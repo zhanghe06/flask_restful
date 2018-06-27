@@ -1,0 +1,19 @@
+# Created by .ignore support plugin (hsz.mobi)
+
+
+.idea/
+
+*.py[cod]
+
+*.env/
+
+config/
+!config/__init__.py
+!config/default.py
+
+docs/_book/*
+
+
+# local files
+run_service_app.py
+web_app
