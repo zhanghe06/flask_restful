@@ -78,14 +78,18 @@ def edit_inventory(inventory_id, inventory_data):
     return db_instance.edit(Inventory, inventory_id, inventory_data)
 
 
-def delete_inventory(inventory_id):
+def delete_inventory(inventory_id, force=False):
     """
     删除信息
     :param inventory_id:
+    :param force:
     :return: Number of affected rows (Example: 0/1)
     :except:
     """
-    return db_instance.delete(Inventory, inventory_id)
+    if force:
+        return db_instance.delete(Inventory, inventory_id)
+    else:
+        return db_instance.edit(Inventory, inventory_id, {'status_delete': True})
 
 
 def get_inventory_pagination(page=1, per_page=10, *args, **kwargs):
@@ -125,29 +129,3 @@ def count_inventory(*args, **kwargs):
     :return:
     """
     return db_instance.count(Inventory, *args, **kwargs)
-
-
-def increase_inventory(inventory_id, field, num=1, **kwargs):
-    """
-    自增、自减
-    :param inventory_id:
-    :param field:
-    :param num:
-    :param kwargs:
-    :return:
-    """
-    # inventory_info = db_instance.get_row_by_id(Inventory, inventory_id)
-    # if getattr(inventory_info, field) + num >= 0:
-    #     return db_instance.increase(Inventory, inventory_id, field, num, **kwargs)
-
-    inventory_obj = db.session.query(Inventory).filter(Inventory.id == inventory_id)
-    import time
-    time.sleep(2)
-    if inventory_obj.one().stock_qty >= num:
-        time.sleep(2)
-        data = {
-            'stock_qty': Inventory.stock_qty - num
-        }
-        inventory_obj.update(data)
-        db.session.commit()
-    return True

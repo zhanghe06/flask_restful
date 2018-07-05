@@ -13,7 +13,7 @@ from __future__ import unicode_literals
 
 from flask_restful import fields
 
-fields_item = {
+fields_item_fetch_result = {
     'id': fields.Integer,
     'task_id': fields.Integer,
     'platform_id': fields.Integer,

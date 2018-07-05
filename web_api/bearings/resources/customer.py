@@ -4,18 +4,17 @@
 """
 @author: zhanghe
 @software: PyCharm
-@file: inventory.py
-@time: 2018-06-28 00:22
+@file: customer.py
+@time: 2018-07-05 16:57
 """
-
 
 from __future__ import unicode_literals
 
 from flask import jsonify, make_response
 from flask_restful import Resource, marshal, reqparse
 
-from web_api.bearings.outputs.inventory import fields_item_inventory
-from web_api.bearings.reqparsers.inventory import (
+from web_api.bearings.outputs.customer import fields_item_customer, fields_detail_customer
+from web_api.bearings.reqparsers.customer import (
     request_parser,
     request_parser_item_post,
     request_parser_item_put,
@@ -23,13 +22,14 @@ from web_api.bearings.reqparsers.inventory import (
     structure_key_items,
 )
 from web_api.commons.exceptions import BadRequest, NotFound
-from web_api.bearings.apis.inventory import (
-    get_inventory_row_by_id,
-    edit_inventory,
-    delete_inventory,
-    get_inventory_limit_rows_by_last_id,
-    add_inventory,
-    get_inventory_pagination,
+from web_api.bearings.apis.customer import (
+    get_customer_row_by_id,
+    get_customer_detail_info,
+    edit_customer,
+    delete_customer,
+    get_customer_limit_rows_by_last_id,
+    add_customer,
+    get_customer_pagination,
 )
 from web_api.commons.http_token_auth import token_auth
 from web_api import app
@@ -38,33 +38,34 @@ SUCCESS_MSG = app.config['SUCCESS_MSG']
 FAILURE_MSG = app.config['FAILURE_MSG']
 
 
-class InventoryResource(Resource):
+class CustomerResource(Resource):
     """
-    InventoryResource
+    CustomerResource
     """
     decorators = [token_auth.login_required]
 
     def get(self, pk):
         """
         Example:
-            curl http://0.0.0.0:5000/bearings/inventory/1
+            curl http://0.0.0.0:5000/bearings/customer/1
         :param pk:
         :return:
         """
-        data = get_inventory_row_by_id(pk)
+        data = get_customer_detail_info(pk)
         if not data:
             raise NotFound
-        result = marshal(data, fields_item_inventory, envelope=structure_key_item)
+        result = marshal(data, fields_detail_customer, envelope=structure_key_item)
         return jsonify(result)
 
     def delete(self, pk):
         """
         Example:
-            curl http://0.0.0.0:5000/bearings/inventory/1 -X DELETE
+            curl http://0.0.0.0:5000/bearings/customer/1 -X DELETE
         :param pk:
         :return:
         """
-        result = delete_inventory(pk)
+        # TODO Soft Delete with delete time
+        result = delete_customer(pk)
         if result:
             success_msg = SUCCESS_MSG.copy()
             return make_response(jsonify(success_msg), 204)
@@ -75,13 +76,12 @@ class InventoryResource(Resource):
     def put(self, pk):
         """
         Example:
-            curl http://0.0.0.0:5000/bearings/inventory/1 -H "Content-Type: application/json" -X PUT -d '
+            curl http://0.0.0.0:5000/bearings/customer/1 -H "Content-Type: application/json" -X PUT -d '
             {
-                "inventory": {
-                    "product_id": 1,
-                    "warehouse_id": 1,
-                    "rack_id": 1,
-                    "stock_qty": 101
+                "customer": {
+                    "company_name": "测试公司a",
+                    "company_tel": "021-62345678",
+                    "company_fax": "021-62345678"
                 }
             }'
         :param pk:
@@ -93,7 +93,8 @@ class InventoryResource(Resource):
             raise BadRequest('Bad request.')
 
         request_data = request_item_args
-        result = edit_inventory(pk, request_data)
+        # TODO with update time
+        result = edit_customer(pk, request_data)
         if result:
             success_msg = SUCCESS_MSG.copy()
             return make_response(jsonify(success_msg), 200)
@@ -102,17 +103,17 @@ class InventoryResource(Resource):
             return make_response(jsonify(failure_msg), 400)
 
 
-class InventoryListResource(Resource):
+class CustomerListResource(Resource):
     """
-    InventoryListResource
+    CustomerListResource
     """
     decorators = [token_auth.login_required]
 
     def get(self):
         """
         Example:
-            curl http://0.0.0.0:5000/bearings/inventories
-            curl http://0.0.0.0:5000/bearings/inventories?last_pk=2&limit_num=2
+            curl http://0.0.0.0:5000/bearings/customers
+            curl http://0.0.0.0:5000/bearings/customers?last_pk=2&limit_num=2
         :return:
         """
         # 条件参数
@@ -122,21 +123,23 @@ class InventoryListResource(Resource):
 
         filter_parser_args = filter_parser.parse_args()
 
-        data = get_inventory_limit_rows_by_last_id(**filter_parser_args)
-        result = marshal(data, fields_item_inventory, envelope=structure_key_items)
+        data = get_customer_limit_rows_by_last_id(**filter_parser_args)
+        result = marshal(data, fields_item_customer, envelope=structure_key_items)
         return jsonify(result)
 
     def post(self):
         """
         Example:
-            curl http://0.0.0.0:5000/bearings/inventories -H "Content-Type: application/json" -X POST -d '
+            curl http://0.0.0.0:5000/bearings/customers -H "Content-Type: application/json" -X POST -d '
             {
-                "inventory": {
-                    "product_id": 1,
-                    "warehouse_id": 1,
-                    "rack_id": "1",
-                    "stock_qty": 100,
-                    "note": "SNFA"
+                "customer": {
+                    "company_name": "测试公司_test",
+                    "company_type": 1,
+                    "owner_uid": 1,
+                    "company_address": "公司地址1",
+                    "company_site": "http://www.baidu.com",
+                    "company_tel": "021-62345678",
+                    "company_fax": "021-62345678"
                 }
             }'
         :return:
@@ -147,24 +150,24 @@ class InventoryListResource(Resource):
             raise BadRequest('Bad request.')
 
         request_data = request_item_args
-        result = add_inventory(request_data)
+        result = add_customer(request_data)
         if result:
             SUCCESS_MSG['id'] = result
             return make_response(jsonify(SUCCESS_MSG), 201)
         raise NotFound
 
 
-class InventoryPaginationResource(Resource):
+class CustomerPaginationResource(Resource):
     """
-    InventoryPaginationResource
+    CustomerPaginationResource
     """
     decorators = [token_auth.login_required]
 
     def get(self):
         """
         Example:
-            curl http://0.0.0.0:5000/bearings/inventories/pagination
-            curl http://0.0.0.0:5000/bearings/inventories/pagination?page=2&per_page=2
+            curl http://0.0.0.0:5000/bearings/customers/pagination
+            curl http://0.0.0.0:5000/bearings/customers/pagination?page=2&per_page=2
         :return:
         """
         # 条件参数
@@ -174,8 +177,8 @@ class InventoryPaginationResource(Resource):
 
         filter_parser_args = filter_parser.parse_args()
 
-        pagination_obj = get_inventory_pagination(**filter_parser_args)
+        pagination_obj = get_customer_pagination(**filter_parser_args)
 
-        result = marshal(pagination_obj.items, fields_item_inventory, envelope=structure_key_items)
+        result = marshal(pagination_obj.items, fields_item_customer, envelope=structure_key_items)
         result['total'] = pagination_obj.total
         return jsonify(result)

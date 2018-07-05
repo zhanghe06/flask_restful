@@ -14,7 +14,7 @@ from __future__ import unicode_literals
 from flask import jsonify, make_response
 from flask_restful import Resource, marshal, reqparse
 
-from web_api.news.outputs.fetch_result import fields_item
+from web_api.news.outputs.fetch_result import fields_item_fetch_result
 from web_api.news.reqparsers.fetch_result import (
     request_parser,
     request_parser_item_post,
@@ -54,7 +54,7 @@ class FetchResultResource(Resource):
         data = get_fetch_result_row_by_id(pk)
         if not data:
             raise NotFound
-        result = marshal(data, fields_item, envelope=structure_key_item)
+        result = marshal(data, fields_item_fetch_result, envelope=structure_key_item)
         return jsonify(result)
 
     def delete(self, pk):
@@ -137,7 +137,7 @@ class FetchResultListResource(Resource):
 
         # data = get_fetch_result_rows()
         data = get_fetch_result_limit_rows_by_last_id(**filter_parser_args)
-        result = marshal(data, fields_item, envelope=structure_key_items)
+        result = marshal(data, fields_item_fetch_result, envelope=structure_key_items)
         return jsonify(result)
 
     def post(self):
@@ -205,6 +205,6 @@ class FetchResultPaginationResource(Resource):
 
         pagination_obj = get_fetch_result_pagination(**filter_parser_args)
 
-        result = marshal(pagination_obj.items, fields_item, envelope=structure_key_items)
+        result = marshal(pagination_obj.items, fields_item_fetch_result, envelope=structure_key_items)
         result['total'] = pagination_obj.total
         return jsonify(result)

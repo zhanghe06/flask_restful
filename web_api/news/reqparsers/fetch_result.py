@@ -30,97 +30,95 @@ request_parser_item_post.add_argument(
     name='task_id',
     location=structure_key_item,
     store_missing=False,
-    required=True
+    required=True,
 )
 request_parser_item_post.add_argument(
     name='platform_id',
     location=structure_key_item,
     store_missing=False,
-    required=True
+    required=True,
 )
 request_parser_item_post.add_argument(
     name='platform_name',
     location=structure_key_item,
     store_missing=False,
-    required=True
+    required=True,
 )
 request_parser_item_post.add_argument(
     name='channel_id',
     location=structure_key_item,
     store_missing=False,
-    required=True
+    required=True,
 )
 request_parser_item_post.add_argument(
     name='channel_name',
     location=structure_key_item,
     store_missing=False,
-    required=True
+    required=True,
 )
 request_parser_item_post.add_argument(
     name='article_id',
     location=structure_key_item,
     store_missing=False,
-    required=True
+    required=True,
 )
 request_parser_item_post.add_argument(
     name='article_url',
     location=structure_key_item,
     store_missing=False,
-    required=True
+    required=True,
 )
 request_parser_item_post.add_argument(
     name='article_title',
     location=structure_key_item,
     store_missing=False,
-    required=True
+    required=True,
 )
 request_parser_item_post.add_argument(
     name='article_author_id',
     location=structure_key_item,
     store_missing=False,
-    required=True
+    required=True,
 )
 request_parser_item_post.add_argument(
     name='article_author_name',
     location=structure_key_item,
     store_missing=False,
-    required=True
+    required=True,
 )
 request_parser_item_post.add_argument(
     name='article_tags',
     location=structure_key_item,
     store_missing=False,
-    required=True
+    required=True,
 )
 request_parser_item_post.add_argument(
     name='article_abstract',
     location=structure_key_item,
     store_missing=False,
-    required=True
+    required=True,
 )
 request_parser_item_post.add_argument(
     name='article_content',
     location=structure_key_item,
     store_missing=False,
-    required=True
+    required=True,
 )
 request_parser_item_post.add_argument(
     'article_pub_time',
     location=structure_key_item,
     store_missing=False,
-    required=True
+    required=True,
 )
 request_parser_item_post.add_argument(
     'create_time',
     location=structure_key_item,
     store_missing=False,
-    required=False
 )
 request_parser_item_post.add_argument(
     'update_time',
     location=structure_key_item,
     store_missing=False,
-    required=False
 )
 
 # PUT

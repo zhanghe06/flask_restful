@@ -4,8 +4,8 @@
 """
 @author: zhanghe
 @software: PyCharm
-@file: inventory.py
-@time: 2018-07-04 10:25
+@file: customer.py
+@time: 2018-07-05 16:57
 """
 
 
@@ -14,8 +14,8 @@ from __future__ import unicode_literals
 from flask_restful import reqparse, inputs
 
 
-structure_key_item = 'inventory'
-structure_key_items = 'inventories'
+structure_key_item = 'customer'
+structure_key_items = 'customers'
 
 request_parser = reqparse.RequestParser()
 request_parser.add_argument(structure_key_item, type=dict, location='json')
@@ -27,125 +27,92 @@ request_parser_item = reqparse.RequestParser(trim=True, bundle_errors=True)
 request_parser_item_post = request_parser_item.copy()
 
 request_parser_item_post.add_argument(
-    name='product_id',
-    type=int,
+    name='company_name',
     location=structure_key_item,
     store_missing=False,
     required=True,
 )
 request_parser_item_post.add_argument(
-    name='warehouse_id',
-    type=int,
+    name='company_address',
     location=structure_key_item,
     store_missing=False,
     required=True,
 )
 request_parser_item_post.add_argument(
-    name='rack_id',
-    type=int,
+    name='company_site',
+    location=structure_key_item,
+    store_missing=False,
+)
+request_parser_item_post.add_argument(
+    name='company_tel',
+    location=structure_key_item,
+    store_missing=False,
+)
+request_parser_item_post.add_argument(
+    name='company_fax',
+    location=structure_key_item,
+    store_missing=False,
+)
+request_parser_item_post.add_argument(
+    name='company_type',
+    type=inputs.int_range(0, 2),
     location=structure_key_item,
     store_missing=False,
     required=True,
+    help='字段必填',
 )
 request_parser_item_post.add_argument(
-    name='stock_qty',
+    name='owner_uid',
     type=int,
     location=structure_key_item,
     store_missing=False,
-    required=True,
+    default=0
 )
-request_parser_item_post.add_argument(
-    name='note',
-    location=structure_key_item,
-    store_missing=False,
-    required=False,
-)
-request_parser_item_post.add_argument(
-    name='status_delete',
-    type=inputs.boolean,
-    location=structure_key_item,
-    store_missing=False,
-    required=False,
-)
-request_parser_item_post.add_argument(
-    name='delete_time',
-    type=inputs.datetime,
-    location=structure_key_item,
-    store_missing=False,
-    required=False,
-)
-request_parser_item_post.add_argument(
-    'create_time',
-    type=inputs.datetime,
-    location=structure_key_item,
-    store_missing=False,
-    required=False,
-)
-request_parser_item_post.add_argument(
-    'update_time',
-    type=inputs.datetime,
-    location=structure_key_item,
-    store_missing=False,
-    required=False,
-)
+
 
 # PUT
 request_parser_item_put = request_parser_item.copy()
+
 request_parser_item_put.add_argument(
-    name='product_id',
+    name='company_name',
     location=structure_key_item,
     store_missing=False,
-    required=True,
 )
 request_parser_item_put.add_argument(
-    name='warehouse_id',
+    name='company_address',
     location=structure_key_item,
     store_missing=False,
-    required=True,
 )
 request_parser_item_put.add_argument(
-    name='rack_id',
+    name='company_site',
     location=structure_key_item,
     store_missing=False,
-    required=True,
 )
 request_parser_item_put.add_argument(
-    name='stock_qty',
+    name='company_tel',
     location=structure_key_item,
     store_missing=False,
-    required=True,
 )
 request_parser_item_put.add_argument(
-    name='note',
+    name='company_fax',
     location=structure_key_item,
     store_missing=False,
-    required=False,
+)
+request_parser_item_put.add_argument(
+    name='company_type',
+    type=inputs.int_range(0, 2),
+    location=structure_key_item,
+    store_missing=False,
+)
+request_parser_item_put.add_argument(
+    name='owner_uid',
+    type=int,
+    location=structure_key_item,
+    store_missing=False,
 )
 request_parser_item_put.add_argument(
     name='status_delete',
     type=inputs.boolean,
     location=structure_key_item,
     store_missing=False,
-    required=False,
-)
-request_parser_item_put.add_argument(
-    name='delete_time',
-    type=inputs.datetime,
-    location=structure_key_item,
-    store_missing=False,
-    required=False,
-)
-request_parser_item_put.add_argument(
-    'create_time',
-    type=inputs.datetime,
-    location=structure_key_item,
-    store_missing=False,
-    required=False,
-)
-request_parser_item_put.add_argument(
-    'update_time',
-    type=inputs.datetime,
-    location=structure_key_item,
-    store_missing=False,
-    required=False,
 )
