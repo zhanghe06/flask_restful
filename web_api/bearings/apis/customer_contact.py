@@ -8,6 +8,7 @@
 @time: 2018-07-05 16:57
 """
 
+import datetime
 
 from libs.mysql_orm_op import DbInstance
 from web_api.databases.bearings import db
@@ -89,7 +90,11 @@ def delete_customer_contact(customer_contact_id, force=False):
     if force:
         return db_instance.delete(CustomerContact, customer_contact_id)
     else:
-        return db_instance.edit(CustomerContact, customer_contact_id, {'status_delete': True})
+        data = {
+            'status_delete': True,
+            'delete_time': datetime.datetime.utcnow()
+        }
+        return db_instance.edit(CustomerContact, customer_contact_id, data)
 
 
 def get_customer_contact_pagination(page=1, per_page=10, *args, **kwargs):

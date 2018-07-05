@@ -8,6 +8,7 @@
 @time: 2018-06-28 00:23
 """
 
+import datetime
 
 from libs.mysql_orm_op import DbInstance
 from web_api.databases.bearings import db
@@ -89,7 +90,11 @@ def delete_inventory(inventory_id, force=False):
     if force:
         return db_instance.delete(Inventory, inventory_id)
     else:
-        return db_instance.edit(Inventory, inventory_id, {'status_delete': True})
+        data = {
+            'status_delete': True,
+            'delete_time': datetime.datetime.utcnow()
+        }
+        return db_instance.edit(Inventory, inventory_id, data)
 
 
 def get_inventory_pagination(page=1, per_page=10, *args, **kwargs):

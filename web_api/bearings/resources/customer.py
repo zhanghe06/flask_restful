@@ -64,7 +64,6 @@ class CustomerResource(Resource):
         :param pk:
         :return:
         """
-        # TODO Soft Delete with delete time
         result = delete_customer(pk)
         if result:
             success_msg = SUCCESS_MSG.copy()
@@ -93,7 +92,6 @@ class CustomerResource(Resource):
             raise BadRequest('Bad request.')
 
         request_data = request_item_args
-        # TODO with update time
         result = edit_customer(pk, request_data)
         if result:
             success_msg = SUCCESS_MSG.copy()
