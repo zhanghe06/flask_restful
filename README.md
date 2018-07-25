@@ -13,6 +13,7 @@ pip install sqlacodegen==1.1.6
 pip install gunicorn
 pip install eventlet
 pip install mysqlclient
+pip install pymssql
 pip install redis
 pip install requests
 pip install celery
