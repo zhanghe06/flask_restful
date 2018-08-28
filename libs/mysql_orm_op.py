@@ -89,6 +89,7 @@ class DbInstance(object):
     def get_limit_rows_by_last_id(self, model_class, last_pk, limit_num, *args, **kwargs):
         """
         通过最后一个主键 id 获取最新信息列表
+        避免id乱序, 需要加入order_by
         适用场景：
         1、动态加载
         2、快速定位
@@ -104,6 +105,7 @@ class DbInstance(object):
             .query(model_class) \
             .filter(model_pk > last_pk, *args) \
             .filter_by(**kwargs) \
+            .order_by(model_pk) \
             .limit(limit_num) \
             .all()
 

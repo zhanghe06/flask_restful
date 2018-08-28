@@ -12,7 +12,8 @@
 from sqlalchemy import create_engine
 
 # conn_str = 'mssql+pymssql://%s:%s@%s/UFTData018618_000666' % ('sa', '1qazXSW@', '192.168.64.167\SQLEXPRESS')
-conn_str = 'mssql+pymssql://%s:%s@%s/UFTData78445_000666' % ('sa', 'kundi88888', '192.168.1.110')
+conn_str = 'mssql+pymssql://%s:%s@%s/UFTData018618_000666' % ('sa', '123456', '10.21.2.83\SQLEXPRESS')
+# conn_str = 'mssql+pymssql://%s:%s@%s/UFTData78445_000666' % ('sa', 'kundi88888', '192.168.1.110')
 engine = create_engine(conn_str)
 connection = engine.connect()
 result = connection.execute("SELECT * FROM AA_Partner")

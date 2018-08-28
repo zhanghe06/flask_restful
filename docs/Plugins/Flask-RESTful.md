@@ -113,10 +113,10 @@ OrderedDict([('data', OrderedDict([('a', 100)]))])
 
 关于嵌套结构的示例
 
-1. 嵌套结构有数据
+1、嵌套结构有数据
 
-![bearings customer info with contact](https://github.com/zhanghe06/flask_restful/blob/master/images/postman_bearings_customer_info_with_contact.png)
+![bearings customer info with contact](https://github.com/zhanghe06/flask_restful/raw/master/images/postman_bearings_customer_info_with_contact.png)
 
-2. 嵌套结构无数据
+2、嵌套结构无数据
 
-![bearings customer info without contact](https://github.com/zhanghe06/flask_restful/blob/master/images/postman_bearings_customer_info_without_contact.png)
+![bearings customer info without contact](https://github.com/zhanghe06/flask_restful/raw/master/images/postman_bearings_customer_info_without_contact.png)

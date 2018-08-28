@@ -11,6 +11,8 @@
 
 from __future__ import unicode_literals
 
+from datetime import datetime
+
 from flask import jsonify, make_response
 from flask_restful import Resource, marshal, reqparse
 
@@ -30,7 +32,9 @@ from web_api.yonyou.apis.partner import (
     get_partner_limit_rows_by_last_id,
     add_partner,
     get_partner_pagination,
-)
+    count_partner)
+from web_api.bearings.apis.customer import count_customer, add_customer
+from web_api.bearings.apis.customer_contact import add_customer_contact
 from web_api.commons.http_token_auth import token_auth
 from web_api import app
 
@@ -123,4 +127,76 @@ class PartnerPaginationResource(Resource):
 
         result = marshal(pagination_obj.items, fields_item_partner, envelope=structure_key_items)
         result['total'] = pagination_obj.total
+        return jsonify(result)
+
+
+class PartnerListSyncResource(Resource):
+    """
+    PartnerListSyncResource
+    """
+    decorators = [token_auth.login_required]
+
+    def get(self):
+        """
+        Example:
+            curl http://0.0.0.0:5000/yonyou/partners/sync
+        :return:
+        """
+        last_pk = 0
+        limit_num = 2000
+
+        count_duplicate = 0
+
+        while 1:
+            partner_rows = get_partner_limit_rows_by_last_id(last_pk=last_pk, limit_num=limit_num)
+            if not partner_rows:
+                break
+            for partner_item in partner_rows:
+
+                last_pk = partner_item.id
+
+                company_name = partner_item.name.strip() if partner_item.name else ''
+                company_address = partner_item.ShipmentAddress.strip() if partner_item.ShipmentAddress else ''
+                company_tel = partner_item.TelephoneNo.strip() if partner_item.TelephoneNo else ''
+                company_fax = partner_item.Fax.strip() if partner_item.Fax else ''
+                # owner_uid = partner_item.idsaleman  # todo
+
+                # 判断重复
+                count_dup = count_customer(company_name=company_name)
+                if count_dup:
+                    count_duplicate += 1
+                    print(company_name)
+                    print(count_duplicate)
+                    continue
+                current_time = datetime.utcnow()
+                customer_data = {
+                    'company_name': company_name,
+                    'company_address': company_address,
+                    # 'company_site': '',
+                    'company_tel': company_tel,
+                    'company_fax': company_fax,
+                    # 'company_email': '',
+                    # 'company_type': '',
+                    # 'owner_uid': owner_uid,
+                    'create_time': current_time,
+                    'update_time': current_time,
+                }
+                cid = add_customer(customer_data)
+
+                # 插入联系方式（默认）
+                customer_contact_data = {
+                    'cid': cid,
+                    'name': partner_item.Contact.strip() if partner_item.Contact else '',
+                    'mobile': partner_item.TelephoneNo.strip() if partner_item.TelephoneNo else '',
+                    'address': partner_item.ShipmentAddress.strip() if partner_item.ShipmentAddress else '',
+                    'status_default': True,
+                }
+                add_customer_contact(customer_contact_data)
+
+        result = {
+            '总数': count_partner(),
+            '过滤重复': count_duplicate,
+            '成功导入': count_customer(),
+        }
+
         return jsonify(result)

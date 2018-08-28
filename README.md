@@ -22,6 +22,26 @@ pip install grequests
 注意: sqlacodegen==2.0有bug
 
 
+Hack sqlacodegen
+
+flask_restful.env/lib/python2.7/site-packages/sqlacodegen/codegen.py
+```
+# Only form model classes for tables that have a primary key and are not association tables
+if noclasses or not table.primary_key or table.name in association_tables:
+    model = ModelTable(table)
+else:
+    model = ModelClass(table, links[table.name], inflect_engine, not nojoined)
+    classes[model.name] = model
+```
+改为
+```
+if noclasses:
+    model = ModelTable(table)
+else:
+    model = ModelClass(table, links[table.name], inflect_engine, not nojoined)
+    classes[model.name] = model
+```
+
 本地启动
 ```bash
 python run_service_api.py

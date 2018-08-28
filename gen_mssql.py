@@ -23,7 +23,7 @@ def gen_models(app_name, db_key):
     :return:
     """
     file_path = os.path.join(BASE_DIR, app_name, 'models', '%s.py' % db_key)
-    # cmd = 'sqlacodegen %s --noinflect --outfile %s' % (SQLALCHEMY_BINDS[db_key], file_path)
+    # cmd = 'sqlacodegen "%s" --noinflect --outfile %s' % (SQLALCHEMY_BINDS[db_key], file_path)
     cmd = 'sqlacodegen "%s" --noviews --noconstraints --noinflect --outfile %s' % (SQLALCHEMY_BINDS[db_key], file_path)
     print(cmd)
 

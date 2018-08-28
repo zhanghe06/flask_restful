@@ -1,5 +1,5 @@
 # coding: utf-8
-from sqlalchemy import BINARY, BigInteger, Column, DateTime, Float, Index, Integer, LargeBinary, Numeric, SmallInteger, String, TIMESTAMP, Table, Text, Unicode, UnicodeText, text
+from sqlalchemy import BINARY, BigInteger, Column, DateTime, Float, Index, Integer, LargeBinary, Numeric, SmallInteger, String, TIMESTAMP, Text, Unicode, UnicodeText, text
 from sqlalchemy.dialects.mssql.base import BIT, UNIQUEIDENTIFIER
 from web_api.databases.yonyou import db
 
@@ -109,58 +109,58 @@ class AAAccountType(Base):
     defaultdcdirection = Column(Integer)
 
 
-t_AA_Account_Ext = Table(
-    'AA_Account_Ext', metadata,
-    Column('accountcode_lev1', Unicode(40)),
-    Column('accountname_lev1', Unicode(200)),
-    Column('accountcode_lev2', Unicode(40)),
-    Column('accountname_lev2', Unicode(200)),
-    Column('accountcode_lev3', Unicode(40)),
-    Column('accountname_lev3', Unicode(200)),
-    Column('accountcode_lev4', Unicode(40)),
-    Column('accountname_lev4', Unicode(200)),
-    Column('accountcode_lev5', Unicode(40)),
-    Column('accountname_lev5', Unicode(200)),
-    Column('accountcode_lev6', Unicode(40)),
-    Column('accountname_lev6', Unicode(200)),
-    Column('accountcode_lev7', Unicode(40)),
-    Column('accountname_lev7', Unicode(200)),
-    Column('accountcode_lev8', Unicode(40)),
-    Column('accountname_lev8', Unicode(200)),
-    Column('accountcode_lev9', Unicode(40)),
-    Column('accountname_lev9', Unicode(200)),
-    Column('accountcode_lev10', Unicode(40)),
-    Column('accountname_lev10', Unicode(200)),
-    Column('accountcode_lev11', Unicode(40)),
-    Column('accountname_lev11', Unicode(200)),
-    Column('accountcode_lev12', Unicode(40)),
-    Column('accountname_lev12', Unicode(200)),
-    Column('accountcode_lev13', Unicode(40)),
-    Column('accountname_lev13', Unicode(200)),
-    Column('accountcode_lev14', Unicode(40)),
-    Column('accountname_lev14', Unicode(200)),
-    Column('accountcode_lev15', Unicode(40)),
-    Column('accountname_lev15', Unicode(200)),
-    Column('depth', Unicode(10)),
-    Column('createTime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('ts', TIMESTAMP),
-    Column('accountid_lev1', Integer),
-    Column('accountid_lev10', Integer),
-    Column('accountid_lev11', Integer),
-    Column('accountid_lev12', Integer),
-    Column('accountid_lev13', Integer),
-    Column('accountid_lev14', Integer),
-    Column('accountid_lev15', Integer),
-    Column('accountid_lev2', Integer),
-    Column('accountid_lev3', Integer),
-    Column('accountid_lev4', Integer),
-    Column('accountid_lev5', Integer),
-    Column('accountid_lev6', Integer),
-    Column('accountid_lev7', Integer),
-    Column('accountid_lev8', Integer),
-    Column('accountid_lev9', Integer),
-    Column('id', Integer)
-)
+class AAAccountExt(Base):
+    __tablename__ = 'AA_Account_Ext'
+
+    accountcode_lev1 = Column(Unicode(40))
+    accountname_lev1 = Column(Unicode(200))
+    accountcode_lev2 = Column(Unicode(40))
+    accountname_lev2 = Column(Unicode(200))
+    accountcode_lev3 = Column(Unicode(40))
+    accountname_lev3 = Column(Unicode(200))
+    accountcode_lev4 = Column(Unicode(40))
+    accountname_lev4 = Column(Unicode(200))
+    accountcode_lev5 = Column(Unicode(40))
+    accountname_lev5 = Column(Unicode(200))
+    accountcode_lev6 = Column(Unicode(40))
+    accountname_lev6 = Column(Unicode(200))
+    accountcode_lev7 = Column(Unicode(40))
+    accountname_lev7 = Column(Unicode(200))
+    accountcode_lev8 = Column(Unicode(40))
+    accountname_lev8 = Column(Unicode(200))
+    accountcode_lev9 = Column(Unicode(40))
+    accountname_lev9 = Column(Unicode(200))
+    accountcode_lev10 = Column(Unicode(40))
+    accountname_lev10 = Column(Unicode(200))
+    accountcode_lev11 = Column(Unicode(40))
+    accountname_lev11 = Column(Unicode(200))
+    accountcode_lev12 = Column(Unicode(40))
+    accountname_lev12 = Column(Unicode(200))
+    accountcode_lev13 = Column(Unicode(40))
+    accountname_lev13 = Column(Unicode(200))
+    accountcode_lev14 = Column(Unicode(40))
+    accountname_lev14 = Column(Unicode(200))
+    accountcode_lev15 = Column(Unicode(40))
+    accountname_lev15 = Column(Unicode(200))
+    depth = Column(Unicode(10))
+    createTime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    ts = Column(TIMESTAMP)
+    accountid_lev1 = Column(Integer)
+    accountid_lev10 = Column(Integer)
+    accountid_lev11 = Column(Integer)
+    accountid_lev12 = Column(Integer)
+    accountid_lev13 = Column(Integer)
+    accountid_lev14 = Column(Integer)
+    accountid_lev15 = Column(Integer)
+    accountid_lev2 = Column(Integer)
+    accountid_lev3 = Column(Integer)
+    accountid_lev4 = Column(Integer)
+    accountid_lev5 = Column(Integer)
+    accountid_lev6 = Column(Integer)
+    accountid_lev7 = Column(Integer)
+    accountid_lev8 = Column(Integer)
+    accountid_lev9 = Column(Integer)
+    id = Column(Integer, primary_key=True)
 
 
 class AAAssetClass(Base):
@@ -194,58 +194,58 @@ class AAAssetClass(Base):
     idCardStyle = Column(Integer)
 
 
-t_AA_AssetClass_Ext = Table(
-    'AA_AssetClass_Ext', metadata,
-    Column('assetClasscode_lev1', Unicode(40)),
-    Column('assetClassname_lev1', Unicode(400)),
-    Column('assetClasscode_lev2', Unicode(40)),
-    Column('assetClassname_lev2', Unicode(400)),
-    Column('assetClasscode_lev3', Unicode(40)),
-    Column('assetClassname_lev3', Unicode(400)),
-    Column('assetClasscode_lev4', Unicode(40)),
-    Column('assetClassname_lev4', Unicode(400)),
-    Column('assetClasscode_lev5', Unicode(40)),
-    Column('assetClassname_lev5', Unicode(400)),
-    Column('assetClasscode_lev6', Unicode(40)),
-    Column('assetClassname_lev6', Unicode(400)),
-    Column('assetClasscode_lev7', Unicode(40)),
-    Column('assetClassname_lev7', Unicode(400)),
-    Column('assetClasscode_lev8', Unicode(40)),
-    Column('assetClassname_lev8', Unicode(400)),
-    Column('assetClasscode_lev9', Unicode(40)),
-    Column('assetClassname_lev9', Unicode(400)),
-    Column('assetClasscode_lev10', Unicode(40)),
-    Column('assetClassname_lev10', Unicode(400)),
-    Column('assetClasscode_lev11', Unicode(40)),
-    Column('assetClassname_lev11', Unicode(400)),
-    Column('assetClasscode_lev12', Unicode(40)),
-    Column('assetClassname_lev12', Unicode(400)),
-    Column('assetClasscode_lev13', Unicode(40)),
-    Column('assetClassname_lev13', Unicode(400)),
-    Column('assetClasscode_lev14', Unicode(40)),
-    Column('assetClassname_lev14', Unicode(400)),
-    Column('assetClasscode_lev15', Unicode(40)),
-    Column('assetClassname_lev15', Unicode(400)),
-    Column('depth', Unicode(10)),
-    Column('createTime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('ts', TIMESTAMP),
-    Column('id', Integer),
-    Column('assetClassid_lev1', Integer),
-    Column('assetClassid_lev10', Integer),
-    Column('assetClassid_lev11', Integer),
-    Column('assetClassid_lev12', Integer),
-    Column('assetClassid_lev13', Integer),
-    Column('assetClassid_lev14', Integer),
-    Column('assetClassid_lev15', Integer),
-    Column('assetClassid_lev2', Integer),
-    Column('assetClassid_lev3', Integer),
-    Column('assetClassid_lev4', Integer),
-    Column('assetClassid_lev5', Integer),
-    Column('assetClassid_lev6', Integer),
-    Column('assetClassid_lev7', Integer),
-    Column('assetClassid_lev8', Integer),
-    Column('assetClassid_lev9', Integer)
-)
+class AAAssetClassExt(Base):
+    __tablename__ = 'AA_AssetClass_Ext'
+
+    assetClasscode_lev1 = Column(Unicode(40))
+    assetClassname_lev1 = Column(Unicode(400))
+    assetClasscode_lev2 = Column(Unicode(40))
+    assetClassname_lev2 = Column(Unicode(400))
+    assetClasscode_lev3 = Column(Unicode(40))
+    assetClassname_lev3 = Column(Unicode(400))
+    assetClasscode_lev4 = Column(Unicode(40))
+    assetClassname_lev4 = Column(Unicode(400))
+    assetClasscode_lev5 = Column(Unicode(40))
+    assetClassname_lev5 = Column(Unicode(400))
+    assetClasscode_lev6 = Column(Unicode(40))
+    assetClassname_lev6 = Column(Unicode(400))
+    assetClasscode_lev7 = Column(Unicode(40))
+    assetClassname_lev7 = Column(Unicode(400))
+    assetClasscode_lev8 = Column(Unicode(40))
+    assetClassname_lev8 = Column(Unicode(400))
+    assetClasscode_lev9 = Column(Unicode(40))
+    assetClassname_lev9 = Column(Unicode(400))
+    assetClasscode_lev10 = Column(Unicode(40))
+    assetClassname_lev10 = Column(Unicode(400))
+    assetClasscode_lev11 = Column(Unicode(40))
+    assetClassname_lev11 = Column(Unicode(400))
+    assetClasscode_lev12 = Column(Unicode(40))
+    assetClassname_lev12 = Column(Unicode(400))
+    assetClasscode_lev13 = Column(Unicode(40))
+    assetClassname_lev13 = Column(Unicode(400))
+    assetClasscode_lev14 = Column(Unicode(40))
+    assetClassname_lev14 = Column(Unicode(400))
+    assetClasscode_lev15 = Column(Unicode(40))
+    assetClassname_lev15 = Column(Unicode(400))
+    depth = Column(Unicode(10))
+    createTime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    ts = Column(TIMESTAMP)
+    id = Column(Integer, primary_key=True)
+    assetClassid_lev1 = Column(Integer)
+    assetClassid_lev10 = Column(Integer)
+    assetClassid_lev11 = Column(Integer)
+    assetClassid_lev12 = Column(Integer)
+    assetClassid_lev13 = Column(Integer)
+    assetClassid_lev14 = Column(Integer)
+    assetClassid_lev15 = Column(Integer)
+    assetClassid_lev2 = Column(Integer)
+    assetClassid_lev3 = Column(Integer)
+    assetClassid_lev4 = Column(Integer)
+    assetClassid_lev5 = Column(Integer)
+    assetClassid_lev6 = Column(Integer)
+    assetClassid_lev7 = Column(Integer)
+    assetClassid_lev8 = Column(Integer)
+    assetClassid_lev9 = Column(Integer)
 
 
 class AAAssetProp(Base):
@@ -264,374 +264,374 @@ class AAAssetProp(Base):
     provisionway = Column(Integer)
 
 
-t_AA_BOM = Table(
-    'AA_BOM', metadata,
-    Column('code', Unicode(32)),
-    Column('name', Unicode(200)),
-    Column('version', Unicode(30)),
-    Column('produceQuantity', Numeric(28, 14)),
-    Column('rationWage', Numeric(28, 14)),
-    Column('rationCharge', Numeric(28, 14)),
-    Column('rationManHour', Numeric(28, 14)),
-    Column('isDefaultBom', Integer),
-    Column('bomDepth', Integer),
-    Column('disabled', Integer),
-    Column('ts', TIMESTAMP),
-    Column('updatedBy', Unicode(32)),
-    Column('freeItem0', Unicode(300)),
-    Column('freeItem1', Unicode(300)),
-    Column('freeItem2', Unicode(300)),
-    Column('freeItem3', Unicode(300)),
-    Column('freeItem4', Unicode(300)),
-    Column('freeItem5', Unicode(300)),
-    Column('freeItem6', Unicode(300)),
-    Column('freeItem7', Unicode(300)),
-    Column('freeItem8', Unicode(300)),
-    Column('freeItem9', Unicode(300)),
-    Column('priuserdefnvc1', Unicode(500)),
-    Column('priuserdefdecm1', Numeric(28, 14)),
-    Column('priuserdefnvc2', Unicode(500)),
-    Column('priuserdefdecm2', Numeric(28, 14)),
-    Column('priuserdefnvc3', Unicode(500)),
-    Column('priuserdefdecm3', Numeric(28, 14)),
-    Column('priuserdefnvc4', Unicode(500)),
-    Column('priuserdefdecm4', Numeric(28, 14)),
-    Column('priuserdefnvc5', Unicode(500)),
-    Column('priuserdefdecm5', Numeric(28, 14)),
-    Column('producequantity2', Numeric(28, 14)),
-    Column('rationcost', Numeric(28, 14)),
-    Column('rationmaterial', Numeric(28, 14)),
-    Column('cost', Numeric(28, 14)),
-    Column('rateofexchange', Numeric(28, 14)),
-    Column('yieldrate', Numeric(28, 14)),
-    Column('iscostbom', Integer),
-    Column('idsaleorder', Unicode(50)),
-    Column('maker', Unicode(50)),
-    Column('auditor', Unicode(50)),
-    Column('reviser', Unicode(50)),
-    Column('isorderbom', Integer),
-    Column('customerName', Unicode(200)),
-    Column('customerCode', Unicode(200)),
-    Column('customerForShort', Unicode(200)),
-    Column('pubuserdefnvc1', Unicode(500)),
-    Column('pubuserdefnvc2', Unicode(500)),
-    Column('pubuserdefnvc3', Unicode(500)),
-    Column('pubuserdefnvc4', Unicode(500)),
-    Column('pubuserdefnvc5', Unicode(500)),
-    Column('pubuserdefnvc6', Unicode(500)),
-    Column('pubuserdefdecm1', Numeric(28, 14)),
-    Column('pubuserdefdecm2', Numeric(28, 14)),
-    Column('pubuserdefdecm3', Numeric(28, 14)),
-    Column('pubuserdefdecm4', Numeric(28, 14)),
-    Column('pubuserdefdecm5', Numeric(28, 14)),
-    Column('pubuserdefdecm6', Numeric(28, 14)),
-    Column('priuserdefdecm6', Numeric(28, 14)),
-    Column('priuserdefnvc6', Unicode(500)),
-    Column('id', Integer, nullable=False),
-    Column('idBomRelationDTO', Integer),
-    Column('idmanufactureplant', Integer),
-    Column('idinventory', Integer),
-    Column('idmechiner', Integer),
-    Column('idrouting', Integer),
-    Column('idunit', Integer),
-    Column('idunit2', Integer),
-    Column('idwarehouse', Integer),
-    Column('getbomchildunitmethod', Integer),
-    Column('produceType', Integer),
-    Column('voucherstate', Integer),
-    Column('auditorid', Integer),
-    Column('makerid', Integer),
-    Column('madeDate', DateTime),
-    Column('updated', DateTime),
-    Column('voucherdate', DateTime),
-    Column('auditeddate', DateTime),
-    Column('createdtime', DateTime),
-    Column('reviserid', Integer, server_default=text("(NULL)")),
-    Column('ReviserDate', DateTime, server_default=text("(NULL)"))
-)
+class AABOM(Base):
+    __tablename__ = 'AA_BOM'
+
+    code = Column(Unicode(32))
+    name = Column(Unicode(200))
+    version = Column(Unicode(30))
+    produceQuantity = Column(Numeric(28, 14))
+    rationWage = Column(Numeric(28, 14))
+    rationCharge = Column(Numeric(28, 14))
+    rationManHour = Column(Numeric(28, 14))
+    isDefaultBom = Column(Integer)
+    bomDepth = Column(Integer)
+    disabled = Column(Integer)
+    ts = Column(TIMESTAMP)
+    updatedBy = Column(Unicode(32))
+    freeItem0 = Column(Unicode(300))
+    freeItem1 = Column(Unicode(300))
+    freeItem2 = Column(Unicode(300))
+    freeItem3 = Column(Unicode(300))
+    freeItem4 = Column(Unicode(300))
+    freeItem5 = Column(Unicode(300))
+    freeItem6 = Column(Unicode(300))
+    freeItem7 = Column(Unicode(300))
+    freeItem8 = Column(Unicode(300))
+    freeItem9 = Column(Unicode(300))
+    priuserdefnvc1 = Column(Unicode(500))
+    priuserdefdecm1 = Column(Numeric(28, 14))
+    priuserdefnvc2 = Column(Unicode(500))
+    priuserdefdecm2 = Column(Numeric(28, 14))
+    priuserdefnvc3 = Column(Unicode(500))
+    priuserdefdecm3 = Column(Numeric(28, 14))
+    priuserdefnvc4 = Column(Unicode(500))
+    priuserdefdecm4 = Column(Numeric(28, 14))
+    priuserdefnvc5 = Column(Unicode(500))
+    priuserdefdecm5 = Column(Numeric(28, 14))
+    producequantity2 = Column(Numeric(28, 14))
+    rationcost = Column(Numeric(28, 14))
+    rationmaterial = Column(Numeric(28, 14))
+    cost = Column(Numeric(28, 14))
+    rateofexchange = Column(Numeric(28, 14))
+    yieldrate = Column(Numeric(28, 14))
+    iscostbom = Column(Integer)
+    idsaleorder = Column(Unicode(50))
+    maker = Column(Unicode(50))
+    auditor = Column(Unicode(50))
+    reviser = Column(Unicode(50))
+    isorderbom = Column(Integer)
+    customerName = Column(Unicode(200))
+    customerCode = Column(Unicode(200))
+    customerForShort = Column(Unicode(200))
+    pubuserdefnvc1 = Column(Unicode(500))
+    pubuserdefnvc2 = Column(Unicode(500))
+    pubuserdefnvc3 = Column(Unicode(500))
+    pubuserdefnvc4 = Column(Unicode(500))
+    pubuserdefnvc5 = Column(Unicode(500))
+    pubuserdefnvc6 = Column(Unicode(500))
+    pubuserdefdecm1 = Column(Numeric(28, 14))
+    pubuserdefdecm2 = Column(Numeric(28, 14))
+    pubuserdefdecm3 = Column(Numeric(28, 14))
+    pubuserdefdecm4 = Column(Numeric(28, 14))
+    pubuserdefdecm5 = Column(Numeric(28, 14))
+    pubuserdefdecm6 = Column(Numeric(28, 14))
+    priuserdefdecm6 = Column(Numeric(28, 14))
+    priuserdefnvc6 = Column(Unicode(500))
+    id = Column(Integer, nullable=False, primary_key=True)
+    idBomRelationDTO = Column(Integer)
+    idmanufactureplant = Column(Integer)
+    idinventory = Column(Integer)
+    idmechiner = Column(Integer)
+    idrouting = Column(Integer)
+    idunit = Column(Integer)
+    idunit2 = Column(Integer)
+    idwarehouse = Column(Integer)
+    getbomchildunitmethod = Column(Integer)
+    produceType = Column(Integer)
+    voucherstate = Column(Integer)
+    auditorid = Column(Integer)
+    makerid = Column(Integer)
+    madeDate = Column(DateTime)
+    updated = Column(DateTime)
+    voucherdate = Column(DateTime)
+    auditeddate = Column(DateTime)
+    createdtime = Column(DateTime)
+    reviserid = Column(Integer, server_default=text("(NULL)"))
+    ReviserDate = Column(DateTime, server_default=text("(NULL)"))
 
 
-t_AA_BOMChild = Table(
-    'AA_BOMChild', metadata,
-    Column('code', Unicode(32)),
-    Column('name', Unicode(200)),
-    Column('produceQuantity', Numeric(28, 14)),
-    Column('rationQuantity', Numeric(28, 14)),
-    Column('wasteRate', Numeric(28, 14)),
-    Column('ts', TIMESTAMP),
-    Column('updatedBy', Unicode(32)),
-    Column('freeItem0', Unicode(300)),
-    Column('freeItem1', Unicode(300)),
-    Column('freeItem2', Unicode(300)),
-    Column('freeItem3', Unicode(300)),
-    Column('freeItem4', Unicode(300)),
-    Column('freeItem5', Unicode(300)),
-    Column('freeItem6', Unicode(300)),
-    Column('freeItem7', Unicode(300)),
-    Column('freeItem8', Unicode(300)),
-    Column('freeItem9', Unicode(300)),
-    Column('memo', Unicode(200)),
-    Column('requiredquantity', Numeric(28, 14)),
-    Column('requiredquantity2', Numeric(28, 14)),
-    Column('rateofexchange', Numeric(28, 14)),
-    Column('unitprice', Numeric(28, 14)),
-    Column('cost', Numeric(28, 14)),
-    Column('backflushmaterial', Integer),
-    Column('defaultchoice', Integer),
-    Column('priuserdefnvc1', Unicode(500)),
-    Column('priuserdefnvc2', Unicode(500)),
-    Column('priuserdefnvc3', Unicode(500)),
-    Column('priuserdefnvc4', Unicode(500)),
-    Column('priuserdefdecm1', Numeric(28, 14)),
-    Column('priuserdefdecm2', Numeric(28, 14)),
-    Column('priuserdefdecm3', Numeric(28, 14)),
-    Column('priuserdefdecm4', Numeric(28, 14)),
-    Column('pubuserdefnvc1', Unicode(500)),
-    Column('pubuserdefnvc2', Unicode(500)),
-    Column('pubuserdefnvc3', Unicode(500)),
-    Column('pubuserdefnvc4', Unicode(500)),
-    Column('pubuserdefdecm1', Numeric(28, 14)),
-    Column('pubuserdefdecm2', Numeric(28, 14)),
-    Column('pubuserdefdecm3', Numeric(28, 14)),
-    Column('pubuserdefdecm4', Numeric(28, 14)),
-    Column('BatchNumber', Unicode(100)),
-    Column('FailDate', DateTime),
-    Column('id', Integer, nullable=False),
-    Column('idchildbom', Integer),
-    Column('idbom', Integer),
-    Column('idBomRelationDTO', Integer),
-    Column('idinventory', Integer),
-    Column('idproductprocess', Integer),
-    Column('idunit', Integer),
-    Column('idunit2', Integer),
-    Column('idwarehouse', Integer),
-    Column('bomchildattribute', Integer),
-    Column('madeDate', DateTime),
-    Column('updated', DateTime),
-    Column('createdtime', DateTime)
-)
+class AABOMChild(Base):
+    __tablename__ = 'AA_BOMChild'
+
+    code = Column(Unicode(32))
+    name = Column(Unicode(200))
+    produceQuantity = Column(Numeric(28, 14))
+    rationQuantity = Column(Numeric(28, 14))
+    wasteRate = Column(Numeric(28, 14))
+    ts = Column(TIMESTAMP)
+    updatedBy = Column(Unicode(32))
+    freeItem0 = Column(Unicode(300))
+    freeItem1 = Column(Unicode(300))
+    freeItem2 = Column(Unicode(300))
+    freeItem3 = Column(Unicode(300))
+    freeItem4 = Column(Unicode(300))
+    freeItem5 = Column(Unicode(300))
+    freeItem6 = Column(Unicode(300))
+    freeItem7 = Column(Unicode(300))
+    freeItem8 = Column(Unicode(300))
+    freeItem9 = Column(Unicode(300))
+    memo = Column(Unicode(200))
+    requiredquantity = Column(Numeric(28, 14))
+    requiredquantity2 = Column(Numeric(28, 14))
+    rateofexchange = Column(Numeric(28, 14))
+    unitprice = Column(Numeric(28, 14))
+    cost = Column(Numeric(28, 14))
+    backflushmaterial = Column(Integer)
+    defaultchoice = Column(Integer)
+    priuserdefnvc1 = Column(Unicode(500))
+    priuserdefnvc2 = Column(Unicode(500))
+    priuserdefnvc3 = Column(Unicode(500))
+    priuserdefnvc4 = Column(Unicode(500))
+    priuserdefdecm1 = Column(Numeric(28, 14))
+    priuserdefdecm2 = Column(Numeric(28, 14))
+    priuserdefdecm3 = Column(Numeric(28, 14))
+    priuserdefdecm4 = Column(Numeric(28, 14))
+    pubuserdefnvc1 = Column(Unicode(500))
+    pubuserdefnvc2 = Column(Unicode(500))
+    pubuserdefnvc3 = Column(Unicode(500))
+    pubuserdefnvc4 = Column(Unicode(500))
+    pubuserdefdecm1 = Column(Numeric(28, 14))
+    pubuserdefdecm2 = Column(Numeric(28, 14))
+    pubuserdefdecm3 = Column(Numeric(28, 14))
+    pubuserdefdecm4 = Column(Numeric(28, 14))
+    BatchNumber = Column(Unicode(100))
+    FailDate = Column(DateTime)
+    id = Column(Integer, nullable=False, primary_key=True)
+    idchildbom = Column(Integer)
+    idbom = Column(Integer)
+    idBomRelationDTO = Column(Integer)
+    idinventory = Column(Integer)
+    idproductprocess = Column(Integer)
+    idunit = Column(Integer)
+    idunit2 = Column(Integer)
+    idwarehouse = Column(Integer)
+    bomchildattribute = Column(Integer)
+    madeDate = Column(DateTime)
+    updated = Column(DateTime)
+    createdtime = Column(DateTime)
 
 
-t_AA_BankAccount = Table(
-    'AA_BankAccount', metadata,
-    Column('code', Unicode(50)),
-    Column('name', Unicode(200)),
-    Column('bankNo', Unicode(50)),
-    Column('disabled', Integer),
-    Column('ts', TIMESTAMP),
-    Column('updatedBy', Unicode(32)),
-    Column('isusingdeficitcontrol', Integer),
-    Column('isusingbankcheck', Integer),
-    Column('NewBalance', Numeric(38, 6)),
-    Column('VirtualPay', Integer),
-    Column('id', Integer, nullable=False),
-    Column('idcurrency', Integer),
-    Column('iddepartment', Integer),
-    Column('idMarketingOrgan', Integer),
-    Column('balancedirection', Integer),
-    Column('bankName', Integer),
-    Column('bankNoType', Integer),
-    Column('madeDate', DateTime),
-    Column('updated', DateTime),
-    Column('dateofusingbankcheck', DateTime),
-    Column('createdTime', DateTime)
-)
+class AABankAccount(Base):
+    __tablename__ = 'AA_BankAccount'
+
+    code = Column(Unicode(50))
+    name = Column(Unicode(200))
+    bankNo = Column(Unicode(50))
+    disabled = Column(Integer)
+    ts = Column(TIMESTAMP)
+    updatedBy = Column(Unicode(32))
+    isusingdeficitcontrol = Column(Integer)
+    isusingbankcheck = Column(Integer)
+    NewBalance = Column(Numeric(38, 6))
+    VirtualPay = Column(Integer)
+    id = Column(Integer, nullable=False, primary_key=True)
+    idcurrency = Column(Integer)
+    iddepartment = Column(Integer)
+    idMarketingOrgan = Column(Integer)
+    balancedirection = Column(Integer)
+    bankName = Column(Integer)
+    bankNoType = Column(Integer)
+    madeDate = Column(DateTime)
+    updated = Column(DateTime)
+    dateofusingbankcheck = Column(DateTime)
+    createdTime = Column(DateTime)
 
 
-t_AA_BarCodeInformation = Table(
-    'AA_BarCodeInformation', metadata,
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updatedBy', Unicode(32)),
-    Column('Code', Unicode(30)),
-    Column('Name', Unicode(50)),
-    Column('disabled', Integer),
-    Column('fieldName', Unicode(60)),
-    Column('formatCode', Unicode(60)),
-    Column('VfieldName', Unicode(100)),
-    Column('fieldType', Unicode(50)),
-    Column('ControlType', Unicode(60)),
-    Column('RefDTOName', Unicode(50)),
-    Column('RefDataSource', Unicode(50)),
-    Column('EnumName', Unicode(50)),
-    Column('RefShowField', Unicode(50)),
-    Column('id', Integer, nullable=False),
-    Column('idInformationClass', Integer),
-    Column('updated', DateTime),
-    Column('madeDate', DateTime)
-)
+class AABarCodeInformation(Base):
+    __tablename__ = 'AA_BarCodeInformation'
+
+    ts = Column(TIMESTAMP, nullable=False)
+    updatedBy = Column(Unicode(32))
+    Code = Column(Unicode(30))
+    Name = Column(Unicode(50))
+    disabled = Column(Integer)
+    fieldName = Column(Unicode(60))
+    formatCode = Column(Unicode(60))
+    VfieldName = Column(Unicode(100))
+    fieldType = Column(Unicode(50))
+    ControlType = Column(Unicode(60))
+    RefDTOName = Column(Unicode(50))
+    RefDataSource = Column(Unicode(50))
+    EnumName = Column(Unicode(50))
+    RefShowField = Column(Unicode(50))
+    id = Column(Integer, nullable=False, primary_key=True)
+    idInformationClass = Column(Integer)
+    updated = Column(DateTime)
+    madeDate = Column(DateTime)
 
 
-t_AA_BarCodeInformationClass = Table(
-    'AA_BarCodeInformationClass', metadata,
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updatedBy', Unicode(32)),
-    Column('Code', Unicode(30)),
-    Column('Name', Unicode(50)),
-    Column('InId', Unicode(560)),
-    Column('IsEndNode', Integer),
-    Column('disabled', Integer),
-    Column('id', Integer, nullable=False),
-    Column('idParent', Integer),
-    Column('updated', DateTime),
-    Column('madeDate', DateTime)
-)
+class AABarCodeInformationClass(Base):
+    __tablename__ = 'AA_BarCodeInformationClass'
+
+    ts = Column(TIMESTAMP, nullable=False)
+    updatedBy = Column(Unicode(32))
+    Code = Column(Unicode(30))
+    Name = Column(Unicode(50))
+    InId = Column(Unicode(560))
+    IsEndNode = Column(Integer)
+    disabled = Column(Integer)
+    id = Column(Integer, nullable=False, primary_key=True)
+    idParent = Column(Integer)
+    updated = Column(DateTime)
+    madeDate = Column(DateTime)
 
 
-t_AA_BarCodeSectionInfo = Table(
-    'AA_BarCodeSectionInfo', metadata,
-    Column('code', Unicode(32)),
-    Column('name', Unicode(200)),
-    Column('length', Integer),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updatedBy', Unicode(32)),
-    Column('idsectionInfo', Integer),
-    Column('id', Integer, nullable=False),
-    Column('idBarCodeSolution', Integer),
-    Column('fillType', Integer),
-    Column('format', Integer),
-    Column('madeDate', DateTime),
-    Column('updated', DateTime),
-    Column('createdTime', DateTime)
-)
+class AABarCodeSectionInfo(Base):
+    __tablename__ = 'AA_BarCodeSectionInfo'
+
+    code = Column(Unicode(32))
+    name = Column(Unicode(200))
+    length = Column(Integer)
+    ts = Column(TIMESTAMP, nullable=False)
+    updatedBy = Column(Unicode(32))
+    idsectionInfo = Column(Integer)
+    id = Column(Integer, nullable=False, primary_key=True)
+    idBarCodeSolution = Column(Integer)
+    fillType = Column(Integer)
+    format = Column(Integer)
+    madeDate = Column(DateTime)
+    updated = Column(DateTime)
+    createdTime = Column(DateTime)
 
 
-t_AA_BarCodeSolution = Table(
-    'AA_BarCodeSolution', metadata,
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updatedBy', Unicode(32)),
-    Column('code', Unicode(6)),
-    Column('name', Unicode(50)),
-    Column('length', Integer),
-    Column('memo', Unicode(560)),
-    Column('id', Integer, nullable=False),
-    Column('BarCodeType', Integer),
-    Column('codingType', Integer),
-    Column('isLenFixed', BIT, server_default=text("((1))")),
-    Column('lengthFixed', String(10, u'Chinese_PRC_CI_AS')),
-    Column('updated', DateTime),
-    Column('madeDate', DateTime),
-    Column('createdTime', DateTime)
-)
+class AABarCodeSolution(Base):
+    __tablename__ = 'AA_BarCodeSolution'
+
+    ts = Column(TIMESTAMP, nullable=False)
+    updatedBy = Column(Unicode(32))
+    code = Column(Unicode(6))
+    name = Column(Unicode(50))
+    length = Column(Integer)
+    memo = Column(Unicode(560))
+    id = Column(Integer, nullable=False, primary_key=True)
+    BarCodeType = Column(Integer)
+    codingType = Column(Integer)
+    isLenFixed = Column(BIT, server_default=text("((1))"))
+    lengthFixed = Column(String(10, u'Chinese_PRC_CI_AS'))
+    updated = Column(DateTime)
+    madeDate = Column(DateTime)
+    createdTime = Column(DateTime)
 
 
-t_AA_BarCodeTermAnalysisInfo = Table(
-    'AA_BarCodeTermAnalysisInfo', metadata,
-    Column('code', Unicode(32)),
-    Column('name', Unicode(200)),
-    Column('updatedBy', Unicode(32)),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('Information1', Integer),
-    Column('Information2', Integer),
-    Column('Information3', Integer),
-    Column('Information4', Integer),
-    Column('Information5', Integer),
-    Column('Information6', Integer),
-    Column('Information7', Integer),
-    Column('Information8', Integer),
-    Column('Information9', Integer),
-    Column('Information10', Integer),
-    Column('Information11', Integer),
-    Column('Information12', Integer),
-    Column('Information13', Integer),
-    Column('Information14', Integer),
-    Column('Information15', Integer),
-    Column('Information16', Integer),
-    Column('Information17', Integer),
-    Column('Information18', Integer),
-    Column('Information19', Integer),
-    Column('Information20', Integer),
-    Column('Information21', Integer),
-    Column('Information22', Integer),
-    Column('Information23', Integer),
-    Column('Information24', Integer),
-    Column('Information25', Integer),
-    Column('Information26', Integer),
-    Column('Information27', Integer),
-    Column('Information28', Integer),
-    Column('Information29', Integer),
-    Column('Information30', Integer),
-    Column('Information31', Integer),
-    Column('Information32', Integer),
-    Column('Information33', Integer),
-    Column('Information34', Integer),
-    Column('Information35', Integer),
-    Column('Information36', Integer),
-    Column('Information37', Integer),
-    Column('Information38', Integer),
-    Column('Information39', Integer),
-    Column('Information40', Integer),
-    Column('Information41', Integer),
-    Column('Information42', Integer),
-    Column('Information43', Integer),
-    Column('Information44', Integer),
-    Column('Information45', Integer),
-    Column('Information46', Integer),
-    Column('Information47', Integer),
-    Column('Information48', Integer),
-    Column('Information49', Integer),
-    Column('Information50', Integer),
-    Column('Information51', Integer),
-    Column('Information52', Integer),
-    Column('Information53', Integer),
-    Column('Information54', Integer),
-    Column('Information55', Integer),
-    Column('Information56', Integer),
-    Column('Information57', Integer),
-    Column('Information58', Integer),
-    Column('Information59', Integer),
-    Column('Information60', Integer),
-    Column('Information61', Integer),
-    Column('Information62', Integer),
-    Column('Information63', Integer),
-    Column('Information64', Integer),
-    Column('Information65', Integer),
-    Column('Information66', Integer),
-    Column('Information67', Integer),
-    Column('Information68', Integer),
-    Column('Information69', Integer),
-    Column('Information70', Integer),
-    Column('Information71', Integer),
-    Column('Information72', Integer),
-    Column('Information73', Integer),
-    Column('Information74', Integer),
-    Column('Information75', Integer),
-    Column('Information76', Integer),
-    Column('Information77', Integer),
-    Column('Information78', Integer),
-    Column('Information79', Integer),
-    Column('Information80', Integer),
-    Column('Information81', Integer),
-    Column('Information82', Integer),
-    Column('Information83', Integer),
-    Column('Information84', Integer),
-    Column('Information85', Integer),
-    Column('Information86', Integer),
-    Column('Information87', Integer),
-    Column('Information88', Integer),
-    Column('Information89', Integer),
-    Column('Information90', Integer),
-    Column('Information91', Integer),
-    Column('Information92', Integer),
-    Column('Information93', Integer),
-    Column('Information94', Integer),
-    Column('Information95', Integer),
-    Column('Information96', Integer),
-    Column('Information97', Integer),
-    Column('Information98', Integer),
-    Column('Information99', Integer),
-    Column('Information100', Integer),
-    Column('Information101', Integer),
-    Column('Information102', Integer),
-    Column('Information103', Integer),
-    Column('Information104', Integer),
-    Column('Information105', Integer),
-    Column('Information106', Integer),
-    Column('Information107', Integer),
-    Column('BarCodeSolutionId', Integer),
-    Column('id', Integer, nullable=False),
-    Column('idVoucher', Integer),
-    Column('updated', DateTime)
-)
+class AABarCodeTermAnalysisInfo(Base):
+    __tablename__ = 'AA_BarCodeTermAnalysisInfo'
+
+    code = Column(Unicode(32))
+    name = Column(Unicode(200))
+    updatedBy = Column(Unicode(32))
+    ts = Column(TIMESTAMP, nullable=False)
+    Information1 = Column(Integer)
+    Information2 = Column(Integer)
+    Information3 = Column(Integer)
+    Information4 = Column(Integer)
+    Information5 = Column(Integer)
+    Information6 = Column(Integer)
+    Information7 = Column(Integer)
+    Information8 = Column(Integer)
+    Information9 = Column(Integer)
+    Information10 = Column(Integer)
+    Information11 = Column(Integer)
+    Information12 = Column(Integer)
+    Information13 = Column(Integer)
+    Information14 = Column(Integer)
+    Information15 = Column(Integer)
+    Information16 = Column(Integer)
+    Information17 = Column(Integer)
+    Information18 = Column(Integer)
+    Information19 = Column(Integer)
+    Information20 = Column(Integer)
+    Information21 = Column(Integer)
+    Information22 = Column(Integer)
+    Information23 = Column(Integer)
+    Information24 = Column(Integer)
+    Information25 = Column(Integer)
+    Information26 = Column(Integer)
+    Information27 = Column(Integer)
+    Information28 = Column(Integer)
+    Information29 = Column(Integer)
+    Information30 = Column(Integer)
+    Information31 = Column(Integer)
+    Information32 = Column(Integer)
+    Information33 = Column(Integer)
+    Information34 = Column(Integer)
+    Information35 = Column(Integer)
+    Information36 = Column(Integer)
+    Information37 = Column(Integer)
+    Information38 = Column(Integer)
+    Information39 = Column(Integer)
+    Information40 = Column(Integer)
+    Information41 = Column(Integer)
+    Information42 = Column(Integer)
+    Information43 = Column(Integer)
+    Information44 = Column(Integer)
+    Information45 = Column(Integer)
+    Information46 = Column(Integer)
+    Information47 = Column(Integer)
+    Information48 = Column(Integer)
+    Information49 = Column(Integer)
+    Information50 = Column(Integer)
+    Information51 = Column(Integer)
+    Information52 = Column(Integer)
+    Information53 = Column(Integer)
+    Information54 = Column(Integer)
+    Information55 = Column(Integer)
+    Information56 = Column(Integer)
+    Information57 = Column(Integer)
+    Information58 = Column(Integer)
+    Information59 = Column(Integer)
+    Information60 = Column(Integer)
+    Information61 = Column(Integer)
+    Information62 = Column(Integer)
+    Information63 = Column(Integer)
+    Information64 = Column(Integer)
+    Information65 = Column(Integer)
+    Information66 = Column(Integer)
+    Information67 = Column(Integer)
+    Information68 = Column(Integer)
+    Information69 = Column(Integer)
+    Information70 = Column(Integer)
+    Information71 = Column(Integer)
+    Information72 = Column(Integer)
+    Information73 = Column(Integer)
+    Information74 = Column(Integer)
+    Information75 = Column(Integer)
+    Information76 = Column(Integer)
+    Information77 = Column(Integer)
+    Information78 = Column(Integer)
+    Information79 = Column(Integer)
+    Information80 = Column(Integer)
+    Information81 = Column(Integer)
+    Information82 = Column(Integer)
+    Information83 = Column(Integer)
+    Information84 = Column(Integer)
+    Information85 = Column(Integer)
+    Information86 = Column(Integer)
+    Information87 = Column(Integer)
+    Information88 = Column(Integer)
+    Information89 = Column(Integer)
+    Information90 = Column(Integer)
+    Information91 = Column(Integer)
+    Information92 = Column(Integer)
+    Information93 = Column(Integer)
+    Information94 = Column(Integer)
+    Information95 = Column(Integer)
+    Information96 = Column(Integer)
+    Information97 = Column(Integer)
+    Information98 = Column(Integer)
+    Information99 = Column(Integer)
+    Information100 = Column(Integer)
+    Information101 = Column(Integer)
+    Information102 = Column(Integer)
+    Information103 = Column(Integer)
+    Information104 = Column(Integer)
+    Information105 = Column(Integer)
+    Information106 = Column(Integer)
+    Information107 = Column(Integer)
+    BarCodeSolutionId = Column(Integer)
+    id = Column(Integer, nullable=False, primary_key=True)
+    idVoucher = Column(Integer)
+    updated = Column(DateTime)
 
 
 class AABizUsage(Base):
@@ -649,46 +649,46 @@ class AABizUsage(Base):
     id = Column(Integer, primary_key=True)
 
 
-t_AA_BomRelation = Table(
-    'AA_BomRelation', metadata,
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updatedBy', Unicode(32)),
-    Column('realLevel', Integer),
-    Column('level', Integer),
-    Column('isVirtual', Integer),
-    Column('isEnd', Integer),
-    Column('bomPath', Unicode(1000)),
-    Column('id', Integer, nullable=False),
-    Column('idBOM', Integer),
-    Column('idParent', Integer),
-    Column('idTop', Integer),
-    Column('idChild', Integer),
-    Column('idInventory', Integer),
-    Column('idSku', Integer),
-    Column('createdtime', DateTime),
-    Column('updated', DateTime)
-)
+class AABomRelation(Base):
+    __tablename__ = 'AA_BomRelation'
+
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    ts = Column(TIMESTAMP, nullable=False)
+    updatedBy = Column(Unicode(32))
+    realLevel = Column(Integer)
+    level = Column(Integer)
+    isVirtual = Column(Integer)
+    isEnd = Column(Integer)
+    bomPath = Column(Unicode(1000))
+    id = Column(Integer, nullable=False, primary_key=True)
+    idBOM = Column(Integer)
+    idParent = Column(Integer)
+    idTop = Column(Integer)
+    idChild = Column(Integer)
+    idInventory = Column(Integer)
+    idSku = Column(Integer)
+    createdtime = Column(DateTime)
+    updated = Column(DateTime)
 
 
-t_AA_BusiType = Table(
-    'AA_BusiType', metadata,
-    Column('code', Unicode(32)),
-    Column('name', Unicode(200)),
-    Column('disabled', Integer),
-    Column('ts', TIMESTAMP),
-    Column('updatedBy', Unicode(32)),
-    Column('isSystem', Integer),
-    Column('ExpressionName', Unicode(60)),
-    Column('id', Integer, nullable=False),
-    Column('idrdStyleIn', Integer),
-    Column('idrdStyleOut', Integer),
-    Column('businessVoucher', Integer),
-    Column('madeDate', DateTime),
-    Column('updated', DateTime),
-    Column('createdTime', DateTime)
-)
+class AABusiType(Base):
+    __tablename__ = 'AA_BusiType'
+
+    code = Column(Unicode(32))
+    name = Column(Unicode(200))
+    disabled = Column(Integer)
+    ts = Column(TIMESTAMP)
+    updatedBy = Column(Unicode(32))
+    isSystem = Column(Integer)
+    ExpressionName = Column(Unicode(60))
+    id = Column(Integer, nullable=False, primary_key=True)
+    idrdStyleIn = Column(Integer)
+    idrdStyleOut = Column(Integer)
+    businessVoucher = Column(Integer)
+    madeDate = Column(DateTime)
+    updated = Column(DateTime)
+    createdTime = Column(DateTime)
 
 
 class AACashFlowItem(Base):
@@ -725,58 +725,58 @@ class AACashFlowItemClass(Base):
     idparent = Column(Integer)
 
 
-t_AA_CashFlowItemClass_Ext = Table(
-    'AA_CashFlowItemClass_Ext', metadata,
-    Column('CashFlowItemClasscode_lev1', Unicode(32)),
-    Column('CashFlowItemClassname_lev1', Unicode(200)),
-    Column('CashFlowItemClasscode_lev2', Unicode(32)),
-    Column('CashFlowItemClassname_lev2', Unicode(200)),
-    Column('CashFlowItemClasscode_lev3', Unicode(32)),
-    Column('CashFlowItemClassname_lev3', Unicode(200)),
-    Column('CashFlowItemClasscode_lev4', Unicode(32)),
-    Column('CashFlowItemClassname_lev4', Unicode(200)),
-    Column('CashFlowItemClasscode_lev5', Unicode(32)),
-    Column('CashFlowItemClassname_lev5', Unicode(200)),
-    Column('CashFlowItemClasscode_lev6', Unicode(32)),
-    Column('CashFlowItemClassname_lev6', Unicode(200)),
-    Column('CashFlowItemClasscode_lev7', Unicode(32)),
-    Column('CashFlowItemClassname_lev7', Unicode(200)),
-    Column('CashFlowItemClasscode_lev8', Unicode(32)),
-    Column('CashFlowItemClassname_lev8', Unicode(200)),
-    Column('CashFlowItemClasscode_lev9', Unicode(32)),
-    Column('CashFlowItemClassname_lev9', Unicode(200)),
-    Column('CashFlowItemClasscode_lev10', Unicode(32)),
-    Column('CashFlowItemClassname_lev10', Unicode(200)),
-    Column('CashFlowItemClasscode_lev11', Unicode(32)),
-    Column('CashFlowItemClassname_lev11', Unicode(200)),
-    Column('CashFlowItemClasscode_lev12', Unicode(32)),
-    Column('CashFlowItemClassname_lev12', Unicode(200)),
-    Column('CashFlowItemClasscode_lev13', Unicode(32)),
-    Column('CashFlowItemClassname_lev13', Unicode(200)),
-    Column('CashFlowItemClasscode_lev14', Unicode(32)),
-    Column('CashFlowItemClassname_lev14', Unicode(200)),
-    Column('CashFlowItemClasscode_lev15', Unicode(32)),
-    Column('CashFlowItemClassname_lev15', Unicode(200)),
-    Column('depth', Unicode(10)),
-    Column('createTime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('ts', TIMESTAMP),
-    Column('CashFlowItemClassid_lev1', Integer),
-    Column('CashFlowItemClassid_lev10', Integer),
-    Column('CashFlowItemClassid_lev11', Integer),
-    Column('CashFlowItemClassid_lev12', Integer),
-    Column('CashFlowItemClassid_lev13', Integer),
-    Column('CashFlowItemClassid_lev14', Integer),
-    Column('CashFlowItemClassid_lev15', Integer),
-    Column('CashFlowItemClassid_lev2', Integer),
-    Column('CashFlowItemClassid_lev3', Integer),
-    Column('CashFlowItemClassid_lev4', Integer),
-    Column('CashFlowItemClassid_lev5', Integer),
-    Column('CashFlowItemClassid_lev6', Integer),
-    Column('CashFlowItemClassid_lev7', Integer),
-    Column('CashFlowItemClassid_lev8', Integer),
-    Column('CashFlowItemClassid_lev9', Integer),
-    Column('id', Integer)
-)
+class AACashFlowItemClassExt(Base):
+    __tablename__ = 'AA_CashFlowItemClass_Ext'
+
+    CashFlowItemClasscode_lev1 = Column(Unicode(32))
+    CashFlowItemClassname_lev1 = Column(Unicode(200))
+    CashFlowItemClasscode_lev2 = Column(Unicode(32))
+    CashFlowItemClassname_lev2 = Column(Unicode(200))
+    CashFlowItemClasscode_lev3 = Column(Unicode(32))
+    CashFlowItemClassname_lev3 = Column(Unicode(200))
+    CashFlowItemClasscode_lev4 = Column(Unicode(32))
+    CashFlowItemClassname_lev4 = Column(Unicode(200))
+    CashFlowItemClasscode_lev5 = Column(Unicode(32))
+    CashFlowItemClassname_lev5 = Column(Unicode(200))
+    CashFlowItemClasscode_lev6 = Column(Unicode(32))
+    CashFlowItemClassname_lev6 = Column(Unicode(200))
+    CashFlowItemClasscode_lev7 = Column(Unicode(32))
+    CashFlowItemClassname_lev7 = Column(Unicode(200))
+    CashFlowItemClasscode_lev8 = Column(Unicode(32))
+    CashFlowItemClassname_lev8 = Column(Unicode(200))
+    CashFlowItemClasscode_lev9 = Column(Unicode(32))
+    CashFlowItemClassname_lev9 = Column(Unicode(200))
+    CashFlowItemClasscode_lev10 = Column(Unicode(32))
+    CashFlowItemClassname_lev10 = Column(Unicode(200))
+    CashFlowItemClasscode_lev11 = Column(Unicode(32))
+    CashFlowItemClassname_lev11 = Column(Unicode(200))
+    CashFlowItemClasscode_lev12 = Column(Unicode(32))
+    CashFlowItemClassname_lev12 = Column(Unicode(200))
+    CashFlowItemClasscode_lev13 = Column(Unicode(32))
+    CashFlowItemClassname_lev13 = Column(Unicode(200))
+    CashFlowItemClasscode_lev14 = Column(Unicode(32))
+    CashFlowItemClassname_lev14 = Column(Unicode(200))
+    CashFlowItemClasscode_lev15 = Column(Unicode(32))
+    CashFlowItemClassname_lev15 = Column(Unicode(200))
+    depth = Column(Unicode(10))
+    createTime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    ts = Column(TIMESTAMP)
+    CashFlowItemClassid_lev1 = Column(Integer)
+    CashFlowItemClassid_lev10 = Column(Integer)
+    CashFlowItemClassid_lev11 = Column(Integer)
+    CashFlowItemClassid_lev12 = Column(Integer)
+    CashFlowItemClassid_lev13 = Column(Integer)
+    CashFlowItemClassid_lev14 = Column(Integer)
+    CashFlowItemClassid_lev15 = Column(Integer)
+    CashFlowItemClassid_lev2 = Column(Integer)
+    CashFlowItemClassid_lev3 = Column(Integer)
+    CashFlowItemClassid_lev4 = Column(Integer)
+    CashFlowItemClassid_lev5 = Column(Integer)
+    CashFlowItemClassid_lev6 = Column(Integer)
+    CashFlowItemClassid_lev7 = Column(Integer)
+    CashFlowItemClassid_lev8 = Column(Integer)
+    CashFlowItemClassid_lev9 = Column(Integer)
+    id = Column(Integer, primary_key=True)
 
 
 class AACashItemAccountDetail(Base):
@@ -830,80 +830,80 @@ class AACommonSummaryClass(Base):
     idparent = Column(Integer)
 
 
-t_AA_CommonSummaryClass_Ext = Table(
-    'AA_CommonSummaryClass_Ext', metadata,
-    Column('CommonSummaryClasscode_lev1', Unicode(32)),
-    Column('CommonSummaryClassname_lev1', Unicode(200)),
-    Column('CommonSummaryClasscode_lev2', Unicode(32)),
-    Column('CommonSummaryClassname_lev2', Unicode(200)),
-    Column('CommonSummaryClasscode_lev3', Unicode(32)),
-    Column('CommonSummaryClassname_lev3', Unicode(200)),
-    Column('CommonSummaryClasscode_lev4', Unicode(32)),
-    Column('CommonSummaryClassname_lev4', Unicode(200)),
-    Column('CommonSummaryClasscode_lev5', Unicode(32)),
-    Column('CommonSummaryClassname_lev5', Unicode(200)),
-    Column('CommonSummaryClasscode_lev6', Unicode(32)),
-    Column('CommonSummaryClassname_lev6', Unicode(200)),
-    Column('CommonSummaryClasscode_lev7', Unicode(32)),
-    Column('CommonSummaryClassname_lev7', Unicode(200)),
-    Column('CommonSummaryClasscode_lev8', Unicode(32)),
-    Column('CommonSummaryClassname_lev8', Unicode(200)),
-    Column('CommonSummaryClasscode_lev9', Unicode(32)),
-    Column('CommonSummaryClassname_lev9', Unicode(200)),
-    Column('CommonSummaryClasscode_lev10', Unicode(32)),
-    Column('CommonSummaryClassname_lev10', Unicode(200)),
-    Column('CommonSummaryClasscode_lev11', Unicode(32)),
-    Column('CommonSummaryClassname_lev11', Unicode(200)),
-    Column('CommonSummaryClasscode_lev12', Unicode(32)),
-    Column('CommonSummaryClassname_lev12', Unicode(200)),
-    Column('CommonSummaryClasscode_lev13', Unicode(32)),
-    Column('CommonSummaryClassname_lev13', Unicode(200)),
-    Column('CommonSummaryClasscode_lev14', Unicode(32)),
-    Column('CommonSummaryClassname_lev14', Unicode(200)),
-    Column('CommonSummaryClasscode_lev15', Unicode(32)),
-    Column('CommonSummaryClassname_lev15', Unicode(200)),
-    Column('depth', Unicode(10)),
-    Column('createTime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('ts', TIMESTAMP),
-    Column('CommonSummaryClassid_lev1', Integer),
-    Column('CommonSummaryClassid_lev10', Integer),
-    Column('CommonSummaryClassid_lev11', Integer),
-    Column('CommonSummaryClassid_lev12', Integer),
-    Column('CommonSummaryClassid_lev13', Integer),
-    Column('CommonSummaryClassid_lev14', Integer),
-    Column('CommonSummaryClassid_lev15', Integer),
-    Column('CommonSummaryClassid_lev2', Integer),
-    Column('CommonSummaryClassid_lev3', Integer),
-    Column('CommonSummaryClassid_lev4', Integer),
-    Column('CommonSummaryClassid_lev5', Integer),
-    Column('CommonSummaryClassid_lev6', Integer),
-    Column('CommonSummaryClassid_lev7', Integer),
-    Column('CommonSummaryClassid_lev8', Integer),
-    Column('CommonSummaryClassid_lev9', Integer),
-    Column('id', Integer)
-)
+class AACommonSummaryClassExt(Base):
+    __tablename__ = 'AA_CommonSummaryClass_Ext'
+
+    CommonSummaryClasscode_lev1 = Column(Unicode(32))
+    CommonSummaryClassname_lev1 = Column(Unicode(200))
+    CommonSummaryClasscode_lev2 = Column(Unicode(32))
+    CommonSummaryClassname_lev2 = Column(Unicode(200))
+    CommonSummaryClasscode_lev3 = Column(Unicode(32))
+    CommonSummaryClassname_lev3 = Column(Unicode(200))
+    CommonSummaryClasscode_lev4 = Column(Unicode(32))
+    CommonSummaryClassname_lev4 = Column(Unicode(200))
+    CommonSummaryClasscode_lev5 = Column(Unicode(32))
+    CommonSummaryClassname_lev5 = Column(Unicode(200))
+    CommonSummaryClasscode_lev6 = Column(Unicode(32))
+    CommonSummaryClassname_lev6 = Column(Unicode(200))
+    CommonSummaryClasscode_lev7 = Column(Unicode(32))
+    CommonSummaryClassname_lev7 = Column(Unicode(200))
+    CommonSummaryClasscode_lev8 = Column(Unicode(32))
+    CommonSummaryClassname_lev8 = Column(Unicode(200))
+    CommonSummaryClasscode_lev9 = Column(Unicode(32))
+    CommonSummaryClassname_lev9 = Column(Unicode(200))
+    CommonSummaryClasscode_lev10 = Column(Unicode(32))
+    CommonSummaryClassname_lev10 = Column(Unicode(200))
+    CommonSummaryClasscode_lev11 = Column(Unicode(32))
+    CommonSummaryClassname_lev11 = Column(Unicode(200))
+    CommonSummaryClasscode_lev12 = Column(Unicode(32))
+    CommonSummaryClassname_lev12 = Column(Unicode(200))
+    CommonSummaryClasscode_lev13 = Column(Unicode(32))
+    CommonSummaryClassname_lev13 = Column(Unicode(200))
+    CommonSummaryClasscode_lev14 = Column(Unicode(32))
+    CommonSummaryClassname_lev14 = Column(Unicode(200))
+    CommonSummaryClasscode_lev15 = Column(Unicode(32))
+    CommonSummaryClassname_lev15 = Column(Unicode(200))
+    depth = Column(Unicode(10))
+    createTime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    ts = Column(TIMESTAMP)
+    CommonSummaryClassid_lev1 = Column(Integer)
+    CommonSummaryClassid_lev10 = Column(Integer)
+    CommonSummaryClassid_lev11 = Column(Integer)
+    CommonSummaryClassid_lev12 = Column(Integer)
+    CommonSummaryClassid_lev13 = Column(Integer)
+    CommonSummaryClassid_lev14 = Column(Integer)
+    CommonSummaryClassid_lev15 = Column(Integer)
+    CommonSummaryClassid_lev2 = Column(Integer)
+    CommonSummaryClassid_lev3 = Column(Integer)
+    CommonSummaryClassid_lev4 = Column(Integer)
+    CommonSummaryClassid_lev5 = Column(Integer)
+    CommonSummaryClassid_lev6 = Column(Integer)
+    CommonSummaryClassid_lev7 = Column(Integer)
+    CommonSummaryClassid_lev8 = Column(Integer)
+    CommonSummaryClassid_lev9 = Column(Integer)
+    id = Column(Integer, primary_key=True)
 
 
-t_AA_Currency = Table(
-    'AA_Currency', metadata,
-    Column('code', Unicode(32)),
-    Column('name', Unicode(200)),
-    Column('currencySign', Unicode(10)),
-    Column('isNative', Integer),
-    Column('maxError', Numeric(28, 14)),
-    Column('exchangeRate', Numeric(28, 14)),
-    Column('disabled', Integer),
-    Column('ts', TIMESTAMP),
-    Column('updatedBy', Unicode(32)),
-    Column('id', Integer, nullable=False),
-    Column('calDirection', Integer),
-    Column('madeDate', DateTime),
-    Column('updated', DateTime),
-    Column('createdTime', DateTime),
-    Column('ExChangeRateType', Integer),
-    Column('AccountDate', Integer),
-    Column('AccountYear', Integer)
-)
+class AACurrency(Base):
+    __tablename__ = 'AA_Currency'
+
+    code = Column(Unicode(32))
+    name = Column(Unicode(200))
+    currencySign = Column(Unicode(10))
+    isNative = Column(Integer)
+    maxError = Column(Numeric(28, 14))
+    exchangeRate = Column(Numeric(28, 14))
+    disabled = Column(Integer)
+    ts = Column(TIMESTAMP)
+    updatedBy = Column(Unicode(32))
+    id = Column(Integer, nullable=False, primary_key=True)
+    calDirection = Column(Integer)
+    madeDate = Column(DateTime)
+    updated = Column(DateTime)
+    createdTime = Column(DateTime)
+    ExChangeRateType = Column(Integer)
+    AccountDate = Column(Integer)
+    AccountYear = Column(Integer)
 
 
 class AACustomerInventoryPrice(Base):
@@ -934,23 +934,23 @@ class AACustomerInventoryPrice(Base):
     updated = Column(DateTime)
 
 
-t_AA_CustomerInventoryPriceTrace = Table(
-    'AA_CustomerInventoryPriceTrace', metadata,
-    Column('code', Unicode(32)),
-    Column('name', Unicode(200)),
-    Column('lastPrice', Numeric(32, 15)),
-    Column('discount', Numeric(32, 15)),
-    Column('unitprice', Numeric(32, 15)),
-    Column('unittaxprice', Numeric(32, 15)),
-    Column('ts', TIMESTAMP),
-    Column('updatedBy', Unicode(32)),
-    Column('id', Integer, nullable=False),
-    Column('idinventory', Integer, nullable=False, server_default=text("((0))")),
-    Column('idcustomer', Integer, nullable=False, server_default=text("((0))")),
-    Column('idunit', Integer, nullable=False, server_default=text("((0))")),
-    Column('createdtime', DateTime),
-    Column('updated', DateTime)
-)
+class AACustomerInventoryPriceTrace(Base):
+    __tablename__ = 'AA_CustomerInventoryPriceTrace'
+
+    code = Column(Unicode(32))
+    name = Column(Unicode(200))
+    lastPrice = Column(Numeric(32, 15))
+    discount = Column(Numeric(32, 15))
+    unitprice = Column(Numeric(32, 15))
+    unittaxprice = Column(Numeric(32, 15))
+    ts = Column(TIMESTAMP)
+    updatedBy = Column(Unicode(32))
+    id = Column(Integer, nullable=False, primary_key=True)
+    idinventory = Column(Integer, nullable=False, server_default=text("((0))"))
+    idcustomer = Column(Integer, nullable=False, server_default=text("((0))"))
+    idunit = Column(Integer, nullable=False, server_default=text("((0))"))
+    createdtime = Column(DateTime)
+    updated = Column(DateTime)
 
 
 class AADRMember(Base):
@@ -1024,26 +1024,26 @@ class AADRMember(Base):
     idsourcevouchertype = Column(Integer)
 
 
-t_AA_DR_MemberBatchAdd = Table(
-    'AA_DR_MemberBatchAdd', metadata,
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('priuserdefnvc1', Unicode(100)),
-    Column('priuserdefdecm1', Numeric(28, 14)),
-    Column('priuserdefnvc2', Unicode(100)),
-    Column('priuserdefdecm2', Numeric(28, 14)),
-    Column('priuserdefnvc3', Unicode(100)),
-    Column('priuserdefdecm3', Numeric(28, 14)),
-    Column('priuserdefnvc4', Unicode(100)),
-    Column('priuserdefdecm4', Numeric(28, 14)),
-    Column('priuserdefnvc5', Unicode(100)),
-    Column('priuserdefdecm5', Numeric(28, 14)),
-    Column('id', Integer, nullable=False, server_default=text("((0))")),
-    Column('idperson', Integer),
-    Column('idstore', Integer),
-    Column('iddistrict', Integer),
-    Column('idmembertype', Integer, nullable=False, server_default=text("((0))"))
-)
+class AADRMemberBatchAdd(Base):
+    __tablename__ = 'AA_DR_MemberBatchAdd'
+
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    priuserdefnvc1 = Column(Unicode(100))
+    priuserdefdecm1 = Column(Numeric(28, 14))
+    priuserdefnvc2 = Column(Unicode(100))
+    priuserdefdecm2 = Column(Numeric(28, 14))
+    priuserdefnvc3 = Column(Unicode(100))
+    priuserdefdecm3 = Column(Numeric(28, 14))
+    priuserdefnvc4 = Column(Unicode(100))
+    priuserdefdecm4 = Column(Numeric(28, 14))
+    priuserdefnvc5 = Column(Unicode(100))
+    priuserdefdecm5 = Column(Numeric(28, 14))
+    id = Column(Integer, nullable=False, server_default=text("((0))"), primary_key=True)
+    idperson = Column(Integer)
+    idstore = Column(Integer)
+    iddistrict = Column(Integer)
+    idmembertype = Column(Integer, nullable=False, server_default=text("((0))"))
 
 
 class AADRMemberChangeCard(Base):
@@ -1236,17 +1236,17 @@ class AADRMemberStorageDetails(Base):
     storagetype = Column(Integer)
 
 
-t_AA_DR_MemberStorageUsed = Table(
-    'AA_DR_MemberStorageUsed', metadata,
-    Column('key', UNIQUEIDENTIFIER, nullable=False),
-    Column('storage', Numeric(28, 14)),
-    Column('retailvouchercode', Unicode(50)),
-    Column('maker', Unicode(50)),
-    Column('storagetype', Integer),
-    Column('idmember', Integer),
-    Column('idstore', Integer),
-    Column('createdate', DateTime)
-)
+class AADRMemberStorageUsed(Base):
+    __tablename__ = 'AA_DR_MemberStorageUsed'
+
+    key = Column(UNIQUEIDENTIFIER, nullable=False, primary_key=True)
+    storage = Column(Numeric(28, 14))
+    retailvouchercode = Column(Unicode(50))
+    maker = Column(Unicode(50))
+    storagetype = Column(Integer)
+    idmember = Column(Integer)
+    idstore = Column(Integer)
+    createdate = Column(DateTime)
 
 
 class AADRMemberType(Base):
@@ -1579,163 +1579,163 @@ class AADRStoreShift(Base):
     shiftname = Column(Integer)
 
 
-t_AA_DR_Store_WareHouse = Table(
-    'AA_DR_Store_WareHouse', metadata,
-    Column('id', UNIQUEIDENTIFIER, nullable=False),
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('createdtime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('sequencenumber', Integer),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('updatedBy', Unicode(32)),
-    Column('idwarehouse', UNIQUEIDENTIFIER),
-    Column('idstore', UNIQUEIDENTIFIER)
-)
+class AADRStoreWareHouse(Base):
+    __tablename__ = 'AA_DR_Store_WareHouse'
+
+    id = Column(UNIQUEIDENTIFIER, nullable=False, primary_key=True)
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    createdtime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    sequencenumber = Column(Integer)
+    ts = Column(TIMESTAMP, nullable=False)
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    updatedBy = Column(Unicode(32))
+    idwarehouse = Column(UNIQUEIDENTIFIER)
+    idstore = Column(UNIQUEIDENTIFIER)
 
 
-t_AA_Department = Table(
-    'AA_Department', metadata,
-    Column('code', Unicode(32)),
-    Column('name', Unicode(200)),
-    Column('isEndNode', Integer),
-    Column('depth', Integer),
-    Column('disabled', Integer),
-    Column('ts', TIMESTAMP),
-    Column('updatedBy', Unicode(32)),
-    Column('priuserdefnvc1', Unicode(500)),
-    Column('priuserdefdecm1', Numeric(28, 14)),
-    Column('priuserdefnvc2', Unicode(500)),
-    Column('priuserdefdecm2', Numeric(28, 14)),
-    Column('priuserdefnvc3', Unicode(500)),
-    Column('priuserdefdecm3', Numeric(28, 14)),
-    Column('priuserdefnvc4', Unicode(500)),
-    Column('priuserdefdecm4', Numeric(28, 14)),
-    Column('priuserdefnvc5', Unicode(500)),
-    Column('priuserdefdecm5', Numeric(28, 14)),
-    Column('inId', Unicode(560)),
-    Column('id', Integer, nullable=False),
-    Column('idparent', Integer),
-    Column('idMarketingOrgan', Integer),
-    Column('iddirector', Integer),
-    Column('madeDate', DateTime),
-    Column('updated', DateTime),
-    Column('createdTime', DateTime)
-)
+class AADepartment(Base):
+    __tablename__ = 'AA_Department'
+
+    code = Column(Unicode(32))
+    name = Column(Unicode(200))
+    isEndNode = Column(Integer)
+    depth = Column(Integer)
+    disabled = Column(Integer)
+    ts = Column(TIMESTAMP)
+    updatedBy = Column(Unicode(32))
+    priuserdefnvc1 = Column(Unicode(500))
+    priuserdefdecm1 = Column(Numeric(28, 14))
+    priuserdefnvc2 = Column(Unicode(500))
+    priuserdefdecm2 = Column(Numeric(28, 14))
+    priuserdefnvc3 = Column(Unicode(500))
+    priuserdefdecm3 = Column(Numeric(28, 14))
+    priuserdefnvc4 = Column(Unicode(500))
+    priuserdefdecm4 = Column(Numeric(28, 14))
+    priuserdefnvc5 = Column(Unicode(500))
+    priuserdefdecm5 = Column(Numeric(28, 14))
+    inId = Column(Unicode(560))
+    id = Column(Integer, nullable=False, primary_key=True)
+    idparent = Column(Integer)
+    idMarketingOrgan = Column(Integer)
+    iddirector = Column(Integer)
+    madeDate = Column(DateTime)
+    updated = Column(DateTime)
+    createdTime = Column(DateTime)
 
 
-t_AA_DepartmentInventoryPrice = Table(
-    'AA_DepartmentInventoryPrice', metadata,
-    Column('code', Unicode(32)),
-    Column('name', Unicode(200)),
-    Column('level1Price', Unicode(1000)),
-    Column('level2Price', Unicode(1000)),
-    Column('level3Price', Unicode(1000)),
-    Column('level4Price', Unicode(1000)),
-    Column('level5Price', Unicode(1000)),
-    Column('lowestPrice', Unicode(1000)),
-    Column('retailPrice', Unicode(1000)),
-    Column('ts', TIMESTAMP),
-    Column('updatedBy', Unicode(32)),
-    Column('retailPriceFormula', Unicode(1000)),
-    Column('level1PriceFormula', Unicode(1000)),
-    Column('level2PriceFormula', Unicode(1000)),
-    Column('level3PriceFormula', Unicode(1000)),
-    Column('level4PriceFormula', Unicode(1000)),
-    Column('level5PriceFormula', Unicode(1000)),
-    Column('lowestPriceFormula', Unicode(1000)),
-    Column('level6Price', Unicode(1000)),
-    Column('level6PriceFormula', Unicode(1000)),
-    Column('level7Price', Unicode(1000)),
-    Column('level7PriceFormula', Unicode(1000)),
-    Column('level8Price', Unicode(1000)),
-    Column('level8PriceFormula', Unicode(1000)),
-    Column('level9Price', Unicode(1000)),
-    Column('level9PriceFormula', Unicode(1000)),
-    Column('level10Price', Unicode(1000)),
-    Column('level10PriceFormula', Unicode(1000)),
-    Column('id', Integer, nullable=False),
-    Column('iddepartment', Integer),
-    Column('idpricetrace', Integer),
-    Column('idinventory', Integer),
-    Column('idinventoryprice', Integer),
-    Column('idunit', Integer),
-    Column('createdtime', DateTime),
-    Column('updated', DateTime)
-)
+class AADepartmentInventoryPrice(Base):
+    __tablename__ = 'AA_DepartmentInventoryPrice'
+
+    code = Column(Unicode(32))
+    name = Column(Unicode(200))
+    level1Price = Column(Unicode(1000))
+    level2Price = Column(Unicode(1000))
+    level3Price = Column(Unicode(1000))
+    level4Price = Column(Unicode(1000))
+    level5Price = Column(Unicode(1000))
+    lowestPrice = Column(Unicode(1000))
+    retailPrice = Column(Unicode(1000))
+    ts = Column(TIMESTAMP)
+    updatedBy = Column(Unicode(32))
+    retailPriceFormula = Column(Unicode(1000))
+    level1PriceFormula = Column(Unicode(1000))
+    level2PriceFormula = Column(Unicode(1000))
+    level3PriceFormula = Column(Unicode(1000))
+    level4PriceFormula = Column(Unicode(1000))
+    level5PriceFormula = Column(Unicode(1000))
+    lowestPriceFormula = Column(Unicode(1000))
+    level6Price = Column(Unicode(1000))
+    level6PriceFormula = Column(Unicode(1000))
+    level7Price = Column(Unicode(1000))
+    level7PriceFormula = Column(Unicode(1000))
+    level8Price = Column(Unicode(1000))
+    level8PriceFormula = Column(Unicode(1000))
+    level9Price = Column(Unicode(1000))
+    level9PriceFormula = Column(Unicode(1000))
+    level10Price = Column(Unicode(1000))
+    level10PriceFormula = Column(Unicode(1000))
+    id = Column(Integer, nullable=False, primary_key=True)
+    iddepartment = Column(Integer)
+    idpricetrace = Column(Integer)
+    idinventory = Column(Integer)
+    idinventoryprice = Column(Integer)
+    idunit = Column(Integer)
+    createdtime = Column(DateTime)
+    updated = Column(DateTime)
 
 
-t_AA_DepartmentInventoryPriceTrace = Table(
-    'AA_DepartmentInventoryPriceTrace', metadata,
-    Column('code', Unicode(32)),
-    Column('name', Unicode(200)),
-    Column('unitprice', Numeric(32, 15)),
-    Column('discount', Numeric(32, 15)),
-    Column('lastPrice', Numeric(32, 15)),
-    Column('unittaxprice', Numeric(32, 15)),
-    Column('ts', TIMESTAMP),
-    Column('updatedBy', Unicode(32)),
-    Column('id', Integer, nullable=False),
-    Column('iddepartment', Integer, nullable=False, server_default=text("((0))")),
-    Column('idinventory', Integer, nullable=False, server_default=text("((0))")),
-    Column('idunit', Integer, nullable=False, server_default=text("((0))")),
-    Column('createdtime', DateTime),
-    Column('updated', DateTime)
-)
+class AADepartmentInventoryPriceTrace(Base):
+    __tablename__ = 'AA_DepartmentInventoryPriceTrace'
+
+    code = Column(Unicode(32))
+    name = Column(Unicode(200))
+    unitprice = Column(Numeric(32, 15))
+    discount = Column(Numeric(32, 15))
+    lastPrice = Column(Numeric(32, 15))
+    unittaxprice = Column(Numeric(32, 15))
+    ts = Column(TIMESTAMP)
+    updatedBy = Column(Unicode(32))
+    id = Column(Integer, nullable=False, primary_key=True)
+    iddepartment = Column(Integer, nullable=False, server_default=text("((0))"))
+    idinventory = Column(Integer, nullable=False, server_default=text("((0))"))
+    idunit = Column(Integer, nullable=False, server_default=text("((0))"))
+    createdtime = Column(DateTime)
+    updated = Column(DateTime)
 
 
-t_AA_Department_Ext = Table(
-    'AA_Department_Ext', metadata,
-    Column('departmentcode_lev1', Unicode(32)),
-    Column('departmentname_lev1', Unicode(200)),
-    Column('departmentcode_lev2', Unicode(32)),
-    Column('departmentname_lev2', Unicode(200)),
-    Column('departmentcode_lev3', Unicode(32)),
-    Column('departmentname_lev3', Unicode(200)),
-    Column('departmentcode_lev4', Unicode(32)),
-    Column('departmentname_lev4', Unicode(200)),
-    Column('departmentcode_lev5', Unicode(32)),
-    Column('departmentname_lev5', Unicode(200)),
-    Column('departmentcode_lev6', Unicode(32)),
-    Column('departmentname_lev6', Unicode(200)),
-    Column('departmentcode_lev7', Unicode(32)),
-    Column('departmentname_lev7', Unicode(200)),
-    Column('departmentcode_lev8', Unicode(32)),
-    Column('departmentname_lev8', Unicode(200)),
-    Column('departmentcode_lev9', Unicode(32)),
-    Column('departmentname_lev9', Unicode(200)),
-    Column('departmentcode_lev10', Unicode(32)),
-    Column('departmentname_lev10', Unicode(200)),
-    Column('departmentcode_lev11', Unicode(32)),
-    Column('departmentname_lev11', Unicode(200)),
-    Column('departmentcode_lev12', Unicode(32)),
-    Column('departmentname_lev12', Unicode(200)),
-    Column('departmentcode_lev13', Unicode(32)),
-    Column('departmentname_lev13', Unicode(200)),
-    Column('departmentcode_lev14', Unicode(32)),
-    Column('departmentname_lev14', Unicode(200)),
-    Column('departmentcode_lev15', Unicode(32)),
-    Column('departmentname_lev15', Unicode(200)),
-    Column('depth', Unicode(10)),
-    Column('ts', TIMESTAMP),
-    Column('departmentid_lev1', Integer),
-    Column('departmentid_lev10', Integer),
-    Column('departmentid_lev11', Integer),
-    Column('departmentid_lev12', Integer),
-    Column('departmentid_lev13', Integer),
-    Column('departmentid_lev14', Integer),
-    Column('departmentid_lev15', Integer),
-    Column('departmentid_lev2', Integer),
-    Column('departmentid_lev3', Integer),
-    Column('departmentid_lev4', Integer),
-    Column('departmentid_lev5', Integer),
-    Column('departmentid_lev6', Integer),
-    Column('departmentid_lev7', Integer),
-    Column('departmentid_lev8', Integer),
-    Column('departmentid_lev9', Integer),
-    Column('id', Integer),
-    Column('createTime', DateTime, index=True)
-)
+class AADepartmentExt(Base):
+    __tablename__ = 'AA_Department_Ext'
+
+    departmentcode_lev1 = Column(Unicode(32))
+    departmentname_lev1 = Column(Unicode(200))
+    departmentcode_lev2 = Column(Unicode(32))
+    departmentname_lev2 = Column(Unicode(200))
+    departmentcode_lev3 = Column(Unicode(32))
+    departmentname_lev3 = Column(Unicode(200))
+    departmentcode_lev4 = Column(Unicode(32))
+    departmentname_lev4 = Column(Unicode(200))
+    departmentcode_lev5 = Column(Unicode(32))
+    departmentname_lev5 = Column(Unicode(200))
+    departmentcode_lev6 = Column(Unicode(32))
+    departmentname_lev6 = Column(Unicode(200))
+    departmentcode_lev7 = Column(Unicode(32))
+    departmentname_lev7 = Column(Unicode(200))
+    departmentcode_lev8 = Column(Unicode(32))
+    departmentname_lev8 = Column(Unicode(200))
+    departmentcode_lev9 = Column(Unicode(32))
+    departmentname_lev9 = Column(Unicode(200))
+    departmentcode_lev10 = Column(Unicode(32))
+    departmentname_lev10 = Column(Unicode(200))
+    departmentcode_lev11 = Column(Unicode(32))
+    departmentname_lev11 = Column(Unicode(200))
+    departmentcode_lev12 = Column(Unicode(32))
+    departmentname_lev12 = Column(Unicode(200))
+    departmentcode_lev13 = Column(Unicode(32))
+    departmentname_lev13 = Column(Unicode(200))
+    departmentcode_lev14 = Column(Unicode(32))
+    departmentname_lev14 = Column(Unicode(200))
+    departmentcode_lev15 = Column(Unicode(32))
+    departmentname_lev15 = Column(Unicode(200))
+    depth = Column(Unicode(10))
+    ts = Column(TIMESTAMP)
+    departmentid_lev1 = Column(Integer)
+    departmentid_lev10 = Column(Integer)
+    departmentid_lev11 = Column(Integer)
+    departmentid_lev12 = Column(Integer)
+    departmentid_lev13 = Column(Integer)
+    departmentid_lev14 = Column(Integer)
+    departmentid_lev15 = Column(Integer)
+    departmentid_lev2 = Column(Integer)
+    departmentid_lev3 = Column(Integer)
+    departmentid_lev4 = Column(Integer)
+    departmentid_lev5 = Column(Integer)
+    departmentid_lev6 = Column(Integer)
+    departmentid_lev7 = Column(Integer)
+    departmentid_lev8 = Column(Integer)
+    departmentid_lev9 = Column(Integer)
+    id = Column(Integer, primary_key=True)
+    createTime = Column(DateTime, index=True)
 
 
 class AADeprMethod(Base):
@@ -1753,22 +1753,22 @@ class AADeprMethod(Base):
     id = Column(Integer, primary_key=True)
 
 
-t_AA_District = Table(
-    'AA_District', metadata,
-    Column('code', Unicode(32)),
-    Column('name', Unicode(200)),
-    Column('disabled', Integer),
-    Column('isEndNode', Integer),
-    Column('depth', Integer),
-    Column('ts', TIMESTAMP),
-    Column('updatedBy', Unicode(32)),
-    Column('inId', Unicode(560)),
-    Column('id', Integer, nullable=False),
-    Column('idparent', Integer),
-    Column('madeDate', DateTime),
-    Column('updated', DateTime),
-    Column('createdTime', DateTime)
-)
+class AADistrict(Base):
+    __tablename__ = 'AA_District'
+
+    code = Column(Unicode(32))
+    name = Column(Unicode(200))
+    disabled = Column(Integer)
+    isEndNode = Column(Integer)
+    depth = Column(Integer)
+    ts = Column(TIMESTAMP)
+    updatedBy = Column(Unicode(32))
+    inId = Column(Unicode(560))
+    id = Column(Integer, nullable=False, primary_key=True)
+    idparent = Column(Integer)
+    madeDate = Column(DateTime)
+    updated = Column(DateTime)
+    createdTime = Column(DateTime)
 
 
 class AADocAccountDetail(Base):
@@ -1817,34 +1817,34 @@ class AADocumentsUsage(Base):
     id = Column(Integer, primary_key=True)
 
 
-t_AA_EnumFreeItemsAvailable = Table(
-    'AA_EnumFreeItemsAvailable', metadata,
-    Column('code', Unicode(50)),
-    Column('name', Unicode(300)),
-    Column('isInUse', Integer),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updatedBy', Unicode(32)),
-    Column('id', Integer, nullable=False),
-    Column('idInventory', Integer, nullable=False, server_default=text("((0))")),
-    Column('EnumID', Integer, nullable=False, server_default=text("((0))")),
-    Column('idEnumitem', Integer, nullable=False, server_default=text("((0))")),
-    Column('updated', DateTime)
-)
+class AAEnumFreeItemsAvailable(Base):
+    __tablename__ = 'AA_EnumFreeItemsAvailable'
+
+    code = Column(Unicode(50))
+    name = Column(Unicode(300))
+    isInUse = Column(Integer)
+    ts = Column(TIMESTAMP, nullable=False)
+    updatedBy = Column(Unicode(32))
+    id = Column(Integer, nullable=False, primary_key=True)
+    idInventory = Column(Integer, nullable=False, server_default=text("((0))"))
+    EnumID = Column(Integer, nullable=False, server_default=text("((0))"))
+    idEnumitem = Column(Integer, nullable=False, server_default=text("((0))"))
+    updated = Column(DateTime)
 
 
-t_AA_ExchangeRate = Table(
-    'AA_ExchangeRate', metadata,
-    Column('id', Integer, nullable=False, unique=True),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updatedBy', Unicode(32)),
-    Column('updated', DateTime),
-    Column('name', Unicode(200)),
-    Column('code', Unicode(32)),
-    Column('AccountDateRange', DateTime, index=True),
-    Column('ExchangeRate', Numeric(28, 14), index=True),
-    Column('IDCurrency', Integer, index=True),
-    Column('ExChangeRateStyle', Integer, index=True)
-)
+class AAExchangeRate(Base):
+    __tablename__ = 'AA_ExchangeRate'
+
+    id = Column(Integer, nullable=False, unique=True, primary_key=True)
+    ts = Column(TIMESTAMP, nullable=False)
+    updatedBy = Column(Unicode(32))
+    updated = Column(DateTime)
+    name = Column(Unicode(200))
+    code = Column(Unicode(32))
+    AccountDateRange = Column(DateTime, index=True)
+    ExchangeRate = Column(Numeric(28, 14), index=True)
+    IDCurrency = Column(Integer, index=True)
+    ExChangeRateStyle = Column(Integer, index=True)
 
 
 class AAExpenseItem(Base):
@@ -1868,64 +1868,64 @@ class AAExpenseItem(Base):
     expenseType = Column(Integer)
 
 
-t_AA_FixedAssetsBarCodeSectionInfo = Table(
-    'AA_FixedAssetsBarCodeSectionInfo', metadata,
-    Column('code', Unicode(32)),
-    Column('name', Unicode(200)),
-    Column('sectionNo', Integer),
-    Column('length', Integer),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updatedBy', Unicode(32)),
-    Column('id', Integer, nullable=False),
-    Column('idBarCodeSolution', Integer),
-    Column('fillType', Integer),
-    Column('format', Integer),
-    Column('sectionInfo', Integer),
-    Column('madeDate', DateTime),
-    Column('updated', DateTime),
-    Column('createdTime', DateTime)
-)
+class AAFixedAssetsBarCodeSectionInfo(Base):
+    __tablename__ = 'AA_FixedAssetsBarCodeSectionInfo'
+
+    code = Column(Unicode(32))
+    name = Column(Unicode(200))
+    sectionNo = Column(Integer)
+    length = Column(Integer)
+    ts = Column(TIMESTAMP, nullable=False)
+    updatedBy = Column(Unicode(32))
+    id = Column(Integer, nullable=False, primary_key=True)
+    idBarCodeSolution = Column(Integer)
+    fillType = Column(Integer)
+    format = Column(Integer)
+    sectionInfo = Column(Integer)
+    madeDate = Column(DateTime)
+    updated = Column(DateTime)
+    createdTime = Column(DateTime)
 
 
-t_AA_FixedAssetsBarCodeSolution = Table(
-    'AA_FixedAssetsBarCodeSolution', metadata,
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updatedBy', Unicode(32)),
-    Column('code', Unicode(6)),
-    Column('name', Unicode(30)),
-    Column('length', Integer),
-    Column('memo', Unicode(560)),
-    Column('id', Integer, nullable=False),
-    Column('codingType', Integer),
-    Column('updated', DateTime),
-    Column('madeDate', DateTime),
-    Column('createdTime', DateTime)
-)
+class AAFixedAssetsBarCodeSolution(Base):
+    __tablename__ = 'AA_FixedAssetsBarCodeSolution'
+
+    ts = Column(TIMESTAMP, nullable=False)
+    updatedBy = Column(Unicode(32))
+    code = Column(Unicode(6))
+    name = Column(Unicode(30))
+    length = Column(Integer)
+    memo = Column(Unicode(560))
+    id = Column(Integer, nullable=False, primary_key=True)
+    codingType = Column(Integer)
+    updated = Column(DateTime)
+    madeDate = Column(DateTime)
+    createdTime = Column(DateTime)
 
 
-t_AA_FreeItemsEnum = Table(
-    'AA_FreeItemsEnum', metadata,
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('sequencenumber', Integer),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updatedBy', Unicode(32)),
-    Column('Freeitems', Unicode(200)),
-    Column('freeItem0', Unicode(300)),
-    Column('freeItem1', Unicode(300)),
-    Column('freeItem2', Unicode(300)),
-    Column('freeItem3', Unicode(300)),
-    Column('freeItem4', Unicode(300)),
-    Column('freeItem5', Unicode(300)),
-    Column('freeItem6', Unicode(300)),
-    Column('freeItem7', Unicode(300)),
-    Column('freeItem8', Unicode(300)),
-    Column('freeItem9', Unicode(300)),
-    Column('id', Integer, nullable=False),
-    Column('idInventoryDTO', Integer),
-    Column('createdtime', DateTime),
-    Column('updated', DateTime)
-)
+class AAFreeItemsEnum(Base):
+    __tablename__ = 'AA_FreeItemsEnum'
+
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    sequencenumber = Column(Integer)
+    ts = Column(TIMESTAMP, nullable=False)
+    updatedBy = Column(Unicode(32))
+    Freeitems = Column(Unicode(200))
+    freeItem0 = Column(Unicode(300))
+    freeItem1 = Column(Unicode(300))
+    freeItem2 = Column(Unicode(300))
+    freeItem3 = Column(Unicode(300))
+    freeItem4 = Column(Unicode(300))
+    freeItem5 = Column(Unicode(300))
+    freeItem6 = Column(Unicode(300))
+    freeItem7 = Column(Unicode(300))
+    freeItem8 = Column(Unicode(300))
+    freeItem9 = Column(Unicode(300))
+    id = Column(Integer, nullable=False, primary_key=True)
+    idInventoryDTO = Column(Integer)
+    createdtime = Column(DateTime)
+    updated = Column(DateTime)
 
 
 class AAHandleReason(Base):
@@ -1945,58 +1945,58 @@ class AAHandleReason(Base):
     idparent = Column(Integer)
 
 
-t_AA_HandleReason_Ext = Table(
-    'AA_HandleReason_Ext', metadata,
-    Column('handleReasoncode_lev1', Unicode(40)),
-    Column('handleReasonname_lev1', Unicode(100)),
-    Column('handleReasoncode_lev2', Unicode(40)),
-    Column('handleReasonname_lev2', Unicode(100)),
-    Column('handleReasoncode_lev3', Unicode(40)),
-    Column('handleReasonname_lev3', Unicode(100)),
-    Column('handleReasoncode_lev4', Unicode(40)),
-    Column('handleReasonname_lev4', Unicode(100)),
-    Column('handleReasoncode_lev5', Unicode(40)),
-    Column('handleReasonname_lev5', Unicode(100)),
-    Column('handleReasoncode_lev6', Unicode(40)),
-    Column('handleReasonname_lev6', Unicode(100)),
-    Column('handleReasoncode_lev7', Unicode(40)),
-    Column('handleReasonname_lev7', Unicode(100)),
-    Column('handleReasoncode_lev8', Unicode(40)),
-    Column('handleReasonname_lev8', Unicode(100)),
-    Column('handleReasoncode_lev9', Unicode(40)),
-    Column('handleReasonname_lev9', Unicode(100)),
-    Column('handleReasoncode_lev10', Unicode(40)),
-    Column('handleReasonname_lev10', Unicode(100)),
-    Column('handleReasoncode_lev11', Unicode(40)),
-    Column('handleReasonname_lev11', Unicode(100)),
-    Column('handleReasoncode_lev12', Unicode(40)),
-    Column('handleReasonname_lev12', Unicode(100)),
-    Column('handleReasoncode_lev13', Unicode(40)),
-    Column('handleReasonname_lev13', Unicode(100)),
-    Column('handleReasoncode_lev14', Unicode(40)),
-    Column('handleReasonname_lev14', Unicode(100)),
-    Column('handleReasoncode_lev15', Unicode(40)),
-    Column('handleReasonname_lev15', Unicode(100)),
-    Column('depth', Unicode(10)),
-    Column('createTime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('ts', TIMESTAMP),
-    Column('id', Integer),
-    Column('handleReasonid_lev1', Integer),
-    Column('handleReasonid_lev10', Integer),
-    Column('handleReasonid_lev11', Integer),
-    Column('handleReasonid_lev12', Integer),
-    Column('handleReasonid_lev13', Integer),
-    Column('handleReasonid_lev14', Integer),
-    Column('handleReasonid_lev15', Integer),
-    Column('handleReasonid_lev2', Integer),
-    Column('handleReasonid_lev3', Integer),
-    Column('handleReasonid_lev4', Integer),
-    Column('handleReasonid_lev5', Integer),
-    Column('handleReasonid_lev6', Integer),
-    Column('handleReasonid_lev7', Integer),
-    Column('handleReasonid_lev8', Integer),
-    Column('handleReasonid_lev9', Integer)
-)
+class AAHandleReasonExt(Base):
+    __tablename__ = 'AA_HandleReason_Ext'
+
+    handleReasoncode_lev1 = Column(Unicode(40))
+    handleReasonname_lev1 = Column(Unicode(100))
+    handleReasoncode_lev2 = Column(Unicode(40))
+    handleReasonname_lev2 = Column(Unicode(100))
+    handleReasoncode_lev3 = Column(Unicode(40))
+    handleReasonname_lev3 = Column(Unicode(100))
+    handleReasoncode_lev4 = Column(Unicode(40))
+    handleReasonname_lev4 = Column(Unicode(100))
+    handleReasoncode_lev5 = Column(Unicode(40))
+    handleReasonname_lev5 = Column(Unicode(100))
+    handleReasoncode_lev6 = Column(Unicode(40))
+    handleReasonname_lev6 = Column(Unicode(100))
+    handleReasoncode_lev7 = Column(Unicode(40))
+    handleReasonname_lev7 = Column(Unicode(100))
+    handleReasoncode_lev8 = Column(Unicode(40))
+    handleReasonname_lev8 = Column(Unicode(100))
+    handleReasoncode_lev9 = Column(Unicode(40))
+    handleReasonname_lev9 = Column(Unicode(100))
+    handleReasoncode_lev10 = Column(Unicode(40))
+    handleReasonname_lev10 = Column(Unicode(100))
+    handleReasoncode_lev11 = Column(Unicode(40))
+    handleReasonname_lev11 = Column(Unicode(100))
+    handleReasoncode_lev12 = Column(Unicode(40))
+    handleReasonname_lev12 = Column(Unicode(100))
+    handleReasoncode_lev13 = Column(Unicode(40))
+    handleReasonname_lev13 = Column(Unicode(100))
+    handleReasoncode_lev14 = Column(Unicode(40))
+    handleReasonname_lev14 = Column(Unicode(100))
+    handleReasoncode_lev15 = Column(Unicode(40))
+    handleReasonname_lev15 = Column(Unicode(100))
+    depth = Column(Unicode(10))
+    createTime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    ts = Column(TIMESTAMP)
+    id = Column(Integer, primary_key=True)
+    handleReasonid_lev1 = Column(Integer)
+    handleReasonid_lev10 = Column(Integer)
+    handleReasonid_lev11 = Column(Integer)
+    handleReasonid_lev12 = Column(Integer)
+    handleReasonid_lev13 = Column(Integer)
+    handleReasonid_lev14 = Column(Integer)
+    handleReasonid_lev15 = Column(Integer)
+    handleReasonid_lev2 = Column(Integer)
+    handleReasonid_lev3 = Column(Integer)
+    handleReasonid_lev4 = Column(Integer)
+    handleReasonid_lev5 = Column(Integer)
+    handleReasonid_lev6 = Column(Integer)
+    handleReasonid_lev7 = Column(Integer)
+    handleReasonid_lev8 = Column(Integer)
+    handleReasonid_lev9 = Column(Integer)
 
 
 class AAIncDecWay(Base):
@@ -2017,58 +2017,58 @@ class AAIncDecWay(Base):
     idparent = Column(Integer)
 
 
-t_AA_IncDecWay_Ext = Table(
-    'AA_IncDecWay_Ext', metadata,
-    Column('incDecWaycode_lev1', Unicode(40)),
-    Column('incDecWayname_lev1', Unicode(100)),
-    Column('incDecWaycode_lev2', Unicode(40)),
-    Column('incDecWayname_lev2', Unicode(100)),
-    Column('incDecWaycode_lev3', Unicode(40)),
-    Column('incDecWayname_lev3', Unicode(100)),
-    Column('incDecWaycode_lev4', Unicode(40)),
-    Column('incDecWayname_lev4', Unicode(100)),
-    Column('incDecWaycode_lev5', Unicode(40)),
-    Column('incDecWayname_lev5', Unicode(100)),
-    Column('incDecWaycode_lev6', Unicode(40)),
-    Column('incDecWayname_lev6', Unicode(100)),
-    Column('incDecWaycode_lev7', Unicode(40)),
-    Column('incDecWayname_lev7', Unicode(100)),
-    Column('incDecWaycode_lev8', Unicode(40)),
-    Column('incDecWayname_lev8', Unicode(100)),
-    Column('incDecWaycode_lev9', Unicode(40)),
-    Column('incDecWayname_lev9', Unicode(100)),
-    Column('incDecWaycode_lev10', Unicode(40)),
-    Column('incDecWayname_lev10', Unicode(100)),
-    Column('incDecWaycode_lev11', Unicode(40)),
-    Column('incDecWayname_lev11', Unicode(100)),
-    Column('incDecWaycode_lev12', Unicode(40)),
-    Column('incDecWayname_lev12', Unicode(100)),
-    Column('incDecWaycode_lev13', Unicode(40)),
-    Column('incDecWayname_lev13', Unicode(100)),
-    Column('incDecWaycode_lev14', Unicode(40)),
-    Column('incDecWayname_lev14', Unicode(100)),
-    Column('incDecWaycode_lev15', Unicode(40)),
-    Column('incDecWayname_lev15', Unicode(100)),
-    Column('depth', Unicode(10)),
-    Column('createTime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('ts', TIMESTAMP),
-    Column('id', Integer),
-    Column('incDecWayid_lev1', Integer),
-    Column('incDecWayid_lev10', Integer),
-    Column('incDecWayid_lev11', Integer),
-    Column('incDecWayid_lev12', Integer),
-    Column('incDecWayid_lev13', Integer),
-    Column('incDecWayid_lev14', Integer),
-    Column('incDecWayid_lev15', Integer),
-    Column('incDecWayid_lev2', Integer),
-    Column('incDecWayid_lev3', Integer),
-    Column('incDecWayid_lev4', Integer),
-    Column('incDecWayid_lev5', Integer),
-    Column('incDecWayid_lev6', Integer),
-    Column('incDecWayid_lev7', Integer),
-    Column('incDecWayid_lev8', Integer),
-    Column('incDecWayid_lev9', Integer)
-)
+class AAIncDecWayExt(Base):
+    __tablename__ = 'AA_IncDecWay_Ext'
+
+    incDecWaycode_lev1 = Column(Unicode(40))
+    incDecWayname_lev1 = Column(Unicode(100))
+    incDecWaycode_lev2 = Column(Unicode(40))
+    incDecWayname_lev2 = Column(Unicode(100))
+    incDecWaycode_lev3 = Column(Unicode(40))
+    incDecWayname_lev3 = Column(Unicode(100))
+    incDecWaycode_lev4 = Column(Unicode(40))
+    incDecWayname_lev4 = Column(Unicode(100))
+    incDecWaycode_lev5 = Column(Unicode(40))
+    incDecWayname_lev5 = Column(Unicode(100))
+    incDecWaycode_lev6 = Column(Unicode(40))
+    incDecWayname_lev6 = Column(Unicode(100))
+    incDecWaycode_lev7 = Column(Unicode(40))
+    incDecWayname_lev7 = Column(Unicode(100))
+    incDecWaycode_lev8 = Column(Unicode(40))
+    incDecWayname_lev8 = Column(Unicode(100))
+    incDecWaycode_lev9 = Column(Unicode(40))
+    incDecWayname_lev9 = Column(Unicode(100))
+    incDecWaycode_lev10 = Column(Unicode(40))
+    incDecWayname_lev10 = Column(Unicode(100))
+    incDecWaycode_lev11 = Column(Unicode(40))
+    incDecWayname_lev11 = Column(Unicode(100))
+    incDecWaycode_lev12 = Column(Unicode(40))
+    incDecWayname_lev12 = Column(Unicode(100))
+    incDecWaycode_lev13 = Column(Unicode(40))
+    incDecWayname_lev13 = Column(Unicode(100))
+    incDecWaycode_lev14 = Column(Unicode(40))
+    incDecWayname_lev14 = Column(Unicode(100))
+    incDecWaycode_lev15 = Column(Unicode(40))
+    incDecWayname_lev15 = Column(Unicode(100))
+    depth = Column(Unicode(10))
+    createTime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    ts = Column(TIMESTAMP)
+    id = Column(Integer, primary_key=True)
+    incDecWayid_lev1 = Column(Integer)
+    incDecWayid_lev10 = Column(Integer)
+    incDecWayid_lev11 = Column(Integer)
+    incDecWayid_lev12 = Column(Integer)
+    incDecWayid_lev13 = Column(Integer)
+    incDecWayid_lev14 = Column(Integer)
+    incDecWayid_lev15 = Column(Integer)
+    incDecWayid_lev2 = Column(Integer)
+    incDecWayid_lev3 = Column(Integer)
+    incDecWayid_lev4 = Column(Integer)
+    incDecWayid_lev5 = Column(Integer)
+    incDecWayid_lev6 = Column(Integer)
+    incDecWayid_lev7 = Column(Integer)
+    incDecWayid_lev8 = Column(Integer)
+    incDecWayid_lev9 = Column(Integer)
 
 
 class AAIncome(Base):
@@ -2207,157 +2207,157 @@ class AAInventory(Base):
     Changedate = Column(DateTime, server_default=text("(NULL)"))
 
 
-t_AA_InventoryBarCode = Table(
-    'AA_InventoryBarCode', metadata,
-    Column('code', Unicode(200)),
-    Column('name', Unicode(200)),
-    Column('barCode', Unicode(128)),
-    Column('quantity', Numeric(28, 14)),
-    Column('ts', TIMESTAMP),
-    Column('updatedBy', Unicode(32)),
-    Column('freeItem0', Unicode(300)),
-    Column('freeItem1', Unicode(300)),
-    Column('freeItem2', Unicode(300)),
-    Column('freeItem3', Unicode(300)),
-    Column('freeItem4', Unicode(300)),
-    Column('freeItem5', Unicode(300)),
-    Column('freeItem6', Unicode(300)),
-    Column('freeItem7', Unicode(300)),
-    Column('freeItem8', Unicode(300)),
-    Column('freeItem9', Unicode(300)),
-    Column('batchNumber', Unicode(50)),
-    Column('detail_priuserdefdecm1', Numeric(28, 14)),
-    Column('detail_priuserdefdecm2', Numeric(28, 14)),
-    Column('detail_priuserdefdecm3', Numeric(28, 14)),
-    Column('detail_priuserdefdecm4', Numeric(28, 14)),
-    Column('detail_priuserdefnvc1', Unicode(60)),
-    Column('detail_priuserdefnvc2', Unicode(60)),
-    Column('detail_priuserdefnvc3', Unicode(60)),
-    Column('detail_priuserdefnvc4', Unicode(60)),
-    Column('detail_pubuserdefdecm1', Numeric(28, 14)),
-    Column('detail_pubuserdefdecm2', Numeric(28, 14)),
-    Column('detail_pubuserdefdecm3', Numeric(28, 14)),
-    Column('detail_pubuserdefdecm4', Numeric(28, 14)),
-    Column('detail_pubuserdefnvc1', Unicode(60)),
-    Column('detail_pubuserdefnvc2', Unicode(60)),
-    Column('detail_pubuserdefnvc3', Unicode(60)),
-    Column('detail_pubuserdefnvc4', Unicode(60)),
-    Column('detail_amount', Numeric(28, 14)),
-    Column('detail_price', Numeric(28, 14)),
-    Column('head_priuserdefdecm1', Numeric(28, 14)),
-    Column('head_priuserdefdecm2', Numeric(28, 14)),
-    Column('head_priuserdefdecm3', Numeric(28, 14)),
-    Column('head_priuserdefdecm4', Numeric(28, 14)),
-    Column('head_priuserdefdecm5', Numeric(28, 14)),
-    Column('head_priuserdefdecm6', Numeric(28, 14)),
-    Column('head_priuserdefnvc1', Unicode(60)),
-    Column('head_priuserdefnvc2', Unicode(60)),
-    Column('head_priuserdefnvc3', Unicode(60)),
-    Column('head_priuserdefnvc4', Unicode(60)),
-    Column('head_priuserdefnvc5', Unicode(60)),
-    Column('head_priuserdefnvc6', Unicode(60)),
-    Column('head_pubuserdefdecm1', Numeric(28, 14)),
-    Column('head_pubuserdefdecm2', Numeric(28, 14)),
-    Column('head_pubuserdefdecm3', Numeric(28, 14)),
-    Column('head_pubuserdefdecm4', Numeric(28, 14)),
-    Column('head_pubuserdefdecm5', Numeric(28, 14)),
-    Column('head_pubuserdefdecm6', Numeric(28, 14)),
-    Column('head_pubuserdefnvc1', Unicode(60)),
-    Column('head_pubuserdefnvc2', Unicode(60)),
-    Column('head_pubuserdefnvc3', Unicode(60)),
-    Column('head_pubuserdefnvc4', Unicode(60)),
-    Column('head_pubuserdefnvc5', Unicode(60)),
-    Column('head_pubuserdefnvc6', Unicode(60)),
-    Column('IsDefault', Integer),
-    Column('iddepartment', Integer),
-    Column('idinventoryDTO', Integer),
-    Column('id', Integer, nullable=False),
-    Column('idcustomer', Integer),
-    Column('idpartner', Integer),
-    Column('idperson', Integer),
-    Column('idunit', Integer),
-    Column('idwarehouse', Integer),
-    Column('madeDate', DateTime),
-    Column('updated', DateTime),
-    Column('createdTime', DateTime),
-    Column('failDate', DateTime),
-    Column('ProductionDate', DateTime)
-)
+class AAInventoryBarCode(Base):
+    __tablename__ = 'AA_InventoryBarCode'
+
+    code = Column(Unicode(200))
+    name = Column(Unicode(200))
+    barCode = Column(Unicode(128))
+    quantity = Column(Numeric(28, 14))
+    ts = Column(TIMESTAMP)
+    updatedBy = Column(Unicode(32))
+    freeItem0 = Column(Unicode(300))
+    freeItem1 = Column(Unicode(300))
+    freeItem2 = Column(Unicode(300))
+    freeItem3 = Column(Unicode(300))
+    freeItem4 = Column(Unicode(300))
+    freeItem5 = Column(Unicode(300))
+    freeItem6 = Column(Unicode(300))
+    freeItem7 = Column(Unicode(300))
+    freeItem8 = Column(Unicode(300))
+    freeItem9 = Column(Unicode(300))
+    batchNumber = Column(Unicode(50))
+    detail_priuserdefdecm1 = Column(Numeric(28, 14))
+    detail_priuserdefdecm2 = Column(Numeric(28, 14))
+    detail_priuserdefdecm3 = Column(Numeric(28, 14))
+    detail_priuserdefdecm4 = Column(Numeric(28, 14))
+    detail_priuserdefnvc1 = Column(Unicode(60))
+    detail_priuserdefnvc2 = Column(Unicode(60))
+    detail_priuserdefnvc3 = Column(Unicode(60))
+    detail_priuserdefnvc4 = Column(Unicode(60))
+    detail_pubuserdefdecm1 = Column(Numeric(28, 14))
+    detail_pubuserdefdecm2 = Column(Numeric(28, 14))
+    detail_pubuserdefdecm3 = Column(Numeric(28, 14))
+    detail_pubuserdefdecm4 = Column(Numeric(28, 14))
+    detail_pubuserdefnvc1 = Column(Unicode(60))
+    detail_pubuserdefnvc2 = Column(Unicode(60))
+    detail_pubuserdefnvc3 = Column(Unicode(60))
+    detail_pubuserdefnvc4 = Column(Unicode(60))
+    detail_amount = Column(Numeric(28, 14))
+    detail_price = Column(Numeric(28, 14))
+    head_priuserdefdecm1 = Column(Numeric(28, 14))
+    head_priuserdefdecm2 = Column(Numeric(28, 14))
+    head_priuserdefdecm3 = Column(Numeric(28, 14))
+    head_priuserdefdecm4 = Column(Numeric(28, 14))
+    head_priuserdefdecm5 = Column(Numeric(28, 14))
+    head_priuserdefdecm6 = Column(Numeric(28, 14))
+    head_priuserdefnvc1 = Column(Unicode(60))
+    head_priuserdefnvc2 = Column(Unicode(60))
+    head_priuserdefnvc3 = Column(Unicode(60))
+    head_priuserdefnvc4 = Column(Unicode(60))
+    head_priuserdefnvc5 = Column(Unicode(60))
+    head_priuserdefnvc6 = Column(Unicode(60))
+    head_pubuserdefdecm1 = Column(Numeric(28, 14))
+    head_pubuserdefdecm2 = Column(Numeric(28, 14))
+    head_pubuserdefdecm3 = Column(Numeric(28, 14))
+    head_pubuserdefdecm4 = Column(Numeric(28, 14))
+    head_pubuserdefdecm5 = Column(Numeric(28, 14))
+    head_pubuserdefdecm6 = Column(Numeric(28, 14))
+    head_pubuserdefnvc1 = Column(Unicode(60))
+    head_pubuserdefnvc2 = Column(Unicode(60))
+    head_pubuserdefnvc3 = Column(Unicode(60))
+    head_pubuserdefnvc4 = Column(Unicode(60))
+    head_pubuserdefnvc5 = Column(Unicode(60))
+    head_pubuserdefnvc6 = Column(Unicode(60))
+    IsDefault = Column(Integer)
+    iddepartment = Column(Integer)
+    idinventoryDTO = Column(Integer)
+    id = Column(Integer, nullable=False, primary_key=True)
+    idcustomer = Column(Integer)
+    idpartner = Column(Integer)
+    idperson = Column(Integer)
+    idunit = Column(Integer)
+    idwarehouse = Column(Integer)
+    madeDate = Column(DateTime)
+    updated = Column(DateTime)
+    createdTime = Column(DateTime)
+    failDate = Column(DateTime)
+    ProductionDate = Column(DateTime)
 
 
-t_AA_InventoryClass = Table(
-    'AA_InventoryClass', metadata,
-    Column('code', Unicode(32)),
-    Column('name', Unicode(200)),
-    Column('isEndNode', Integer),
-    Column('depth', Integer),
-    Column('disabled', Integer),
-    Column('ts', TIMESTAMP),
-    Column('updatedBy', Unicode(32)),
-    Column('inId', Unicode(560)),
-    Column('id', Integer, nullable=False),
-    Column('idMarketingOrgan', Integer),
-    Column('idparent', Integer),
-    Column('madeDate', DateTime),
-    Column('updated', DateTime),
-    Column('createdTime', DateTime)
-)
+class AAInventoryClass(Base):
+    __tablename__ = 'AA_InventoryClass'
+
+    code = Column(Unicode(32))
+    name = Column(Unicode(200))
+    isEndNode = Column(Integer)
+    depth = Column(Integer)
+    disabled = Column(Integer)
+    ts = Column(TIMESTAMP)
+    updatedBy = Column(Unicode(32))
+    inId = Column(Unicode(560))
+    id = Column(Integer, nullable=False, primary_key=True)
+    idMarketingOrgan = Column(Integer)
+    idparent = Column(Integer)
+    madeDate = Column(DateTime)
+    updated = Column(DateTime)
+    createdTime = Column(DateTime)
 
 
-t_AA_InventoryCountLevelPrice = Table(
-    'AA_InventoryCountLevelPrice', metadata,
-    Column('name', Unicode(200)),
-    Column('code', Unicode(50)),
-    Column('sellPrice', Numeric(18, 0)),
-    Column('countLowerLimit', Numeric(28, 14)),
-    Column('countUpperLimit', Numeric(28, 14)),
-    Column('price', Unicode(1000)),
-    Column('priceFormula', Unicode(1000)),
-    Column('Updated', DateTime),
-    Column('UpdatedBy', Unicode(50)),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('InvBarCode', Unicode(128)),
-    Column('idInventory', Integer),
-    Column('id', Integer, nullable=False),
-    Column('idInventoryprice', Integer),
-    Column('idUnit', Integer)
-)
+class AAInventoryCountLevelPrice(Base):
+    __tablename__ = 'AA_InventoryCountLevelPrice'
+
+    name = Column(Unicode(200))
+    code = Column(Unicode(50))
+    sellPrice = Column(Numeric(18, 0))
+    countLowerLimit = Column(Numeric(28, 14))
+    countUpperLimit = Column(Numeric(28, 14))
+    price = Column(Unicode(1000))
+    priceFormula = Column(Unicode(1000))
+    Updated = Column(DateTime)
+    UpdatedBy = Column(Unicode(50))
+    ts = Column(TIMESTAMP, nullable=False)
+    InvBarCode = Column(Unicode(128))
+    idInventory = Column(Integer)
+    id = Column(Integer, nullable=False, primary_key=True)
+    idInventoryprice = Column(Integer)
+    idUnit = Column(Integer)
 
 
-t_AA_InventoryLocation = Table(
-    'AA_InventoryLocation', metadata,
-    Column('code', Unicode(32)),
-    Column('name', Unicode(200)),
-    Column('shorthand', Unicode(50)),
-    Column('isEndNode', Integer),
-    Column('depth', Integer),
-    Column('memo', Unicode(50)),
-    Column('disabled', Integer),
-    Column('ts', TIMESTAMP),
-    Column('updatedBy', Unicode(32)),
-    Column('inId', Unicode(560)),
-    Column('id', Integer, nullable=False),
-    Column('idparent', Integer),
-    Column('idwarehouse', Integer),
-    Column('madeDate', DateTime),
-    Column('updated', DateTime),
-    Column('createdTime', DateTime)
-)
+class AAInventoryLocation(Base):
+    __tablename__ = 'AA_InventoryLocation'
+
+    code = Column(Unicode(32))
+    name = Column(Unicode(200))
+    shorthand = Column(Unicode(50))
+    isEndNode = Column(Integer)
+    depth = Column(Integer)
+    memo = Column(Unicode(50))
+    disabled = Column(Integer)
+    ts = Column(TIMESTAMP)
+    updatedBy = Column(Unicode(32))
+    inId = Column(Unicode(560))
+    id = Column(Integer, nullable=False, primary_key=True)
+    idparent = Column(Integer)
+    idwarehouse = Column(Integer)
+    madeDate = Column(DateTime)
+    updated = Column(DateTime)
+    createdTime = Column(DateTime)
 
 
-t_AA_InventoryMutiCode = Table(
-    'AA_InventoryMutiCode', metadata,
-    Column('Updated', DateTime),
-    Column('UpdatedBy', Unicode(50)),
-    Column('name', Unicode(300)),
-    Column('code', Unicode(300)),
-    Column('CusInSaleCount', Unicode(20)),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('idinventory', Integer),
-    Column('id', Integer, nullable=False),
-    Column('idcustomer', Integer),
-    Column('idunit', Integer)
-)
+class AAInventoryMutiCode(Base):
+    __tablename__ = 'AA_InventoryMutiCode'
+
+    Updated = Column(DateTime)
+    UpdatedBy = Column(Unicode(50))
+    name = Column(Unicode(300))
+    code = Column(Unicode(300))
+    CusInSaleCount = Column(Unicode(20))
+    ts = Column(TIMESTAMP, nullable=False)
+    idinventory = Column(Integer)
+    id = Column(Integer, nullable=False, primary_key=True)
+    idcustomer = Column(Integer)
+    idunit = Column(Integer)
 
 
 class AAInventoryPrice(Base):
@@ -2410,256 +2410,233 @@ class AAInventoryPrice(Base):
     updated = Column(DateTime)
 
 
-t_AA_InventoryPriceForNumeric = Table(
-    'AA_InventoryPriceForNumeric', metadata,
-    Column('id', Integer, nullable=False),
-    Column('retailPrice', Unicode(1000)),
-    Column('invMPCost', Unicode(1000)),
-    Column('invLSPrice', Unicode(1000)),
-    Column('latestPPrice', Numeric(32, 15)),
-    Column('latestSalePrice', Numeric(32, 15)),
-    Column('invSCost1', Unicode(1000)),
-    Column('invSCost2', Unicode(1000)),
-    Column('invSCost3', Unicode(1000)),
-    Column('invSCost4', Unicode(1000)),
-    Column('invSCost5', Unicode(1000)),
-    Column('invSCost6', Unicode(1000)),
-    Column('invSCost7', Unicode(1000)),
-    Column('invSCost8', Unicode(1000)),
-    Column('invSCost9', Unicode(1000)),
-    Column('invSCost10', Unicode(1000)),
-    Column('Discount', Numeric(32, 15)),
-    Column('MarkupRate', Numeric(32, 15)),
-    Column('MemberPrice', Numeric(32, 15)),
-    Column('retailPriceNew', Numeric(32, 15)),
-    Column('idinventory', Integer),
-    Column('codeinventory', Unicode(32)),
-    Column('idunit', Integer),
-    Column('codeunit', Unicode(32))
-)
+class AAInventoryPriceForNumeric(Base):
+    __tablename__ = 'AA_InventoryPriceForNumeric'
+
+    id = Column(Integer, nullable=False, primary_key=True)
+    retailPrice = Column(Unicode(1000))
+    invMPCost = Column(Unicode(1000))
+    invLSPrice = Column(Unicode(1000))
+    latestPPrice = Column(Numeric(32, 15))
+    latestSalePrice = Column(Numeric(32, 15))
+    invSCost1 = Column(Unicode(1000))
+    invSCost2 = Column(Unicode(1000))
+    invSCost3 = Column(Unicode(1000))
+    invSCost4 = Column(Unicode(1000))
+    invSCost5 = Column(Unicode(1000))
+    invSCost6 = Column(Unicode(1000))
+    invSCost7 = Column(Unicode(1000))
+    invSCost8 = Column(Unicode(1000))
+    invSCost9 = Column(Unicode(1000))
+    invSCost10 = Column(Unicode(1000))
+    Discount = Column(Numeric(32, 15))
+    MarkupRate = Column(Numeric(32, 15))
+    MemberPrice = Column(Numeric(32, 15))
+    retailPriceNew = Column(Numeric(32, 15))
+    idinventory = Column(Integer)
+    codeinventory = Column(Unicode(32))
+    idunit = Column(Integer)
+    codeunit = Column(Unicode(32))
 
 
-t_AA_InventoryPriceTrace = Table(
-    'AA_InventoryPriceTrace', metadata,
-    Column('code', Unicode(32)),
-    Column('name', Unicode(200)),
-    Column('LatestPPrice', Numeric(32, 15)),
-    Column('LatestSalePrice', Numeric(32, 15)),
-    Column('ts', TIMESTAMP),
-    Column('updatedBy', Unicode(32)),
-    Column('idinventory', Integer, nullable=False, server_default=text("((0))")),
-    Column('id', Integer, nullable=False),
-    Column('idunit', Integer, nullable=False, server_default=text("((0))")),
-    Column('createdtime', DateTime),
-    Column('updated', DateTime)
-)
+class AAInventoryPriceTrace(Base):
+    __tablename__ = 'AA_InventoryPriceTrace'
+
+    code = Column(Unicode(32))
+    name = Column(Unicode(200))
+    LatestPPrice = Column(Numeric(32, 15))
+    LatestSalePrice = Column(Numeric(32, 15))
+    ts = Column(TIMESTAMP)
+    updatedBy = Column(Unicode(32))
+    idinventory = Column(Integer, nullable=False, server_default=text("((0))"))
+    id = Column(Integer, nullable=False, primary_key=True)
+    idunit = Column(Integer, nullable=False, server_default=text("((0))"))
+    createdtime = Column(DateTime)
+    updated = Column(DateTime)
 
 
-t_AA_InventoryUnitPrice = Table(
-    'AA_InventoryUnitPrice', metadata,
-    Column('code', Unicode(32)),
-    Column('name', Unicode(200)),
-    Column('invMPCost', Numeric(28, 14)),
-    Column('invLSPrice', Numeric(28, 14)),
-    Column('retailPrice', Numeric(28, 14)),
-    Column('latestPPrice', Numeric(28, 14)),
-    Column('latestSalePrice', Numeric(28, 14)),
-    Column('invSCost1', Numeric(28, 14)),
-    Column('invSCost2', Numeric(28, 14)),
-    Column('invSCost3', Numeric(28, 14)),
-    Column('invSCost4', Numeric(28, 14)),
-    Column('invSCost5', Numeric(28, 14)),
-    Column('ts', TIMESTAMP),
-    Column('updatedBy', Unicode(32)),
-    Column('latestSaleDiscount', Numeric(28, 14)),
-    Column('latestUnitSalePrice', Numeric(28, 14)),
-    Column('latestUnitTaxSalePrice', Numeric(28, 14)),
-    Column('highestoutsourcedprice', Numeric(28, 14)),
-    Column('latestoutsourcedprice', Numeric(28, 14)),
-    Column('rateOfExchange', Numeric(28, 14)),
-    Column('rateDescription', Unicode(200)),
-    Column('MarkupRate', Numeric(28, 14)),
-    Column('Discount', Numeric(28, 14)),
-    Column('InvSCost6', Numeric(28, 14)),
-    Column('InvSCost7', Numeric(28, 14)),
-    Column('InvSCost8', Numeric(28, 14)),
-    Column('InvSCost9', Numeric(28, 14)),
-    Column('InvSCost10', Numeric(28, 14)),
-    Column('idinventory', Integer, nullable=False, server_default=text("((0))")),
-    Column('id', Integer, nullable=False),
-    Column('idunit', Integer, nullable=False, server_default=text("((0))")),
-    Column('idunitgroup', Integer),
-    Column('madeDate', DateTime),
-    Column('updated', DateTime),
-    Column('createdTime', DateTime),
-    Column('isGroup', Integer)
-)
+class AAInventoryUnitPrice(Base):
+    __tablename__ = 'AA_InventoryUnitPrice'
+
+    code = Column(Unicode(32))
+    name = Column(Unicode(200))
+    invMPCost = Column(Numeric(28, 14))
+    invLSPrice = Column(Numeric(28, 14))
+    retailPrice = Column(Numeric(28, 14))
+    latestPPrice = Column(Numeric(28, 14))
+    latestSalePrice = Column(Numeric(28, 14))
+    invSCost1 = Column(Numeric(28, 14))
+    invSCost2 = Column(Numeric(28, 14))
+    invSCost3 = Column(Numeric(28, 14))
+    invSCost4 = Column(Numeric(28, 14))
+    invSCost5 = Column(Numeric(28, 14))
+    ts = Column(TIMESTAMP)
+    updatedBy = Column(Unicode(32))
+    latestSaleDiscount = Column(Numeric(28, 14))
+    latestUnitSalePrice = Column(Numeric(28, 14))
+    latestUnitTaxSalePrice = Column(Numeric(28, 14))
+    highestoutsourcedprice = Column(Numeric(28, 14))
+    latestoutsourcedprice = Column(Numeric(28, 14))
+    rateOfExchange = Column(Numeric(28, 14))
+    rateDescription = Column(Unicode(200))
+    MarkupRate = Column(Numeric(28, 14))
+    Discount = Column(Numeric(28, 14))
+    InvSCost6 = Column(Numeric(28, 14))
+    InvSCost7 = Column(Numeric(28, 14))
+    InvSCost8 = Column(Numeric(28, 14))
+    InvSCost9 = Column(Numeric(28, 14))
+    InvSCost10 = Column(Numeric(28, 14))
+    idinventory = Column(Integer, nullable=False, server_default=text("((0))"))
+    id = Column(Integer, nullable=False, primary_key=True)
+    idunit = Column(Integer, nullable=False, server_default=text("((0))"))
+    idunitgroup = Column(Integer)
+    madeDate = Column(DateTime)
+    updated = Column(DateTime)
+    createdTime = Column(DateTime)
+    isGroup = Column(Integer)
 
 
-t_AA_Inventory_MultiUnit = Table(
-    'AA_Inventory_MultiUnit', metadata,
-    Column('Unit1Code', Unicode(50)),
-    Column('Unit1Name', Unicode(200)),
-    Column('Unit1ChangeRate', Numeric(28, 14)),
-    Column('Unit2Code', Unicode(50)),
-    Column('Unit2Name', Unicode(200)),
-    Column('Unit2ChangeRate', Numeric(28, 14)),
-    Column('Unit3Code', Unicode(50)),
-    Column('Unit3Name', Unicode(200)),
-    Column('Unit3ChangeRate', Numeric(28, 14)),
-    Column('Unit4Code', Unicode(50)),
-    Column('Unit4Name', Unicode(200)),
-    Column('Unit4ChangeRate', Numeric(28, 14)),
-    Column('TS', TIMESTAMP, nullable=False),
-    Column('IDInventory', Integer, nullable=False, server_default=text("((0))")),
-    Column('IDUnit1', Integer),
-    Column('IDUnit2', Integer),
-    Column('IDUnit3', Integer),
-    Column('IDUnit4', Integer)
-)
+class AAMarketingOrgan(Base):
+    __tablename__ = 'AA_MarketingOrgan'
+
+    Updated = Column(DateTime)
+    UpdatedBy = Column(Unicode(32))
+    ts = Column(TIMESTAMP)
+    Code = Column(Unicode(60))
+    Name = Column(Unicode(100))
+    InId = Column(Unicode(1120))
+    Depth = Column(Integer)
+    IsEndNode = Column(Integer)
+    disabled = Column(Integer)
+    IsHeaderQuaters = Column(Integer)
+    id = Column(Integer, nullable=False, primary_key=True)
+    idHeaderDepartment = Column(Integer)
+    idParent = Column(Integer)
+    madeDate = Column(DateTime)
 
 
-t_AA_MarketingOrgan = Table(
-    'AA_MarketingOrgan', metadata,
-    Column('Updated', DateTime),
-    Column('UpdatedBy', Unicode(32)),
-    Column('ts', TIMESTAMP),
-    Column('Code', Unicode(60)),
-    Column('Name', Unicode(100)),
-    Column('InId', Unicode(1120)),
-    Column('Depth', Integer),
-    Column('IsEndNode', Integer),
-    Column('disabled', Integer),
-    Column('IsHeaderQuaters', Integer),
-    Column('id', Integer, nullable=False),
-    Column('idHeaderDepartment', Integer),
-    Column('idParent', Integer),
-    Column('madeDate', DateTime)
-)
+class AAMarketingOrganExt(Base):
+    __tablename__ = 'AA_MarketingOrgan_Ext'
+
+    MarketingOrgancode_lev1 = Column(Unicode(80))
+    MarketingOrganname_lev1 = Column(Unicode(400))
+    MarketingOrgancode_lev2 = Column(Unicode(80))
+    MarketingOrganname_lev2 = Column(Unicode(400))
+    MarketingOrgancode_lev3 = Column(Unicode(80))
+    MarketingOrganname_lev3 = Column(Unicode(400))
+    MarketingOrgancode_lev4 = Column(Unicode(80))
+    MarketingOrganname_lev4 = Column(Unicode(400))
+    MarketingOrgancode_lev5 = Column(Unicode(80))
+    MarketingOrganname_lev5 = Column(Unicode(400))
+    MarketingOrgancode_lev6 = Column(Unicode(80))
+    MarketingOrganname_lev6 = Column(Unicode(400))
+    MarketingOrgancode_lev7 = Column(Unicode(80))
+    MarketingOrganname_lev7 = Column(Unicode(400))
+    MarketingOrgancode_lev8 = Column(Unicode(80))
+    MarketingOrganname_lev8 = Column(Unicode(400))
+    MarketingOrgancode_lev9 = Column(Unicode(80))
+    MarketingOrganname_lev9 = Column(Unicode(400))
+    MarketingOrgancode_lev10 = Column(Unicode(80))
+    MarketingOrganname_lev10 = Column(Unicode(400))
+    MarketingOrgancode_lev11 = Column(Unicode(80))
+    MarketingOrganname_lev11 = Column(Unicode(400))
+    MarketingOrgancode_lev12 = Column(Unicode(80))
+    MarketingOrganname_lev12 = Column(Unicode(400))
+    MarketingOrgancode_lev13 = Column(Unicode(80))
+    MarketingOrganname_lev13 = Column(Unicode(400))
+    MarketingOrgancode_lev14 = Column(Unicode(80))
+    MarketingOrganname_lev14 = Column(Unicode(400))
+    MarketingOrgancode_lev15 = Column(Unicode(80))
+    MarketingOrganname_lev15 = Column(Unicode(400))
+    depth = Column(Unicode(20))
+    ts = Column(TIMESTAMP)
+    MarketingOrganid_lev1 = Column(Integer)
+    MarketingOrganid_lev10 = Column(Integer)
+    MarketingOrganid_lev11 = Column(Integer)
+    MarketingOrganid_lev12 = Column(Integer)
+    MarketingOrganid_lev13 = Column(Integer)
+    MarketingOrganid_lev14 = Column(Integer)
+    MarketingOrganid_lev15 = Column(Integer)
+    MarketingOrganid_lev2 = Column(Integer)
+    MarketingOrganid_lev3 = Column(Integer)
+    MarketingOrganid_lev4 = Column(Integer)
+    MarketingOrganid_lev5 = Column(Integer)
+    MarketingOrganid_lev6 = Column(Integer)
+    MarketingOrganid_lev7 = Column(Integer)
+    MarketingOrganid_lev8 = Column(Integer)
+    MarketingOrganid_lev9 = Column(Integer)
+    id = Column(Integer, primary_key=True)
+    createTime = Column(DateTime)
 
 
-t_AA_MarketingOrgan_Ext = Table(
-    'AA_MarketingOrgan_Ext', metadata,
-    Column('MarketingOrgancode_lev1', Unicode(80)),
-    Column('MarketingOrganname_lev1', Unicode(400)),
-    Column('MarketingOrgancode_lev2', Unicode(80)),
-    Column('MarketingOrganname_lev2', Unicode(400)),
-    Column('MarketingOrgancode_lev3', Unicode(80)),
-    Column('MarketingOrganname_lev3', Unicode(400)),
-    Column('MarketingOrgancode_lev4', Unicode(80)),
-    Column('MarketingOrganname_lev4', Unicode(400)),
-    Column('MarketingOrgancode_lev5', Unicode(80)),
-    Column('MarketingOrganname_lev5', Unicode(400)),
-    Column('MarketingOrgancode_lev6', Unicode(80)),
-    Column('MarketingOrganname_lev6', Unicode(400)),
-    Column('MarketingOrgancode_lev7', Unicode(80)),
-    Column('MarketingOrganname_lev7', Unicode(400)),
-    Column('MarketingOrgancode_lev8', Unicode(80)),
-    Column('MarketingOrganname_lev8', Unicode(400)),
-    Column('MarketingOrgancode_lev9', Unicode(80)),
-    Column('MarketingOrganname_lev9', Unicode(400)),
-    Column('MarketingOrgancode_lev10', Unicode(80)),
-    Column('MarketingOrganname_lev10', Unicode(400)),
-    Column('MarketingOrgancode_lev11', Unicode(80)),
-    Column('MarketingOrganname_lev11', Unicode(400)),
-    Column('MarketingOrgancode_lev12', Unicode(80)),
-    Column('MarketingOrganname_lev12', Unicode(400)),
-    Column('MarketingOrgancode_lev13', Unicode(80)),
-    Column('MarketingOrganname_lev13', Unicode(400)),
-    Column('MarketingOrgancode_lev14', Unicode(80)),
-    Column('MarketingOrganname_lev14', Unicode(400)),
-    Column('MarketingOrgancode_lev15', Unicode(80)),
-    Column('MarketingOrganname_lev15', Unicode(400)),
-    Column('depth', Unicode(20)),
-    Column('ts', TIMESTAMP),
-    Column('MarketingOrganid_lev1', Integer),
-    Column('MarketingOrganid_lev10', Integer),
-    Column('MarketingOrganid_lev11', Integer),
-    Column('MarketingOrganid_lev12', Integer),
-    Column('MarketingOrganid_lev13', Integer),
-    Column('MarketingOrganid_lev14', Integer),
-    Column('MarketingOrganid_lev15', Integer),
-    Column('MarketingOrganid_lev2', Integer),
-    Column('MarketingOrganid_lev3', Integer),
-    Column('MarketingOrganid_lev4', Integer),
-    Column('MarketingOrganid_lev5', Integer),
-    Column('MarketingOrganid_lev6', Integer),
-    Column('MarketingOrganid_lev7', Integer),
-    Column('MarketingOrganid_lev8', Integer),
-    Column('MarketingOrganid_lev9', Integer),
-    Column('id', Integer),
-    Column('createTime', DateTime)
-)
+class AAOutSourcedPriceSource(Base):
+    __tablename__ = 'AA_OutSourcedPriceSource'
+
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    priorityLevel = Column(Integer)
+    isInUse = Column(Integer)
+    sequencenumber = Column(Integer)
+    ts = Column(TIMESTAMP, nullable=False)
+    updatedBy = Column(Unicode(32))
+    id = Column(Integer, nullable=False, primary_key=True)
+    idPriceStrategyDTO = Column(Integer)
+    createdtime = Column(DateTime)
+    updated = Column(DateTime)
 
 
-t_AA_OutSourcedPriceSource = Table(
-    'AA_OutSourcedPriceSource', metadata,
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('priorityLevel', Integer),
-    Column('isInUse', Integer),
-    Column('sequencenumber', Integer),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updatedBy', Unicode(32)),
-    Column('id', Integer, nullable=False),
-    Column('idPriceStrategyDTO', Integer),
-    Column('createdtime', DateTime),
-    Column('updated', DateTime)
-)
+class AAOutsourcedVendorInventoryPrice(Base):
+    __tablename__ = 'AA_OutsourcedVendorInventoryPrice'
+
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    sequencenumber = Column(Integer)
+    ts = Column(TIMESTAMP, nullable=False)
+    updatedBy = Column(Unicode(32))
+    AgreementPrice = Column(Numeric(28, 14))
+    HighestOutsourcedPrice = Column(Numeric(28, 14))
+    LatestOutresourcedPrice = Column(Numeric(28, 14))
+    idinventory = Column(Integer)
+    id = Column(Integer, nullable=False, primary_key=True)
+    idpricetrace = Column(Integer)
+    idOutsourcedVendorPriceStrategyDTO = Column(Integer)
+    idpartner = Column(Integer)
+    idunit = Column(Integer)
+    createdtime = Column(DateTime)
+    updated = Column(DateTime)
 
 
-t_AA_OutsourcedVendorInventoryPrice = Table(
-    'AA_OutsourcedVendorInventoryPrice', metadata,
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('sequencenumber', Integer),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updatedBy', Unicode(32)),
-    Column('AgreementPrice', Numeric(28, 14)),
-    Column('HighestOutsourcedPrice', Numeric(28, 14)),
-    Column('LatestOutresourcedPrice', Numeric(28, 14)),
-    Column('idinventory', Integer),
-    Column('id', Integer, nullable=False),
-    Column('idpricetrace', Integer),
-    Column('idOutsourcedVendorPriceStrategyDTO', Integer),
-    Column('idpartner', Integer),
-    Column('idunit', Integer),
-    Column('createdtime', DateTime),
-    Column('updated', DateTime)
-)
+class AAOutsourcedVendorInventoryPriceTrace(Base):
+    __tablename__ = 'AA_OutsourcedVendorInventoryPriceTrace'
+
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    lastprice = Column(Numeric(28, 14))
+    discount = Column(Numeric(28, 14))
+    unitprice = Column(Numeric(28, 14))
+    unittaxprice = Column(Numeric(28, 14))
+    sequencenumber = Column(Integer)
+    ts = Column(TIMESTAMP, nullable=False)
+    updatedBy = Column(Unicode(32))
+    idinventory = Column(Integer)
+    id = Column(Integer, nullable=False, primary_key=True)
+    idOutSourcedVender = Column(Integer)
+    idunit = Column(Integer)
+    createdtime = Column(DateTime)
+    updated = Column(DateTime)
 
 
-t_AA_OutsourcedVendorInventoryPriceTrace = Table(
-    'AA_OutsourcedVendorInventoryPriceTrace', metadata,
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('lastprice', Numeric(28, 14)),
-    Column('discount', Numeric(28, 14)),
-    Column('unitprice', Numeric(28, 14)),
-    Column('unittaxprice', Numeric(28, 14)),
-    Column('sequencenumber', Integer),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updatedBy', Unicode(32)),
-    Column('idinventory', Integer),
-    Column('id', Integer, nullable=False),
-    Column('idOutSourcedVender', Integer),
-    Column('idunit', Integer),
-    Column('createdtime', DateTime),
-    Column('updated', DateTime)
-)
+class AAOutsourcedVendorPriceStrategy(Base):
+    __tablename__ = 'AA_OutsourcedVendorPriceStrategy'
 
-
-t_AA_OutsourcedVendorPriceStrategy = Table(
-    'AA_OutsourcedVendorPriceStrategy', metadata,
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('sequencenumber', Integer),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updatedBy', Unicode(32)),
-    Column('id', Integer, nullable=False),
-    Column('createdtime', DateTime),
-    Column('updated', DateTime)
-)
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    sequencenumber = Column(Integer)
+    ts = Column(TIMESTAMP, nullable=False)
+    updatedBy = Column(Unicode(32))
+    id = Column(Integer, nullable=False, primary_key=True)
+    createdtime = Column(DateTime)
+    updated = Column(DateTime)
 
 
 class AAParentAccount(Base):
@@ -2677,19 +2654,19 @@ class AAParentAccount(Base):
     idSon = Column(Integer)
 
 
-t_AA_ParentAssetClass = Table(
-    'AA_ParentAssetClass', metadata,
-    Column('ts', TIMESTAMP),
-    Column('updatedBy', Unicode(32)),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('name', Unicode(100)),
-    Column('code', Unicode(32)),
-    Column('Depth', Integer),
-    Column('isEndNode', Integer),
-    Column('id', Integer, nullable=False),
-    Column('idParent', Integer),
-    Column('idSon', Integer)
-)
+class AAParentAssetClass(Base):
+    __tablename__ = 'AA_ParentAssetClass'
+
+    ts = Column(TIMESTAMP)
+    updatedBy = Column(Unicode(32))
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    name = Column(Unicode(100))
+    code = Column(Unicode(32))
+    Depth = Column(Integer)
+    isEndNode = Column(Integer)
+    id = Column(Integer, nullable=False, primary_key=True)
+    idParent = Column(Integer)
+    idSon = Column(Integer)
 
 
 class AAParentCashFlowItemClass(Base):
@@ -2722,26 +2699,26 @@ class AAParentCommonSummaryClass(Base):
     id = Column(Integer, primary_key=True)
 
 
-t_AA_ParentDepartment = Table(
-    'AA_ParentDepartment', metadata,
-    Column('ts', TIMESTAMP),
-    Column('Depth', Integer),
-    Column('isEndNode', Integer),
-    Column('idParent', Integer),
-    Column('idSon', Integer),
-    Column('id', Integer, nullable=False)
-)
+class AAParentDepartment(Base):
+    __tablename__ = 'AA_ParentDepartment'
+
+    ts = Column(TIMESTAMP)
+    Depth = Column(Integer)
+    isEndNode = Column(Integer)
+    idParent = Column(Integer)
+    idSon = Column(Integer)
+    id = Column(Integer, nullable=False, primary_key=True)
 
 
-t_AA_ParentDistrict = Table(
-    'AA_ParentDistrict', metadata,
-    Column('ts', TIMESTAMP),
-    Column('Depth', Integer),
-    Column('isEndNode', Integer),
-    Column('idParent', Integer),
-    Column('idSon', Integer),
-    Column('id', Integer, nullable=False)
-)
+class AAParentDistrict(Base):
+    __tablename__ = 'AA_ParentDistrict'
+
+    ts = Column(TIMESTAMP)
+    Depth = Column(Integer)
+    isEndNode = Column(Integer)
+    idParent = Column(Integer)
+    idSon = Column(Integer)
+    id = Column(Integer, nullable=False, primary_key=True)
 
 
 class AAParentExpenseItem(Base):
@@ -2759,34 +2736,34 @@ class AAParentExpenseItem(Base):
     id = Column(Integer, primary_key=True)
 
 
-t_AA_ParentHandleReason = Table(
-    'AA_ParentHandleReason', metadata,
-    Column('ts', TIMESTAMP),
-    Column('updatedBy', Unicode(32)),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('name', Unicode(100)),
-    Column('code', Unicode(32)),
-    Column('Depth', Integer),
-    Column('isEndNode', Integer),
-    Column('idParent', Integer),
-    Column('idSon', Integer),
-    Column('id', Integer, nullable=False)
-)
+class AAParentHandleReason(Base):
+    __tablename__ = 'AA_ParentHandleReason'
+
+    ts = Column(TIMESTAMP)
+    updatedBy = Column(Unicode(32))
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    name = Column(Unicode(100))
+    code = Column(Unicode(32))
+    Depth = Column(Integer)
+    isEndNode = Column(Integer)
+    idParent = Column(Integer)
+    idSon = Column(Integer)
+    id = Column(Integer, nullable=False, primary_key=True)
 
 
-t_AA_ParentIncDecWay = Table(
-    'AA_ParentIncDecWay', metadata,
-    Column('ts', TIMESTAMP),
-    Column('updatedBy', Unicode(32)),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('name', Unicode(100)),
-    Column('code', Unicode(32)),
-    Column('Depth', Integer),
-    Column('isEndNode', Integer),
-    Column('idParent', Integer),
-    Column('idSon', Integer),
-    Column('id', Integer, nullable=False)
-)
+class AAParentIncDecWay(Base):
+    __tablename__ = 'AA_ParentIncDecWay'
+
+    ts = Column(TIMESTAMP)
+    updatedBy = Column(Unicode(32))
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    name = Column(Unicode(100))
+    code = Column(Unicode(32))
+    Depth = Column(Integer)
+    isEndNode = Column(Integer)
+    idParent = Column(Integer)
+    idSon = Column(Integer)
+    id = Column(Integer, nullable=False, primary_key=True)
 
 
 class AAParentIncome(Base):
@@ -2804,100 +2781,100 @@ class AAParentIncome(Base):
     id = Column(Integer, primary_key=True)
 
 
-t_AA_ParentInventoryClass = Table(
-    'AA_ParentInventoryClass', metadata,
-    Column('ts', TIMESTAMP),
-    Column('Depth', Integer),
-    Column('isEndNode', Integer),
-    Column('id', Integer, nullable=False),
-    Column('idParent', Integer),
-    Column('idSon', Integer)
-)
+class AAParentInventoryClass(Base):
+    __tablename__ = 'AA_ParentInventoryClass'
+
+    ts = Column(TIMESTAMP)
+    Depth = Column(Integer)
+    isEndNode = Column(Integer)
+    id = Column(Integer, nullable=False, primary_key=True)
+    idParent = Column(Integer)
+    idSon = Column(Integer)
 
 
-t_AA_ParentInventoryLocation = Table(
-    'AA_ParentInventoryLocation', metadata,
-    Column('ts', TIMESTAMP),
-    Column('Depth', Integer),
-    Column('isEndNode', Integer),
-    Column('idParent', Integer),
-    Column('idSon', Integer),
-    Column('id', Integer, nullable=False)
-)
+class AAParentInventoryLocation(Base):
+    __tablename__ = 'AA_ParentInventoryLocation'
+
+    ts = Column(TIMESTAMP)
+    Depth = Column(Integer)
+    isEndNode = Column(Integer)
+    idParent = Column(Integer)
+    idSon = Column(Integer)
+    id = Column(Integer, nullable=False, primary_key=True)
 
 
-t_AA_ParentMarketingOrgan = Table(
-    'AA_ParentMarketingOrgan', metadata,
-    Column('ts', TIMESTAMP),
-    Column('Depth', Integer),
-    Column('isEndNode', Integer),
-    Column('idParent', Integer),
-    Column('idSon', Integer),
-    Column('id', Integer, nullable=False)
-)
+class AAParentMarketingOrgan(Base):
+    __tablename__ = 'AA_ParentMarketingOrgan'
+
+    ts = Column(TIMESTAMP)
+    Depth = Column(Integer)
+    isEndNode = Column(Integer)
+    idParent = Column(Integer)
+    idSon = Column(Integer)
+    id = Column(Integer, nullable=False, primary_key=True)
 
 
-t_AA_ParentPartnerClass = Table(
-    'AA_ParentPartnerClass', metadata,
-    Column('ts', TIMESTAMP),
-    Column('Depth', Integer),
-    Column('isEndNode', Integer),
-    Column('id', Integer, nullable=False),
-    Column('idParent', Integer),
-    Column('idSon', Integer)
-)
+class AAParentPartnerClass(Base):
+    __tablename__ = 'AA_ParentPartnerClass'
+
+    ts = Column(TIMESTAMP)
+    Depth = Column(Integer)
+    isEndNode = Column(Integer)
+    id = Column(Integer, nullable=False, primary_key=True)
+    idParent = Column(Integer)
+    idSon = Column(Integer)
 
 
-t_AA_ParentPosition = Table(
-    'AA_ParentPosition', metadata,
-    Column('ts', TIMESTAMP),
-    Column('updatedBy', Unicode(32)),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('name', Unicode(100)),
-    Column('code', Unicode(32)),
-    Column('Depth', Integer),
-    Column('isEndNode', Integer),
-    Column('id', Integer, nullable=False),
-    Column('idParent', Integer),
-    Column('idSon', Integer)
-)
+class AAParentPosition(Base):
+    __tablename__ = 'AA_ParentPosition'
+
+    ts = Column(TIMESTAMP)
+    updatedBy = Column(Unicode(32))
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    name = Column(Unicode(100))
+    code = Column(Unicode(32))
+    Depth = Column(Integer)
+    isEndNode = Column(Integer)
+    id = Column(Integer, nullable=False, primary_key=True)
+    idParent = Column(Integer)
+    idSon = Column(Integer)
 
 
-t_AA_ParentProjectClass = Table(
-    'AA_ParentProjectClass', metadata,
-    Column('ts', TIMESTAMP),
-    Column('Depth', Integer),
-    Column('isEndNode', Integer),
-    Column('id', Integer, nullable=False),
-    Column('idParent', Integer),
-    Column('idSon', Integer)
-)
+class AAParentProjectClass(Base):
+    __tablename__ = 'AA_ParentProjectClass'
+
+    ts = Column(TIMESTAMP)
+    Depth = Column(Integer)
+    isEndNode = Column(Integer)
+    id = Column(Integer, nullable=False, primary_key=True)
+    idParent = Column(Integer)
+    idSon = Column(Integer)
 
 
-t_AA_ParentRDStyle = Table(
-    'AA_ParentRDStyle', metadata,
-    Column('ts', TIMESTAMP),
-    Column('Depth', Integer),
-    Column('isEndNode', Integer),
-    Column('id', Integer, nullable=False),
-    Column('idParent', Integer),
-    Column('idSon', Integer)
-)
+class AAParentRDStyle(Base):
+    __tablename__ = 'AA_ParentRDStyle'
+
+    ts = Column(TIMESTAMP)
+    Depth = Column(Integer)
+    isEndNode = Column(Integer)
+    id = Column(Integer, nullable=False, primary_key=True)
+    idParent = Column(Integer)
+    idSon = Column(Integer)
 
 
-t_AA_ParentUseStatus = Table(
-    'AA_ParentUseStatus', metadata,
-    Column('ts', TIMESTAMP),
-    Column('updatedBy', Unicode(32)),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('name', Unicode(100)),
-    Column('code', Unicode(32)),
-    Column('Depth', Integer),
-    Column('isEndNode', Integer),
-    Column('id', Integer, nullable=False),
-    Column('idParent', Integer),
-    Column('idSon', Integer)
-)
+class AAParentUseStatus(Base):
+    __tablename__ = 'AA_ParentUseStatus'
+
+    ts = Column(TIMESTAMP)
+    updatedBy = Column(Unicode(32))
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    name = Column(Unicode(100))
+    code = Column(Unicode(32))
+    Depth = Column(Integer)
+    isEndNode = Column(Integer)
+    id = Column(Integer, nullable=False, primary_key=True)
+    idParent = Column(Integer)
+    idSon = Column(Integer)
 
 
 class AAPartner(Base):
@@ -2983,144 +2960,144 @@ class AAPartner(Base):
     createdTime = Column(DateTime)
 
 
-t_AA_PartnerAddress = Table(
-    'AA_PartnerAddress', metadata,
-    Column('code', Unicode(32)),
-    Column('name', Unicode(200)),
-    Column('contact', Unicode(50)),
-    Column('telephoneNo', Unicode(100)),
-    Column('fax', Unicode(20)),
-    Column('emailAddr', Unicode(100)),
-    Column('mobilePhone', Unicode(30)),
-    Column('qqNo', Unicode(50)),
-    Column('msnAddress', Unicode(50)),
-    Column('uuNo', Unicode(50)),
-    Column('shipmentAddress', Unicode(200)),
-    Column('isDefaultAddress', Integer),
-    Column('ts', TIMESTAMP),
-    Column('updatedBy', Unicode(32)),
-    Column('Position', Unicode(20)),
-    Column('Birthday', DateTime),
-    Column('idpartner', Integer),
-    Column('id', Integer, nullable=False),
-    Column('deliveryMode', Integer),
-    Column('madeDate', DateTime),
-    Column('updated', DateTime),
-    Column('createdTime', DateTime)
-)
+class AAPartnerAddress(Base):
+    __tablename__ = 'AA_PartnerAddress'
+
+    code = Column(Unicode(32))
+    name = Column(Unicode(200))
+    contact = Column(Unicode(50))
+    telephoneNo = Column(Unicode(100))
+    fax = Column(Unicode(20))
+    emailAddr = Column(Unicode(100))
+    mobilePhone = Column(Unicode(30))
+    qqNo = Column(Unicode(50))
+    msnAddress = Column(Unicode(50))
+    uuNo = Column(Unicode(50))
+    shipmentAddress = Column(Unicode(200))
+    isDefaultAddress = Column(Integer)
+    ts = Column(TIMESTAMP)
+    updatedBy = Column(Unicode(32))
+    Position = Column(Unicode(20))
+    Birthday = Column(DateTime)
+    idpartner = Column(Integer)
+    id = Column(Integer, nullable=False, primary_key=True)
+    deliveryMode = Column(Integer)
+    madeDate = Column(DateTime)
+    updated = Column(DateTime)
+    createdTime = Column(DateTime)
 
 
-t_AA_PartnerClass = Table(
-    'AA_PartnerClass', metadata,
-    Column('code', Unicode(32)),
-    Column('name', Unicode(200)),
-    Column('isEndNode', Integer),
-    Column('depth', Integer),
-    Column('disabled', Integer),
-    Column('ts', TIMESTAMP),
-    Column('updatedBy', Unicode(32)),
-    Column('inId', Unicode(560)),
-    Column('id', Integer, nullable=False),
-    Column('IdMarketingOrgan', Integer),
-    Column('idparent', Integer),
-    Column('madeDate', DateTime),
-    Column('updated', DateTime),
-    Column('createdTime', DateTime)
-)
+class AAPartnerClass(Base):
+    __tablename__ = 'AA_PartnerClass'
+
+    code = Column(Unicode(32))
+    name = Column(Unicode(200))
+    isEndNode = Column(Integer)
+    depth = Column(Integer)
+    disabled = Column(Integer)
+    ts = Column(TIMESTAMP)
+    updatedBy = Column(Unicode(32))
+    inId = Column(Unicode(560))
+    id = Column(Integer, nullable=False, primary_key=True)
+    IdMarketingOrgan = Column(Integer)
+    idparent = Column(Integer)
+    madeDate = Column(DateTime)
+    updated = Column(DateTime)
+    createdTime = Column(DateTime)
 
 
-t_AA_PartnerClassPriceTrace = Table(
-    'AA_PartnerClassPriceTrace', metadata,
-    Column('code', Unicode(32)),
-    Column('name', Unicode(200)),
-    Column('lastprice', Numeric(32, 15)),
-    Column('discount', Numeric(32, 15)),
-    Column('unitprice', Numeric(32, 15)),
-    Column('unittaxprice', Numeric(32, 15)),
-    Column('ts', TIMESTAMP),
-    Column('updatedBy', Unicode(32)),
-    Column('idinventory', Integer, nullable=False, server_default=text("((0))")),
-    Column('idPartnerClass', Integer, nullable=False, server_default=text("((0))")),
-    Column('id', Integer, nullable=False),
-    Column('idunit', Integer, nullable=False, server_default=text("((0))")),
-    Column('createdtime', DateTime),
-    Column('updated', DateTime)
-)
+class AAPartnerClassPriceTrace(Base):
+    __tablename__ = 'AA_PartnerClassPriceTrace'
+
+    code = Column(Unicode(32))
+    name = Column(Unicode(200))
+    lastprice = Column(Numeric(32, 15))
+    discount = Column(Numeric(32, 15))
+    unitprice = Column(Numeric(32, 15))
+    unittaxprice = Column(Numeric(32, 15))
+    ts = Column(TIMESTAMP)
+    updatedBy = Column(Unicode(32))
+    idinventory = Column(Integer, nullable=False, server_default=text("((0))"))
+    idPartnerClass = Column(Integer, nullable=False, server_default=text("((0))"))
+    id = Column(Integer, nullable=False, primary_key=True)
+    idunit = Column(Integer, nullable=False, server_default=text("((0))"))
+    createdtime = Column(DateTime)
+    updated = Column(DateTime)
 
 
-t_AA_PartnerInventory = Table(
-    'AA_PartnerInventory', metadata,
-    Column('code', Unicode(32)),
-    Column('name', Unicode(200)),
-    Column('partnerInvenCode', Unicode(100)),
-    Column('ts', TIMESTAMP),
-    Column('updatedBy', Unicode(32)),
-    Column('freeItem0', Unicode(300)),
-    Column('freeItem1', Unicode(300)),
-    Column('freeItem2', Unicode(300)),
-    Column('freeItem3', Unicode(300)),
-    Column('freeItem4', Unicode(300)),
-    Column('freeItem5', Unicode(300)),
-    Column('freeItem6', Unicode(300)),
-    Column('freeItem7', Unicode(300)),
-    Column('freeItem8', Unicode(300)),
-    Column('freeItem9', Unicode(300)),
-    Column('id', Integer, nullable=False),
-    Column('idinventory', Integer),
-    Column('idpartner', Integer),
-    Column('madeDate', DateTime),
-    Column('updated', DateTime)
-)
+class AAPartnerInventory(Base):
+    __tablename__ = 'AA_PartnerInventory'
+
+    code = Column(Unicode(32))
+    name = Column(Unicode(200))
+    partnerInvenCode = Column(Unicode(100))
+    ts = Column(TIMESTAMP)
+    updatedBy = Column(Unicode(32))
+    freeItem0 = Column(Unicode(300))
+    freeItem1 = Column(Unicode(300))
+    freeItem2 = Column(Unicode(300))
+    freeItem3 = Column(Unicode(300))
+    freeItem4 = Column(Unicode(300))
+    freeItem5 = Column(Unicode(300))
+    freeItem6 = Column(Unicode(300))
+    freeItem7 = Column(Unicode(300))
+    freeItem8 = Column(Unicode(300))
+    freeItem9 = Column(Unicode(300))
+    id = Column(Integer, nullable=False, primary_key=True)
+    idinventory = Column(Integer)
+    idpartner = Column(Integer)
+    madeDate = Column(DateTime)
+    updated = Column(DateTime)
 
 
-t_AA_Person = Table(
-    'AA_Person', metadata,
-    Column('code', Unicode(32)),
-    Column('name', Unicode(200)),
-    Column('shorthand', Unicode(50)),
-    Column('nativePlace', Unicode(30)),
-    Column('identityNo', Unicode(20)),
-    Column('familyPhoneNo', Unicode(100)),
-    Column('officePhoneNo', Unicode(100)),
-    Column('mobilePhoneNo', Unicode(20)),
-    Column('emailAddr', Unicode(100)),
-    Column('qqcode', Unicode(30)),
-    Column('msnAddr', Unicode(30)),
-    Column('uuNo', Unicode(30)),
-    Column('postCode', Unicode(50)),
-    Column('postAddr', Unicode(200)),
-    Column('isSalesman', Integer),
-    Column('creditDate', Numeric(28, 14)),
-    Column('creditQuantity', Numeric(28, 14)),
-    Column('aRBalance', Numeric(28, 14)),
-    Column('aPBalance', Numeric(28, 14)),
-    Column('disabled', Integer),
-    Column('ts', TIMESTAMP),
-    Column('updatedBy', Unicode(32)),
-    Column('priuserdefnvc1', Unicode(500)),
-    Column('priuserdefdecm1', Numeric(28, 14)),
-    Column('priuserdefnvc2', Unicode(500)),
-    Column('priuserdefdecm2', Numeric(28, 14)),
-    Column('priuserdefnvc3', Unicode(500)),
-    Column('priuserdefdecm3', Numeric(28, 14)),
-    Column('priuserdefnvc4', Unicode(500)),
-    Column('priuserdefdecm4', Numeric(28, 14)),
-    Column('priuserdefnvc5', Unicode(500)),
-    Column('priuserdefdecm5', Numeric(28, 14)),
-    Column('IsNavigator', Integer),
-    Column('IsOperator', Integer),
-    Column('id', Integer, nullable=False),
-    Column('iddepartment', Integer),
-    Column('idMarketingOrgan', Integer),
-    Column('education', Integer),
-    Column('gender', Integer),
-    Column('identificationType', Integer),
-    Column('position', Integer),
-    Column('birthday', DateTime),
-    Column('madeDate', DateTime),
-    Column('updated', DateTime),
-    Column('createdTime', DateTime)
-)
+class AAPerson(Base):
+    __tablename__ = 'AA_Person'
+
+    code = Column(Unicode(32))
+    name = Column(Unicode(200))
+    shorthand = Column(Unicode(50))
+    nativePlace = Column(Unicode(30))
+    identityNo = Column(Unicode(20))
+    familyPhoneNo = Column(Unicode(100))
+    officePhoneNo = Column(Unicode(100))
+    mobilePhoneNo = Column(Unicode(20))
+    emailAddr = Column(Unicode(100))
+    qqcode = Column(Unicode(30))
+    msnAddr = Column(Unicode(30))
+    uuNo = Column(Unicode(30))
+    postCode = Column(Unicode(50))
+    postAddr = Column(Unicode(200))
+    isSalesman = Column(Integer)
+    creditDate = Column(Numeric(28, 14))
+    creditQuantity = Column(Numeric(28, 14))
+    aRBalance = Column(Numeric(28, 14))
+    aPBalance = Column(Numeric(28, 14))
+    disabled = Column(Integer)
+    ts = Column(TIMESTAMP)
+    updatedBy = Column(Unicode(32))
+    priuserdefnvc1 = Column(Unicode(500))
+    priuserdefdecm1 = Column(Numeric(28, 14))
+    priuserdefnvc2 = Column(Unicode(500))
+    priuserdefdecm2 = Column(Numeric(28, 14))
+    priuserdefnvc3 = Column(Unicode(500))
+    priuserdefdecm3 = Column(Numeric(28, 14))
+    priuserdefnvc4 = Column(Unicode(500))
+    priuserdefdecm4 = Column(Numeric(28, 14))
+    priuserdefnvc5 = Column(Unicode(500))
+    priuserdefdecm5 = Column(Numeric(28, 14))
+    IsNavigator = Column(Integer)
+    IsOperator = Column(Integer)
+    id = Column(Integer, nullable=False, primary_key=True)
+    iddepartment = Column(Integer)
+    idMarketingOrgan = Column(Integer)
+    education = Column(Integer)
+    gender = Column(Integer)
+    identificationType = Column(Integer)
+    position = Column(Integer)
+    birthday = Column(DateTime)
+    madeDate = Column(DateTime)
+    updated = Column(DateTime)
+    createdTime = Column(DateTime)
 
 
 class AAPosition(Base):
@@ -3139,516 +3116,516 @@ class AAPosition(Base):
     idparent = Column(Integer)
 
 
-t_AA_Position_Ext = Table(
-    'AA_Position_Ext', metadata,
-    Column('positioncode_lev1', Unicode(40)),
-    Column('positionname_lev1', Unicode(100)),
-    Column('positioncode_lev2', Unicode(40)),
-    Column('positionname_lev2', Unicode(100)),
-    Column('positioncode_lev3', Unicode(40)),
-    Column('positionname_lev3', Unicode(100)),
-    Column('positioncode_lev4', Unicode(40)),
-    Column('positionname_lev4', Unicode(100)),
-    Column('positioncode_lev5', Unicode(40)),
-    Column('positionname_lev5', Unicode(100)),
-    Column('positioncode_lev6', Unicode(40)),
-    Column('positionname_lev6', Unicode(100)),
-    Column('positioncode_lev7', Unicode(40)),
-    Column('positionname_lev7', Unicode(100)),
-    Column('positioncode_lev8', Unicode(40)),
-    Column('positionname_lev8', Unicode(100)),
-    Column('positioncode_lev9', Unicode(40)),
-    Column('positionname_lev9', Unicode(100)),
-    Column('positioncode_lev10', Unicode(40)),
-    Column('positionname_lev10', Unicode(100)),
-    Column('positioncode_lev11', Unicode(40)),
-    Column('positionname_lev11', Unicode(100)),
-    Column('positioncode_lev12', Unicode(40)),
-    Column('positionname_lev12', Unicode(100)),
-    Column('positioncode_lev13', Unicode(40)),
-    Column('positionname_lev13', Unicode(100)),
-    Column('positioncode_lev14', Unicode(40)),
-    Column('positionname_lev14', Unicode(100)),
-    Column('positioncode_lev15', Unicode(40)),
-    Column('positionname_lev15', Unicode(100)),
-    Column('depth', Unicode(10)),
-    Column('createTime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('ts', TIMESTAMP),
-    Column('id', Integer),
-    Column('positionid_lev1', Integer),
-    Column('positionid_lev10', Integer),
-    Column('positionid_lev11', Integer),
-    Column('positionid_lev12', Integer),
-    Column('positionid_lev13', Integer),
-    Column('positionid_lev14', Integer),
-    Column('positionid_lev15', Integer),
-    Column('positionid_lev2', Integer),
-    Column('positionid_lev3', Integer),
-    Column('positionid_lev4', Integer),
-    Column('positionid_lev5', Integer),
-    Column('positionid_lev6', Integer),
-    Column('positionid_lev7', Integer),
-    Column('positionid_lev8', Integer),
-    Column('positionid_lev9', Integer)
-)
+class AAPositionExt(Base):
+    __tablename__ = 'AA_Position_Ext'
+
+    positioncode_lev1 = Column(Unicode(40))
+    positionname_lev1 = Column(Unicode(100))
+    positioncode_lev2 = Column(Unicode(40))
+    positionname_lev2 = Column(Unicode(100))
+    positioncode_lev3 = Column(Unicode(40))
+    positionname_lev3 = Column(Unicode(100))
+    positioncode_lev4 = Column(Unicode(40))
+    positionname_lev4 = Column(Unicode(100))
+    positioncode_lev5 = Column(Unicode(40))
+    positionname_lev5 = Column(Unicode(100))
+    positioncode_lev6 = Column(Unicode(40))
+    positionname_lev6 = Column(Unicode(100))
+    positioncode_lev7 = Column(Unicode(40))
+    positionname_lev7 = Column(Unicode(100))
+    positioncode_lev8 = Column(Unicode(40))
+    positionname_lev8 = Column(Unicode(100))
+    positioncode_lev9 = Column(Unicode(40))
+    positionname_lev9 = Column(Unicode(100))
+    positioncode_lev10 = Column(Unicode(40))
+    positionname_lev10 = Column(Unicode(100))
+    positioncode_lev11 = Column(Unicode(40))
+    positionname_lev11 = Column(Unicode(100))
+    positioncode_lev12 = Column(Unicode(40))
+    positionname_lev12 = Column(Unicode(100))
+    positioncode_lev13 = Column(Unicode(40))
+    positionname_lev13 = Column(Unicode(100))
+    positioncode_lev14 = Column(Unicode(40))
+    positionname_lev14 = Column(Unicode(100))
+    positioncode_lev15 = Column(Unicode(40))
+    positionname_lev15 = Column(Unicode(100))
+    depth = Column(Unicode(10))
+    createTime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    ts = Column(TIMESTAMP)
+    id = Column(Integer, primary_key=True)
+    positionid_lev1 = Column(Integer)
+    positionid_lev10 = Column(Integer)
+    positionid_lev11 = Column(Integer)
+    positionid_lev12 = Column(Integer)
+    positionid_lev13 = Column(Integer)
+    positionid_lev14 = Column(Integer)
+    positionid_lev15 = Column(Integer)
+    positionid_lev2 = Column(Integer)
+    positionid_lev3 = Column(Integer)
+    positionid_lev4 = Column(Integer)
+    positionid_lev5 = Column(Integer)
+    positionid_lev6 = Column(Integer)
+    positionid_lev7 = Column(Integer)
+    positionid_lev8 = Column(Integer)
+    positionid_lev9 = Column(Integer)
 
 
-t_AA_PriceStrategy = Table(
-    'AA_PriceStrategy', metadata,
-    Column('code', Unicode(32)),
-    Column('name', Unicode(200)),
-    Column('ts', TIMESTAMP),
-    Column('updatedBy', Unicode(32)),
-    Column('id', Integer, nullable=False),
-    Column('createdtime', DateTime),
-    Column('updated', DateTime)
-)
+class AAPriceStrategy(Base):
+    __tablename__ = 'AA_PriceStrategy'
+
+    code = Column(Unicode(32))
+    name = Column(Unicode(200))
+    ts = Column(TIMESTAMP)
+    updatedBy = Column(Unicode(32))
+    id = Column(Integer, nullable=False, primary_key=True)
+    createdtime = Column(DateTime)
+    updated = Column(DateTime)
 
 
-t_AA_PriceTrace = Table(
-    'AA_PriceTrace', metadata,
-    Column('code', Unicode(32)),
-    Column('name', Unicode(200)),
-    Column('lastprice', Numeric(32, 15)),
-    Column('discount', Numeric(32, 15)),
-    Column('unitprice', Numeric(32, 15)),
-    Column('unittaxprice', Numeric(32, 15)),
-    Column('pricesource', Unicode(50)),
-    Column('ts', TIMESTAMP),
-    Column('updatedBy', Unicode(32)),
-    Column('id', Integer, nullable=False),
-    Column('updated', DateTime)
-)
+class AAPriceTrace(Base):
+    __tablename__ = 'AA_PriceTrace'
+
+    code = Column(Unicode(32))
+    name = Column(Unicode(200))
+    lastprice = Column(Numeric(32, 15))
+    discount = Column(Numeric(32, 15))
+    unitprice = Column(Numeric(32, 15))
+    unittaxprice = Column(Numeric(32, 15))
+    pricesource = Column(Unicode(50))
+    ts = Column(TIMESTAMP)
+    updatedBy = Column(Unicode(32))
+    id = Column(Integer, nullable=False, primary_key=True)
+    updated = Column(DateTime)
 
 
-t_AA_ProductProcess = Table(
-    'AA_ProductProcess', metadata,
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('memo', Unicode(200)),
-    Column('disabled', Integer),
-    Column('sequencenumber', Integer),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updatedBy', Unicode(32)),
-    Column('priuserdefnvc1', Unicode(500)),
-    Column('priuserdefdecm1', Numeric(28, 14)),
-    Column('priuserdefnvc2', Unicode(500)),
-    Column('priuserdefdecm2', Numeric(28, 14)),
-    Column('priuserdefnvc3', Unicode(500)),
-    Column('priuserdefdecm3', Numeric(28, 14)),
-    Column('priuserdefnvc4', Unicode(500)),
-    Column('priuserdefdecm4', Numeric(28, 14)),
-    Column('priuserdefnvc5', Unicode(500)),
-    Column('priuserdefdecm5', Numeric(28, 14)),
-    Column('idworkshop', Integer),
-    Column('id', Integer, nullable=False),
-    Column('createdtime', DateTime),
-    Column('updated', DateTime)
-)
+class AAProductProcess(Base):
+    __tablename__ = 'AA_ProductProcess'
+
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    memo = Column(Unicode(200))
+    disabled = Column(Integer)
+    sequencenumber = Column(Integer)
+    ts = Column(TIMESTAMP, nullable=False)
+    updatedBy = Column(Unicode(32))
+    priuserdefnvc1 = Column(Unicode(500))
+    priuserdefdecm1 = Column(Numeric(28, 14))
+    priuserdefnvc2 = Column(Unicode(500))
+    priuserdefdecm2 = Column(Numeric(28, 14))
+    priuserdefnvc3 = Column(Unicode(500))
+    priuserdefdecm3 = Column(Numeric(28, 14))
+    priuserdefnvc4 = Column(Unicode(500))
+    priuserdefdecm4 = Column(Numeric(28, 14))
+    priuserdefnvc5 = Column(Unicode(500))
+    priuserdefdecm5 = Column(Numeric(28, 14))
+    idworkshop = Column(Integer)
+    id = Column(Integer, nullable=False, primary_key=True)
+    createdtime = Column(DateTime)
+    updated = Column(DateTime)
 
 
-t_AA_Project = Table(
-    'AA_Project', metadata,
-    Column('Updated', DateTime),
-    Column('UpdatedBy', Unicode(32)),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('Code', Unicode(30), nullable=False),
-    Column('Name', Unicode(50), nullable=False),
-    Column('disabled', Integer, nullable=False),
-    Column('idMarketingOrgan', Integer),
-    Column('id', Integer, nullable=False),
-    Column('idclass', Integer),
-    Column('madeDate', DateTime)
-)
+class AAProject(Base):
+    __tablename__ = 'AA_Project'
+
+    Updated = Column(DateTime)
+    UpdatedBy = Column(Unicode(32))
+    ts = Column(TIMESTAMP, nullable=False)
+    Code = Column(Unicode(30), nullable=False)
+    Name = Column(Unicode(50), nullable=False)
+    disabled = Column(Integer, nullable=False)
+    idMarketingOrgan = Column(Integer)
+    id = Column(Integer, nullable=False, primary_key=True)
+    idclass = Column(Integer)
+    madeDate = Column(DateTime)
 
 
-t_AA_ProjectClass = Table(
-    'AA_ProjectClass', metadata,
-    Column('Updated', DateTime),
-    Column('UpdatedBy', Unicode(32)),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('Code', Unicode(30), nullable=False),
-    Column('Name', Unicode(50), nullable=False),
-    Column('disabled', Integer, nullable=False),
-    Column('InId', Unicode(560)),
-    Column('IsEndNode', Integer),
-    Column('depth', Integer),
-    Column('id', Integer, nullable=False),
-    Column('idparent', Integer),
-    Column('madeDate', DateTime)
-)
+class AAProjectClass(Base):
+    __tablename__ = 'AA_ProjectClass'
+
+    Updated = Column(DateTime)
+    UpdatedBy = Column(Unicode(32))
+    ts = Column(TIMESTAMP, nullable=False)
+    Code = Column(Unicode(30), nullable=False)
+    Name = Column(Unicode(50), nullable=False)
+    disabled = Column(Integer, nullable=False)
+    InId = Column(Unicode(560))
+    IsEndNode = Column(Integer)
+    depth = Column(Integer)
+    id = Column(Integer, nullable=False, primary_key=True)
+    idparent = Column(Integer)
+    madeDate = Column(DateTime)
 
 
-t_AA_ProjectClass_Ext = Table(
-    'AA_ProjectClass_Ext', metadata,
-    Column('ProjectClasscode_lev1', Unicode(40)),
-    Column('ProjectClassname_lev1', Unicode(200)),
-    Column('ProjectClasscode_lev2', Unicode(40)),
-    Column('ProjectClassname_lev2', Unicode(200)),
-    Column('ProjectClasscode_lev3', Unicode(40)),
-    Column('ProjectClassname_lev3', Unicode(200)),
-    Column('ProjectClasscode_lev4', Unicode(40)),
-    Column('ProjectClassname_lev4', Unicode(200)),
-    Column('ProjectClasscode_lev5', Unicode(40)),
-    Column('ProjectClassname_lev5', Unicode(200)),
-    Column('ProjectClasscode_lev6', Unicode(40)),
-    Column('ProjectClassname_lev6', Unicode(200)),
-    Column('ProjectClasscode_lev7', Unicode(40)),
-    Column('ProjectClassname_lev7', Unicode(200)),
-    Column('ProjectClasscode_lev8', Unicode(40)),
-    Column('ProjectClassname_lev8', Unicode(200)),
-    Column('ProjectClasscode_lev9', Unicode(40)),
-    Column('ProjectClassname_lev9', Unicode(200)),
-    Column('ProjectClasscode_lev10', Unicode(40)),
-    Column('ProjectClassname_lev10', Unicode(200)),
-    Column('ProjectClasscode_lev11', Unicode(40)),
-    Column('ProjectClassname_lev11', Unicode(200)),
-    Column('ProjectClasscode_lev12', Unicode(40)),
-    Column('ProjectClassname_lev12', Unicode(200)),
-    Column('ProjectClasscode_lev13', Unicode(40)),
-    Column('ProjectClassname_lev13', Unicode(200)),
-    Column('ProjectClasscode_lev14', Unicode(40)),
-    Column('ProjectClassname_lev14', Unicode(200)),
-    Column('ProjectClasscode_lev15', Unicode(40)),
-    Column('ProjectClassname_lev15', Unicode(200)),
-    Column('depth', Unicode(10)),
-    Column('ts', TIMESTAMP),
-    Column('id', Integer),
-    Column('ProjectClassid_lev1', Integer),
-    Column('ProjectClassid_lev10', Integer),
-    Column('ProjectClassid_lev11', Integer),
-    Column('ProjectClassid_lev12', Integer),
-    Column('ProjectClassid_lev13', Integer),
-    Column('ProjectClassid_lev14', Integer),
-    Column('ProjectClassid_lev15', Integer),
-    Column('ProjectClassid_lev2', Integer),
-    Column('ProjectClassid_lev3', Integer),
-    Column('ProjectClassid_lev4', Integer),
-    Column('ProjectClassid_lev5', Integer),
-    Column('ProjectClassid_lev6', Integer),
-    Column('ProjectClassid_lev7', Integer),
-    Column('ProjectClassid_lev8', Integer),
-    Column('ProjectClassid_lev9', Integer),
-    Column('createTime', DateTime, index=True)
-)
+class AAProjectClassExt(Base):
+    __tablename__ = 'AA_ProjectClass_Ext'
+
+    ProjectClasscode_lev1 = Column(Unicode(40))
+    ProjectClassname_lev1 = Column(Unicode(200))
+    ProjectClasscode_lev2 = Column(Unicode(40))
+    ProjectClassname_lev2 = Column(Unicode(200))
+    ProjectClasscode_lev3 = Column(Unicode(40))
+    ProjectClassname_lev3 = Column(Unicode(200))
+    ProjectClasscode_lev4 = Column(Unicode(40))
+    ProjectClassname_lev4 = Column(Unicode(200))
+    ProjectClasscode_lev5 = Column(Unicode(40))
+    ProjectClassname_lev5 = Column(Unicode(200))
+    ProjectClasscode_lev6 = Column(Unicode(40))
+    ProjectClassname_lev6 = Column(Unicode(200))
+    ProjectClasscode_lev7 = Column(Unicode(40))
+    ProjectClassname_lev7 = Column(Unicode(200))
+    ProjectClasscode_lev8 = Column(Unicode(40))
+    ProjectClassname_lev8 = Column(Unicode(200))
+    ProjectClasscode_lev9 = Column(Unicode(40))
+    ProjectClassname_lev9 = Column(Unicode(200))
+    ProjectClasscode_lev10 = Column(Unicode(40))
+    ProjectClassname_lev10 = Column(Unicode(200))
+    ProjectClasscode_lev11 = Column(Unicode(40))
+    ProjectClassname_lev11 = Column(Unicode(200))
+    ProjectClasscode_lev12 = Column(Unicode(40))
+    ProjectClassname_lev12 = Column(Unicode(200))
+    ProjectClasscode_lev13 = Column(Unicode(40))
+    ProjectClassname_lev13 = Column(Unicode(200))
+    ProjectClasscode_lev14 = Column(Unicode(40))
+    ProjectClassname_lev14 = Column(Unicode(200))
+    ProjectClasscode_lev15 = Column(Unicode(40))
+    ProjectClassname_lev15 = Column(Unicode(200))
+    depth = Column(Unicode(10))
+    ts = Column(TIMESTAMP)
+    id = Column(Integer, primary_key=True)
+    ProjectClassid_lev1 = Column(Integer)
+    ProjectClassid_lev10 = Column(Integer)
+    ProjectClassid_lev11 = Column(Integer)
+    ProjectClassid_lev12 = Column(Integer)
+    ProjectClassid_lev13 = Column(Integer)
+    ProjectClassid_lev14 = Column(Integer)
+    ProjectClassid_lev15 = Column(Integer)
+    ProjectClassid_lev2 = Column(Integer)
+    ProjectClassid_lev3 = Column(Integer)
+    ProjectClassid_lev4 = Column(Integer)
+    ProjectClassid_lev5 = Column(Integer)
+    ProjectClassid_lev6 = Column(Integer)
+    ProjectClassid_lev7 = Column(Integer)
+    ProjectClassid_lev8 = Column(Integer)
+    ProjectClassid_lev9 = Column(Integer)
+    createTime = Column(DateTime, index=True)
 
 
-t_AA_PurchasePriceSource = Table(
-    'AA_PurchasePriceSource', metadata,
-    Column('code', Unicode(32)),
-    Column('name', Unicode(200)),
-    Column('priorityLevel', Integer),
-    Column('isInUse', Integer),
-    Column('ts', TIMESTAMP),
-    Column('updatedBy', Unicode(32)),
-    Column('discount', Numeric(32, 15)),
-    Column('id', Integer, nullable=False),
-    Column('idpricestrategy', Integer),
-    Column('createdtime', DateTime),
-    Column('updated', DateTime)
-)
+class AAPurchasePriceSource(Base):
+    __tablename__ = 'AA_PurchasePriceSource'
+
+    code = Column(Unicode(32))
+    name = Column(Unicode(200))
+    priorityLevel = Column(Integer)
+    isInUse = Column(Integer)
+    ts = Column(TIMESTAMP)
+    updatedBy = Column(Unicode(32))
+    discount = Column(Numeric(32, 15))
+    id = Column(Integer, nullable=False, primary_key=True)
+    idpricestrategy = Column(Integer)
+    createdtime = Column(DateTime)
+    updated = Column(DateTime)
 
 
-t_AA_RDStyle = Table(
-    'AA_RDStyle', metadata,
-    Column('code', Unicode(32)),
-    Column('name', Unicode(200)),
-    Column('isEndNode', Integer),
-    Column('depth', Integer),
-    Column('disabled', Integer),
-    Column('ts', TIMESTAMP),
-    Column('updatedBy', Unicode(32)),
-    Column('inId', Unicode(560)),
-    Column('id', Integer, nullable=False),
-    Column('idparent', Integer),
-    Column('madeDate', DateTime),
-    Column('updated', DateTime),
-    Column('createdTime', DateTime)
-)
+class AARDStyle(Base):
+    __tablename__ = 'AA_RDStyle'
+
+    code = Column(Unicode(32))
+    name = Column(Unicode(200))
+    isEndNode = Column(Integer)
+    depth = Column(Integer)
+    disabled = Column(Integer)
+    ts = Column(TIMESTAMP)
+    updatedBy = Column(Unicode(32))
+    inId = Column(Unicode(560))
+    id = Column(Integer, nullable=False, primary_key=True)
+    idparent = Column(Integer)
+    madeDate = Column(DateTime)
+    updated = Column(DateTime)
+    createdTime = Column(DateTime)
 
 
-t_AA_RdStyle_Ext = Table(
-    'AA_RdStyle_Ext', metadata,
-    Column('RdStylecode_lev1', Unicode(32)),
-    Column('RdStylename_lev1', Unicode(200)),
-    Column('RdStylecode_lev2', Unicode(32)),
-    Column('RdStylename_lev2', Unicode(200)),
-    Column('RdStylecode_lev3', Unicode(32)),
-    Column('RdStylename_lev3', Unicode(200)),
-    Column('RdStylecode_lev4', Unicode(32)),
-    Column('RdStylename_lev4', Unicode(200)),
-    Column('RdStylecode_lev5', Unicode(32)),
-    Column('RdStylename_lev5', Unicode(200)),
-    Column('RdStylecode_lev6', Unicode(32)),
-    Column('RdStylename_lev6', Unicode(200)),
-    Column('RdStylecode_lev7', Unicode(32)),
-    Column('RdStylename_lev7', Unicode(200)),
-    Column('RdStylecode_lev8', Unicode(32)),
-    Column('RdStylename_lev8', Unicode(200)),
-    Column('RdStylecode_lev9', Unicode(32)),
-    Column('RdStylename_lev9', Unicode(200)),
-    Column('RdStylecode_lev10', Unicode(32)),
-    Column('RdStylename_lev10', Unicode(200)),
-    Column('RdStylecode_lev11', Unicode(32)),
-    Column('RdStylename_lev11', Unicode(200)),
-    Column('RdStylecode_lev12', Unicode(32)),
-    Column('RdStylename_lev12', Unicode(200)),
-    Column('RdStylecode_lev13', Unicode(32)),
-    Column('RdStylename_lev13', Unicode(200)),
-    Column('RdStylecode_lev14', Unicode(32)),
-    Column('RdStylename_lev14', Unicode(200)),
-    Column('RdStylecode_lev15', Unicode(32)),
-    Column('RdStylename_lev15', Unicode(200)),
-    Column('depth', Unicode(10)),
-    Column('ts', TIMESTAMP),
-    Column('RdStyleid_lev1', Integer),
-    Column('RdStyleid_lev10', Integer),
-    Column('RdStyleid_lev11', Integer),
-    Column('RdStyleid_lev12', Integer),
-    Column('RdStyleid_lev13', Integer),
-    Column('RdStyleid_lev14', Integer),
-    Column('RdStyleid_lev15', Integer),
-    Column('RdStyleid_lev2', Integer),
-    Column('RdStyleid_lev3', Integer),
-    Column('RdStyleid_lev4', Integer),
-    Column('RdStyleid_lev5', Integer),
-    Column('RdStyleid_lev6', Integer),
-    Column('RdStyleid_lev7', Integer),
-    Column('RdStyleid_lev8', Integer),
-    Column('RdStyleid_lev9', Integer),
-    Column('id', Integer),
-    Column('createTime', DateTime, index=True)
-)
+class AARdStyleExt(Base):
+    __tablename__ = 'AA_RdStyle_Ext'
+
+    RdStylecode_lev1 = Column(Unicode(32))
+    RdStylename_lev1 = Column(Unicode(200))
+    RdStylecode_lev2 = Column(Unicode(32))
+    RdStylename_lev2 = Column(Unicode(200))
+    RdStylecode_lev3 = Column(Unicode(32))
+    RdStylename_lev3 = Column(Unicode(200))
+    RdStylecode_lev4 = Column(Unicode(32))
+    RdStylename_lev4 = Column(Unicode(200))
+    RdStylecode_lev5 = Column(Unicode(32))
+    RdStylename_lev5 = Column(Unicode(200))
+    RdStylecode_lev6 = Column(Unicode(32))
+    RdStylename_lev6 = Column(Unicode(200))
+    RdStylecode_lev7 = Column(Unicode(32))
+    RdStylename_lev7 = Column(Unicode(200))
+    RdStylecode_lev8 = Column(Unicode(32))
+    RdStylename_lev8 = Column(Unicode(200))
+    RdStylecode_lev9 = Column(Unicode(32))
+    RdStylename_lev9 = Column(Unicode(200))
+    RdStylecode_lev10 = Column(Unicode(32))
+    RdStylename_lev10 = Column(Unicode(200))
+    RdStylecode_lev11 = Column(Unicode(32))
+    RdStylename_lev11 = Column(Unicode(200))
+    RdStylecode_lev12 = Column(Unicode(32))
+    RdStylename_lev12 = Column(Unicode(200))
+    RdStylecode_lev13 = Column(Unicode(32))
+    RdStylename_lev13 = Column(Unicode(200))
+    RdStylecode_lev14 = Column(Unicode(32))
+    RdStylename_lev14 = Column(Unicode(200))
+    RdStylecode_lev15 = Column(Unicode(32))
+    RdStylename_lev15 = Column(Unicode(200))
+    depth = Column(Unicode(10))
+    ts = Column(TIMESTAMP)
+    RdStyleid_lev1 = Column(Integer)
+    RdStyleid_lev10 = Column(Integer)
+    RdStyleid_lev11 = Column(Integer)
+    RdStyleid_lev12 = Column(Integer)
+    RdStyleid_lev13 = Column(Integer)
+    RdStyleid_lev14 = Column(Integer)
+    RdStyleid_lev15 = Column(Integer)
+    RdStyleid_lev2 = Column(Integer)
+    RdStyleid_lev3 = Column(Integer)
+    RdStyleid_lev4 = Column(Integer)
+    RdStyleid_lev5 = Column(Integer)
+    RdStyleid_lev6 = Column(Integer)
+    RdStyleid_lev7 = Column(Integer)
+    RdStyleid_lev8 = Column(Integer)
+    RdStyleid_lev9 = Column(Integer)
+    id = Column(Integer, primary_key=True)
+    createTime = Column(DateTime, index=True)
 
 
-t_AA_Routing = Table(
-    'AA_Routing', metadata,
-    Column('code', Unicode(30)),
-    Column('name', Unicode(50)),
-    Column('defaultrouting', Integer),
-    Column('disabled', Integer),
-    Column('sequencenumber', Integer),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updatedBy', Unicode(32)),
-    Column('priuserdefnvc1', Unicode(500)),
-    Column('priuserdefdecm1', Numeric(28, 14)),
-    Column('priuserdefnvc2', Unicode(500)),
-    Column('priuserdefdecm2', Numeric(28, 14)),
-    Column('priuserdefnvc3', Unicode(500)),
-    Column('priuserdefdecm3', Numeric(28, 14)),
-    Column('priuserdefnvc4', Unicode(500)),
-    Column('priuserdefdecm4', Numeric(28, 14)),
-    Column('priuserdefnvc5', Unicode(500)),
-    Column('priuserdefdecm5', Numeric(28, 14)),
-    Column('freeItem0', Unicode(300)),
-    Column('freeItem1', Unicode(300)),
-    Column('freeItem2', Unicode(300)),
-    Column('freeItem3', Unicode(300)),
-    Column('freeItem4', Unicode(300)),
-    Column('freeItem5', Unicode(300)),
-    Column('freeItem6', Unicode(300)),
-    Column('freeItem7', Unicode(300)),
-    Column('freeItem8', Unicode(300)),
-    Column('freeItem9', Unicode(300)),
-    Column('id', Integer, nullable=False),
-    Column('idworkshop', Integer),
-    Column('idinventory', Integer),
-    Column('idunit', Integer),
-    Column('idunit2', Integer),
-    Column('createdtime', DateTime),
-    Column('updated', DateTime)
-)
+class AARouting(Base):
+    __tablename__ = 'AA_Routing'
+
+    code = Column(Unicode(30))
+    name = Column(Unicode(50))
+    defaultrouting = Column(Integer)
+    disabled = Column(Integer)
+    sequencenumber = Column(Integer)
+    ts = Column(TIMESTAMP, nullable=False)
+    updatedBy = Column(Unicode(32))
+    priuserdefnvc1 = Column(Unicode(500))
+    priuserdefdecm1 = Column(Numeric(28, 14))
+    priuserdefnvc2 = Column(Unicode(500))
+    priuserdefdecm2 = Column(Numeric(28, 14))
+    priuserdefnvc3 = Column(Unicode(500))
+    priuserdefdecm3 = Column(Numeric(28, 14))
+    priuserdefnvc4 = Column(Unicode(500))
+    priuserdefdecm4 = Column(Numeric(28, 14))
+    priuserdefnvc5 = Column(Unicode(500))
+    priuserdefdecm5 = Column(Numeric(28, 14))
+    freeItem0 = Column(Unicode(300))
+    freeItem1 = Column(Unicode(300))
+    freeItem2 = Column(Unicode(300))
+    freeItem3 = Column(Unicode(300))
+    freeItem4 = Column(Unicode(300))
+    freeItem5 = Column(Unicode(300))
+    freeItem6 = Column(Unicode(300))
+    freeItem7 = Column(Unicode(300))
+    freeItem8 = Column(Unicode(300))
+    freeItem9 = Column(Unicode(300))
+    id = Column(Integer, nullable=False, primary_key=True)
+    idworkshop = Column(Integer)
+    idinventory = Column(Integer)
+    idunit = Column(Integer)
+    idunit2 = Column(Integer)
+    createdtime = Column(DateTime)
+    updated = Column(DateTime)
 
 
-t_AA_Routing_b = Table(
-    'AA_Routing_b', metadata,
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('jobsequence', Integer),
-    Column('workprice', Numeric(28, 14)),
-    Column('timesheet', Numeric(28, 14)),
-    Column('salary', Numeric(28, 14)),
-    Column('rateofexchange', Numeric(28, 14)),
-    Column('completepercentage', Numeric(28, 14)),
-    Column('qualifiedrate', Numeric(28, 14)),
-    Column('sequencenumber', Integer),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updatedBy', Unicode(32)),
-    Column('priuserdefnvc1', Unicode(500)),
-    Column('priuserdefdecm1', Numeric(28, 14)),
-    Column('priuserdefnvc2', Unicode(500)),
-    Column('priuserdefdecm2', Numeric(28, 14)),
-    Column('priuserdefnvc3', Unicode(500)),
-    Column('priuserdefdecm3', Numeric(28, 14)),
-    Column('priuserdefnvc4', Unicode(500)),
-    Column('priuserdefdecm4', Numeric(28, 14)),
-    Column('priuserdefnvc5', Unicode(500)),
-    Column('priuserdefdecm5', Numeric(28, 14)),
-    Column('idworkshop', Integer),
-    Column('idproductprocess', Integer),
-    Column('idRoutingDTO', Integer),
-    Column('id', Integer, nullable=False),
-    Column('salarycalculatemethod', Integer),
-    Column('timesheetunit', Integer),
-    Column('createdtime', DateTime),
-    Column('updated', DateTime)
-)
+class AARoutingB(Base):
+    __tablename__ = 'AA_Routing_b'
+
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    jobsequence = Column(Integer)
+    workprice = Column(Numeric(28, 14))
+    timesheet = Column(Numeric(28, 14))
+    salary = Column(Numeric(28, 14))
+    rateofexchange = Column(Numeric(28, 14))
+    completepercentage = Column(Numeric(28, 14))
+    qualifiedrate = Column(Numeric(28, 14))
+    sequencenumber = Column(Integer)
+    ts = Column(TIMESTAMP, nullable=False)
+    updatedBy = Column(Unicode(32))
+    priuserdefnvc1 = Column(Unicode(500))
+    priuserdefdecm1 = Column(Numeric(28, 14))
+    priuserdefnvc2 = Column(Unicode(500))
+    priuserdefdecm2 = Column(Numeric(28, 14))
+    priuserdefnvc3 = Column(Unicode(500))
+    priuserdefdecm3 = Column(Numeric(28, 14))
+    priuserdefnvc4 = Column(Unicode(500))
+    priuserdefdecm4 = Column(Numeric(28, 14))
+    priuserdefnvc5 = Column(Unicode(500))
+    priuserdefdecm5 = Column(Numeric(28, 14))
+    idworkshop = Column(Integer)
+    idproductprocess = Column(Integer)
+    idRoutingDTO = Column(Integer)
+    id = Column(Integer, nullable=False, primary_key=True)
+    salarycalculatemethod = Column(Integer)
+    timesheetunit = Column(Integer)
+    createdtime = Column(DateTime)
+    updated = Column(DateTime)
 
 
-t_AA_SalePriceSource = Table(
-    'AA_SalePriceSource', metadata,
-    Column('code', Unicode(32)),
-    Column('name', Unicode(200)),
-    Column('priorityLevel', Integer),
-    Column('isInUse', Integer),
-    Column('ts', TIMESTAMP),
-    Column('updatedBy', Unicode(32)),
-    Column('discount', Numeric(32, 15)),
-    Column('ID', Integer, nullable=False),
-    Column('idpricestrategy', Integer),
-    Column('createdtime', DateTime),
-    Column('updated', DateTime)
-)
+class AASalePriceSource(Base):
+    __tablename__ = 'AA_SalePriceSource'
+
+    code = Column(Unicode(32))
+    name = Column(Unicode(200))
+    priorityLevel = Column(Integer)
+    isInUse = Column(Integer)
+    ts = Column(TIMESTAMP)
+    updatedBy = Column(Unicode(32))
+    discount = Column(Numeric(32, 15))
+    ID = Column(Integer, nullable=False, primary_key=True)
+    idpricestrategy = Column(Integer)
+    createdtime = Column(DateTime)
+    updated = Column(DateTime)
 
 
-t_AA_SettleStyle = Table(
-    'AA_SettleStyle', metadata,
-    Column('code', Unicode(32)),
-    Column('name', Unicode(200)),
-    Column('disabled', Integer),
-    Column('ts', TIMESTAMP),
-    Column('updatedBy', Unicode(32)),
-    Column('chequeManagement', Integer),
-    Column('VirtualPay', Integer),
-    Column('id', Integer, nullable=False),
-    Column('idbankaccount', Integer),
-    Column('madeDate', DateTime),
-    Column('updated', DateTime),
-    Column('createdTime', DateTime)
-)
+class AASettleStyle(Base):
+    __tablename__ = 'AA_SettleStyle'
+
+    code = Column(Unicode(32))
+    name = Column(Unicode(200))
+    disabled = Column(Integer)
+    ts = Column(TIMESTAMP)
+    updatedBy = Column(Unicode(32))
+    chequeManagement = Column(Integer)
+    VirtualPay = Column(Integer)
+    id = Column(Integer, nullable=False, primary_key=True)
+    idbankaccount = Column(Integer)
+    madeDate = Column(DateTime)
+    updated = Column(DateTime)
+    createdTime = Column(DateTime)
 
 
-t_AA_StoreInventoryPrice = Table(
-    'AA_StoreInventoryPrice', metadata,
-    Column('code', Unicode(32)),
-    Column('name', Unicode(200)),
-    Column('MemberPrice', Numeric(32, 15)),
-    Column('retailPriceNew', Numeric(32, 15)),
-    Column('ts', TIMESTAMP),
-    Column('updatedBy', Unicode(32)),
-    Column('StoreRetailPriceFormula', Unicode(1000)),
-    Column('StoreRetailPrice', Unicode(1000)),
-    Column('StoreMemberPrice', Unicode(1000)),
-    Column('StoreMemberPriceFormula', Unicode(1000)),
-    Column('PriceKey', Unicode(36)),
-    Column('SearchFlag', Integer),
-    Column('InvBarCode', Unicode(1000)),
-    Column('idstore', Integer),
-    Column('idinventory', Integer),
-    Column('id', Integer, nullable=False),
-    Column('idunit', Integer),
-    Column('dimension', Integer),
-    Column('iddepartment', Integer),
-    Column('iddistrict', Integer),
-    Column('StoreType', Integer),
-    Column('updated', DateTime),
-    Column('createdtime', DateTime)
-)
+class AAStoreInventoryPrice(Base):
+    __tablename__ = 'AA_StoreInventoryPrice'
+
+    code = Column(Unicode(32))
+    name = Column(Unicode(200))
+    MemberPrice = Column(Numeric(32, 15))
+    retailPriceNew = Column(Numeric(32, 15))
+    ts = Column(TIMESTAMP)
+    updatedBy = Column(Unicode(32))
+    StoreRetailPriceFormula = Column(Unicode(1000))
+    StoreRetailPrice = Column(Unicode(1000))
+    StoreMemberPrice = Column(Unicode(1000))
+    StoreMemberPriceFormula = Column(Unicode(1000))
+    PriceKey = Column(Unicode(36))
+    SearchFlag = Column(Integer)
+    InvBarCode = Column(Unicode(1000))
+    idstore = Column(Integer)
+    idinventory = Column(Integer)
+    id = Column(Integer, nullable=False, primary_key=True)
+    idunit = Column(Integer)
+    dimension = Column(Integer)
+    iddepartment = Column(Integer)
+    iddistrict = Column(Integer)
+    StoreType = Column(Integer)
+    updated = Column(DateTime)
+    createdtime = Column(DateTime)
 
 
-t_AA_Suite = Table(
-    'AA_Suite', metadata,
-    Column('code', Unicode(32)),
-    Column('name', Unicode(200)),
-    Column('produceQuantity', Numeric(28, 14)),
-    Column('disabled', Integer),
-    Column('producequantity2', Numeric(28, 14)),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updatedBy', Unicode(32)),
-    Column('rateofexchange', Numeric(28, 14)),
-    Column('priuserdefdecm1', Numeric(28, 14)),
-    Column('priuserdefdecm2', Numeric(28, 14)),
-    Column('priuserdefdecm3', Numeric(28, 14)),
-    Column('priuserdefdecm4', Numeric(28, 14)),
-    Column('priuserdefdecm5', Numeric(28, 14)),
-    Column('priuserdefdecm6', Numeric(28, 14)),
-    Column('priuserdefnvc1', Unicode(500)),
-    Column('priuserdefnvc2', Unicode(500)),
-    Column('priuserdefnvc3', Unicode(500)),
-    Column('priuserdefnvc4', Unicode(500)),
-    Column('priuserdefnvc5', Unicode(500)),
-    Column('priuserdefnvc6', Unicode(500)),
-    Column('pubuserdefdecm1', Numeric(28, 14)),
-    Column('pubuserdefdecm2', Numeric(28, 14)),
-    Column('pubuserdefdecm3', Numeric(28, 14)),
-    Column('pubuserdefdecm4', Numeric(28, 14)),
-    Column('pubuserdefdecm5', Numeric(28, 14)),
-    Column('pubuserdefdecm6', Numeric(28, 14)),
-    Column('pubuserdefnvc1', Unicode(500)),
-    Column('pubuserdefnvc2', Unicode(500)),
-    Column('pubuserdefnvc3', Unicode(500)),
-    Column('pubuserdefnvc4', Unicode(500)),
-    Column('pubuserdefnvc5', Unicode(500)),
-    Column('pubuserdefnvc6', Unicode(500)),
-    Column('idinventory', Integer),
-    Column('id', Integer, nullable=False),
-    Column('idunit', Integer),
-    Column('idunit2', Integer),
-    Column('updated', DateTime),
-    Column('madeDate', DateTime),
-    Column('createdtime', DateTime)
-)
+class AASuite(Base):
+    __tablename__ = 'AA_Suite'
+
+    code = Column(Unicode(32))
+    name = Column(Unicode(200))
+    produceQuantity = Column(Numeric(28, 14))
+    disabled = Column(Integer)
+    producequantity2 = Column(Numeric(28, 14))
+    ts = Column(TIMESTAMP, nullable=False)
+    updatedBy = Column(Unicode(32))
+    rateofexchange = Column(Numeric(28, 14))
+    priuserdefdecm1 = Column(Numeric(28, 14))
+    priuserdefdecm2 = Column(Numeric(28, 14))
+    priuserdefdecm3 = Column(Numeric(28, 14))
+    priuserdefdecm4 = Column(Numeric(28, 14))
+    priuserdefdecm5 = Column(Numeric(28, 14))
+    priuserdefdecm6 = Column(Numeric(28, 14))
+    priuserdefnvc1 = Column(Unicode(500))
+    priuserdefnvc2 = Column(Unicode(500))
+    priuserdefnvc3 = Column(Unicode(500))
+    priuserdefnvc4 = Column(Unicode(500))
+    priuserdefnvc5 = Column(Unicode(500))
+    priuserdefnvc6 = Column(Unicode(500))
+    pubuserdefdecm1 = Column(Numeric(28, 14))
+    pubuserdefdecm2 = Column(Numeric(28, 14))
+    pubuserdefdecm3 = Column(Numeric(28, 14))
+    pubuserdefdecm4 = Column(Numeric(28, 14))
+    pubuserdefdecm5 = Column(Numeric(28, 14))
+    pubuserdefdecm6 = Column(Numeric(28, 14))
+    pubuserdefnvc1 = Column(Unicode(500))
+    pubuserdefnvc2 = Column(Unicode(500))
+    pubuserdefnvc3 = Column(Unicode(500))
+    pubuserdefnvc4 = Column(Unicode(500))
+    pubuserdefnvc5 = Column(Unicode(500))
+    pubuserdefnvc6 = Column(Unicode(500))
+    idinventory = Column(Integer)
+    id = Column(Integer, nullable=False, primary_key=True)
+    idunit = Column(Integer)
+    idunit2 = Column(Integer)
+    updated = Column(DateTime)
+    madeDate = Column(DateTime)
+    createdtime = Column(DateTime)
 
 
-t_AA_SuiteChild = Table(
-    'AA_SuiteChild', metadata,
-    Column('code', Unicode(32)),
-    Column('name', Unicode(200)),
-    Column('produceQuantity', Numeric(28, 14)),
-    Column('rationQuantity', Numeric(28, 14)),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('requiredquantity', Numeric(28, 14)),
-    Column('rateofexchange', Numeric(28, 14)),
-    Column('requiredquantity2', Numeric(28, 14)),
-    Column('updatedBy', Unicode(32)),
-    Column('BatchNumber', Unicode(100)),
-    Column('failDate', DateTime),
-    Column('freeItem0', Unicode(300)),
-    Column('freeItem1', Unicode(300)),
-    Column('freeItem2', Unicode(300)),
-    Column('freeItem3', Unicode(300)),
-    Column('freeItem4', Unicode(300)),
-    Column('freeItem5', Unicode(300)),
-    Column('freeItem6', Unicode(300)),
-    Column('freeItem7', Unicode(300)),
-    Column('freeItem8', Unicode(300)),
-    Column('freeItem9', Unicode(300)),
-    Column('memo', Unicode(200)),
-    Column('priuserdefdecm1', Numeric(28, 14)),
-    Column('priuserdefdecm2', Numeric(28, 14)),
-    Column('priuserdefdecm3', Numeric(28, 14)),
-    Column('priuserdefdecm4', Numeric(28, 14)),
-    Column('priuserdefnvc1', Unicode(500)),
-    Column('priuserdefnvc2', Unicode(500)),
-    Column('priuserdefnvc3', Unicode(500)),
-    Column('priuserdefnvc4', Unicode(500)),
-    Column('pubuserdefdecm1', Numeric(28, 14)),
-    Column('pubuserdefdecm2', Numeric(28, 14)),
-    Column('pubuserdefdecm3', Numeric(28, 14)),
-    Column('pubuserdefdecm4', Numeric(28, 14)),
-    Column('pubuserdefnvc1', Unicode(500)),
-    Column('pubuserdefnvc2', Unicode(500)),
-    Column('pubuserdefnvc3', Unicode(500)),
-    Column('pubuserdefnvc4', Unicode(500)),
-    Column('idinventory', Integer),
-    Column('idbom', Integer),
-    Column('id', Integer, nullable=False),
-    Column('idunit', Integer),
-    Column('idunit2', Integer),
-    Column('madeDate', DateTime),
-    Column('updated', DateTime),
-    Column('createdtime', DateTime)
-)
+class AASuiteChild(Base):
+    __tablename__ = 'AA_SuiteChild'
+
+    code = Column(Unicode(32))
+    name = Column(Unicode(200))
+    produceQuantity = Column(Numeric(28, 14))
+    rationQuantity = Column(Numeric(28, 14))
+    ts = Column(TIMESTAMP, nullable=False)
+    requiredquantity = Column(Numeric(28, 14))
+    rateofexchange = Column(Numeric(28, 14))
+    requiredquantity2 = Column(Numeric(28, 14))
+    updatedBy = Column(Unicode(32))
+    BatchNumber = Column(Unicode(100))
+    failDate = Column(DateTime)
+    freeItem0 = Column(Unicode(300))
+    freeItem1 = Column(Unicode(300))
+    freeItem2 = Column(Unicode(300))
+    freeItem3 = Column(Unicode(300))
+    freeItem4 = Column(Unicode(300))
+    freeItem5 = Column(Unicode(300))
+    freeItem6 = Column(Unicode(300))
+    freeItem7 = Column(Unicode(300))
+    freeItem8 = Column(Unicode(300))
+    freeItem9 = Column(Unicode(300))
+    memo = Column(Unicode(200))
+    priuserdefdecm1 = Column(Numeric(28, 14))
+    priuserdefdecm2 = Column(Numeric(28, 14))
+    priuserdefdecm3 = Column(Numeric(28, 14))
+    priuserdefdecm4 = Column(Numeric(28, 14))
+    priuserdefnvc1 = Column(Unicode(500))
+    priuserdefnvc2 = Column(Unicode(500))
+    priuserdefnvc3 = Column(Unicode(500))
+    priuserdefnvc4 = Column(Unicode(500))
+    pubuserdefdecm1 = Column(Numeric(28, 14))
+    pubuserdefdecm2 = Column(Numeric(28, 14))
+    pubuserdefdecm3 = Column(Numeric(28, 14))
+    pubuserdefdecm4 = Column(Numeric(28, 14))
+    pubuserdefnvc1 = Column(Unicode(500))
+    pubuserdefnvc2 = Column(Unicode(500))
+    pubuserdefnvc3 = Column(Unicode(500))
+    pubuserdefnvc4 = Column(Unicode(500))
+    idinventory = Column(Integer)
+    idbom = Column(Integer)
+    id = Column(Integer, nullable=False, primary_key=True)
+    idunit = Column(Integer)
+    idunit2 = Column(Integer)
+    madeDate = Column(DateTime)
+    updated = Column(DateTime)
+    createdtime = Column(DateTime)
 
 
 class AATicketType(Base):
@@ -3690,18 +3667,18 @@ class AAUnit(Base):
     createdTime = Column(DateTime)
 
 
-t_AA_UnitGroup = Table(
-    'AA_UnitGroup', metadata,
-    Column('code', Unicode(50)),
-    Column('name', Unicode(200)),
-    Column('disabled', Integer),
-    Column('ts', TIMESTAMP),
-    Column('updatedBy', Unicode(32)),
-    Column('id', Integer, nullable=False),
-    Column('madeDate', DateTime),
-    Column('updated', DateTime),
-    Column('createdTime', DateTime)
-)
+class AAUnitGroup(Base):
+    __tablename__ = 'AA_UnitGroup'
+
+    code = Column(Unicode(50))
+    name = Column(Unicode(200))
+    disabled = Column(Integer)
+    ts = Column(TIMESTAMP)
+    updatedBy = Column(Unicode(32))
+    id = Column(Integer, nullable=False, primary_key=True)
+    madeDate = Column(DateTime)
+    updated = Column(DateTime)
+    createdTime = Column(DateTime)
 
 
 class AAUseStatus(Base):
@@ -3723,481 +3700,481 @@ class AAUseStatus(Base):
     idparent = Column(Integer)
 
 
-t_AA_UseStatus_Ext = Table(
-    'AA_UseStatus_Ext', metadata,
-    Column('useStatuscode_lev1', Unicode(40)),
-    Column('useStatusname_lev1', Unicode(100)),
-    Column('useStatuscode_lev2', Unicode(40)),
-    Column('useStatusname_lev2', Unicode(100)),
-    Column('useStatuscode_lev3', Unicode(40)),
-    Column('useStatusname_lev3', Unicode(100)),
-    Column('useStatuscode_lev4', Unicode(40)),
-    Column('useStatusname_lev4', Unicode(100)),
-    Column('useStatuscode_lev5', Unicode(40)),
-    Column('useStatusname_lev5', Unicode(100)),
-    Column('useStatuscode_lev6', Unicode(40)),
-    Column('useStatusname_lev6', Unicode(100)),
-    Column('useStatuscode_lev7', Unicode(40)),
-    Column('useStatusname_lev7', Unicode(100)),
-    Column('useStatuscode_lev8', Unicode(40)),
-    Column('useStatusname_lev8', Unicode(100)),
-    Column('useStatuscode_lev9', Unicode(40)),
-    Column('useStatusname_lev9', Unicode(100)),
-    Column('useStatuscode_lev10', Unicode(40)),
-    Column('useStatusname_lev10', Unicode(100)),
-    Column('useStatuscode_lev11', Unicode(40)),
-    Column('useStatusname_lev11', Unicode(100)),
-    Column('useStatuscode_lev12', Unicode(40)),
-    Column('useStatusname_lev12', Unicode(100)),
-    Column('useStatuscode_lev13', Unicode(40)),
-    Column('useStatusname_lev13', Unicode(100)),
-    Column('useStatuscode_lev14', Unicode(40)),
-    Column('useStatusname_lev14', Unicode(100)),
-    Column('useStatuscode_lev15', Unicode(40)),
-    Column('useStatusname_lev15', Unicode(100)),
-    Column('depth', Unicode(10)),
-    Column('createTime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('ts', TIMESTAMP),
-    Column('id', Integer),
-    Column('useStatusid_lev1', Integer),
-    Column('useStatusid_lev10', Integer),
-    Column('useStatusid_lev11', Integer),
-    Column('useStatusid_lev12', Integer),
-    Column('useStatusid_lev13', Integer),
-    Column('useStatusid_lev14', Integer),
-    Column('useStatusid_lev15', Integer),
-    Column('useStatusid_lev2', Integer),
-    Column('useStatusid_lev3', Integer),
-    Column('useStatusid_lev4', Integer),
-    Column('useStatusid_lev5', Integer),
-    Column('useStatusid_lev6', Integer),
-    Column('useStatusid_lev7', Integer),
-    Column('useStatusid_lev8', Integer),
-    Column('useStatusid_lev9', Integer)
-)
+class AAUseStatusExt(Base):
+    __tablename__ = 'AA_UseStatus_Ext'
+
+    useStatuscode_lev1 = Column(Unicode(40))
+    useStatusname_lev1 = Column(Unicode(100))
+    useStatuscode_lev2 = Column(Unicode(40))
+    useStatusname_lev2 = Column(Unicode(100))
+    useStatuscode_lev3 = Column(Unicode(40))
+    useStatusname_lev3 = Column(Unicode(100))
+    useStatuscode_lev4 = Column(Unicode(40))
+    useStatusname_lev4 = Column(Unicode(100))
+    useStatuscode_lev5 = Column(Unicode(40))
+    useStatusname_lev5 = Column(Unicode(100))
+    useStatuscode_lev6 = Column(Unicode(40))
+    useStatusname_lev6 = Column(Unicode(100))
+    useStatuscode_lev7 = Column(Unicode(40))
+    useStatusname_lev7 = Column(Unicode(100))
+    useStatuscode_lev8 = Column(Unicode(40))
+    useStatusname_lev8 = Column(Unicode(100))
+    useStatuscode_lev9 = Column(Unicode(40))
+    useStatusname_lev9 = Column(Unicode(100))
+    useStatuscode_lev10 = Column(Unicode(40))
+    useStatusname_lev10 = Column(Unicode(100))
+    useStatuscode_lev11 = Column(Unicode(40))
+    useStatusname_lev11 = Column(Unicode(100))
+    useStatuscode_lev12 = Column(Unicode(40))
+    useStatusname_lev12 = Column(Unicode(100))
+    useStatuscode_lev13 = Column(Unicode(40))
+    useStatusname_lev13 = Column(Unicode(100))
+    useStatuscode_lev14 = Column(Unicode(40))
+    useStatusname_lev14 = Column(Unicode(100))
+    useStatuscode_lev15 = Column(Unicode(40))
+    useStatusname_lev15 = Column(Unicode(100))
+    depth = Column(Unicode(10))
+    createTime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    ts = Column(TIMESTAMP)
+    id = Column(Integer, primary_key=True)
+    useStatusid_lev1 = Column(Integer)
+    useStatusid_lev10 = Column(Integer)
+    useStatusid_lev11 = Column(Integer)
+    useStatusid_lev12 = Column(Integer)
+    useStatusid_lev13 = Column(Integer)
+    useStatusid_lev14 = Column(Integer)
+    useStatusid_lev15 = Column(Integer)
+    useStatusid_lev2 = Column(Integer)
+    useStatusid_lev3 = Column(Integer)
+    useStatusid_lev4 = Column(Integer)
+    useStatusid_lev5 = Column(Integer)
+    useStatusid_lev6 = Column(Integer)
+    useStatusid_lev7 = Column(Integer)
+    useStatusid_lev8 = Column(Integer)
+    useStatusid_lev9 = Column(Integer)
 
 
-t_AA_VendorInventoryPrice = Table(
-    'AA_VendorInventoryPrice', metadata,
-    Column('code', Unicode(32)),
-    Column('name', Unicode(200)),
-    Column('agreementPrice', Unicode(1000)),
-    Column('highestPrice', Unicode(1000)),
-    Column('ts', TIMESTAMP),
-    Column('updatedBy', Unicode(32)),
-    Column('EffectiveStartDate', DateTime),
-    Column('EffectiveEndDate', DateTime),
-    Column('agreementDiscount', Numeric(28, 14)),
-    Column('transactionPrice', Unicode(1000)),
-    Column('discount', Numeric(28, 14)),
-    Column('highestPriceFormula', Unicode(1000)),
-    Column('PriceKey', Unicode(34)),
-    Column('InvBarCode', Unicode(128)),
-    Column('idinventory', Integer),
-    Column('idInventoryPrice', Integer),
-    Column('idvendor', Integer),
-    Column('idunit', Integer),
-    Column('id', Integer, nullable=False),
-    Column('idpricetrace', Integer),
-    Column('createdtime', DateTime),
-    Column('updated', DateTime)
-)
+class AAVendorInventoryPrice(Base):
+    __tablename__ = 'AA_VendorInventoryPrice'
+
+    code = Column(Unicode(32))
+    name = Column(Unicode(200))
+    agreementPrice = Column(Unicode(1000))
+    highestPrice = Column(Unicode(1000))
+    ts = Column(TIMESTAMP)
+    updatedBy = Column(Unicode(32))
+    EffectiveStartDate = Column(DateTime)
+    EffectiveEndDate = Column(DateTime)
+    agreementDiscount = Column(Numeric(28, 14))
+    transactionPrice = Column(Unicode(1000))
+    discount = Column(Numeric(28, 14))
+    highestPriceFormula = Column(Unicode(1000))
+    PriceKey = Column(Unicode(34))
+    InvBarCode = Column(Unicode(128))
+    idinventory = Column(Integer)
+    idInventoryPrice = Column(Integer)
+    idvendor = Column(Integer)
+    idunit = Column(Integer)
+    id = Column(Integer, nullable=False, primary_key=True)
+    idpricetrace = Column(Integer)
+    createdtime = Column(DateTime)
+    updated = Column(DateTime)
 
 
-t_AA_VendorInventoryPriceDetail = Table(
-    'AA_VendorInventoryPriceDetail', metadata,
-    Column('Code', Unicode(32)),
-    Column('Name', Unicode(200)),
-    Column('AgreementPrice', Unicode(1000)),
-    Column('AgreementPriceFormula', Unicode(1000)),
-    Column('AgreementDiscount', Numeric(28, 14)),
-    Column('TransactionPrice', Unicode(1000)),
-    Column('TransactionPriceFormula', Unicode(1000)),
-    Column('EffectiveStartDate', DateTime),
-    Column('EffectiveEndDate', DateTime),
-    Column('CreatedTime', DateTime),
-    Column('Updated', DateTime),
-    Column('UpdatedBy', Unicode(32)),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('Id', Integer, nullable=False),
-    Column('IdVendorInventoryPrice', Integer, nullable=False, server_default=text("((0))"))
-)
+class AAVendorInventoryPriceDetail(Base):
+    __tablename__ = 'AA_VendorInventoryPriceDetail'
+
+    Code = Column(Unicode(32))
+    Name = Column(Unicode(200))
+    AgreementPrice = Column(Unicode(1000))
+    AgreementPriceFormula = Column(Unicode(1000))
+    AgreementDiscount = Column(Numeric(28, 14))
+    TransactionPrice = Column(Unicode(1000))
+    TransactionPriceFormula = Column(Unicode(1000))
+    EffectiveStartDate = Column(DateTime)
+    EffectiveEndDate = Column(DateTime)
+    CreatedTime = Column(DateTime)
+    Updated = Column(DateTime)
+    UpdatedBy = Column(Unicode(32))
+    ts = Column(TIMESTAMP, nullable=False)
+    Id = Column(Integer, nullable=False, primary_key=True)
+    IdVendorInventoryPrice = Column(Integer, nullable=False, server_default=text("((0))"))
 
 
-t_AA_VendorInventoryPriceTrace = Table(
-    'AA_VendorInventoryPriceTrace', metadata,
-    Column('code', Unicode(32)),
-    Column('name', Unicode(200)),
-    Column('lastPrice', Numeric(32, 15)),
-    Column('discount', Numeric(32, 15)),
-    Column('unitprice', Numeric(32, 15)),
-    Column('unittaxprice', Numeric(32, 15)),
-    Column('ts', TIMESTAMP),
-    Column('updatedBy', Unicode(32)),
-    Column('id', Integer, nullable=False),
-    Column('idinventory', Integer, nullable=False, server_default=text("((0))")),
-    Column('idvendor', Integer, nullable=False, server_default=text("((0))")),
-    Column('idunit', Integer, nullable=False, server_default=text("((0))")),
-    Column('createdtime', DateTime),
-    Column('updated', DateTime)
-)
+class AAVendorInventoryPriceTrace(Base):
+    __tablename__ = 'AA_VendorInventoryPriceTrace'
+
+    code = Column(Unicode(32))
+    name = Column(Unicode(200))
+    lastPrice = Column(Numeric(32, 15))
+    discount = Column(Numeric(32, 15))
+    unitprice = Column(Numeric(32, 15))
+    unittaxprice = Column(Numeric(32, 15))
+    ts = Column(TIMESTAMP)
+    updatedBy = Column(Unicode(32))
+    id = Column(Integer, nullable=False, primary_key=True)
+    idinventory = Column(Integer, nullable=False, server_default=text("((0))"))
+    idvendor = Column(Integer, nullable=False, server_default=text("((0))"))
+    idunit = Column(Integer, nullable=False, server_default=text("((0))"))
+    createdtime = Column(DateTime)
+    updated = Column(DateTime)
 
 
-t_AA_Warehouse = Table(
-    'AA_Warehouse', metadata,
-    Column('code', Unicode(32)),
-    Column('name', Unicode(200)),
-    Column('address', Unicode(200)),
-    Column('hasPosition', Integer),
-    Column('memo', Unicode(50)),
-    Column('disabled', Integer),
-    Column('ts', TIMESTAMP),
-    Column('updatedBy', Unicode(32)),
-    Column('priuserdefnvc1', Unicode(500)),
-    Column('priuserdefdecm1', Numeric(28, 14)),
-    Column('priuserdefnvc2', Unicode(500)),
-    Column('priuserdefdecm2', Numeric(28, 14)),
-    Column('priuserdefnvc3', Unicode(500)),
-    Column('priuserdefdecm3', Numeric(28, 14)),
-    Column('priuserdefnvc4', Unicode(500)),
-    Column('priuserdefdecm4', Numeric(28, 14)),
-    Column('priuserdefnvc5', Unicode(500)),
-    Column('priuserdefdecm5', Numeric(28, 14)),
-    Column('involveatp', Integer),
-    Column('floorstocks', Integer),
-    Column('shorthand', Unicode(50)),
-    Column('idMarketingOrgan', Integer),
-    Column('idadmin', Integer),
-    Column('id', Integer, nullable=False),
-    Column('DistributionWay', Integer),
-    Column('madeDate', DateTime),
-    Column('updated', DateTime),
-    Column('createdTime', DateTime)
-)
+class AAWarehouse(Base):
+    __tablename__ = 'AA_Warehouse'
+
+    code = Column(Unicode(32))
+    name = Column(Unicode(200))
+    address = Column(Unicode(200))
+    hasPosition = Column(Integer)
+    memo = Column(Unicode(50))
+    disabled = Column(Integer)
+    ts = Column(TIMESTAMP)
+    updatedBy = Column(Unicode(32))
+    priuserdefnvc1 = Column(Unicode(500))
+    priuserdefdecm1 = Column(Numeric(28, 14))
+    priuserdefnvc2 = Column(Unicode(500))
+    priuserdefdecm2 = Column(Numeric(28, 14))
+    priuserdefnvc3 = Column(Unicode(500))
+    priuserdefdecm3 = Column(Numeric(28, 14))
+    priuserdefnvc4 = Column(Unicode(500))
+    priuserdefdecm4 = Column(Numeric(28, 14))
+    priuserdefnvc5 = Column(Unicode(500))
+    priuserdefdecm5 = Column(Numeric(28, 14))
+    involveatp = Column(Integer)
+    floorstocks = Column(Integer)
+    shorthand = Column(Unicode(50))
+    idMarketingOrgan = Column(Integer)
+    idadmin = Column(Integer)
+    id = Column(Integer, nullable=False, primary_key=True)
+    DistributionWay = Column(Integer)
+    madeDate = Column(DateTime)
+    updated = Column(DateTime)
+    createdTime = Column(DateTime)
 
 
-t_AA_district_Ext = Table(
-    'AA_district_Ext', metadata,
-    Column('districtcode_lev1', Unicode(32)),
-    Column('districtname_lev1', Unicode(200)),
-    Column('districtcode_lev2', Unicode(32)),
-    Column('districtname_lev2', Unicode(200)),
-    Column('districtcode_lev3', Unicode(32)),
-    Column('districtname_lev3', Unicode(200)),
-    Column('districtcode_lev4', Unicode(32)),
-    Column('districtname_lev4', Unicode(200)),
-    Column('districtcode_lev5', Unicode(32)),
-    Column('districtname_lev5', Unicode(200)),
-    Column('districtcode_lev6', Unicode(32)),
-    Column('districtname_lev6', Unicode(200)),
-    Column('districtcode_lev7', Unicode(32)),
-    Column('districtname_lev7', Unicode(200)),
-    Column('districtcode_lev8', Unicode(32)),
-    Column('districtname_lev8', Unicode(200)),
-    Column('districtcode_lev9', Unicode(32)),
-    Column('districtname_lev9', Unicode(200)),
-    Column('districtcode_lev10', Unicode(32)),
-    Column('districtname_lev10', Unicode(200)),
-    Column('districtcode_lev11', Unicode(32)),
-    Column('districtname_lev11', Unicode(200)),
-    Column('districtcode_lev12', Unicode(32)),
-    Column('districtname_lev12', Unicode(200)),
-    Column('districtcode_lev13', Unicode(32)),
-    Column('districtname_lev13', Unicode(200)),
-    Column('districtcode_lev14', Unicode(32)),
-    Column('districtname_lev14', Unicode(200)),
-    Column('districtcode_lev15', Unicode(32)),
-    Column('districtname_lev15', Unicode(200)),
-    Column('depth', Unicode(10)),
-    Column('ts', TIMESTAMP),
-    Column('id', Integer),
-    Column('districtid_lev1', Integer),
-    Column('districtid_lev10', Integer),
-    Column('districtid_lev11', Integer),
-    Column('districtid_lev12', Integer),
-    Column('districtid_lev13', Integer),
-    Column('districtid_lev14', Integer),
-    Column('districtid_lev15', Integer),
-    Column('districtid_lev2', Integer),
-    Column('districtid_lev3', Integer),
-    Column('districtid_lev4', Integer),
-    Column('districtid_lev5', Integer),
-    Column('districtid_lev6', Integer),
-    Column('districtid_lev7', Integer),
-    Column('districtid_lev8', Integer),
-    Column('districtid_lev9', Integer),
-    Column('createTime', DateTime, index=True)
-)
+class AADistrictExt(Base):
+    __tablename__ = 'AA_district_Ext'
+
+    districtcode_lev1 = Column(Unicode(32))
+    districtname_lev1 = Column(Unicode(200))
+    districtcode_lev2 = Column(Unicode(32))
+    districtname_lev2 = Column(Unicode(200))
+    districtcode_lev3 = Column(Unicode(32))
+    districtname_lev3 = Column(Unicode(200))
+    districtcode_lev4 = Column(Unicode(32))
+    districtname_lev4 = Column(Unicode(200))
+    districtcode_lev5 = Column(Unicode(32))
+    districtname_lev5 = Column(Unicode(200))
+    districtcode_lev6 = Column(Unicode(32))
+    districtname_lev6 = Column(Unicode(200))
+    districtcode_lev7 = Column(Unicode(32))
+    districtname_lev7 = Column(Unicode(200))
+    districtcode_lev8 = Column(Unicode(32))
+    districtname_lev8 = Column(Unicode(200))
+    districtcode_lev9 = Column(Unicode(32))
+    districtname_lev9 = Column(Unicode(200))
+    districtcode_lev10 = Column(Unicode(32))
+    districtname_lev10 = Column(Unicode(200))
+    districtcode_lev11 = Column(Unicode(32))
+    districtname_lev11 = Column(Unicode(200))
+    districtcode_lev12 = Column(Unicode(32))
+    districtname_lev12 = Column(Unicode(200))
+    districtcode_lev13 = Column(Unicode(32))
+    districtname_lev13 = Column(Unicode(200))
+    districtcode_lev14 = Column(Unicode(32))
+    districtname_lev14 = Column(Unicode(200))
+    districtcode_lev15 = Column(Unicode(32))
+    districtname_lev15 = Column(Unicode(200))
+    depth = Column(Unicode(10))
+    ts = Column(TIMESTAMP)
+    id = Column(Integer, primary_key=True)
+    districtid_lev1 = Column(Integer)
+    districtid_lev10 = Column(Integer)
+    districtid_lev11 = Column(Integer)
+    districtid_lev12 = Column(Integer)
+    districtid_lev13 = Column(Integer)
+    districtid_lev14 = Column(Integer)
+    districtid_lev15 = Column(Integer)
+    districtid_lev2 = Column(Integer)
+    districtid_lev3 = Column(Integer)
+    districtid_lev4 = Column(Integer)
+    districtid_lev5 = Column(Integer)
+    districtid_lev6 = Column(Integer)
+    districtid_lev7 = Column(Integer)
+    districtid_lev8 = Column(Integer)
+    districtid_lev9 = Column(Integer)
+    createTime = Column(DateTime, index=True)
 
 
-t_AA_expenseitem_Ext = Table(
-    'AA_expenseitem_Ext', metadata,
-    Column('expenseitemcode_lev1', Unicode(32)),
-    Column('expenseitemname_lev1', Unicode(200)),
-    Column('expenseitemcode_lev2', Unicode(32)),
-    Column('expenseitemname_lev2', Unicode(200)),
-    Column('expenseitemcode_lev3', Unicode(32)),
-    Column('expenseitemname_lev3', Unicode(200)),
-    Column('expenseitemcode_lev4', Unicode(32)),
-    Column('expenseitemname_lev4', Unicode(200)),
-    Column('expenseitemcode_lev5', Unicode(32)),
-    Column('expenseitemname_lev5', Unicode(200)),
-    Column('expenseitemcode_lev6', Unicode(32)),
-    Column('expenseitemname_lev6', Unicode(200)),
-    Column('expenseitemcode_lev7', Unicode(32)),
-    Column('expenseitemname_lev7', Unicode(200)),
-    Column('expenseitemcode_lev8', Unicode(32)),
-    Column('expenseitemname_lev8', Unicode(200)),
-    Column('expenseitemcode_lev9', Unicode(32)),
-    Column('expenseitemname_lev9', Unicode(200)),
-    Column('expenseitemcode_lev10', Unicode(32)),
-    Column('expenseitemname_lev10', Unicode(200)),
-    Column('expenseitemcode_lev11', Unicode(32)),
-    Column('expenseitemname_lev11', Unicode(200)),
-    Column('expenseitemcode_lev12', Unicode(32)),
-    Column('expenseitemname_lev12', Unicode(200)),
-    Column('expenseitemcode_lev13', Unicode(32)),
-    Column('expenseitemname_lev13', Unicode(200)),
-    Column('expenseitemcode_lev14', Unicode(32)),
-    Column('expenseitemname_lev14', Unicode(200)),
-    Column('expenseitemcode_lev15', Unicode(32)),
-    Column('expenseitemname_lev15', Unicode(200)),
-    Column('depth', Unicode(10)),
-    Column('createTime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('ts', TIMESTAMP),
-    Column('id', Integer),
-    Column('expenseitemid_lev1', Integer),
-    Column('expenseitemid_lev10', Integer),
-    Column('expenseitemid_lev11', Integer),
-    Column('expenseitemid_lev12', Integer),
-    Column('expenseitemid_lev13', Integer),
-    Column('expenseitemid_lev14', Integer),
-    Column('expenseitemid_lev15', Integer),
-    Column('expenseitemid_lev2', Integer),
-    Column('expenseitemid_lev3', Integer),
-    Column('expenseitemid_lev4', Integer),
-    Column('expenseitemid_lev5', Integer),
-    Column('expenseitemid_lev6', Integer),
-    Column('expenseitemid_lev7', Integer),
-    Column('expenseitemid_lev8', Integer),
-    Column('expenseitemid_lev9', Integer)
-)
+class AAExpenseitemExt(Base):
+    __tablename__ = 'AA_expenseitem_Ext'
+
+    expenseitemcode_lev1 = Column(Unicode(32))
+    expenseitemname_lev1 = Column(Unicode(200))
+    expenseitemcode_lev2 = Column(Unicode(32))
+    expenseitemname_lev2 = Column(Unicode(200))
+    expenseitemcode_lev3 = Column(Unicode(32))
+    expenseitemname_lev3 = Column(Unicode(200))
+    expenseitemcode_lev4 = Column(Unicode(32))
+    expenseitemname_lev4 = Column(Unicode(200))
+    expenseitemcode_lev5 = Column(Unicode(32))
+    expenseitemname_lev5 = Column(Unicode(200))
+    expenseitemcode_lev6 = Column(Unicode(32))
+    expenseitemname_lev6 = Column(Unicode(200))
+    expenseitemcode_lev7 = Column(Unicode(32))
+    expenseitemname_lev7 = Column(Unicode(200))
+    expenseitemcode_lev8 = Column(Unicode(32))
+    expenseitemname_lev8 = Column(Unicode(200))
+    expenseitemcode_lev9 = Column(Unicode(32))
+    expenseitemname_lev9 = Column(Unicode(200))
+    expenseitemcode_lev10 = Column(Unicode(32))
+    expenseitemname_lev10 = Column(Unicode(200))
+    expenseitemcode_lev11 = Column(Unicode(32))
+    expenseitemname_lev11 = Column(Unicode(200))
+    expenseitemcode_lev12 = Column(Unicode(32))
+    expenseitemname_lev12 = Column(Unicode(200))
+    expenseitemcode_lev13 = Column(Unicode(32))
+    expenseitemname_lev13 = Column(Unicode(200))
+    expenseitemcode_lev14 = Column(Unicode(32))
+    expenseitemname_lev14 = Column(Unicode(200))
+    expenseitemcode_lev15 = Column(Unicode(32))
+    expenseitemname_lev15 = Column(Unicode(200))
+    depth = Column(Unicode(10))
+    createTime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    ts = Column(TIMESTAMP)
+    id = Column(Integer, primary_key=True)
+    expenseitemid_lev1 = Column(Integer)
+    expenseitemid_lev10 = Column(Integer)
+    expenseitemid_lev11 = Column(Integer)
+    expenseitemid_lev12 = Column(Integer)
+    expenseitemid_lev13 = Column(Integer)
+    expenseitemid_lev14 = Column(Integer)
+    expenseitemid_lev15 = Column(Integer)
+    expenseitemid_lev2 = Column(Integer)
+    expenseitemid_lev3 = Column(Integer)
+    expenseitemid_lev4 = Column(Integer)
+    expenseitemid_lev5 = Column(Integer)
+    expenseitemid_lev6 = Column(Integer)
+    expenseitemid_lev7 = Column(Integer)
+    expenseitemid_lev8 = Column(Integer)
+    expenseitemid_lev9 = Column(Integer)
 
 
-t_AA_income_Ext = Table(
-    'AA_income_Ext', metadata,
-    Column('incomecode_lev1', Unicode(32)),
-    Column('incomename_lev1', Unicode(200)),
-    Column('incomecode_lev2', Unicode(32)),
-    Column('incomename_lev2', Unicode(200)),
-    Column('incomecode_lev3', Unicode(32)),
-    Column('incomename_lev3', Unicode(200)),
-    Column('incomecode_lev4', Unicode(32)),
-    Column('incomename_lev4', Unicode(200)),
-    Column('incomecode_lev5', Unicode(32)),
-    Column('incomename_lev5', Unicode(200)),
-    Column('incomecode_lev6', Unicode(32)),
-    Column('incomename_lev6', Unicode(200)),
-    Column('incomecode_lev7', Unicode(32)),
-    Column('incomename_lev7', Unicode(200)),
-    Column('incomecode_lev8', Unicode(32)),
-    Column('incomename_lev8', Unicode(200)),
-    Column('incomecode_lev9', Unicode(32)),
-    Column('incomename_lev9', Unicode(200)),
-    Column('incomecode_lev10', Unicode(32)),
-    Column('incomename_lev10', Unicode(200)),
-    Column('incomecode_lev11', Unicode(32)),
-    Column('incomename_lev11', Unicode(200)),
-    Column('incomecode_lev12', Unicode(32)),
-    Column('incomename_lev12', Unicode(200)),
-    Column('incomecode_lev13', Unicode(32)),
-    Column('incomename_lev13', Unicode(200)),
-    Column('incomecode_lev14', Unicode(32)),
-    Column('incomename_lev14', Unicode(200)),
-    Column('incomecode_lev15', Unicode(32)),
-    Column('incomename_lev15', Unicode(200)),
-    Column('depth', Unicode(10)),
-    Column('createTime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('ts', TIMESTAMP),
-    Column('id', Integer),
-    Column('incomeid_lev1', Integer),
-    Column('incomeid_lev10', Integer),
-    Column('incomeid_lev11', Integer),
-    Column('incomeid_lev12', Integer),
-    Column('incomeid_lev13', Integer),
-    Column('incomeid_lev14', Integer),
-    Column('incomeid_lev15', Integer),
-    Column('incomeid_lev2', Integer),
-    Column('incomeid_lev3', Integer),
-    Column('incomeid_lev4', Integer),
-    Column('incomeid_lev5', Integer),
-    Column('incomeid_lev6', Integer),
-    Column('incomeid_lev7', Integer),
-    Column('incomeid_lev8', Integer),
-    Column('incomeid_lev9', Integer)
-)
+class AAIncomeExt(Base):
+    __tablename__ = 'AA_income_Ext'
+
+    incomecode_lev1 = Column(Unicode(32))
+    incomename_lev1 = Column(Unicode(200))
+    incomecode_lev2 = Column(Unicode(32))
+    incomename_lev2 = Column(Unicode(200))
+    incomecode_lev3 = Column(Unicode(32))
+    incomename_lev3 = Column(Unicode(200))
+    incomecode_lev4 = Column(Unicode(32))
+    incomename_lev4 = Column(Unicode(200))
+    incomecode_lev5 = Column(Unicode(32))
+    incomename_lev5 = Column(Unicode(200))
+    incomecode_lev6 = Column(Unicode(32))
+    incomename_lev6 = Column(Unicode(200))
+    incomecode_lev7 = Column(Unicode(32))
+    incomename_lev7 = Column(Unicode(200))
+    incomecode_lev8 = Column(Unicode(32))
+    incomename_lev8 = Column(Unicode(200))
+    incomecode_lev9 = Column(Unicode(32))
+    incomename_lev9 = Column(Unicode(200))
+    incomecode_lev10 = Column(Unicode(32))
+    incomename_lev10 = Column(Unicode(200))
+    incomecode_lev11 = Column(Unicode(32))
+    incomename_lev11 = Column(Unicode(200))
+    incomecode_lev12 = Column(Unicode(32))
+    incomename_lev12 = Column(Unicode(200))
+    incomecode_lev13 = Column(Unicode(32))
+    incomename_lev13 = Column(Unicode(200))
+    incomecode_lev14 = Column(Unicode(32))
+    incomename_lev14 = Column(Unicode(200))
+    incomecode_lev15 = Column(Unicode(32))
+    incomename_lev15 = Column(Unicode(200))
+    depth = Column(Unicode(10))
+    createTime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    ts = Column(TIMESTAMP)
+    id = Column(Integer, primary_key=True)
+    incomeid_lev1 = Column(Integer)
+    incomeid_lev10 = Column(Integer)
+    incomeid_lev11 = Column(Integer)
+    incomeid_lev12 = Column(Integer)
+    incomeid_lev13 = Column(Integer)
+    incomeid_lev14 = Column(Integer)
+    incomeid_lev15 = Column(Integer)
+    incomeid_lev2 = Column(Integer)
+    incomeid_lev3 = Column(Integer)
+    incomeid_lev4 = Column(Integer)
+    incomeid_lev5 = Column(Integer)
+    incomeid_lev6 = Column(Integer)
+    incomeid_lev7 = Column(Integer)
+    incomeid_lev8 = Column(Integer)
+    incomeid_lev9 = Column(Integer)
 
 
-t_AA_inventoryClass_Ext = Table(
-    'AA_inventoryClass_Ext', metadata,
-    Column('inventoryClasscode_lev1', Unicode(32)),
-    Column('inventoryClassname_lev1', Unicode(200)),
-    Column('inventoryClasscode_lev2', Unicode(32)),
-    Column('inventoryClassname_lev2', Unicode(200)),
-    Column('inventoryClasscode_lev3', Unicode(32)),
-    Column('inventoryClassname_lev3', Unicode(200)),
-    Column('inventoryClasscode_lev4', Unicode(32)),
-    Column('inventoryClassname_lev4', Unicode(200)),
-    Column('inventoryClasscode_lev5', Unicode(32)),
-    Column('inventoryClassname_lev5', Unicode(200)),
-    Column('inventoryClasscode_lev6', Unicode(32)),
-    Column('inventoryClassname_lev6', Unicode(200)),
-    Column('inventoryClasscode_lev7', Unicode(32)),
-    Column('inventoryClassname_lev7', Unicode(200)),
-    Column('inventoryClasscode_lev8', Unicode(32)),
-    Column('inventoryClassname_lev8', Unicode(200)),
-    Column('inventoryClasscode_lev9', Unicode(32)),
-    Column('inventoryClassname_lev9', Unicode(200)),
-    Column('inventoryClasscode_lev10', Unicode(32)),
-    Column('inventoryClassname_lev10', Unicode(200)),
-    Column('inventoryClasscode_lev11', Unicode(32)),
-    Column('inventoryClassname_lev11', Unicode(200)),
-    Column('inventoryClasscode_lev12', Unicode(32)),
-    Column('inventoryClassname_lev12', Unicode(200)),
-    Column('inventoryClasscode_lev13', Unicode(32)),
-    Column('inventoryClassname_lev13', Unicode(200)),
-    Column('inventoryClasscode_lev14', Unicode(32)),
-    Column('inventoryClassname_lev14', Unicode(200)),
-    Column('inventoryClasscode_lev15', Unicode(32)),
-    Column('inventoryClassname_lev15', Unicode(200)),
-    Column('depth', Unicode(10)),
-    Column('ts', TIMESTAMP),
-    Column('id', Integer),
-    Column('inventoryClassid_lev1', Integer),
-    Column('inventoryClassid_lev10', Integer),
-    Column('inventoryClassid_lev11', Integer),
-    Column('inventoryClassid_lev12', Integer),
-    Column('inventoryClassid_lev13', Integer),
-    Column('inventoryClassid_lev14', Integer),
-    Column('inventoryClassid_lev15', Integer),
-    Column('inventoryClassid_lev2', Integer),
-    Column('inventoryClassid_lev3', Integer),
-    Column('inventoryClassid_lev4', Integer),
-    Column('inventoryClassid_lev5', Integer),
-    Column('inventoryClassid_lev6', Integer),
-    Column('inventoryClassid_lev7', Integer),
-    Column('inventoryClassid_lev8', Integer),
-    Column('inventoryClassid_lev9', Integer),
-    Column('createTime', DateTime, index=True)
-)
+class AAInventoryClassExt(Base):
+    __tablename__ = 'AA_inventoryClass_Ext'
+
+    inventoryClasscode_lev1 = Column(Unicode(32))
+    inventoryClassname_lev1 = Column(Unicode(200))
+    inventoryClasscode_lev2 = Column(Unicode(32))
+    inventoryClassname_lev2 = Column(Unicode(200))
+    inventoryClasscode_lev3 = Column(Unicode(32))
+    inventoryClassname_lev3 = Column(Unicode(200))
+    inventoryClasscode_lev4 = Column(Unicode(32))
+    inventoryClassname_lev4 = Column(Unicode(200))
+    inventoryClasscode_lev5 = Column(Unicode(32))
+    inventoryClassname_lev5 = Column(Unicode(200))
+    inventoryClasscode_lev6 = Column(Unicode(32))
+    inventoryClassname_lev6 = Column(Unicode(200))
+    inventoryClasscode_lev7 = Column(Unicode(32))
+    inventoryClassname_lev7 = Column(Unicode(200))
+    inventoryClasscode_lev8 = Column(Unicode(32))
+    inventoryClassname_lev8 = Column(Unicode(200))
+    inventoryClasscode_lev9 = Column(Unicode(32))
+    inventoryClassname_lev9 = Column(Unicode(200))
+    inventoryClasscode_lev10 = Column(Unicode(32))
+    inventoryClassname_lev10 = Column(Unicode(200))
+    inventoryClasscode_lev11 = Column(Unicode(32))
+    inventoryClassname_lev11 = Column(Unicode(200))
+    inventoryClasscode_lev12 = Column(Unicode(32))
+    inventoryClassname_lev12 = Column(Unicode(200))
+    inventoryClasscode_lev13 = Column(Unicode(32))
+    inventoryClassname_lev13 = Column(Unicode(200))
+    inventoryClasscode_lev14 = Column(Unicode(32))
+    inventoryClassname_lev14 = Column(Unicode(200))
+    inventoryClasscode_lev15 = Column(Unicode(32))
+    inventoryClassname_lev15 = Column(Unicode(200))
+    depth = Column(Unicode(10))
+    ts = Column(TIMESTAMP)
+    id = Column(Integer, primary_key=True)
+    inventoryClassid_lev1 = Column(Integer)
+    inventoryClassid_lev10 = Column(Integer)
+    inventoryClassid_lev11 = Column(Integer)
+    inventoryClassid_lev12 = Column(Integer)
+    inventoryClassid_lev13 = Column(Integer)
+    inventoryClassid_lev14 = Column(Integer)
+    inventoryClassid_lev15 = Column(Integer)
+    inventoryClassid_lev2 = Column(Integer)
+    inventoryClassid_lev3 = Column(Integer)
+    inventoryClassid_lev4 = Column(Integer)
+    inventoryClassid_lev5 = Column(Integer)
+    inventoryClassid_lev6 = Column(Integer)
+    inventoryClassid_lev7 = Column(Integer)
+    inventoryClassid_lev8 = Column(Integer)
+    inventoryClassid_lev9 = Column(Integer)
+    createTime = Column(DateTime, index=True)
 
 
-t_AA_inventoryLocation_Ext = Table(
-    'AA_inventoryLocation_Ext', metadata,
-    Column('inventoryLocationcode_lev1', Unicode(32)),
-    Column('inventoryLocationname_lev1', Unicode(200)),
-    Column('inventoryLocationcode_lev2', Unicode(32)),
-    Column('inventoryLocationname_lev2', Unicode(200)),
-    Column('inventoryLocationcode_lev3', Unicode(32)),
-    Column('inventoryLocationname_lev3', Unicode(200)),
-    Column('inventoryLocationcode_lev4', Unicode(32)),
-    Column('inventoryLocationname_lev4', Unicode(200)),
-    Column('inventoryLocationcode_lev5', Unicode(32)),
-    Column('inventoryLocationname_lev5', Unicode(200)),
-    Column('inventoryLocationcode_lev6', Unicode(32)),
-    Column('inventoryLocationname_lev6', Unicode(200)),
-    Column('inventoryLocationcode_lev7', Unicode(32)),
-    Column('inventoryLocationname_lev7', Unicode(200)),
-    Column('inventoryLocationcode_lev8', Unicode(32)),
-    Column('inventoryLocationname_lev8', Unicode(200)),
-    Column('inventoryLocationcode_lev9', Unicode(32)),
-    Column('inventoryLocationname_lev9', Unicode(200)),
-    Column('inventoryLocationcode_lev10', Unicode(32)),
-    Column('inventoryLocationname_lev10', Unicode(200)),
-    Column('inventoryLocationcode_lev11', Unicode(32)),
-    Column('inventoryLocationname_lev11', Unicode(200)),
-    Column('inventoryLocationcode_lev12', Unicode(32)),
-    Column('inventoryLocationname_lev12', Unicode(200)),
-    Column('inventoryLocationcode_lev13', Unicode(32)),
-    Column('inventoryLocationname_lev13', Unicode(200)),
-    Column('inventoryLocationcode_lev14', Unicode(32)),
-    Column('inventoryLocationname_lev14', Unicode(200)),
-    Column('inventoryLocationcode_lev15', Unicode(32)),
-    Column('inventoryLocationname_lev15', Unicode(200)),
-    Column('depth', Unicode(10)),
-    Column('ts', TIMESTAMP),
-    Column('inventoryLocationid_lev1', Integer),
-    Column('inventoryLocationid_lev10', Integer),
-    Column('inventoryLocationid_lev11', Integer),
-    Column('inventoryLocationid_lev12', Integer),
-    Column('inventoryLocationid_lev13', Integer),
-    Column('inventoryLocationid_lev14', Integer),
-    Column('inventoryLocationid_lev15', Integer),
-    Column('inventoryLocationid_lev2', Integer),
-    Column('inventoryLocationid_lev3', Integer),
-    Column('inventoryLocationid_lev4', Integer),
-    Column('inventoryLocationid_lev5', Integer),
-    Column('inventoryLocationid_lev6', Integer),
-    Column('inventoryLocationid_lev7', Integer),
-    Column('inventoryLocationid_lev8', Integer),
-    Column('inventoryLocationid_lev9', Integer),
-    Column('id', Integer),
-    Column('createTime', DateTime, index=True)
-)
+class AAInventoryLocationExt(Base):
+    __tablename__ = 'AA_inventoryLocation_Ext'
+
+    inventoryLocationcode_lev1 = Column(Unicode(32))
+    inventoryLocationname_lev1 = Column(Unicode(200))
+    inventoryLocationcode_lev2 = Column(Unicode(32))
+    inventoryLocationname_lev2 = Column(Unicode(200))
+    inventoryLocationcode_lev3 = Column(Unicode(32))
+    inventoryLocationname_lev3 = Column(Unicode(200))
+    inventoryLocationcode_lev4 = Column(Unicode(32))
+    inventoryLocationname_lev4 = Column(Unicode(200))
+    inventoryLocationcode_lev5 = Column(Unicode(32))
+    inventoryLocationname_lev5 = Column(Unicode(200))
+    inventoryLocationcode_lev6 = Column(Unicode(32))
+    inventoryLocationname_lev6 = Column(Unicode(200))
+    inventoryLocationcode_lev7 = Column(Unicode(32))
+    inventoryLocationname_lev7 = Column(Unicode(200))
+    inventoryLocationcode_lev8 = Column(Unicode(32))
+    inventoryLocationname_lev8 = Column(Unicode(200))
+    inventoryLocationcode_lev9 = Column(Unicode(32))
+    inventoryLocationname_lev9 = Column(Unicode(200))
+    inventoryLocationcode_lev10 = Column(Unicode(32))
+    inventoryLocationname_lev10 = Column(Unicode(200))
+    inventoryLocationcode_lev11 = Column(Unicode(32))
+    inventoryLocationname_lev11 = Column(Unicode(200))
+    inventoryLocationcode_lev12 = Column(Unicode(32))
+    inventoryLocationname_lev12 = Column(Unicode(200))
+    inventoryLocationcode_lev13 = Column(Unicode(32))
+    inventoryLocationname_lev13 = Column(Unicode(200))
+    inventoryLocationcode_lev14 = Column(Unicode(32))
+    inventoryLocationname_lev14 = Column(Unicode(200))
+    inventoryLocationcode_lev15 = Column(Unicode(32))
+    inventoryLocationname_lev15 = Column(Unicode(200))
+    depth = Column(Unicode(10))
+    ts = Column(TIMESTAMP)
+    inventoryLocationid_lev1 = Column(Integer)
+    inventoryLocationid_lev10 = Column(Integer)
+    inventoryLocationid_lev11 = Column(Integer)
+    inventoryLocationid_lev12 = Column(Integer)
+    inventoryLocationid_lev13 = Column(Integer)
+    inventoryLocationid_lev14 = Column(Integer)
+    inventoryLocationid_lev15 = Column(Integer)
+    inventoryLocationid_lev2 = Column(Integer)
+    inventoryLocationid_lev3 = Column(Integer)
+    inventoryLocationid_lev4 = Column(Integer)
+    inventoryLocationid_lev5 = Column(Integer)
+    inventoryLocationid_lev6 = Column(Integer)
+    inventoryLocationid_lev7 = Column(Integer)
+    inventoryLocationid_lev8 = Column(Integer)
+    inventoryLocationid_lev9 = Column(Integer)
+    id = Column(Integer, primary_key=True)
+    createTime = Column(DateTime, index=True)
 
 
-t_AA_partnerClass_Ext = Table(
-    'AA_partnerClass_Ext', metadata,
-    Column('partnerClasscode_lev1', Unicode(32)),
-    Column('partnerClassname_lev1', Unicode(200)),
-    Column('partnerClasscode_lev2', Unicode(32)),
-    Column('partnerClassname_lev2', Unicode(200)),
-    Column('partnerClasscode_lev3', Unicode(32)),
-    Column('partnerClassname_lev3', Unicode(200)),
-    Column('partnerClasscode_lev4', Unicode(32)),
-    Column('partnerClassname_lev4', Unicode(200)),
-    Column('partnerClasscode_lev5', Unicode(32)),
-    Column('partnerClassname_lev5', Unicode(200)),
-    Column('partnerClasscode_lev6', Unicode(32)),
-    Column('partnerClassname_lev6', Unicode(200)),
-    Column('partnerClasscode_lev7', Unicode(32)),
-    Column('partnerClassname_lev7', Unicode(200)),
-    Column('partnerClasscode_lev8', Unicode(32)),
-    Column('partnerClassname_lev8', Unicode(200)),
-    Column('partnerClasscode_lev9', Unicode(32)),
-    Column('partnerClassname_lev9', Unicode(200)),
-    Column('partnerClasscode_lev10', Unicode(32)),
-    Column('partnerClassname_lev10', Unicode(200)),
-    Column('partnerClasscode_lev11', Unicode(32)),
-    Column('partnerClassname_lev11', Unicode(200)),
-    Column('partnerClasscode_lev12', Unicode(32)),
-    Column('partnerClassname_lev12', Unicode(200)),
-    Column('partnerClasscode_lev13', Unicode(32)),
-    Column('partnerClassname_lev13', Unicode(200)),
-    Column('partnerClasscode_lev14', Unicode(32)),
-    Column('partnerClassname_lev14', Unicode(200)),
-    Column('partnerClasscode_lev15', Unicode(32)),
-    Column('partnerClassname_lev15', Unicode(200)),
-    Column('depth', Unicode(10)),
-    Column('ts', TIMESTAMP),
-    Column('id', Integer),
-    Column('partnerClassid_lev1', Integer),
-    Column('partnerClassid_lev10', Integer),
-    Column('partnerClassid_lev11', Integer),
-    Column('partnerClassid_lev12', Integer),
-    Column('partnerClassid_lev13', Integer),
-    Column('partnerClassid_lev14', Integer),
-    Column('partnerClassid_lev15', Integer),
-    Column('partnerClassid_lev2', Integer),
-    Column('partnerClassid_lev3', Integer),
-    Column('partnerClassid_lev4', Integer),
-    Column('partnerClassid_lev5', Integer),
-    Column('partnerClassid_lev6', Integer),
-    Column('partnerClassid_lev7', Integer),
-    Column('partnerClassid_lev8', Integer),
-    Column('partnerClassid_lev9', Integer),
-    Column('createTime', DateTime, index=True)
-)
+class AAPartnerClassExt(Base):
+    __tablename__ = 'AA_partnerClass_Ext'
+
+    partnerClasscode_lev1 = Column(Unicode(32))
+    partnerClassname_lev1 = Column(Unicode(200))
+    partnerClasscode_lev2 = Column(Unicode(32))
+    partnerClassname_lev2 = Column(Unicode(200))
+    partnerClasscode_lev3 = Column(Unicode(32))
+    partnerClassname_lev3 = Column(Unicode(200))
+    partnerClasscode_lev4 = Column(Unicode(32))
+    partnerClassname_lev4 = Column(Unicode(200))
+    partnerClasscode_lev5 = Column(Unicode(32))
+    partnerClassname_lev5 = Column(Unicode(200))
+    partnerClasscode_lev6 = Column(Unicode(32))
+    partnerClassname_lev6 = Column(Unicode(200))
+    partnerClasscode_lev7 = Column(Unicode(32))
+    partnerClassname_lev7 = Column(Unicode(200))
+    partnerClasscode_lev8 = Column(Unicode(32))
+    partnerClassname_lev8 = Column(Unicode(200))
+    partnerClasscode_lev9 = Column(Unicode(32))
+    partnerClassname_lev9 = Column(Unicode(200))
+    partnerClasscode_lev10 = Column(Unicode(32))
+    partnerClassname_lev10 = Column(Unicode(200))
+    partnerClasscode_lev11 = Column(Unicode(32))
+    partnerClassname_lev11 = Column(Unicode(200))
+    partnerClasscode_lev12 = Column(Unicode(32))
+    partnerClassname_lev12 = Column(Unicode(200))
+    partnerClasscode_lev13 = Column(Unicode(32))
+    partnerClassname_lev13 = Column(Unicode(200))
+    partnerClasscode_lev14 = Column(Unicode(32))
+    partnerClassname_lev14 = Column(Unicode(200))
+    partnerClasscode_lev15 = Column(Unicode(32))
+    partnerClassname_lev15 = Column(Unicode(200))
+    depth = Column(Unicode(10))
+    ts = Column(TIMESTAMP)
+    id = Column(Integer, primary_key=True)
+    partnerClassid_lev1 = Column(Integer)
+    partnerClassid_lev10 = Column(Integer)
+    partnerClassid_lev11 = Column(Integer)
+    partnerClassid_lev12 = Column(Integer)
+    partnerClassid_lev13 = Column(Integer)
+    partnerClassid_lev14 = Column(Integer)
+    partnerClassid_lev15 = Column(Integer)
+    partnerClassid_lev2 = Column(Integer)
+    partnerClassid_lev3 = Column(Integer)
+    partnerClassid_lev4 = Column(Integer)
+    partnerClassid_lev5 = Column(Integer)
+    partnerClassid_lev6 = Column(Integer)
+    partnerClassid_lev7 = Column(Integer)
+    partnerClassid_lev8 = Column(Integer)
+    partnerClassid_lev9 = Column(Integer)
+    createTime = Column(DateTime, index=True)
 
 
 class AMAsset(Base):
@@ -4467,21 +4444,21 @@ class AMCheckRangeDetail(Base):
     idAMCheckVoucherDTO = Column(Integer)
 
 
-t_AM_CheckUseDept = Table(
-    'AM_CheckUseDept', metadata,
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('rate', Numeric(28, 14)),
-    Column('ismain', Integer),
-    Column('createdtime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('sequencenumber', Integer),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('updatedBy', Unicode(32)),
-    Column('idusedept', Integer),
-    Column('idAMCheckDetailDTO', Integer),
-    Column('id', Integer, nullable=False)
-)
+class AMCheckUseDept(Base):
+    __tablename__ = 'AM_CheckUseDept'
+
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    rate = Column(Numeric(28, 14))
+    ismain = Column(Integer)
+    createdtime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    sequencenumber = Column(Integer)
+    ts = Column(TIMESTAMP, nullable=False)
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    updatedBy = Column(Unicode(32))
+    idusedept = Column(Integer)
+    idAMCheckDetailDTO = Column(Integer)
+    id = Column(Integer, nullable=False, primary_key=True)
 
 
 class AMCheckVoucher(Base):
@@ -4525,18 +4502,18 @@ class AMCheckVoucher(Base):
     idcheckperiod = Column(Integer)
 
 
-t_AM_DeprSummary = Table(
-    'AM_DeprSummary', metadata,
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('Amount', Numeric(28, 14), server_default=text("((0))")),
-    Column('idAssetClass', Integer),
-    Column('idAssetProp', Integer),
-    Column('idDepartment', Integer),
-    Column('idRootDept', Integer),
-    Column('idProject', Integer),
-    Column('id', Integer, nullable=False),
-    Column('idHandleVoucherDTO', Integer, nullable=False, server_default=text("((0))"))
-)
+class AMDeprSummary(Base):
+    __tablename__ = 'AM_DeprSummary'
+
+    ts = Column(TIMESTAMP, nullable=False)
+    Amount = Column(Numeric(28, 14), server_default=text("((0))"))
+    idAssetClass = Column(Integer)
+    idAssetProp = Column(Integer)
+    idDepartment = Column(Integer)
+    idRootDept = Column(Integer)
+    idProject = Column(Integer)
+    id = Column(Integer, nullable=False, primary_key=True)
+    idHandleVoucherDTO = Column(Integer, nullable=False, server_default=text("((0))"))
 
 
 class AMHandleVoucher(Base):
@@ -4579,37 +4556,37 @@ class AMHandleVoucher(Base):
     idvouchertype = Column(Integer)
 
 
-t_AM_HandleVoucherChangeType = Table(
-    'AM_HandleVoucherChangeType', metadata,
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('createdtime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('sequencenumber', Integer),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('updatedBy', Unicode(32)),
-    Column('idHandleVoucherDTO', Integer),
-    Column('id', Integer, nullable=False),
-    Column('changeType', Integer)
-)
+class AMHandleVoucherChangeType(Base):
+    __tablename__ = 'AM_HandleVoucherChangeType'
+
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    createdtime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    sequencenumber = Column(Integer)
+    ts = Column(TIMESTAMP, nullable=False)
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    updatedBy = Column(Unicode(32))
+    idHandleVoucherDTO = Column(Integer)
+    id = Column(Integer, nullable=False, primary_key=True)
+    changeType = Column(Integer)
 
 
-t_AM_HandleVoucherDept = Table(
-    'AM_HandleVoucherDept', metadata,
-    Column('Code', Unicode(200)),
-    Column('name', Unicode(200)),
-    Column('DeptVer', Integer),
-    Column('Rate', Numeric(28, 14)),
-    Column('IsMain', Integer),
-    Column('CreatedTime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('SequenceNumber', Integer),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('updatedBy', Unicode(32)),
-    Column('iduseDept', Integer),
-    Column('IDHandleVoucherDetailDTO', Integer),
-    Column('id', Integer, nullable=False)
-)
+class AMHandleVoucherDept(Base):
+    __tablename__ = 'AM_HandleVoucherDept'
+
+    Code = Column(Unicode(200))
+    name = Column(Unicode(200))
+    DeptVer = Column(Integer)
+    Rate = Column(Numeric(28, 14))
+    IsMain = Column(Integer)
+    CreatedTime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    SequenceNumber = Column(Integer)
+    ts = Column(TIMESTAMP, nullable=False)
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    updatedBy = Column(Unicode(32))
+    iduseDept = Column(Integer)
+    IDHandleVoucherDetailDTO = Column(Integer)
+    id = Column(Integer, nullable=False, primary_key=True)
 
 
 class AMHandleVoucherB(Base):
@@ -4769,14 +4746,6 @@ class AMUseDept(Base):
     idusedept = Column(Integer)
     idAssetDTO = Column(Integer)
     id = Column(Integer, primary_key=True)
-
-
-t_ARAP_AgeAnalysisRptSet = Table(
-    'ARAP_AgeAnalysisRptSet', metadata,
-    Column('days', Integer),
-    Column('isArFlag', Integer),
-    Column('userId', Integer)
-)
 
 
 class ARAPDetail(Base):
@@ -5616,44 +5585,44 @@ class ARAPStrikeBalanceSecondDetail(Base):
     idvouchertype = Column(Integer)
 
 
-t_B2B_InventoryClassUploadLog = Table(
-    'B2B_InventoryClassUploadLog', metadata,
-    Column('id', Integer, nullable=False),
-    Column('idInventoryClass', Integer),
-    Column('B2BInventoryClassCode', Unicode(50)),
-    Column('inventoryClassTS', LargeBinary(8)),
-    Column('uploadDate', DateTime)
-)
+class B2BInventoryClassUploadLog(Base):
+    __tablename__ = 'B2B_InventoryClassUploadLog'
+
+    id = Column(Integer, nullable=False, primary_key=True)
+    idInventoryClass = Column(Integer)
+    B2BInventoryClassCode = Column(Unicode(50))
+    inventoryClassTS = Column(LargeBinary(8))
+    uploadDate = Column(DateTime)
 
 
-t_B2B_InventoryUploadLog = Table(
-    'B2B_InventoryUploadLog', metadata,
-    Column('id', Integer, nullable=False),
-    Column('idInventory', Integer),
-    Column('B2BInventoryCode', Unicode(50)),
-    Column('inventoryTS', LargeBinary(8)),
-    Column('uploadDate', DateTime)
-)
+class B2BInventoryUploadLog(Base):
+    __tablename__ = 'B2B_InventoryUploadLog'
+
+    id = Column(Integer, nullable=False, primary_key=True)
+    idInventory = Column(Integer)
+    B2BInventoryCode = Column(Unicode(50))
+    inventoryTS = Column(LargeBinary(8))
+    uploadDate = Column(DateTime)
 
 
-t_B2B_PartnerClassUploadLog = Table(
-    'B2B_PartnerClassUploadLog', metadata,
-    Column('id', Integer, nullable=False),
-    Column('idPartnerClass', Integer),
-    Column('B2BPartnerClassCode', Unicode(50)),
-    Column('partnerClassTS', LargeBinary(8)),
-    Column('uploadDate', DateTime)
-)
+class B2BPartnerClassUploadLog(Base):
+    __tablename__ = 'B2B_PartnerClassUploadLog'
+
+    id = Column(Integer, nullable=False, primary_key=True)
+    idPartnerClass = Column(Integer)
+    B2BPartnerClassCode = Column(Unicode(50))
+    partnerClassTS = Column(LargeBinary(8))
+    uploadDate = Column(DateTime)
 
 
-t_B2B_PartnerUploadLog = Table(
-    'B2B_PartnerUploadLog', metadata,
-    Column('id', Integer, nullable=False),
-    Column('idPartner', Integer),
-    Column('B2BPartnerCode', Unicode(50)),
-    Column('partnerTS', LargeBinary(8)),
-    Column('uploadDate', DateTime)
-)
+class B2BPartnerUploadLog(Base):
+    __tablename__ = 'B2B_PartnerUploadLog'
+
+    id = Column(Integer, nullable=False, primary_key=True)
+    idPartner = Column(Integer)
+    B2BPartnerCode = Column(Unicode(50))
+    partnerTS = Column(LargeBinary(8))
+    uploadDate = Column(DateTime)
 
 
 class BAPDelLogTable(Base):
@@ -6203,43 +6172,43 @@ class CSChequeBook(Base):
     makerid = Column(Integer)
 
 
-t_CS_DataNoteRelate = Table(
-    'CS_DataNoteRelate', metadata,
-    Column('ID', Integer, nullable=False),
-    Column('OutSysName', Unicode(50)),
-    Column('PrjCode', Unicode(20), nullable=False),
-    Column('NoteID', Unicode(128), nullable=False),
-    Column('RelateXml', UnicodeText(1073741823), nullable=False)
-)
+class CSDataNoteRelate(Base):
+    __tablename__ = 'CS_DataNoteRelate'
+
+    ID = Column(Integer, nullable=False, primary_key=True)
+    OutSysName = Column(Unicode(50))
+    PrjCode = Column(Unicode(20), nullable=False)
+    NoteID = Column(Unicode(128), nullable=False)
+    RelateXml = Column(UnicodeText(1073741823), nullable=False)
 
 
-t_CS_DataProject = Table(
-    'CS_DataProject', metadata,
-    Column('ID', Integer, nullable=False),
-    Column('OutSysName', Unicode(50)),
-    Column('PrjCode', Unicode(20), nullable=False),
-    Column('PrjName', Unicode(100), nullable=False),
-    Column('PrjFormatXml', UnicodeText(1073741823), nullable=False)
-)
+class CSDataProject(Base):
+    __tablename__ = 'CS_DataProject'
+
+    ID = Column(Integer, nullable=False, primary_key=True)
+    OutSysName = Column(Unicode(50))
+    PrjCode = Column(Unicode(20), nullable=False)
+    PrjName = Column(Unicode(100), nullable=False)
+    PrjFormatXml = Column(UnicodeText(1073741823), nullable=False)
 
 
-t_CS_DefPrinterParam = Table(
-    'CS_DefPrinterParam', metadata,
-    Column('ID', Integer, nullable=False),
-    Column('OSVer', Integer),
-    Column('DriverName', Unicode(50)),
-    Column('PrintOrient', Integer),
-    Column('PrintType', Integer),
-    Column('PaperMode', Integer, server_default=text("((0))")),
-    Column('PaperSize', Integer),
-    Column('PaperName', Unicode(50)),
-    Column('PaperAlign', Integer),
-    Column('PrintX', Float(53)),
-    Column('PrintY', Float(53)),
-    Column('Image1', LargeBinary),
-    Column('Image2', LargeBinary),
-    Column('MicroAdjust', Integer)
-)
+class CSDefPrinterParam(Base):
+    __tablename__ = 'CS_DefPrinterParam'
+
+    ID = Column(Integer, nullable=False, primary_key=True)
+    OSVer = Column(Integer)
+    DriverName = Column(Unicode(50))
+    PrintOrient = Column(Integer)
+    PrintType = Column(Integer)
+    PaperMode = Column(Integer, server_default=text("((0))"))
+    PaperSize = Column(Integer)
+    PaperName = Column(Unicode(50))
+    PaperAlign = Column(Integer)
+    PrintX = Column(Float(53))
+    PrintY = Column(Float(53))
+    Image1 = Column(LargeBinary)
+    Image2 = Column(LargeBinary)
+    MicroAdjust = Column(Integer)
 
 
 class CSExpenseVoucher(Base):
@@ -6594,150 +6563,150 @@ class CSIncomeVoucherB(Base):
     saleOrderDetailId = Column(Integer)
 
 
-t_CS_NNRelate = Table(
-    'CS_NNRelate', metadata,
-    Column('ID', Integer, nullable=False),
-    Column('NoteID', Unicode(128)),
-    Column('PartName', Unicode(100)),
-    Column('DestNoteID', Unicode(128)),
-    Column('DestPartName', Unicode(100))
-)
+class CSNNRelate(Base):
+    __tablename__ = 'CS_NNRelate'
+
+    ID = Column(Integer, nullable=False, primary_key=True)
+    NoteID = Column(Unicode(128))
+    PartName = Column(Unicode(100))
+    DestNoteID = Column(Unicode(128))
+    DestPartName = Column(Unicode(100))
 
 
-t_CS_NoteBase = Table(
-    'CS_NoteBase', metadata,
-    Column('ID', Integer, nullable=False),
-    Column('LevelID', Integer),
-    Column('HostName', Unicode(50)),
-    Column('NoteID', Unicode(128)),
-    Column('NoteName', Unicode(255), nullable=False),
-    Column('ImportDate', DateTime),
-    Column('NoteData', LargeBinary),
-    Column('LastUpdateDate', DateTime),
-    Column('LastUpdateHost', Unicode(255)),
-    Column('LastUpdateName', Unicode(200)),
-    Column('ImgLogoID', Integer),
-    Column('ImgTypeID', Integer)
-)
+class CSNoteBase(Base):
+    __tablename__ = 'CS_NoteBase'
+
+    ID = Column(Integer, nullable=False, primary_key=True)
+    LevelID = Column(Integer)
+    HostName = Column(Unicode(50))
+    NoteID = Column(Unicode(128))
+    NoteName = Column(Unicode(255), nullable=False)
+    ImportDate = Column(DateTime)
+    NoteData = Column(LargeBinary)
+    LastUpdateDate = Column(DateTime)
+    LastUpdateHost = Column(Unicode(255))
+    LastUpdateName = Column(Unicode(200))
+    ImgLogoID = Column(Integer)
+    ImgTypeID = Column(Integer)
 
 
-t_CS_NoteCommonInfo = Table(
-    'CS_NoteCommonInfo', metadata,
-    Column('ID', Integer, nullable=False),
-    Column('UserName', Unicode(50)),
-    Column('NoteID', Unicode(128)),
-    Column('ShortName', Unicode(50)),
-    Column('ImgLogoID', Integer),
-    Column('ImgTypeID', Integer),
-    Column('PosIndex', Integer)
-)
+class CSNoteCommonInfo(Base):
+    __tablename__ = 'CS_NoteCommonInfo'
+
+    ID = Column(Integer, nullable=False, primary_key=True)
+    UserName = Column(Unicode(50))
+    NoteID = Column(Unicode(128))
+    ShortName = Column(Unicode(50))
+    ImgLogoID = Column(Integer)
+    ImgTypeID = Column(Integer)
+    PosIndex = Column(Integer)
 
 
-t_CS_NoteImage = Table(
-    'CS_NoteImage', metadata,
-    Column('ID', Integer, nullable=False),
-    Column('Description', Unicode(50)),
-    Column('Type', Integer),
-    Column('Data', LargeBinary)
-)
+class CSNoteImage(Base):
+    __tablename__ = 'CS_NoteImage'
+
+    ID = Column(Integer, nullable=False, primary_key=True)
+    Description = Column(Unicode(50))
+    Type = Column(Integer)
+    Data = Column(LargeBinary)
 
 
-t_CS_NoteLevel = Table(
-    'CS_NoteLevel', metadata,
-    Column('ID', Integer, nullable=False),
-    Column('LevelName', Unicode(100)),
-    Column('ParentID', Integer)
-)
+class CSNoteLevel(Base):
+    __tablename__ = 'CS_NoteLevel'
+
+    ID = Column(Integer, nullable=False, primary_key=True)
+    LevelName = Column(Unicode(100))
+    ParentID = Column(Integer)
 
 
-t_CS_NotePartProperty = Table(
-    'CS_NotePartProperty', metadata,
-    Column('ID', Integer, nullable=False),
-    Column('UserName', Unicode(50)),
-    Column('NoteID', Unicode(128)),
-    Column('UseRegion', Integer),
-    Column('PartName', Unicode(50)),
-    Column('FldName', Unicode(50)),
-    Column('IsBuiltIn', Integer, server_default=text("((0))")),
-    Column('DataType', Integer),
-    Column('ColWidth', Integer),
-    Column('ColOrder', Integer),
-    Column('IsSum', Integer),
-    Column('IsVisible', Integer),
-    Column('FilterPosition', Integer),
-    Column('SortType', Integer),
-    Column('Sort', Integer),
-    Column('sFilPar1', Unicode(255)),
-    Column('sFilPar2', Unicode(255)),
-    Column('SubTableColName', Unicode(50), server_default=text("(NULL)")),
-    Column('SubTableRowNum', Integer, server_default=text("((0))")),
-    Column('SubTableName', Unicode(100), server_default=text("(NULL)")),
-    Column('sFilPar3', String(255, u'Chinese_PRC_CI_AS'), server_default=text("(NULL)"))
-)
+class CSNotePartProperty(Base):
+    __tablename__ = 'CS_NotePartProperty'
+
+    ID = Column(Integer, nullable=False, primary_key=True)
+    UserName = Column(Unicode(50))
+    NoteID = Column(Unicode(128))
+    UseRegion = Column(Integer)
+    PartName = Column(Unicode(50))
+    FldName = Column(Unicode(50))
+    IsBuiltIn = Column(Integer, server_default=text("((0))"))
+    DataType = Column(Integer)
+    ColWidth = Column(Integer)
+    ColOrder = Column(Integer)
+    IsSum = Column(Integer)
+    IsVisible = Column(Integer)
+    FilterPosition = Column(Integer)
+    SortType = Column(Integer)
+    Sort = Column(Integer)
+    sFilPar1 = Column(Unicode(255))
+    sFilPar2 = Column(Unicode(255))
+    SubTableColName = Column(Unicode(50), server_default=text("(NULL)"))
+    SubTableRowNum = Column(Integer, server_default=text("((0))"))
+    SubTableName = Column(Unicode(100), server_default=text("(NULL)"))
+    sFilPar3 = Column(String(255, u'Chinese_PRC_CI_AS'), server_default=text("(NULL)"))
 
 
-t_CS_NotePrintFilter = Table(
-    'CS_NotePrintFilter', metadata,
-    Column('ID', Integer, nullable=False),
-    Column('NoteID', Unicode(128), nullable=False),
-    Column('UserName', Unicode(50)),
-    Column('DateType', Integer),
-    Column('DateBegin', DateTime),
-    Column('DateEnd', DateTime),
-    Column('UserIDList', Unicode(1024)),
-    Column('HostList', Unicode(1024)),
-    Column('UseRegion', Integer),
-    Column('HaveCancel', Integer, server_default=text("((0))")),
-    Column('SubConfig', Integer, server_default=text("((-1))")),
-    Column('SourceType', String(30, u'Chinese_PRC_CI_AS'), server_default=text("(NULL)"))
-)
+class CSNotePrintFilter(Base):
+    __tablename__ = 'CS_NotePrintFilter'
+
+    ID = Column(Integer, nullable=False, primary_key=True)
+    NoteID = Column(Unicode(128), nullable=False)
+    UserName = Column(Unicode(50))
+    DateType = Column(Integer)
+    DateBegin = Column(DateTime)
+    DateEnd = Column(DateTime)
+    UserIDList = Column(Unicode(1024))
+    HostList = Column(Unicode(1024))
+    UseRegion = Column(Integer)
+    HaveCancel = Column(Integer, server_default=text("((0))"))
+    SubConfig = Column(Integer, server_default=text("((-1))"))
+    SourceType = Column(String(30, u'Chinese_PRC_CI_AS'), server_default=text("(NULL)"))
 
 
-t_CS_NotePrintInfo = Table(
-    'CS_NotePrintInfo', metadata,
-    Column('ID', Integer, nullable=False),
-    Column('UserName', Unicode(50)),
-    Column('NoteID', Unicode(128)),
-    Column('NoteName', Unicode(255), nullable=False),
-    Column('PrintTime', DateTime),
-    Column('HostName', Unicode(255)),
-    Column('IsCancel', Integer),
-    Column('DriverName', Unicode(100)),
-    Column('PrintDevice', Unicode(100)),
-    Column('PrintOrient', Integer),
-    Column('PrintX', Float(53)),
-    Column('PrintY', Float(53)),
-    Column('PaperMode', Integer),
-    Column('PaperName', Unicode(50)),
-    Column('PaperSize', Integer),
-    Column('PaperAlign', Integer),
-    Column('PrintType', Integer, server_default=text("((0))")),
-    Column('SourceType', Integer, server_default=text("((0))")),
-    Column('OutSysName', Unicode(50)),
-    Column('OutID', Unicode(255))
-)
+class CSNotePrintInfo(Base):
+    __tablename__ = 'CS_NotePrintInfo'
+
+    ID = Column(Integer, nullable=False, primary_key=True)
+    UserName = Column(Unicode(50))
+    NoteID = Column(Unicode(128))
+    NoteName = Column(Unicode(255), nullable=False)
+    PrintTime = Column(DateTime)
+    HostName = Column(Unicode(255))
+    IsCancel = Column(Integer)
+    DriverName = Column(Unicode(100))
+    PrintDevice = Column(Unicode(100))
+    PrintOrient = Column(Integer)
+    PrintX = Column(Float(53))
+    PrintY = Column(Float(53))
+    PaperMode = Column(Integer)
+    PaperName = Column(Unicode(50))
+    PaperSize = Column(Integer)
+    PaperAlign = Column(Integer)
+    PrintType = Column(Integer, server_default=text("((0))"))
+    SourceType = Column(Integer, server_default=text("((0))"))
+    OutSysName = Column(Unicode(50))
+    OutID = Column(Unicode(255))
 
 
-t_CS_NotePrintList = Table(
-    'CS_NotePrintList', metadata,
-    Column('ID', Integer, nullable=False),
-    Column('InfoID', Integer, nullable=False),
-    Column('PartName', Unicode(255), nullable=False),
-    Column('DataType', Integer, nullable=False),
-    Column('DataValue', Unicode(2048)),
-    Column('SubTableColName', Unicode(50), server_default=text("(NULL)")),
-    Column('SubTableRowNum', Integer, server_default=text("((0))")),
-    Column('SubTableName', Unicode(100), server_default=text("(NULL)"))
-)
+class CSNotePrintList(Base):
+    __tablename__ = 'CS_NotePrintList'
+
+    ID = Column(Integer, nullable=False, primary_key=True)
+    InfoID = Column(Integer, nullable=False)
+    PartName = Column(Unicode(255), nullable=False)
+    DataType = Column(Integer, nullable=False)
+    DataValue = Column(Unicode(2048))
+    SubTableColName = Column(Unicode(50), server_default=text("(NULL)"))
+    SubTableRowNum = Column(Integer, server_default=text("((0))"))
+    SubTableName = Column(Unicode(100), server_default=text("(NULL)"))
 
 
-t_CS_NotePrintOrder = Table(
-    'CS_NotePrintOrder', metadata,
-    Column('ID', Integer, nullable=False),
-    Column('NoteID', Unicode(128), nullable=False),
-    Column('UserName', Unicode(50)),
-    Column('SubTableOrder', Integer, nullable=False, server_default=text("((0))"))
-)
+class CSNotePrintOrder(Base):
+    __tablename__ = 'CS_NotePrintOrder'
+
+    ID = Column(Integer, nullable=False, primary_key=True)
+    NoteID = Column(Unicode(128), nullable=False)
+    UserName = Column(Unicode(50))
+    SubTableOrder = Column(Integer, nullable=False, server_default=text("((0))"))
 
 
 class CSPeriodBeginNoArrival(Base):
@@ -6823,1135 +6792,1109 @@ class CSPeriodBeginNoArrivalDaily(Base):
     idPeriodBeginNoArrivalDTO = Column(Integer)
 
 
-t_CS_PrintJobInfo = Table(
-    'CS_PrintJobInfo', metadata,
-    Column('ID', Integer, nullable=False),
-    Column('NoteID', Unicode(128)),
-    Column('NoteName', Unicode(200)),
-    Column('HostName', Unicode(50)),
-    Column('PrintDate', DateTime),
-    Column('PrintTime', DateTime),
-    Column('UserName', Unicode(50)),
-    Column('SourceType', Integer, server_default=text("((0))")),
-    Column('IsCancel', Integer, server_default=text("((0))")),
-    Column('OutSysName', Unicode(50)),
-    Column('OutID', Unicode(255))
-)
-
-
-t_CS_PrintJobList = Table(
-    'CS_PrintJobList', metadata,
-    Column('ID', Integer, nullable=False),
-    Column('InfoID', Integer, nullable=False),
-    Column('PartName', Unicode(255)),
-    Column('DataType', Integer),
-    Column('DataValue', Unicode(2048)),
-    Column('SubTableColName', Unicode(50), server_default=text("(NULL)")),
-    Column('SubTableRowNum', Integer, server_default=text("((0))")),
-    Column('SubTableName', Unicode(100), server_default=text("(NULL)"))
-)
-
-
-t_CS_PrinterParam = Table(
-    'CS_PrinterParam', metadata,
-    Column('ID', Integer, nullable=False),
-    Column('NoteID', Unicode(128)),
-    Column('PrinterName', Unicode(100)),
-    Column('DriverName', Unicode(100)),
-    Column('HostName', Unicode(50)),
-    Column('PrintOrient', Integer),
-    Column('PrintX', Float(53)),
-    Column('PrintY', Float(53)),
-    Column('PaperMode', Integer),
-    Column('PaperName', Unicode(50)),
-    Column('PaperSize', Integer),
-    Column('PaperAlign', Integer),
-    Column('PrintType', Integer),
-    Column('MicroAdjust', Integer),
-    Column('UpdateTime', DateTime)
-)
-
-
-t_DI_DailyCurrentStock = Table(
-    'DI_DailyCurrentStock', metadata,
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('CanUseQuantity', Numeric(28, 14), nullable=False, server_default=text("((0))")),
-    Column('PurchaseOrderOnWayQuantity', Numeric(28, 14), nullable=False, server_default=text("((0))")),
-    Column('PurchaseArrivalQuantity', Numeric(28, 14), nullable=False, server_default=text("((0))")),
-    Column('PurchaseForReceiveQuantity', Numeric(28, 14), nullable=False, server_default=text("((0))")),
-    Column('OnProducingQuantity', Numeric(28, 14), nullable=False, server_default=text("((0))")),
-    Column('ProductForReceiveQuantity', Numeric(28, 14), nullable=False, server_default=text("((0))")),
-    Column('PurchaseRequisitionQuantity', Numeric(28, 14), nullable=False, server_default=text("((0))")),
-    Column('OtherOnWayQuantity', Numeric(28, 14), nullable=False, server_default=text("((0))")),
-    Column('TransOnWayQuantity', Numeric(28, 14), nullable=False, server_default=text("((0))")),
-    Column('ForSaleOrderQuantity', Numeric(28, 14), nullable=False, server_default=text("((0))")),
-    Column('SaleDeliveryQuantity', Numeric(28, 14), nullable=False, server_default=text("((0))")),
-    Column('ForSaleDispatchQuantity', Numeric(28, 14), nullable=False, server_default=text("((0))")),
-    Column('ProduceForDispatchQuantity', Numeric(28, 14), nullable=False, server_default=text("((0))")),
-    Column('MaterialForSendQuantity', Numeric(28, 14), nullable=False, server_default=text("((0))")),
-    Column('OtherForDispatchQuantity', Numeric(28, 14), nullable=False, server_default=text("((0))")),
-    Column('TransForDispatchQuantity', Numeric(28, 14), nullable=False, server_default=text("((0))")),
-    Column('ForStockOrderQuantity', Numeric(28, 14), nullable=False, server_default=text("((0))")),
-    Column('SafeQuantity', Numeric(28, 14), nullable=False, server_default=text("((0))")),
-    Column('LowQuantity', Numeric(28, 14), nullable=False, server_default=text("((0))")),
-    Column('BaseQuantity', Numeric(28, 14), nullable=False, server_default=text("((0))")),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('updatedBy', Unicode(32)),
-    Column('StockRequestQuantity', Numeric(28, 14), nullable=False, server_default=text("((0))")),
-    Column('ProduceOnWayWithUnAudit', Numeric(28, 14), nullable=False, server_default=text("((0))")),
-    Column('ProduceForDispatchQuantityWithUnAudit', Numeric(28, 14), nullable=False, server_default=text("((0))")),
-    Column('freeItem0', Unicode(300)),
-    Column('freeItem1', Unicode(300)),
-    Column('freeItem2', Unicode(300)),
-    Column('freeItem3', Unicode(300)),
-    Column('freeItem4', Unicode(300)),
-    Column('freeItem5', Unicode(300)),
-    Column('freeItem6', Unicode(300)),
-    Column('freeItem7', Unicode(300)),
-    Column('freeItem8', Unicode(300)),
-    Column('freeItem9', Unicode(300)),
-    Column('ForStockRequestQuantity', Numeric(28, 14), nullable=False, server_default=text("((0))")),
-    Column('DistributionForSendQuantity', Numeric(28, 14), nullable=False, server_default=text("((0))")),
-    Column('id', Integer, nullable=False),
-    Column('idinventory', Integer),
-    Column('idwarehouse', Integer)
-)
-
-
-t_DI_Distribution = Table(
-    'DI_Distribution', metadata,
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('estimateddeliverydate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('telephone', Unicode(50)),
-    Column('arrivaladdress', Unicode(50)),
-    Column('sourcevouchercode', Unicode(50)),
-    Column('contact', Unicode(50)),
-    Column('isnomodify', Unicode(500)),
-    Column('exchangerate', Numeric(28, 14)),
-    Column('memo', Unicode(200)),
-    Column('voucherdate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('madedate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('maker', Unicode(50)),
-    Column('auditor', Unicode(50)),
-    Column('auditeddate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('reviser', Unicode(50)),
-    Column('iscarriedforwardout', Integer),
-    Column('iscarriedforwardin', Integer),
-    Column('ismodifiedcode', Integer),
-    Column('createdtime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('sequencenumber', Integer),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('updatedBy', Unicode(32)),
-    Column('priuserdefnvc1', Unicode(500)),
-    Column('priuserdefdecm1', Numeric(28, 14)),
-    Column('priuserdefnvc2', Unicode(500)),
-    Column('priuserdefdecm2', Numeric(28, 14)),
-    Column('priuserdefnvc3', Unicode(500)),
-    Column('priuserdefdecm3', Numeric(28, 14)),
-    Column('priuserdefnvc4', Unicode(500)),
-    Column('priuserdefdecm4', Numeric(28, 14)),
-    Column('priuserdefnvc5', Unicode(500)),
-    Column('priuserdefdecm5', Numeric(28, 14)),
-    Column('priuserdefnvc6', Unicode(500)),
-    Column('priuserdefdecm6', Numeric(28, 14)),
-    Column('pubuserdefnvc1', Unicode(500)),
-    Column('pubuserdefdecm1', Numeric(28, 14)),
-    Column('pubuserdefnvc2', Unicode(500)),
-    Column('pubuserdefdecm2', Numeric(28, 14)),
-    Column('pubuserdefnvc3', Unicode(500)),
-    Column('pubuserdefdecm3', Numeric(28, 14)),
-    Column('pubuserdefnvc4', Unicode(500)),
-    Column('pubuserdefdecm4', Numeric(28, 14)),
-    Column('pubuserdefnvc5', Unicode(500)),
-    Column('pubuserdefdecm5', Numeric(28, 14)),
-    Column('pubuserdefnvc6', Unicode(500)),
-    Column('pubuserdefdecm6', Numeric(28, 14)),
-    Column('PrintCount', Integer),
-    Column('ID', Integer, nullable=False),
-    Column('idbusitype', Integer),
-    Column('idcurrency', Integer),
-    Column('idstore', Integer),
-    Column('idmarketingorgan', Integer),
-    Column('idcustomer', Integer),
-    Column('idsettleCustomer', Integer),
-    Column('idperson', Integer),
-    Column('idproject', Integer),
-    Column('idinWarehouse', Integer),
-    Column('idoutwarehouse', Integer),
-    Column('idrra', Integer),
-    Column('sourcevoucherid', Integer),
-    Column('completestatus', Integer),
-    Column('deliverymode', Integer),
-    Column('voucherstate', Integer),
-    Column('auditorid', Integer),
-    Column('makerid', Integer),
-    Column('idsourcevouchertype', Integer)
-)
-
-
-t_DI_DistributionSourceRelation = Table(
-    'DI_DistributionSourceRelation', metadata,
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('changerate', Numeric(28, 14)),
-    Column('basequantity', Numeric(28, 14)),
-    Column('subquantity', Numeric(28, 14)),
-    Column('quantity', Numeric(28, 14)),
-    Column('quantity2', Numeric(28, 14)),
-    Column('sequencenumber', Integer),
-    Column('createdtime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('updatedBy', Unicode(32)),
-    Column('id', Integer, nullable=False),
-    Column('idbaseunit', Integer),
-    Column('idsubunit', Integer),
-    Column('idunit', Integer),
-    Column('idunit2', Integer),
-    Column('voucherid', Integer),
-    Column('idDistributionDetailDTO', Integer),
-    Column('sourcevoucherid', Integer),
-    Column('sourcevoucherdetailid', Integer),
-    Column('idsourcevouchertype', Integer)
-)
-
-
-t_DI_Distribution_b = Table(
-    'DI_Distribution_b', metadata,
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('invbarcode', Unicode(50)),
-    Column('quantity', Numeric(28, 14)),
-    Column('quantity2', Numeric(28, 14)),
-    Column('retailprice', Numeric(28, 14)),
-    Column('retailamount', Numeric(28, 14)),
-    Column('sourcevouchercode', Unicode(50)),
-    Column('totalstockinquantity', Numeric(28, 14)),
-    Column('totalstockinquantity2', Numeric(28, 14)),
-    Column('totaltransquantity', Numeric(28, 14)),
-    Column('totaltransquantity2', Numeric(28, 14)),
-    Column('totalstockoutquantity', Numeric(28, 14)),
-    Column('totalstockoutquantity2', Numeric(28, 14)),
-    Column('differencequantity', Numeric(28, 14)),
-    Column('differencequantity2', Numeric(28, 14)),
-    Column('estimateddeliverydate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('changerate', Numeric(28, 14)),
-    Column('basequantity', Numeric(28, 14)),
-    Column('subquantity', Numeric(28, 14)),
-    Column('onwayquantity', Numeric(28, 14)),
-    Column('onwayquantity2', Numeric(28, 14)),
-    Column('totalexecutedquantity', Numeric(28, 14)),
-    Column('totalexecutedquantity2', Numeric(28, 14)),
-    Column('isnomodify', Unicode(500)),
-    Column('compositionquantity', Unicode(50)),
-    Column('createdtime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('sequencenumber', Integer),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('updatedBy', Unicode(32)),
-    Column('priuserdefnvc1', Unicode(500)),
-    Column('priuserdefdecm1', Numeric(28, 14)),
-    Column('priuserdefnvc2', Unicode(500)),
-    Column('priuserdefdecm2', Numeric(28, 14)),
-    Column('priuserdefnvc3', Unicode(500)),
-    Column('priuserdefdecm3', Numeric(28, 14)),
-    Column('priuserdefnvc4', Unicode(500)),
-    Column('priuserdefdecm4', Numeric(28, 14)),
-    Column('pubuserdefnvc1', Unicode(500)),
-    Column('pubuserdefdecm1', Numeric(28, 14)),
-    Column('pubuserdefnvc2', Unicode(500)),
-    Column('pubuserdefdecm2', Numeric(28, 14)),
-    Column('pubuserdefnvc3', Unicode(500)),
-    Column('pubuserdefdecm3', Numeric(28, 14)),
-    Column('pubuserdefnvc4', Unicode(500)),
-    Column('pubuserdefdecm4', Numeric(28, 14)),
-    Column('freeItem0', Unicode(300)),
-    Column('freeItem1', Unicode(300)),
-    Column('freeItem2', Unicode(300)),
-    Column('freeItem3', Unicode(300)),
-    Column('freeItem4', Unicode(300)),
-    Column('freeItem5', Unicode(300)),
-    Column('freeItem6', Unicode(300)),
-    Column('freeItem7', Unicode(300)),
-    Column('freeItem8', Unicode(300)),
-    Column('freeItem9', Unicode(300)),
-    Column('id', Integer, nullable=False),
-    Column('idinventory', Integer),
-    Column('idproject', Integer),
-    Column('idbaseunit', Integer),
-    Column('idsubunit', Integer),
-    Column('idunit', Integer),
-    Column('idunit2', Integer),
-    Column('idoutwarehouse', Integer),
-    Column('idDistributionDTO', Integer),
-    Column('sourcevoucherid', Integer),
-    Column('sourcevoucherdetailid', Integer),
-    Column('completestatus', Integer),
-    Column('idsourcevouchertype', Integer)
-)
-
-
-t_DI_RRABulidPurchaseOrder = Table(
-    'DI_RRABulidPurchaseOrder', metadata,
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('currentquantity', Numeric(28, 14)),
-    Column('purchasedate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('arrivalDate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('price', Numeric(28, 14)),
-    Column('taxRate', Numeric(28, 14)),
-    Column('taxPrice', Numeric(28, 14)),
-    Column('unitexchangerate', Numeric(28, 14)),
-    Column('exchangerate', Numeric(28, 14)),
-    Column('createdtime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('sequencenumber', Integer),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('updatedBy', Unicode(32)),
-    Column('isNoModify', Unicode(400)),
-    Column('freeItem0', Unicode(300)),
-    Column('freeItem1', Unicode(300)),
-    Column('freeItem2', Unicode(300)),
-    Column('freeItem3', Unicode(300)),
-    Column('freeItem4', Unicode(300)),
-    Column('freeItem5', Unicode(300)),
-    Column('freeItem6', Unicode(300)),
-    Column('freeItem7', Unicode(300)),
-    Column('freeItem8', Unicode(300)),
-    Column('freeItem9', Unicode(300)),
-    Column('id', Integer, nullable=False),
-    Column('idCurrency', Integer),
-    Column('idDepartment', Integer),
-    Column('idInventory', Integer),
-    Column('idPartner', Integer),
-    Column('idClerk', Integer),
-    Column('idUnit', Integer),
-    Column('idWarehouse', Integer)
-)
-
-
-t_DI_RRAGeneratePurchaseOrderRule = Table(
-    'DI_RRAGeneratePurchaseOrderRule', metadata,
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('isphurchaselots', Integer),
-    Column('createdtime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('sequencenumber', Integer),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('updatedBy', Unicode(32)),
-    Column('id', Integer, nullable=False),
-    Column('mergerule', Integer),
-    Column('splitrule', Integer),
-    Column('iduser', Integer)
-)
-
-
-t_DI_RRAInventory = Table(
-    'DI_RRAInventory', metadata,
-    Column('Code', Unicode(30)),
-    Column('Name', Unicode(200)),
-    Column('AvailableQuantity', Numeric(28, 14)),
-    Column('ReplenishmentRuleTotalQuantity', Numeric(28, 14)),
-    Column('Ts', TIMESTAMP, nullable=False),
-    Column('Updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('UpdatedBy', Unicode(32)),
-    Column('createdtime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('RequestTotalQuantity', Numeric(28, 14)),
-    Column('freeItem0', Unicode(300)),
-    Column('freeItem1', Unicode(300)),
-    Column('freeItem2', Unicode(300)),
-    Column('freeItem3', Unicode(300)),
-    Column('freeItem4', Unicode(300)),
-    Column('freeItem5', Unicode(300)),
-    Column('freeItem6', Unicode(300)),
-    Column('freeItem7', Unicode(300)),
-    Column('freeItem8', Unicode(300)),
-    Column('freeItem9', Unicode(300)),
-    Column('ReNewGoodSellDays', Integer),
-    Column('ReNewGoodAheadDays', Integer),
-    Column('ID', Integer, nullable=False),
-    Column('idinventory', Integer),
-    Column('idunit', Integer),
-    Column('idoutWarehouse', Integer),
-    Column('idStoreWarehouseReplenishmentRule', Integer),
-    Column('idCustormerReplenishmentRule', Integer),
-    Column('idRRADTO', Integer)
-)
-
-
-t_DI_RRAOption = Table(
-    'DI_RRAOption', metadata,
-    Column('Code', Unicode(30)),
-    Column('Name', Unicode(200)),
-    Column('PreAvailableQuantityDate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('ProcuremenEarlyDays', Integer),
-    Column('FIDivided', Integer),
-    Column('Ts', TIMESTAMP, nullable=False),
-    Column('Updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('UpdatedBy', Unicode(32)),
-    Column('ExistedQuantity', Integer),
-    Column('PurchasereQuisition', Integer),
-    Column('PurchasereQuisitionWithUnAudit', Integer),
-    Column('PurchaseOrderOnWay', Integer),
-    Column('PurchaseOrderOnWayWithUnAudit', Integer),
-    Column('PurchaseArrival', Integer),
-    Column('PurchaseReceive', Integer),
-    Column('TransOnWay', Integer),
-    Column('OtherOnWay', Integer),
-    Column('ProductReceive', Integer),
-    Column('ProduceOnWay', Integer),
-    Column('SafeStock', Integer),
-    Column('LowStock', Integer),
-    Column('SaleOrder', Integer),
-    Column('SaleOrderWithUnAudit', Integer),
-    Column('SaleDelivery', Integer),
-    Column('SaleDispatch', Integer),
-    Column('TransDIspatch', Integer),
-    Column('OtherDispatch', Integer),
-    Column('MaterialDispatch', Integer),
-    Column('ProduceDispatch', Integer),
-    Column('UseDateTimeAvailableQuantity', Integer),
-    Column('ProduceOnWayWithUnAudit', Integer),
-    Column('ProduceDispatchWithUnAudit', Integer),
-    Column('WithEmptyWarhouse', Integer),
-    Column('Store_ExistedQuantity', Integer),
-    Column('Store_PurchaseArrival', Integer),
-    Column('Store_PurchaseReceive', Integer),
-    Column('Store_TransOnWay', Integer),
-    Column('Store_OtherOnWay', Integer),
-    Column('Store_SafeStock', Integer),
-    Column('Store_LowStock', Integer),
-    Column('Store_SaleDelivery', Integer),
-    Column('Store_SaleDispatch', Integer),
-    Column('Store_TransDIspatch', Integer),
-    Column('Store_OtherDispatch', Integer),
-    Column('Store_StockRequestQuantity', Integer),
-    Column('Store_StockRequestQuantityWithNoAudit', Integer),
-    Column('Store_ESStoreForDispatchQuantity', Integer),
-    Column('Store_ESStoreForDispatchQuantityNoAudit', Integer),
-    Column('StockRequest', Integer),
-    Column('StockRequestWithUnAudit', Integer),
-    Column('DistributionForSendQuantity', Integer),
-    Column('DistributionForReceiveQuantity', Integer),
-    Column('ID', Integer, nullable=False),
-    Column('idoutWarehouse', Integer)
-)
-
-
-t_DI_RRAResult = Table(
-    'DI_RRAResult', metadata,
-    Column('Code', Unicode(30)),
-    Column('Name', Unicode(200)),
-    Column('Quantity', Numeric(28, 14)),
-    Column('Ts', TIMESTAMP, nullable=False),
-    Column('Updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('UpdatedBy', Unicode(32)),
-    Column('SourceVoucherCode', Unicode(200)),
-    Column('freeItem0', Unicode(300)),
-    Column('freeItem1', Unicode(300)),
-    Column('freeItem2', Unicode(300)),
-    Column('freeItem3', Unicode(300)),
-    Column('freeItem4', Unicode(300)),
-    Column('freeItem5', Unicode(300)),
-    Column('freeItem6', Unicode(300)),
-    Column('freeItem7', Unicode(300)),
-    Column('freeItem8', Unicode(300)),
-    Column('freeItem9', Unicode(300)),
-    Column('createdtime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('RequestedQuantity', Numeric(28, 14)),
-    Column('SourceVoucherTs', Unicode(50)),
-    Column('SourceVoucherDetailTs', Unicode(50)),
-    Column('VoucherDate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('changerate', Numeric(28, 14)),
-    Column('ID', Integer, nullable=False),
-    Column('idcurrency', Integer),
-    Column('StoreOrCustomerID', Integer),
-    Column('idstore', Integer),
-    Column('idinventory', Integer),
-    Column('idcustomer', Integer),
-    Column('idproject', Integer),
-    Column('idunit', Integer),
-    Column('idwarehouse', Integer),
-    Column('idInWarehouse', Integer),
-    Column('idRRADTO', Integer),
-    Column('SourceVoucherID', Integer),
-    Column('SourceVoucherDetailID', Integer),
-    Column('IdSourceVoucherType', Integer)
-)
-
-
-t_DI_RRAResultSum = Table(
-    'DI_RRAResultSum', metadata,
-    Column('Code', Unicode(30)),
-    Column('freeItem0', Unicode(300)),
-    Column('freeItem1', Unicode(300)),
-    Column('freeItem2', Unicode(300)),
-    Column('freeItem3', Unicode(300)),
-    Column('freeItem4', Unicode(300)),
-    Column('freeItem5', Unicode(300)),
-    Column('freeItem6', Unicode(300)),
-    Column('freeItem7', Unicode(300)),
-    Column('freeItem8', Unicode(300)),
-    Column('freeItem9', Unicode(300)),
-    Column('AvailableQuantity', Numeric(28, 14)),
-    Column('Quantity', Numeric(28, 14)),
-    Column('LeaveAvailableQuantity', Numeric(29, 14)),
-    Column('PurchaseSuggestQuantity', Numeric(29, 14)),
-    Column('PurchaseQuantity', Numeric(28, 14), server_default=text("((0))")),
-    Column('Status', Integer, server_default=text("((0))")),
-    Column('ID', Integer, nullable=False),
-    Column('IdInventory', Integer),
-    Column('IdUnit', Integer),
-    Column('IdWarehouse', Integer)
-)
-
-
-t_DI_RRARuleObj = Table(
-    'DI_RRARuleObj', metadata,
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updatedBy', Unicode(32)),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('name', Unicode(200), nullable=False),
-    Column('id', Integer, nullable=False),
-    Column('ruleTypeID', Integer),
-    Column('idEnum', Integer, nullable=False, server_default=text("((0))"))
-)
-
-
-t_DI_RRARuleSet_Customer = Table(
-    'DI_RRARuleSet_Customer', metadata,
-    Column('Code', Unicode(200)),
-    Column('Name', Unicode(200)),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updatedBy', Unicode(32)),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('id', Integer, nullable=False),
-    Column('IdInventory', Integer),
-    Column('IdInventoryClass', Integer),
-    Column('CustomerReplenishmentRule', Integer),
-    Column('ProductInfo', Integer)
-)
-
-
-t_DI_RRARuleSet_Store = Table(
-    'DI_RRARuleSet_Store', metadata,
-    Column('Code', Unicode(200)),
-    Column('Name', Unicode(200)),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updatedBy', Unicode(32)),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('id', Integer, nullable=False),
-    Column('IdInventory', Integer),
-    Column('IdInventoryClass', Integer),
-    Column('ProductInfo', Integer),
-    Column('StoreReplenishmentRule', Integer)
-)
-
-
-t_DI_RRASourceRelation = Table(
-    'DI_RRASourceRelation', metadata,
-    Column('Code', Unicode(30)),
-    Column('Name', Unicode(200)),
-    Column('Quantity', Numeric(28, 14)),
-    Column('Ts', TIMESTAMP, nullable=False),
-    Column('Updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('UpdatedBy', Unicode(32)),
-    Column('Quantity2', Numeric(28, 14)),
-    Column('SourceVoucherCode', Unicode(200)),
-    Column('SourceVoucherTs', Unicode(50)),
-    Column('SourceVoucherDetailTs', Unicode(50)),
-    Column('VoucherDate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('changerate', Numeric(28, 14)),
-    Column('ID', Integer, nullable=False),
-    Column('idcurrency', Integer),
-    Column('idproject', Integer),
-    Column('IdUnit', Integer),
-    Column('IdUnit2', Integer),
-    Column('idRRAStoreCustormerDTO', Integer),
-    Column('SourceVoucherID', Integer),
-    Column('SourceVoucherDetailID', Integer),
-    Column('idsourceVoucherType', Integer)
-)
-
-
-t_DI_RRAStoreCustormer = Table(
-    'DI_RRAStoreCustormer', metadata,
-    Column('Code', Unicode(30)),
-    Column('Name', Unicode(200)),
-    Column('RequestQuantity', Numeric(28, 14)),
-    Column('DistributionRqeuareQuantity', Numeric(28, 14)),
-    Column('DistributionQuantity', Numeric(28, 14)),
-    Column('CurrentStock', Numeric(28, 14)),
-    Column('SaleQuantity', Numeric(28, 14)),
-    Column('NewAllocationRatio', Numeric(28, 14)),
-    Column('ReplenishmentRule', Unicode(50)),
-    Column('Ts', TIMESTAMP, nullable=False),
-    Column('Updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('UpdatedBy', Unicode(32)),
-    Column('HasDistributed', Integer),
-    Column('createdtime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('AvailableQuantity', Numeric(28, 14)),
-    Column('ID', Integer, nullable=False),
-    Column('idstore', Integer),
-    Column('StoreOrCustomerID', Integer),
-    Column('IdInventory', Integer),
-    Column('idcustomer', Integer),
-    Column('idInWarehouse', Integer),
-    Column('idReplenishmentRule', Integer),
-    Column('IdRRAInventoryDTO', Integer)
-)
-
-
-t_DI_ReplenishmentPriorityLevelLevel = Table(
-    'DI_ReplenishmentPriorityLevelLevel', metadata,
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('PriorityLevel', Integer),
-    Column('createdtime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('sequencenumber', Integer),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('updatedBy', Unicode(32)),
-    Column('id', Integer, nullable=False),
-    Column('idstore', Integer),
-    Column('StoreOrCustomerID', Integer),
-    Column('idcustomer', Integer),
-    Column('idInWarehouse', Integer)
-)
-
-
-t_DI_RunShop = Table(
-    'DI_RunShop', metadata,
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updatedBy', Unicode(32)),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('createdTime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('code', Unicode(30)),
-    Column('PrintCount', Integer),
-    Column('id', Integer, nullable=False)
-)
-
-
-t_DI_RunShopLine = Table(
-    'DI_RunShopLine', metadata,
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updatedBy', Unicode(32)),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('isCurrent', Integer, nullable=False),
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('createdTime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('LineCode', Unicode(200), nullable=False),
-    Column('runshopCyc', Integer),
-    Column('beginDate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('PrintCount', Integer),
-    Column('id', Integer, nullable=False),
-    Column('idSalesman', Integer),
-    Column('idRunShopDTO', Integer, nullable=False, server_default=text("((0))")),
-    Column('RunStatus', Integer)
-)
-
-
-t_DI_RunShopLine_b = Table(
-    'DI_RunShopLine_b', metadata,
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updatedBy', Unicode(32)),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('code', Integer),
-    Column('signInTime', Unicode(50)),
-    Column('signOutTime', Unicode(50)),
-    Column('isReportSalesQuantity', Integer),
-    Column('isReportStockQuantity', Integer),
-    Column('isOrderedDirect', Integer),
-    Column('isSignInPhoto', Integer),
-    Column('isSignOutPhoto', Integer),
-    Column('isPromotionPhoto', Integer),
-    Column('isCompetitionPhoto', Integer),
-    Column('mapMark', Unicode(200), nullable=False),
-    Column('targetType', Integer, nullable=False),
-    Column('createdTime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('CheckAddress', Unicode(200)),
-    Column('name', Unicode(200)),
-    Column('effectiveTime', Integer),
-    Column('effectiveRange', Integer),
-    Column('id', Integer, nullable=False),
-    Column('idStore', Integer),
-    Column('idPartner', Integer),
-    Column('LineGroupInfo', Integer),
-    Column('idRunShopLineDTO', Integer, nullable=False, server_default=text("((0))")),
-    Column('idRunShopRecord', Integer)
-)
-
-
-t_DI_RunShopMap = Table(
-    'DI_RunShopMap', metadata,
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updatedBy', Unicode(32)),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('code', Unicode(30)),
-    Column('menuCode', Unicode(200)),
-    Column('xmlValue', Unicode(1000)),
-    Column('id', Integer, nullable=False),
-    Column('idRunShopDTO', Integer, nullable=False, server_default=text("((0))")),
-    Column('userID', Integer)
-)
-
-
-t_DI_RunShopMapMark = Table(
-    'DI_RunShopMapMark', metadata,
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updatedBy', Unicode(32)),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('code', Unicode(32), nullable=False),
-    Column('isUsed', Integer, nullable=False),
-    Column('id', Integer, nullable=False)
-)
-
-
-t_DI_RunShopNews = Table(
-    'DI_RunShopNews', metadata,
-    Column('recordDate', String(10, u'Chinese_PRC_CI_AS'), nullable=False),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('newsStatus', Integer),
-    Column('position', String(200, u'Chinese_PRC_CI_AS')),
-    Column('id', Integer, nullable=False),
-    Column('idPerson', Integer, nullable=False, server_default=text("((0))")),
-    Column('idRunShopLineDetialDTO', Integer, nullable=False, server_default=text("((0))"))
-)
-
-
-t_DI_RunShopRecord = Table(
-    'DI_RunShopRecord', metadata,
-    Column('recordDate', String(10, u'Chinese_PRC_CI_AS'), nullable=False),
-    Column('signInTime', Unicode(50)),
-    Column('signOutTime', Unicode(50)),
-    Column('lateMinuts', Integer),
-    Column('overTime', Integer),
-    Column('signInPhoto', Unicode(2000)),
-    Column('signOutPhoto', Unicode(2000)),
-    Column('promotionPhoto', Unicode(2000)),
-    Column('competitionPhoto', Unicode(2000)),
-    Column('idStockSalesReport', Unicode(2000)),
-    Column('idSaleOrder', Unicode(2000)),
-    Column('idStockRequest', Unicode(2000)),
-    Column('newsStatus', Integer),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updatedBy', Unicode(32)),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('createdTime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('photoCount', Integer),
-    Column('code', Unicode(30)),
-    Column('signOutDate', String(10, u'Chinese_PRC_CI_AS')),
-    Column('signInAddress', Unicode(50)),
-    Column('TaskDescription', Unicode(1000)),
-    Column('id', Integer, nullable=False),
-    Column('idPerson', Integer),
-    Column('idRunShopLineDetailDTO', Integer)
-)
-
-
-t_DI_RunShopTarget = Table(
-    'DI_RunShopTarget', metadata,
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updatedBy', Unicode(32)),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('isReportSalesQuantity', Integer),
-    Column('isReportStockQuantity', Integer),
-    Column('isOrderedDirect', Integer),
-    Column('isSignInPhoto', Integer),
-    Column('isSignOutPhoto', Integer),
-    Column('isPromotionPhoto', Integer),
-    Column('isCompetitionPhoto', Integer),
-    Column('targetType', Integer, nullable=False),
-    Column('code', Unicode(50)),
-    Column('mapMark', Unicode(200)),
-    Column('id', Integer, nullable=False),
-    Column('idStore', Integer),
-    Column('idPartner', Integer)
-)
-
-
-t_DI_SelectInventoryByRRA = Table(
-    'DI_SelectInventoryByRRA', metadata,
-    Column('ts', TIMESTAMP),
-    Column('updatedBy', Unicode(32)),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('name', Unicode(200)),
-    Column('BeginDate', String(10, u'Chinese_PRC_CI_AS')),
-    Column('BeginTime', Unicode(20)),
-    Column('EndDate', String(10, u'Chinese_PRC_CI_AS')),
-    Column('EndTime', Unicode(20)),
-    Column('ReNewGoodSellDays', Integer),
-    Column('AdviceReplenishQuantity', Numeric(28, 14)),
-    Column('ActualReplenishQuantity', Numeric(28, 14)),
-    Column('SaleQuantity', Numeric(28, 14)),
-    Column('ExistingQuantity', Numeric(28, 14)),
-    Column('AvailableQuantity', Numeric(28, 14)),
-    Column('freeItem0', Unicode(300)),
-    Column('freeItem1', Unicode(300)),
-    Column('freeItem2', Unicode(300)),
-    Column('freeItem3', Unicode(300)),
-    Column('freeItem4', Unicode(300)),
-    Column('freeItem5', Unicode(300)),
-    Column('freeItem6', Unicode(300)),
-    Column('freeItem7', Unicode(300)),
-    Column('freeItem8', Unicode(300)),
-    Column('freeItem9', Unicode(300)),
-    Column('id', Integer, nullable=False),
-    Column('idInventory', Integer),
-    Column('idInventoryClass', Integer),
-    Column('idWarehouse', Integer),
-    Column('idRraruleset_store', Integer),
-    Column('ProductInfo', Integer),
-    Column('StoreReplenishmentRule', Integer)
-)
-
-
-t_DI_StockRequest = Table(
-    'DI_StockRequest', metadata,
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('requirementdate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('telephone', Unicode(50)),
-    Column('arrivaladdress', Unicode(50)),
-    Column('contact', Unicode(50)),
-    Column('memo', Unicode(200)),
-    Column('voucherdate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('madedate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('maker', Unicode(50)),
-    Column('auditor', Unicode(50)),
-    Column('auditeddate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('reviser', Unicode(50)),
-    Column('iscarriedforwardout', Integer),
-    Column('iscarriedforwardin', Integer),
-    Column('ismodifiedcode', Integer),
-    Column('createdtime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('sequencenumber', Integer),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('updatedBy', Unicode(32)),
-    Column('priuserdefnvc1', Unicode(500)),
-    Column('priuserdefdecm1', Numeric(28, 14)),
-    Column('priuserdefnvc2', Unicode(500)),
-    Column('priuserdefdecm2', Numeric(28, 14)),
-    Column('priuserdefnvc3', Unicode(500)),
-    Column('priuserdefdecm3', Numeric(28, 14)),
-    Column('priuserdefnvc4', Unicode(500)),
-    Column('priuserdefdecm4', Numeric(28, 14)),
-    Column('priuserdefnvc5', Unicode(500)),
-    Column('priuserdefdecm5', Numeric(28, 14)),
-    Column('priuserdefnvc6', Unicode(500)),
-    Column('priuserdefdecm6', Numeric(28, 14)),
-    Column('pubuserdefnvc1', Unicode(500)),
-    Column('pubuserdefdecm1', Numeric(28, 14)),
-    Column('pubuserdefnvc2', Unicode(500)),
-    Column('pubuserdefdecm2', Numeric(28, 14)),
-    Column('pubuserdefnvc3', Unicode(500)),
-    Column('pubuserdefdecm3', Numeric(28, 14)),
-    Column('pubuserdefnvc4', Unicode(500)),
-    Column('pubuserdefdecm4', Numeric(28, 14)),
-    Column('pubuserdefnvc5', Unicode(500)),
-    Column('pubuserdefdecm5', Numeric(28, 14)),
-    Column('pubuserdefnvc6', Unicode(500)),
-    Column('pubuserdefdecm6', Numeric(28, 14)),
-    Column('PrintCount', Integer),
-    Column('id', Integer, nullable=False),
-    Column('idbusitype', Integer),
-    Column('iddepartment', Integer),
-    Column('idstore', Integer),
-    Column('idmarketingorgan', Integer),
-    Column('idcustomer', Integer),
-    Column('idperson', Integer),
-    Column('idproject', Integer),
-    Column('IdWarehouse', Integer),
-    Column('IdOutWarehouse', Integer),
-    Column('completestatus', Integer),
-    Column('DistributionState', Integer),
-    Column('voucherstate', Integer),
-    Column('auditorid', Integer),
-    Column('makerid', Integer)
-)
-
-
-t_DI_StockRequest_b = Table(
-    'DI_StockRequest_b', metadata,
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('changerate', Numeric(28, 14)),
-    Column('basequantity', Numeric(28, 14)),
-    Column('subquantity', Numeric(28, 14)),
-    Column('invbarcode', Unicode(50)),
-    Column('quantity', Numeric(28, 14)),
-    Column('quantity2', Numeric(28, 14)),
-    Column('retailprice', Numeric(28, 14)),
-    Column('retailamount', Numeric(28, 14)),
-    Column('onwayquantity', Numeric(28, 14)),
-    Column('onwayquantity2', Numeric(28, 14)),
-    Column('totalpurchasequantity', Numeric(28, 14)),
-    Column('totalpurchasequantity2', Numeric(28, 14)),
-    Column('totaltransquantity', Numeric(28, 14)),
-    Column('totaltransquantity2', Numeric(28, 14)),
-    Column('totalstockoutquantity', Numeric(28, 14)),
-    Column('totalstockoutquantity2', Numeric(28, 14)),
-    Column('differencequantity', Numeric(28, 14)),
-    Column('differencequantity2', Numeric(28, 14)),
-    Column('RequirementDate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('totaldistributionquantity', Numeric(28, 14)),
-    Column('totaldistributionquantity2', Numeric(28, 14)),
-    Column('totalstockinquantity', Numeric(28, 14)),
-    Column('totalstockinquantity2', Numeric(28, 14)),
-    Column('haspra', Integer),
-    Column('totalpracount', Integer),
-    Column('totalexecutedquantity', Numeric(28, 14)),
-    Column('totalexecutedquantity2', Numeric(28, 14)),
-    Column('compositionquantity', Unicode(50)),
-    Column('createdtime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('sequencenumber', Integer),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('updatedBy', Unicode(32)),
-    Column('priuserdefnvc1', Unicode(500)),
-    Column('priuserdefdecm1', Numeric(28, 14)),
-    Column('priuserdefnvc2', Unicode(500)),
-    Column('priuserdefdecm2', Numeric(28, 14)),
-    Column('priuserdefnvc3', Unicode(500)),
-    Column('priuserdefdecm3', Numeric(28, 14)),
-    Column('priuserdefnvc4', Unicode(500)),
-    Column('priuserdefdecm4', Numeric(28, 14)),
-    Column('pubuserdefnvc1', Unicode(500)),
-    Column('pubuserdefdecm1', Numeric(28, 14)),
-    Column('pubuserdefnvc2', Unicode(500)),
-    Column('pubuserdefdecm2', Numeric(28, 14)),
-    Column('pubuserdefnvc3', Unicode(500)),
-    Column('pubuserdefdecm3', Numeric(28, 14)),
-    Column('pubuserdefnvc4', Unicode(500)),
-    Column('pubuserdefdecm4', Numeric(28, 14)),
-    Column('freeItem0', Unicode(300)),
-    Column('freeItem1', Unicode(300)),
-    Column('freeItem2', Unicode(300)),
-    Column('freeItem3', Unicode(300)),
-    Column('freeItem4', Unicode(300)),
-    Column('freeItem5', Unicode(300)),
-    Column('freeItem6', Unicode(300)),
-    Column('freeItem7', Unicode(300)),
-    Column('freeItem8', Unicode(300)),
-    Column('freeItem9', Unicode(300)),
-    Column('id', Integer, nullable=False),
-    Column('idinventory', Integer),
-    Column('idproject', Integer),
-    Column('idbaseunit', Integer),
-    Column('idsubunit', Integer),
-    Column('idunit', Integer),
-    Column('idunit2', Integer),
-    Column('IdOutWarehouse', Integer),
-    Column('idStockRequestDTO', Integer),
-    Column('completestatus', Integer),
-    Column('DistributionState', Integer)
-)
-
-
-t_DI_StockSalesReport = Table(
-    'DI_StockSalesReport', metadata,
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('begindate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('enddate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('contact', Unicode(50)),
-    Column('telephone', Unicode(50)),
-    Column('memo', Unicode(200)),
-    Column('voucherdate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('madedate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('maker', Unicode(50)),
-    Column('auditor', Unicode(50)),
-    Column('auditeddate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('reviser', Unicode(50)),
-    Column('iscarriedforwardout', Integer),
-    Column('iscarriedforwardin', Integer),
-    Column('ismodifiedcode', Integer),
-    Column('createdtime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('sequencenumber', Integer),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('updatedBy', Unicode(32)),
-    Column('priuserdefnvc1', Unicode(500)),
-    Column('priuserdefdecm1', Numeric(28, 14)),
-    Column('priuserdefnvc2', Unicode(500)),
-    Column('priuserdefdecm2', Numeric(28, 14)),
-    Column('priuserdefnvc3', Unicode(500)),
-    Column('priuserdefdecm3', Numeric(28, 14)),
-    Column('priuserdefnvc4', Unicode(500)),
-    Column('priuserdefdecm4', Numeric(28, 14)),
-    Column('priuserdefnvc5', Unicode(500)),
-    Column('priuserdefdecm5', Numeric(28, 14)),
-    Column('priuserdefnvc6', Unicode(500)),
-    Column('priuserdefdecm6', Numeric(28, 14)),
-    Column('pubuserdefnvc1', Unicode(500)),
-    Column('pubuserdefdecm1', Numeric(28, 14)),
-    Column('pubuserdefnvc2', Unicode(500)),
-    Column('pubuserdefdecm2', Numeric(28, 14)),
-    Column('pubuserdefnvc3', Unicode(500)),
-    Column('pubuserdefdecm3', Numeric(28, 14)),
-    Column('pubuserdefnvc4', Unicode(500)),
-    Column('pubuserdefdecm4', Numeric(28, 14)),
-    Column('pubuserdefnvc5', Unicode(500)),
-    Column('pubuserdefdecm5', Numeric(28, 14)),
-    Column('pubuserdefnvc6', Unicode(500)),
-    Column('pubuserdefdecm6', Numeric(28, 14)),
-    Column('PrintCount', Integer, server_default=text("((0))")),
-    Column('id', Integer, nullable=False),
-    Column('idmarketingorgan', Integer),
-    Column('idcustomer', Integer),
-    Column('idperson', Integer),
-    Column('idSourceVoucherType', Integer),
-    Column('StockSalesReportOrderStatus', Integer),
-    Column('voucherstate', Integer),
-    Column('auditorid', Integer),
-    Column('makerid', Integer)
-)
-
-
-t_DI_StockSalesReport_b = Table(
-    'DI_StockSalesReport_b', metadata,
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('quantity', Numeric(28, 14)),
-    Column('dailyaveragesalesquantity', Numeric(28, 14)),
-    Column('stockquantity', Numeric(28, 14)),
-    Column('ReplenishQuantity', Numeric(28, 14)),
-    Column('ReplenishQuantityByStockUnit', Numeric(28, 14)),
-    Column('ispersist', Integer),
-    Column('quantitybystockunit', Numeric(28, 14)),
-    Column('dailyaveragesalesquantitybystockunit', Numeric(28, 14)),
-    Column('stockquantitybystockunit', Numeric(28, 14)),
-    Column('basequantity', Numeric(28, 14)),
-    Column('subquantity', Numeric(28, 14)),
-    Column('changerate', Numeric(28, 14)),
-    Column('createdtime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('sequencenumber', Integer),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('updatedBy', Unicode(32)),
-    Column('freeItem0', Unicode(300)),
-    Column('freeItem1', Unicode(300)),
-    Column('freeItem2', Unicode(300)),
-    Column('freeItem3', Unicode(300)),
-    Column('freeItem4', Unicode(300)),
-    Column('freeItem5', Unicode(300)),
-    Column('freeItem6', Unicode(300)),
-    Column('freeItem7', Unicode(300)),
-    Column('freeItem8', Unicode(300)),
-    Column('freeItem9', Unicode(300)),
-    Column('pubuserdefnvc1', Unicode(500)),
-    Column('pubuserdefdecm1', Numeric(28, 14)),
-    Column('pubuserdefnvc2', Unicode(500)),
-    Column('pubuserdefdecm2', Numeric(28, 14)),
-    Column('pubuserdefnvc3', Unicode(500)),
-    Column('pubuserdefdecm3', Numeric(28, 14)),
-    Column('pubuserdefnvc4', Unicode(500)),
-    Column('pubuserdefdecm4', Numeric(28, 14)),
-    Column('priuserdefnvc1', Unicode(500)),
-    Column('priuserdefdecm1', Numeric(28, 14)),
-    Column('priuserdefnvc2', Unicode(500)),
-    Column('priuserdefdecm2', Numeric(28, 14)),
-    Column('priuserdefnvc3', Unicode(500)),
-    Column('priuserdefdecm3', Numeric(28, 14)),
-    Column('priuserdefnvc4', Unicode(500)),
-    Column('priuserdefdecm4', Numeric(28, 14)),
-    Column('RetailPrice', Numeric(28, 14)),
-    Column('RetailAmount', Numeric(28, 14)),
-    Column('StockAmount', Numeric(28, 14)),
-    Column('id', Integer, nullable=False),
-    Column('idinventory', Integer),
-    Column('idInventoryMutiCode', Integer),
-    Column('idunit', Integer),
-    Column('idunit2', Integer),
-    Column('idStockSalesReportDTO', Integer)
-)
-
-
-t_DI_StoreDailyCurrentStock = Table(
-    'DI_StoreDailyCurrentStock', metadata,
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updatedBy', Unicode(32)),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('name', Unicode(200)),
-    Column('StockRequestQuantity', Numeric(28, 14), nullable=False, server_default=text("((0))")),
-    Column('BaseQuantity', Numeric(28, 14), nullable=False, server_default=text("((0))")),
-    Column('CanUseQuantity', Numeric(28, 14), nullable=False, server_default=text("((0))")),
-    Column('PurchaseArrivalQuantity', Numeric(28, 14), nullable=False, server_default=text("((0))")),
-    Column('PurchaseForReceiveQuantity', Numeric(28, 14), nullable=False, server_default=text("((0))")),
-    Column('ProductForReceiveQuantity', Numeric(28, 14), nullable=False, server_default=text("((0))")),
-    Column('SaleDeliveryQuantity', Numeric(28, 14), nullable=False, server_default=text("((0))")),
-    Column('SaleDispatchQuantity', Numeric(28, 14), nullable=False, server_default=text("((0))")),
-    Column('OtherOnWayQuantity', Numeric(28, 14), nullable=False, server_default=text("((0))")),
-    Column('TransOnWayQuantity', Numeric(28, 14), nullable=False, server_default=text("((0))")),
-    Column('OtherForDispatchQuantity', Numeric(28, 14), nullable=False, server_default=text("((0))")),
-    Column('TransForDispatchQuantity', Numeric(28, 14), nullable=False, server_default=text("((0))")),
-    Column('SafeQuantity', Numeric(28, 14), nullable=False, server_default=text("((0))")),
-    Column('LowQuantity', Numeric(28, 14), nullable=False, server_default=text("((0))")),
-    Column('freeItem0', Unicode(300)),
-    Column('freeItem1', Unicode(300)),
-    Column('freeItem2', Unicode(300)),
-    Column('freeItem3', Unicode(300)),
-    Column('freeItem4', Unicode(300)),
-    Column('freeItem5', Unicode(300)),
-    Column('freeItem6', Unicode(300)),
-    Column('freeItem7', Unicode(300)),
-    Column('freeItem8', Unicode(300)),
-    Column('freeItem9', Unicode(300)),
-    Column('ESStoreForDispatchQuantity', Numeric(28, 14), nullable=False, server_default=text("((0))")),
-    Column('DistributionForReceiveQuantity', Numeric(28, 14), nullable=False, server_default=text("((0))")),
-    Column('id', Integer, nullable=False),
-    Column('idinventory', Integer),
-    Column('idwarehouse', Integer)
-)
-
-
-t_DI_TEMP_DAQ = Table(
-    'DI_TEMP_DAQ', metadata,
-    Column('Quantity', Numeric(28, 14)),
-    Column('IdSku', Integer)
-)
-
-
-t_DI_VoucherSelectResult = Table(
-    'DI_VoucherSelectResult', metadata,
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('VouchertypeCode', Unicode(50)),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('updatedBy', Unicode(32)),
-    Column('id', Integer, nullable=False),
-    Column('Voucherid', Integer),
-    Column('VoucherDetailId', Integer),
-    Column('userId', Integer),
-    Column('idvoucherType', Integer)
-)
-
-
-t_EAP_AccInformation = Table(
-    'EAP_AccInformation', metadata,
-    Column('SysID', Unicode(4)),
-    Column('InfoID', Unicode(6), nullable=False),
-    Column('Name', Unicode(100), nullable=False),
-    Column('Caption', Unicode(30)),
-    Column('Type', Unicode(20)),
-    Column('Value', Unicode(100)),
-    Column('Default', Unicode(100)),
-    Column('IsVisible', BIT),
-    Column('IsEnable', BIT),
-    Column('OptionType', Integer),
-    Column('ExpressionName', Unicode(60)),
-    Column('Version', Unicode(60)),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('idEnablePeriod', Integer)
-)
+class CSPrintJobInfo(Base):
+    __tablename__ = 'CS_PrintJobInfo'
+
+    ID = Column(Integer, nullable=False, primary_key=True)
+    NoteID = Column(Unicode(128))
+    NoteName = Column(Unicode(200))
+    HostName = Column(Unicode(50))
+    PrintDate = Column(DateTime)
+    PrintTime = Column(DateTime)
+    UserName = Column(Unicode(50))
+    SourceType = Column(Integer, server_default=text("((0))"))
+    IsCancel = Column(Integer, server_default=text("((0))"))
+    OutSysName = Column(Unicode(50))
+    OutID = Column(Unicode(255))
+
+
+class CSPrintJobList(Base):
+    __tablename__ = 'CS_PrintJobList'
+
+    ID = Column(Integer, nullable=False, primary_key=True)
+    InfoID = Column(Integer, nullable=False)
+    PartName = Column(Unicode(255))
+    DataType = Column(Integer)
+    DataValue = Column(Unicode(2048))
+    SubTableColName = Column(Unicode(50), server_default=text("(NULL)"))
+    SubTableRowNum = Column(Integer, server_default=text("((0))"))
+    SubTableName = Column(Unicode(100), server_default=text("(NULL)"))
+
+
+class CSPrinterParam(Base):
+    __tablename__ = 'CS_PrinterParam'
+
+    ID = Column(Integer, nullable=False, primary_key=True)
+    NoteID = Column(Unicode(128))
+    PrinterName = Column(Unicode(100))
+    DriverName = Column(Unicode(100))
+    HostName = Column(Unicode(50))
+    PrintOrient = Column(Integer)
+    PrintX = Column(Float(53))
+    PrintY = Column(Float(53))
+    PaperMode = Column(Integer)
+    PaperName = Column(Unicode(50))
+    PaperSize = Column(Integer)
+    PaperAlign = Column(Integer)
+    PrintType = Column(Integer)
+    MicroAdjust = Column(Integer)
+    UpdateTime = Column(DateTime)
+
+
+class DIDailyCurrentStock(Base):
+    __tablename__ = 'DI_DailyCurrentStock'
+
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    CanUseQuantity = Column(Numeric(28, 14), nullable=False, server_default=text("((0))"))
+    PurchaseOrderOnWayQuantity = Column(Numeric(28, 14), nullable=False, server_default=text("((0))"))
+    PurchaseArrivalQuantity = Column(Numeric(28, 14), nullable=False, server_default=text("((0))"))
+    PurchaseForReceiveQuantity = Column(Numeric(28, 14), nullable=False, server_default=text("((0))"))
+    OnProducingQuantity = Column(Numeric(28, 14), nullable=False, server_default=text("((0))"))
+    ProductForReceiveQuantity = Column(Numeric(28, 14), nullable=False, server_default=text("((0))"))
+    PurchaseRequisitionQuantity = Column(Numeric(28, 14), nullable=False, server_default=text("((0))"))
+    OtherOnWayQuantity = Column(Numeric(28, 14), nullable=False, server_default=text("((0))"))
+    TransOnWayQuantity = Column(Numeric(28, 14), nullable=False, server_default=text("((0))"))
+    ForSaleOrderQuantity = Column(Numeric(28, 14), nullable=False, server_default=text("((0))"))
+    SaleDeliveryQuantity = Column(Numeric(28, 14), nullable=False, server_default=text("((0))"))
+    ForSaleDispatchQuantity = Column(Numeric(28, 14), nullable=False, server_default=text("((0))"))
+    ProduceForDispatchQuantity = Column(Numeric(28, 14), nullable=False, server_default=text("((0))"))
+    MaterialForSendQuantity = Column(Numeric(28, 14), nullable=False, server_default=text("((0))"))
+    OtherForDispatchQuantity = Column(Numeric(28, 14), nullable=False, server_default=text("((0))"))
+    TransForDispatchQuantity = Column(Numeric(28, 14), nullable=False, server_default=text("((0))"))
+    ForStockOrderQuantity = Column(Numeric(28, 14), nullable=False, server_default=text("((0))"))
+    SafeQuantity = Column(Numeric(28, 14), nullable=False, server_default=text("((0))"))
+    LowQuantity = Column(Numeric(28, 14), nullable=False, server_default=text("((0))"))
+    BaseQuantity = Column(Numeric(28, 14), nullable=False, server_default=text("((0))"))
+    ts = Column(TIMESTAMP, nullable=False)
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    updatedBy = Column(Unicode(32))
+    StockRequestQuantity = Column(Numeric(28, 14), nullable=False, server_default=text("((0))"))
+    ProduceOnWayWithUnAudit = Column(Numeric(28, 14), nullable=False, server_default=text("((0))"))
+    ProduceForDispatchQuantityWithUnAudit = Column(Numeric(28, 14), nullable=False, server_default=text("((0))"))
+    freeItem0 = Column(Unicode(300))
+    freeItem1 = Column(Unicode(300))
+    freeItem2 = Column(Unicode(300))
+    freeItem3 = Column(Unicode(300))
+    freeItem4 = Column(Unicode(300))
+    freeItem5 = Column(Unicode(300))
+    freeItem6 = Column(Unicode(300))
+    freeItem7 = Column(Unicode(300))
+    freeItem8 = Column(Unicode(300))
+    freeItem9 = Column(Unicode(300))
+    ForStockRequestQuantity = Column(Numeric(28, 14), nullable=False, server_default=text("((0))"))
+    DistributionForSendQuantity = Column(Numeric(28, 14), nullable=False, server_default=text("((0))"))
+    id = Column(Integer, nullable=False, primary_key=True)
+    idinventory = Column(Integer)
+    idwarehouse = Column(Integer)
+
+
+class DIDistribution(Base):
+    __tablename__ = 'DI_Distribution'
+
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    estimateddeliverydate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    telephone = Column(Unicode(50))
+    arrivaladdress = Column(Unicode(50))
+    sourcevouchercode = Column(Unicode(50))
+    contact = Column(Unicode(50))
+    isnomodify = Column(Unicode(500))
+    exchangerate = Column(Numeric(28, 14))
+    memo = Column(Unicode(200))
+    voucherdate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    madedate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    maker = Column(Unicode(50))
+    auditor = Column(Unicode(50))
+    auditeddate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    reviser = Column(Unicode(50))
+    iscarriedforwardout = Column(Integer)
+    iscarriedforwardin = Column(Integer)
+    ismodifiedcode = Column(Integer)
+    createdtime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    sequencenumber = Column(Integer)
+    ts = Column(TIMESTAMP, nullable=False)
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    updatedBy = Column(Unicode(32))
+    priuserdefnvc1 = Column(Unicode(500))
+    priuserdefdecm1 = Column(Numeric(28, 14))
+    priuserdefnvc2 = Column(Unicode(500))
+    priuserdefdecm2 = Column(Numeric(28, 14))
+    priuserdefnvc3 = Column(Unicode(500))
+    priuserdefdecm3 = Column(Numeric(28, 14))
+    priuserdefnvc4 = Column(Unicode(500))
+    priuserdefdecm4 = Column(Numeric(28, 14))
+    priuserdefnvc5 = Column(Unicode(500))
+    priuserdefdecm5 = Column(Numeric(28, 14))
+    priuserdefnvc6 = Column(Unicode(500))
+    priuserdefdecm6 = Column(Numeric(28, 14))
+    pubuserdefnvc1 = Column(Unicode(500))
+    pubuserdefdecm1 = Column(Numeric(28, 14))
+    pubuserdefnvc2 = Column(Unicode(500))
+    pubuserdefdecm2 = Column(Numeric(28, 14))
+    pubuserdefnvc3 = Column(Unicode(500))
+    pubuserdefdecm3 = Column(Numeric(28, 14))
+    pubuserdefnvc4 = Column(Unicode(500))
+    pubuserdefdecm4 = Column(Numeric(28, 14))
+    pubuserdefnvc5 = Column(Unicode(500))
+    pubuserdefdecm5 = Column(Numeric(28, 14))
+    pubuserdefnvc6 = Column(Unicode(500))
+    pubuserdefdecm6 = Column(Numeric(28, 14))
+    PrintCount = Column(Integer)
+    ID = Column(Integer, nullable=False, primary_key=True)
+    idbusitype = Column(Integer)
+    idcurrency = Column(Integer)
+    idstore = Column(Integer)
+    idmarketingorgan = Column(Integer)
+    idcustomer = Column(Integer)
+    idsettleCustomer = Column(Integer)
+    idperson = Column(Integer)
+    idproject = Column(Integer)
+    idinWarehouse = Column(Integer)
+    idoutwarehouse = Column(Integer)
+    idrra = Column(Integer)
+    sourcevoucherid = Column(Integer)
+    completestatus = Column(Integer)
+    deliverymode = Column(Integer)
+    voucherstate = Column(Integer)
+    auditorid = Column(Integer)
+    makerid = Column(Integer)
+    idsourcevouchertype = Column(Integer)
+
+
+class DIDistributionSourceRelation(Base):
+    __tablename__ = 'DI_DistributionSourceRelation'
+
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    changerate = Column(Numeric(28, 14))
+    basequantity = Column(Numeric(28, 14))
+    subquantity = Column(Numeric(28, 14))
+    quantity = Column(Numeric(28, 14))
+    quantity2 = Column(Numeric(28, 14))
+    sequencenumber = Column(Integer)
+    createdtime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    ts = Column(TIMESTAMP, nullable=False)
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    updatedBy = Column(Unicode(32))
+    id = Column(Integer, nullable=False, primary_key=True)
+    idbaseunit = Column(Integer)
+    idsubunit = Column(Integer)
+    idunit = Column(Integer)
+    idunit2 = Column(Integer)
+    voucherid = Column(Integer)
+    idDistributionDetailDTO = Column(Integer)
+    sourcevoucherid = Column(Integer)
+    sourcevoucherdetailid = Column(Integer)
+    idsourcevouchertype = Column(Integer)
+
+
+class DIDistributionB(Base):
+    __tablename__ = 'DI_Distribution_b'
+
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    invbarcode = Column(Unicode(50))
+    quantity = Column(Numeric(28, 14))
+    quantity2 = Column(Numeric(28, 14))
+    retailprice = Column(Numeric(28, 14))
+    retailamount = Column(Numeric(28, 14))
+    sourcevouchercode = Column(Unicode(50))
+    totalstockinquantity = Column(Numeric(28, 14))
+    totalstockinquantity2 = Column(Numeric(28, 14))
+    totaltransquantity = Column(Numeric(28, 14))
+    totaltransquantity2 = Column(Numeric(28, 14))
+    totalstockoutquantity = Column(Numeric(28, 14))
+    totalstockoutquantity2 = Column(Numeric(28, 14))
+    differencequantity = Column(Numeric(28, 14))
+    differencequantity2 = Column(Numeric(28, 14))
+    estimateddeliverydate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    changerate = Column(Numeric(28, 14))
+    basequantity = Column(Numeric(28, 14))
+    subquantity = Column(Numeric(28, 14))
+    onwayquantity = Column(Numeric(28, 14))
+    onwayquantity2 = Column(Numeric(28, 14))
+    totalexecutedquantity = Column(Numeric(28, 14))
+    totalexecutedquantity2 = Column(Numeric(28, 14))
+    isnomodify = Column(Unicode(500))
+    compositionquantity = Column(Unicode(50))
+    createdtime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    sequencenumber = Column(Integer)
+    ts = Column(TIMESTAMP, nullable=False)
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    updatedBy = Column(Unicode(32))
+    priuserdefnvc1 = Column(Unicode(500))
+    priuserdefdecm1 = Column(Numeric(28, 14))
+    priuserdefnvc2 = Column(Unicode(500))
+    priuserdefdecm2 = Column(Numeric(28, 14))
+    priuserdefnvc3 = Column(Unicode(500))
+    priuserdefdecm3 = Column(Numeric(28, 14))
+    priuserdefnvc4 = Column(Unicode(500))
+    priuserdefdecm4 = Column(Numeric(28, 14))
+    pubuserdefnvc1 = Column(Unicode(500))
+    pubuserdefdecm1 = Column(Numeric(28, 14))
+    pubuserdefnvc2 = Column(Unicode(500))
+    pubuserdefdecm2 = Column(Numeric(28, 14))
+    pubuserdefnvc3 = Column(Unicode(500))
+    pubuserdefdecm3 = Column(Numeric(28, 14))
+    pubuserdefnvc4 = Column(Unicode(500))
+    pubuserdefdecm4 = Column(Numeric(28, 14))
+    freeItem0 = Column(Unicode(300))
+    freeItem1 = Column(Unicode(300))
+    freeItem2 = Column(Unicode(300))
+    freeItem3 = Column(Unicode(300))
+    freeItem4 = Column(Unicode(300))
+    freeItem5 = Column(Unicode(300))
+    freeItem6 = Column(Unicode(300))
+    freeItem7 = Column(Unicode(300))
+    freeItem8 = Column(Unicode(300))
+    freeItem9 = Column(Unicode(300))
+    id = Column(Integer, nullable=False, primary_key=True)
+    idinventory = Column(Integer)
+    idproject = Column(Integer)
+    idbaseunit = Column(Integer)
+    idsubunit = Column(Integer)
+    idunit = Column(Integer)
+    idunit2 = Column(Integer)
+    idoutwarehouse = Column(Integer)
+    idDistributionDTO = Column(Integer)
+    sourcevoucherid = Column(Integer)
+    sourcevoucherdetailid = Column(Integer)
+    completestatus = Column(Integer)
+    idsourcevouchertype = Column(Integer)
+
+
+class DIRRABulidPurchaseOrder(Base):
+    __tablename__ = 'DI_RRABulidPurchaseOrder'
+
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    currentquantity = Column(Numeric(28, 14))
+    purchasedate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    arrivalDate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    price = Column(Numeric(28, 14))
+    taxRate = Column(Numeric(28, 14))
+    taxPrice = Column(Numeric(28, 14))
+    unitexchangerate = Column(Numeric(28, 14))
+    exchangerate = Column(Numeric(28, 14))
+    createdtime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    sequencenumber = Column(Integer)
+    ts = Column(TIMESTAMP, nullable=False)
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    updatedBy = Column(Unicode(32))
+    isNoModify = Column(Unicode(400))
+    freeItem0 = Column(Unicode(300))
+    freeItem1 = Column(Unicode(300))
+    freeItem2 = Column(Unicode(300))
+    freeItem3 = Column(Unicode(300))
+    freeItem4 = Column(Unicode(300))
+    freeItem5 = Column(Unicode(300))
+    freeItem6 = Column(Unicode(300))
+    freeItem7 = Column(Unicode(300))
+    freeItem8 = Column(Unicode(300))
+    freeItem9 = Column(Unicode(300))
+    id = Column(Integer, nullable=False, primary_key=True)
+    idCurrency = Column(Integer)
+    idDepartment = Column(Integer)
+    idInventory = Column(Integer)
+    idPartner = Column(Integer)
+    idClerk = Column(Integer)
+    idUnit = Column(Integer)
+    idWarehouse = Column(Integer)
+
+
+class DIRRAGeneratePurchaseOrderRule(Base):
+    __tablename__ = 'DI_RRAGeneratePurchaseOrderRule'
+
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    isphurchaselots = Column(Integer)
+    createdtime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    sequencenumber = Column(Integer)
+    ts = Column(TIMESTAMP, nullable=False)
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    updatedBy = Column(Unicode(32))
+    id = Column(Integer, nullable=False, primary_key=True)
+    mergerule = Column(Integer)
+    splitrule = Column(Integer)
+    iduser = Column(Integer)
+
+
+class DIRRAInventory(Base):
+    __tablename__ = 'DI_RRAInventory'
+
+    Code = Column(Unicode(30))
+    Name = Column(Unicode(200))
+    AvailableQuantity = Column(Numeric(28, 14))
+    ReplenishmentRuleTotalQuantity = Column(Numeric(28, 14))
+    Ts = Column(TIMESTAMP, nullable=False)
+    Updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    UpdatedBy = Column(Unicode(32))
+    createdtime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    RequestTotalQuantity = Column(Numeric(28, 14))
+    freeItem0 = Column(Unicode(300))
+    freeItem1 = Column(Unicode(300))
+    freeItem2 = Column(Unicode(300))
+    freeItem3 = Column(Unicode(300))
+    freeItem4 = Column(Unicode(300))
+    freeItem5 = Column(Unicode(300))
+    freeItem6 = Column(Unicode(300))
+    freeItem7 = Column(Unicode(300))
+    freeItem8 = Column(Unicode(300))
+    freeItem9 = Column(Unicode(300))
+    ReNewGoodSellDays = Column(Integer)
+    ReNewGoodAheadDays = Column(Integer)
+    ID = Column(Integer, nullable=False, primary_key=True)
+    idinventory = Column(Integer)
+    idunit = Column(Integer)
+    idoutWarehouse = Column(Integer)
+    idStoreWarehouseReplenishmentRule = Column(Integer)
+    idCustormerReplenishmentRule = Column(Integer)
+    idRRADTO = Column(Integer)
+
+
+class DIRRAOption(Base):
+    __tablename__ = 'DI_RRAOption'
+
+    Code = Column(Unicode(30))
+    Name = Column(Unicode(200))
+    PreAvailableQuantityDate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    ProcuremenEarlyDays = Column(Integer)
+    FIDivided = Column(Integer)
+    Ts = Column(TIMESTAMP, nullable=False)
+    Updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    UpdatedBy = Column(Unicode(32))
+    ExistedQuantity = Column(Integer)
+    PurchasereQuisition = Column(Integer)
+    PurchasereQuisitionWithUnAudit = Column(Integer)
+    PurchaseOrderOnWay = Column(Integer)
+    PurchaseOrderOnWayWithUnAudit = Column(Integer)
+    PurchaseArrival = Column(Integer)
+    PurchaseReceive = Column(Integer)
+    TransOnWay = Column(Integer)
+    OtherOnWay = Column(Integer)
+    ProductReceive = Column(Integer)
+    ProduceOnWay = Column(Integer)
+    SafeStock = Column(Integer)
+    LowStock = Column(Integer)
+    SaleOrder = Column(Integer)
+    SaleOrderWithUnAudit = Column(Integer)
+    SaleDelivery = Column(Integer)
+    SaleDispatch = Column(Integer)
+    TransDIspatch = Column(Integer)
+    OtherDispatch = Column(Integer)
+    MaterialDispatch = Column(Integer)
+    ProduceDispatch = Column(Integer)
+    UseDateTimeAvailableQuantity = Column(Integer)
+    ProduceOnWayWithUnAudit = Column(Integer)
+    ProduceDispatchWithUnAudit = Column(Integer)
+    WithEmptyWarhouse = Column(Integer)
+    Store_ExistedQuantity = Column(Integer)
+    Store_PurchaseArrival = Column(Integer)
+    Store_PurchaseReceive = Column(Integer)
+    Store_TransOnWay = Column(Integer)
+    Store_OtherOnWay = Column(Integer)
+    Store_SafeStock = Column(Integer)
+    Store_LowStock = Column(Integer)
+    Store_SaleDelivery = Column(Integer)
+    Store_SaleDispatch = Column(Integer)
+    Store_TransDIspatch = Column(Integer)
+    Store_OtherDispatch = Column(Integer)
+    Store_StockRequestQuantity = Column(Integer)
+    Store_StockRequestQuantityWithNoAudit = Column(Integer)
+    Store_ESStoreForDispatchQuantity = Column(Integer)
+    Store_ESStoreForDispatchQuantityNoAudit = Column(Integer)
+    StockRequest = Column(Integer)
+    StockRequestWithUnAudit = Column(Integer)
+    DistributionForSendQuantity = Column(Integer)
+    DistributionForReceiveQuantity = Column(Integer)
+    ID = Column(Integer, nullable=False, primary_key=True)
+    idoutWarehouse = Column(Integer)
+
+
+class DIRRAResult(Base):
+    __tablename__ = 'DI_RRAResult'
+
+    Code = Column(Unicode(30))
+    Name = Column(Unicode(200))
+    Quantity = Column(Numeric(28, 14))
+    Ts = Column(TIMESTAMP, nullable=False)
+    Updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    UpdatedBy = Column(Unicode(32))
+    SourceVoucherCode = Column(Unicode(200))
+    freeItem0 = Column(Unicode(300))
+    freeItem1 = Column(Unicode(300))
+    freeItem2 = Column(Unicode(300))
+    freeItem3 = Column(Unicode(300))
+    freeItem4 = Column(Unicode(300))
+    freeItem5 = Column(Unicode(300))
+    freeItem6 = Column(Unicode(300))
+    freeItem7 = Column(Unicode(300))
+    freeItem8 = Column(Unicode(300))
+    freeItem9 = Column(Unicode(300))
+    createdtime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    RequestedQuantity = Column(Numeric(28, 14))
+    SourceVoucherTs = Column(Unicode(50))
+    SourceVoucherDetailTs = Column(Unicode(50))
+    VoucherDate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    changerate = Column(Numeric(28, 14))
+    ID = Column(Integer, nullable=False, primary_key=True)
+    idcurrency = Column(Integer)
+    StoreOrCustomerID = Column(Integer)
+    idstore = Column(Integer)
+    idinventory = Column(Integer)
+    idcustomer = Column(Integer)
+    idproject = Column(Integer)
+    idunit = Column(Integer)
+    idwarehouse = Column(Integer)
+    idInWarehouse = Column(Integer)
+    idRRADTO = Column(Integer)
+    SourceVoucherID = Column(Integer)
+    SourceVoucherDetailID = Column(Integer)
+    IdSourceVoucherType = Column(Integer)
+
+
+class DIRRAResultSum(Base):
+    __tablename__ = 'DI_RRAResultSum'
+
+    Code = Column(Unicode(30))
+    freeItem0 = Column(Unicode(300))
+    freeItem1 = Column(Unicode(300))
+    freeItem2 = Column(Unicode(300))
+    freeItem3 = Column(Unicode(300))
+    freeItem4 = Column(Unicode(300))
+    freeItem5 = Column(Unicode(300))
+    freeItem6 = Column(Unicode(300))
+    freeItem7 = Column(Unicode(300))
+    freeItem8 = Column(Unicode(300))
+    freeItem9 = Column(Unicode(300))
+    AvailableQuantity = Column(Numeric(28, 14))
+    Quantity = Column(Numeric(28, 14))
+    LeaveAvailableQuantity = Column(Numeric(29, 14))
+    PurchaseSuggestQuantity = Column(Numeric(29, 14))
+    PurchaseQuantity = Column(Numeric(28, 14), server_default=text("((0))"))
+    Status = Column(Integer, server_default=text("((0))"))
+    ID = Column(Integer, nullable=False, primary_key=True)
+    IdInventory = Column(Integer)
+    IdUnit = Column(Integer)
+    IdWarehouse = Column(Integer)
+
+
+class DIRRARuleObj(Base):
+    __tablename__ = 'DI_RRARuleObj'
+
+    ts = Column(TIMESTAMP, nullable=False)
+    updatedBy = Column(Unicode(32))
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    name = Column(Unicode(200), nullable=False)
+    id = Column(Integer, nullable=False, primary_key=True)
+    ruleTypeID = Column(Integer)
+    idEnum = Column(Integer, nullable=False, server_default=text("((0))"))
+
+
+class DIRRARuleSetCustomer(Base):
+    __tablename__ = 'DI_RRARuleSet_Customer'
+
+    Code = Column(Unicode(200))
+    Name = Column(Unicode(200))
+    ts = Column(TIMESTAMP, nullable=False)
+    updatedBy = Column(Unicode(32))
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    id = Column(Integer, nullable=False, primary_key=True)
+    IdInventory = Column(Integer)
+    IdInventoryClass = Column(Integer)
+    CustomerReplenishmentRule = Column(Integer)
+    ProductInfo = Column(Integer)
+
+
+class DIRRARuleSetStore(Base):
+    __tablename__ = 'DI_RRARuleSet_Store'
+
+    Code = Column(Unicode(200))
+    Name = Column(Unicode(200))
+    ts = Column(TIMESTAMP, nullable=False)
+    updatedBy = Column(Unicode(32))
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    id = Column(Integer, nullable=False, primary_key=True)
+    IdInventory = Column(Integer)
+    IdInventoryClass = Column(Integer)
+    ProductInfo = Column(Integer)
+    StoreReplenishmentRule = Column(Integer)
+
+
+class DIRRASourceRelation(Base):
+    __tablename__ = 'DI_RRASourceRelation'
+
+    Code = Column(Unicode(30))
+    Name = Column(Unicode(200))
+    Quantity = Column(Numeric(28, 14))
+    Ts = Column(TIMESTAMP, nullable=False)
+    Updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    UpdatedBy = Column(Unicode(32))
+    Quantity2 = Column(Numeric(28, 14))
+    SourceVoucherCode = Column(Unicode(200))
+    SourceVoucherTs = Column(Unicode(50))
+    SourceVoucherDetailTs = Column(Unicode(50))
+    VoucherDate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    changerate = Column(Numeric(28, 14))
+    ID = Column(Integer, nullable=False, primary_key=True)
+    idcurrency = Column(Integer)
+    idproject = Column(Integer)
+    IdUnit = Column(Integer)
+    IdUnit2 = Column(Integer)
+    idRRAStoreCustormerDTO = Column(Integer)
+    SourceVoucherID = Column(Integer)
+    SourceVoucherDetailID = Column(Integer)
+    idsourceVoucherType = Column(Integer)
+
+
+class DIRRAStoreCustormer(Base):
+    __tablename__ = 'DI_RRAStoreCustormer'
+
+    Code = Column(Unicode(30))
+    Name = Column(Unicode(200))
+    RequestQuantity = Column(Numeric(28, 14))
+    DistributionRqeuareQuantity = Column(Numeric(28, 14))
+    DistributionQuantity = Column(Numeric(28, 14))
+    CurrentStock = Column(Numeric(28, 14))
+    SaleQuantity = Column(Numeric(28, 14))
+    NewAllocationRatio = Column(Numeric(28, 14))
+    ReplenishmentRule = Column(Unicode(50))
+    Ts = Column(TIMESTAMP, nullable=False)
+    Updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    UpdatedBy = Column(Unicode(32))
+    HasDistributed = Column(Integer)
+    createdtime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    AvailableQuantity = Column(Numeric(28, 14))
+    ID = Column(Integer, nullable=False, primary_key=True)
+    idstore = Column(Integer)
+    StoreOrCustomerID = Column(Integer)
+    IdInventory = Column(Integer)
+    idcustomer = Column(Integer)
+    idInWarehouse = Column(Integer)
+    idReplenishmentRule = Column(Integer)
+    IdRRAInventoryDTO = Column(Integer)
+
+
+class DIReplenishmentPriorityLevelLevel(Base):
+    __tablename__ = 'DI_ReplenishmentPriorityLevelLevel'
+
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    PriorityLevel = Column(Integer)
+    createdtime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    sequencenumber = Column(Integer)
+    ts = Column(TIMESTAMP, nullable=False)
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    updatedBy = Column(Unicode(32))
+    id = Column(Integer, nullable=False, primary_key=True)
+    idstore = Column(Integer)
+    StoreOrCustomerID = Column(Integer)
+    idcustomer = Column(Integer)
+    idInWarehouse = Column(Integer)
+
+
+class DIRunShop(Base):
+    __tablename__ = 'DI_RunShop'
+
+    ts = Column(TIMESTAMP, nullable=False)
+    updatedBy = Column(Unicode(32))
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    createdTime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    code = Column(Unicode(30))
+    PrintCount = Column(Integer)
+    id = Column(Integer, nullable=False, primary_key=True)
+
+
+class DIRunShopLine(Base):
+    __tablename__ = 'DI_RunShopLine'
+
+    ts = Column(TIMESTAMP, nullable=False)
+    updatedBy = Column(Unicode(32))
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    isCurrent = Column(Integer, nullable=False)
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    createdTime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    LineCode = Column(Unicode(200), nullable=False)
+    runshopCyc = Column(Integer)
+    beginDate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    PrintCount = Column(Integer)
+    id = Column(Integer, nullable=False, primary_key=True)
+    idSalesman = Column(Integer)
+    idRunShopDTO = Column(Integer, nullable=False, server_default=text("((0))"))
+    RunStatus = Column(Integer)
+
+
+class DIRunShopLineB(Base):
+    __tablename__ = 'DI_RunShopLine_b'
+
+    ts = Column(TIMESTAMP, nullable=False)
+    updatedBy = Column(Unicode(32))
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    code = Column(Integer)
+    signInTime = Column(Unicode(50))
+    signOutTime = Column(Unicode(50))
+    isReportSalesQuantity = Column(Integer)
+    isReportStockQuantity = Column(Integer)
+    isOrderedDirect = Column(Integer)
+    isSignInPhoto = Column(Integer)
+    isSignOutPhoto = Column(Integer)
+    isPromotionPhoto = Column(Integer)
+    isCompetitionPhoto = Column(Integer)
+    mapMark = Column(Unicode(200), nullable=False)
+    targetType = Column(Integer, nullable=False)
+    createdTime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    CheckAddress = Column(Unicode(200))
+    name = Column(Unicode(200))
+    effectiveTime = Column(Integer)
+    effectiveRange = Column(Integer)
+    id = Column(Integer, nullable=False, primary_key=True)
+    idStore = Column(Integer)
+    idPartner = Column(Integer)
+    LineGroupInfo = Column(Integer)
+    idRunShopLineDTO = Column(Integer, nullable=False, server_default=text("((0))"))
+    idRunShopRecord = Column(Integer)
+
+
+class DIRunShopMap(Base):
+    __tablename__ = 'DI_RunShopMap'
+
+    ts = Column(TIMESTAMP, nullable=False)
+    updatedBy = Column(Unicode(32))
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    code = Column(Unicode(30))
+    menuCode = Column(Unicode(200))
+    xmlValue = Column(Unicode(1000))
+    id = Column(Integer, nullable=False, primary_key=True)
+    idRunShopDTO = Column(Integer, nullable=False, server_default=text("((0))"))
+    userID = Column(Integer)
+
+
+class DIRunShopMapMark(Base):
+    __tablename__ = 'DI_RunShopMapMark'
+
+    ts = Column(TIMESTAMP, nullable=False)
+    updatedBy = Column(Unicode(32))
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    code = Column(Unicode(32), nullable=False)
+    isUsed = Column(Integer, nullable=False)
+    id = Column(Integer, nullable=False, primary_key=True)
+
+
+class DIRunShopNews(Base):
+    __tablename__ = 'DI_RunShopNews'
+
+    recordDate = Column(String(10, u'Chinese_PRC_CI_AS'), nullable=False)
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    newsStatus = Column(Integer)
+    position = Column(String(200, u'Chinese_PRC_CI_AS'))
+    id = Column(Integer, nullable=False, primary_key=True)
+    idPerson = Column(Integer, nullable=False, server_default=text("((0))"))
+    idRunShopLineDetialDTO = Column(Integer, nullable=False, server_default=text("((0))"))
+
+
+class DIRunShopRecord(Base):
+    __tablename__ = 'DI_RunShopRecord'
+
+    recordDate = Column(String(10, u'Chinese_PRC_CI_AS'), nullable=False)
+    signInTime = Column(Unicode(50))
+    signOutTime = Column(Unicode(50))
+    lateMinuts = Column(Integer)
+    overTime = Column(Integer)
+    signInPhoto = Column(Unicode(2000))
+    signOutPhoto = Column(Unicode(2000))
+    promotionPhoto = Column(Unicode(2000))
+    competitionPhoto = Column(Unicode(2000))
+    idStockSalesReport = Column(Unicode(2000))
+    idSaleOrder = Column(Unicode(2000))
+    idStockRequest = Column(Unicode(2000))
+    newsStatus = Column(Integer)
+    ts = Column(TIMESTAMP, nullable=False)
+    updatedBy = Column(Unicode(32))
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    createdTime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    photoCount = Column(Integer)
+    code = Column(Unicode(30))
+    signOutDate = Column(String(10, u'Chinese_PRC_CI_AS'))
+    signInAddress = Column(Unicode(50))
+    TaskDescription = Column(Unicode(1000))
+    id = Column(Integer, nullable=False, primary_key=True)
+    idPerson = Column(Integer)
+    idRunShopLineDetailDTO = Column(Integer)
+
+
+class DIRunShopTarget(Base):
+    __tablename__ = 'DI_RunShopTarget'
+
+    ts = Column(TIMESTAMP, nullable=False)
+    updatedBy = Column(Unicode(32))
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    isReportSalesQuantity = Column(Integer)
+    isReportStockQuantity = Column(Integer)
+    isOrderedDirect = Column(Integer)
+    isSignInPhoto = Column(Integer)
+    isSignOutPhoto = Column(Integer)
+    isPromotionPhoto = Column(Integer)
+    isCompetitionPhoto = Column(Integer)
+    targetType = Column(Integer, nullable=False)
+    code = Column(Unicode(50))
+    mapMark = Column(Unicode(200))
+    id = Column(Integer, nullable=False, primary_key=True)
+    idStore = Column(Integer)
+    idPartner = Column(Integer)
+
+
+class DISelectInventoryByRRA(Base):
+    __tablename__ = 'DI_SelectInventoryByRRA'
+
+    ts = Column(TIMESTAMP)
+    updatedBy = Column(Unicode(32))
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    name = Column(Unicode(200))
+    BeginDate = Column(String(10, u'Chinese_PRC_CI_AS'))
+    BeginTime = Column(Unicode(20))
+    EndDate = Column(String(10, u'Chinese_PRC_CI_AS'))
+    EndTime = Column(Unicode(20))
+    ReNewGoodSellDays = Column(Integer)
+    AdviceReplenishQuantity = Column(Numeric(28, 14))
+    ActualReplenishQuantity = Column(Numeric(28, 14))
+    SaleQuantity = Column(Numeric(28, 14))
+    ExistingQuantity = Column(Numeric(28, 14))
+    AvailableQuantity = Column(Numeric(28, 14))
+    freeItem0 = Column(Unicode(300))
+    freeItem1 = Column(Unicode(300))
+    freeItem2 = Column(Unicode(300))
+    freeItem3 = Column(Unicode(300))
+    freeItem4 = Column(Unicode(300))
+    freeItem5 = Column(Unicode(300))
+    freeItem6 = Column(Unicode(300))
+    freeItem7 = Column(Unicode(300))
+    freeItem8 = Column(Unicode(300))
+    freeItem9 = Column(Unicode(300))
+    id = Column(Integer, nullable=False, primary_key=True)
+    idInventory = Column(Integer)
+    idInventoryClass = Column(Integer)
+    idWarehouse = Column(Integer)
+    idRraruleset_store = Column(Integer)
+    ProductInfo = Column(Integer)
+    StoreReplenishmentRule = Column(Integer)
+
+
+class DIStockRequest(Base):
+    __tablename__ = 'DI_StockRequest'
+
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    requirementdate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    telephone = Column(Unicode(50))
+    arrivaladdress = Column(Unicode(50))
+    contact = Column(Unicode(50))
+    memo = Column(Unicode(200))
+    voucherdate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    madedate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    maker = Column(Unicode(50))
+    auditor = Column(Unicode(50))
+    auditeddate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    reviser = Column(Unicode(50))
+    iscarriedforwardout = Column(Integer)
+    iscarriedforwardin = Column(Integer)
+    ismodifiedcode = Column(Integer)
+    createdtime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    sequencenumber = Column(Integer)
+    ts = Column(TIMESTAMP, nullable=False)
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    updatedBy = Column(Unicode(32))
+    priuserdefnvc1 = Column(Unicode(500))
+    priuserdefdecm1 = Column(Numeric(28, 14))
+    priuserdefnvc2 = Column(Unicode(500))
+    priuserdefdecm2 = Column(Numeric(28, 14))
+    priuserdefnvc3 = Column(Unicode(500))
+    priuserdefdecm3 = Column(Numeric(28, 14))
+    priuserdefnvc4 = Column(Unicode(500))
+    priuserdefdecm4 = Column(Numeric(28, 14))
+    priuserdefnvc5 = Column(Unicode(500))
+    priuserdefdecm5 = Column(Numeric(28, 14))
+    priuserdefnvc6 = Column(Unicode(500))
+    priuserdefdecm6 = Column(Numeric(28, 14))
+    pubuserdefnvc1 = Column(Unicode(500))
+    pubuserdefdecm1 = Column(Numeric(28, 14))
+    pubuserdefnvc2 = Column(Unicode(500))
+    pubuserdefdecm2 = Column(Numeric(28, 14))
+    pubuserdefnvc3 = Column(Unicode(500))
+    pubuserdefdecm3 = Column(Numeric(28, 14))
+    pubuserdefnvc4 = Column(Unicode(500))
+    pubuserdefdecm4 = Column(Numeric(28, 14))
+    pubuserdefnvc5 = Column(Unicode(500))
+    pubuserdefdecm5 = Column(Numeric(28, 14))
+    pubuserdefnvc6 = Column(Unicode(500))
+    pubuserdefdecm6 = Column(Numeric(28, 14))
+    PrintCount = Column(Integer)
+    id = Column(Integer, nullable=False, primary_key=True)
+    idbusitype = Column(Integer)
+    iddepartment = Column(Integer)
+    idstore = Column(Integer)
+    idmarketingorgan = Column(Integer)
+    idcustomer = Column(Integer)
+    idperson = Column(Integer)
+    idproject = Column(Integer)
+    IdWarehouse = Column(Integer)
+    IdOutWarehouse = Column(Integer)
+    completestatus = Column(Integer)
+    DistributionState = Column(Integer)
+    voucherstate = Column(Integer)
+    auditorid = Column(Integer)
+    makerid = Column(Integer)
+
+
+class DIStockRequestB(Base):
+    __tablename__ = 'DI_StockRequest_b'
+
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    changerate = Column(Numeric(28, 14))
+    basequantity = Column(Numeric(28, 14))
+    subquantity = Column(Numeric(28, 14))
+    invbarcode = Column(Unicode(50))
+    quantity = Column(Numeric(28, 14))
+    quantity2 = Column(Numeric(28, 14))
+    retailprice = Column(Numeric(28, 14))
+    retailamount = Column(Numeric(28, 14))
+    onwayquantity = Column(Numeric(28, 14))
+    onwayquantity2 = Column(Numeric(28, 14))
+    totalpurchasequantity = Column(Numeric(28, 14))
+    totalpurchasequantity2 = Column(Numeric(28, 14))
+    totaltransquantity = Column(Numeric(28, 14))
+    totaltransquantity2 = Column(Numeric(28, 14))
+    totalstockoutquantity = Column(Numeric(28, 14))
+    totalstockoutquantity2 = Column(Numeric(28, 14))
+    differencequantity = Column(Numeric(28, 14))
+    differencequantity2 = Column(Numeric(28, 14))
+    RequirementDate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    totaldistributionquantity = Column(Numeric(28, 14))
+    totaldistributionquantity2 = Column(Numeric(28, 14))
+    totalstockinquantity = Column(Numeric(28, 14))
+    totalstockinquantity2 = Column(Numeric(28, 14))
+    haspra = Column(Integer)
+    totalpracount = Column(Integer)
+    totalexecutedquantity = Column(Numeric(28, 14))
+    totalexecutedquantity2 = Column(Numeric(28, 14))
+    compositionquantity = Column(Unicode(50))
+    createdtime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    sequencenumber = Column(Integer)
+    ts = Column(TIMESTAMP, nullable=False)
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    updatedBy = Column(Unicode(32))
+    priuserdefnvc1 = Column(Unicode(500))
+    priuserdefdecm1 = Column(Numeric(28, 14))
+    priuserdefnvc2 = Column(Unicode(500))
+    priuserdefdecm2 = Column(Numeric(28, 14))
+    priuserdefnvc3 = Column(Unicode(500))
+    priuserdefdecm3 = Column(Numeric(28, 14))
+    priuserdefnvc4 = Column(Unicode(500))
+    priuserdefdecm4 = Column(Numeric(28, 14))
+    pubuserdefnvc1 = Column(Unicode(500))
+    pubuserdefdecm1 = Column(Numeric(28, 14))
+    pubuserdefnvc2 = Column(Unicode(500))
+    pubuserdefdecm2 = Column(Numeric(28, 14))
+    pubuserdefnvc3 = Column(Unicode(500))
+    pubuserdefdecm3 = Column(Numeric(28, 14))
+    pubuserdefnvc4 = Column(Unicode(500))
+    pubuserdefdecm4 = Column(Numeric(28, 14))
+    freeItem0 = Column(Unicode(300))
+    freeItem1 = Column(Unicode(300))
+    freeItem2 = Column(Unicode(300))
+    freeItem3 = Column(Unicode(300))
+    freeItem4 = Column(Unicode(300))
+    freeItem5 = Column(Unicode(300))
+    freeItem6 = Column(Unicode(300))
+    freeItem7 = Column(Unicode(300))
+    freeItem8 = Column(Unicode(300))
+    freeItem9 = Column(Unicode(300))
+    id = Column(Integer, nullable=False, primary_key=True)
+    idinventory = Column(Integer)
+    idproject = Column(Integer)
+    idbaseunit = Column(Integer)
+    idsubunit = Column(Integer)
+    idunit = Column(Integer)
+    idunit2 = Column(Integer)
+    IdOutWarehouse = Column(Integer)
+    idStockRequestDTO = Column(Integer)
+    completestatus = Column(Integer)
+    DistributionState = Column(Integer)
+
+
+class DIStockSalesReport(Base):
+    __tablename__ = 'DI_StockSalesReport'
+
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    begindate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    enddate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    contact = Column(Unicode(50))
+    telephone = Column(Unicode(50))
+    memo = Column(Unicode(200))
+    voucherdate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    madedate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    maker = Column(Unicode(50))
+    auditor = Column(Unicode(50))
+    auditeddate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    reviser = Column(Unicode(50))
+    iscarriedforwardout = Column(Integer)
+    iscarriedforwardin = Column(Integer)
+    ismodifiedcode = Column(Integer)
+    createdtime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    sequencenumber = Column(Integer)
+    ts = Column(TIMESTAMP, nullable=False)
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    updatedBy = Column(Unicode(32))
+    priuserdefnvc1 = Column(Unicode(500))
+    priuserdefdecm1 = Column(Numeric(28, 14))
+    priuserdefnvc2 = Column(Unicode(500))
+    priuserdefdecm2 = Column(Numeric(28, 14))
+    priuserdefnvc3 = Column(Unicode(500))
+    priuserdefdecm3 = Column(Numeric(28, 14))
+    priuserdefnvc4 = Column(Unicode(500))
+    priuserdefdecm4 = Column(Numeric(28, 14))
+    priuserdefnvc5 = Column(Unicode(500))
+    priuserdefdecm5 = Column(Numeric(28, 14))
+    priuserdefnvc6 = Column(Unicode(500))
+    priuserdefdecm6 = Column(Numeric(28, 14))
+    pubuserdefnvc1 = Column(Unicode(500))
+    pubuserdefdecm1 = Column(Numeric(28, 14))
+    pubuserdefnvc2 = Column(Unicode(500))
+    pubuserdefdecm2 = Column(Numeric(28, 14))
+    pubuserdefnvc3 = Column(Unicode(500))
+    pubuserdefdecm3 = Column(Numeric(28, 14))
+    pubuserdefnvc4 = Column(Unicode(500))
+    pubuserdefdecm4 = Column(Numeric(28, 14))
+    pubuserdefnvc5 = Column(Unicode(500))
+    pubuserdefdecm5 = Column(Numeric(28, 14))
+    pubuserdefnvc6 = Column(Unicode(500))
+    pubuserdefdecm6 = Column(Numeric(28, 14))
+    PrintCount = Column(Integer, server_default=text("((0))"))
+    id = Column(Integer, nullable=False, primary_key=True)
+    idmarketingorgan = Column(Integer)
+    idcustomer = Column(Integer)
+    idperson = Column(Integer)
+    idSourceVoucherType = Column(Integer)
+    StockSalesReportOrderStatus = Column(Integer)
+    voucherstate = Column(Integer)
+    auditorid = Column(Integer)
+    makerid = Column(Integer)
+
+
+class DIStockSalesReportB(Base):
+    __tablename__ = 'DI_StockSalesReport_b'
+
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    quantity = Column(Numeric(28, 14))
+    dailyaveragesalesquantity = Column(Numeric(28, 14))
+    stockquantity = Column(Numeric(28, 14))
+    ReplenishQuantity = Column(Numeric(28, 14))
+    ReplenishQuantityByStockUnit = Column(Numeric(28, 14))
+    ispersist = Column(Integer)
+    quantitybystockunit = Column(Numeric(28, 14))
+    dailyaveragesalesquantitybystockunit = Column(Numeric(28, 14))
+    stockquantitybystockunit = Column(Numeric(28, 14))
+    basequantity = Column(Numeric(28, 14))
+    subquantity = Column(Numeric(28, 14))
+    changerate = Column(Numeric(28, 14))
+    createdtime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    sequencenumber = Column(Integer)
+    ts = Column(TIMESTAMP, nullable=False)
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    updatedBy = Column(Unicode(32))
+    freeItem0 = Column(Unicode(300))
+    freeItem1 = Column(Unicode(300))
+    freeItem2 = Column(Unicode(300))
+    freeItem3 = Column(Unicode(300))
+    freeItem4 = Column(Unicode(300))
+    freeItem5 = Column(Unicode(300))
+    freeItem6 = Column(Unicode(300))
+    freeItem7 = Column(Unicode(300))
+    freeItem8 = Column(Unicode(300))
+    freeItem9 = Column(Unicode(300))
+    pubuserdefnvc1 = Column(Unicode(500))
+    pubuserdefdecm1 = Column(Numeric(28, 14))
+    pubuserdefnvc2 = Column(Unicode(500))
+    pubuserdefdecm2 = Column(Numeric(28, 14))
+    pubuserdefnvc3 = Column(Unicode(500))
+    pubuserdefdecm3 = Column(Numeric(28, 14))
+    pubuserdefnvc4 = Column(Unicode(500))
+    pubuserdefdecm4 = Column(Numeric(28, 14))
+    priuserdefnvc1 = Column(Unicode(500))
+    priuserdefdecm1 = Column(Numeric(28, 14))
+    priuserdefnvc2 = Column(Unicode(500))
+    priuserdefdecm2 = Column(Numeric(28, 14))
+    priuserdefnvc3 = Column(Unicode(500))
+    priuserdefdecm3 = Column(Numeric(28, 14))
+    priuserdefnvc4 = Column(Unicode(500))
+    priuserdefdecm4 = Column(Numeric(28, 14))
+    RetailPrice = Column(Numeric(28, 14))
+    RetailAmount = Column(Numeric(28, 14))
+    StockAmount = Column(Numeric(28, 14))
+    id = Column(Integer, nullable=False, primary_key=True)
+    idinventory = Column(Integer)
+    idInventoryMutiCode = Column(Integer)
+    idunit = Column(Integer)
+    idunit2 = Column(Integer)
+    idStockSalesReportDTO = Column(Integer)
+
+
+class DIStoreDailyCurrentStock(Base):
+    __tablename__ = 'DI_StoreDailyCurrentStock'
+
+    ts = Column(TIMESTAMP, nullable=False)
+    updatedBy = Column(Unicode(32))
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    name = Column(Unicode(200))
+    StockRequestQuantity = Column(Numeric(28, 14), nullable=False, server_default=text("((0))"))
+    BaseQuantity = Column(Numeric(28, 14), nullable=False, server_default=text("((0))"))
+    CanUseQuantity = Column(Numeric(28, 14), nullable=False, server_default=text("((0))"))
+    PurchaseArrivalQuantity = Column(Numeric(28, 14), nullable=False, server_default=text("((0))"))
+    PurchaseForReceiveQuantity = Column(Numeric(28, 14), nullable=False, server_default=text("((0))"))
+    ProductForReceiveQuantity = Column(Numeric(28, 14), nullable=False, server_default=text("((0))"))
+    SaleDeliveryQuantity = Column(Numeric(28, 14), nullable=False, server_default=text("((0))"))
+    SaleDispatchQuantity = Column(Numeric(28, 14), nullable=False, server_default=text("((0))"))
+    OtherOnWayQuantity = Column(Numeric(28, 14), nullable=False, server_default=text("((0))"))
+    TransOnWayQuantity = Column(Numeric(28, 14), nullable=False, server_default=text("((0))"))
+    OtherForDispatchQuantity = Column(Numeric(28, 14), nullable=False, server_default=text("((0))"))
+    TransForDispatchQuantity = Column(Numeric(28, 14), nullable=False, server_default=text("((0))"))
+    SafeQuantity = Column(Numeric(28, 14), nullable=False, server_default=text("((0))"))
+    LowQuantity = Column(Numeric(28, 14), nullable=False, server_default=text("((0))"))
+    freeItem0 = Column(Unicode(300))
+    freeItem1 = Column(Unicode(300))
+    freeItem2 = Column(Unicode(300))
+    freeItem3 = Column(Unicode(300))
+    freeItem4 = Column(Unicode(300))
+    freeItem5 = Column(Unicode(300))
+    freeItem6 = Column(Unicode(300))
+    freeItem7 = Column(Unicode(300))
+    freeItem8 = Column(Unicode(300))
+    freeItem9 = Column(Unicode(300))
+    ESStoreForDispatchQuantity = Column(Numeric(28, 14), nullable=False, server_default=text("((0))"))
+    DistributionForReceiveQuantity = Column(Numeric(28, 14), nullable=False, server_default=text("((0))"))
+    id = Column(Integer, nullable=False, primary_key=True)
+    idinventory = Column(Integer)
+    idwarehouse = Column(Integer)
+
+
+class DIVoucherSelectResult(Base):
+    __tablename__ = 'DI_VoucherSelectResult'
+
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    VouchertypeCode = Column(Unicode(50))
+    ts = Column(TIMESTAMP, nullable=False)
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    updatedBy = Column(Unicode(32))
+    id = Column(Integer, nullable=False, primary_key=True)
+    Voucherid = Column(Integer)
+    VoucherDetailId = Column(Integer)
+    userId = Column(Integer)
+    idvoucherType = Column(Integer)
 
 
 class EAPAppUserAssociation(Base):
@@ -8215,15 +8158,17 @@ class EAPMessageBox(Base):
     MessageId = Column(Integer, nullable=False, server_default=text("((0))"))
 
 
-t_EAP_MessageRuleInfo = Table(
-    'EAP_MessageRuleInfo', metadata,
-    Column('Name', Unicode(50)),
-    Column('Description', Unicode(100)),
-    Column('BusinessCode', Unicode(50)),
-    Column('Id', Integer, nullable=False, server_default=text("((0))")),
-    Column('TypeId', Integer, nullable=False, server_default=text("((0))")),
-    Index('IDX_EAP_MessageRuleInfo_ID_TypeID', 'Id', 'TypeId', unique=True)
-)
+class EAPMessageRuleInfo(Base):
+    __tablename__ = 'EAP_MessageRuleInfo'
+    __table_args__ = (
+        Index('IDX_EAP_MessageRuleInfo_ID_TypeID', 'Id', 'TypeId', unique=True),
+    )
+
+    Name = Column(Unicode(50))
+    Description = Column(Unicode(100))
+    BusinessCode = Column(Unicode(50))
+    Id = Column(Integer, nullable=False, server_default=text("((0))"), primary_key=True)
+    TypeId = Column(Integer, nullable=False, server_default=text("((0))"))
 
 
 class EAPMessageRuleTypeInfo(Base):
@@ -8314,25 +8259,25 @@ class EAPPortalSystem(Base):
     UserId = Column(Integer, nullable=False, server_default=text("((0))"))
 
 
-t_EAP_ReportBasic = Table(
-    'EAP_ReportBasic', metadata,
-    Column('ReportCode', Unicode(200), nullable=False, server_default=text("('')")),
-    Column('SubSysId', Unicode(100), nullable=False, server_default=text("('')")),
-    Column('ReportName', Unicode(200), nullable=False),
-    Column('CreateDate', DateTime, nullable=False, server_default=text("(getdate())")),
-    Column('Createor', Unicode(50), nullable=False),
-    Column('UpdateDate', DateTime, nullable=False),
-    Column('Updater', Unicode(50), nullable=False),
-    Column('ReportFlag', Integer, nullable=False, server_default=text("((2))")),
-    Column('Memo', Unicode(500), nullable=False, server_default=text("('')")),
-    Column('TS', TIMESTAMP, nullable=False),
-    Column('MenuCode', Unicode(50), nullable=False, server_default=text("('')")),
-    Column('ParentMenuCode', Unicode(50), nullable=False, server_default=text("('')")),
-    Column('TemplateId', Integer, nullable=False, server_default=text("((0))")),
-    Column('ID', Integer, nullable=False, server_default=text("((0))")),
-    Column('TypeID', Integer),
-    Column('UpdateID', Integer, nullable=False, server_default=text("((0))"))
-)
+class EAPReportBasic(Base):
+    __tablename__ = 'EAP_ReportBasic'
+
+    ReportCode = Column(Unicode(200), nullable=False, server_default=text("('')"))
+    SubSysId = Column(Unicode(100), nullable=False, server_default=text("('')"))
+    ReportName = Column(Unicode(200), nullable=False)
+    CreateDate = Column(DateTime, nullable=False, server_default=text("(getdate())"))
+    Createor = Column(Unicode(50), nullable=False)
+    UpdateDate = Column(DateTime, nullable=False)
+    Updater = Column(Unicode(50), nullable=False)
+    ReportFlag = Column(Integer, nullable=False, server_default=text("((2))"))
+    Memo = Column(Unicode(500), nullable=False, server_default=text("('')"))
+    TS = Column(TIMESTAMP, nullable=False)
+    MenuCode = Column(Unicode(50), nullable=False, server_default=text("('')"))
+    ParentMenuCode = Column(Unicode(50), nullable=False, server_default=text("('')"))
+    TemplateId = Column(Integer, nullable=False, server_default=text("((0))"))
+    ID = Column(Integer, nullable=False, server_default=text("((0))"), primary_key=True)
+    TypeID = Column(Integer)
+    UpdateID = Column(Integer, nullable=False, server_default=text("((0))"))
 
 
 class EAPReportCommonSet(Base):
@@ -8429,16 +8374,6 @@ class EAPReportFormulaType(Base):
     TypeLevel = Column(Integer, nullable=False, server_default=text("((1))"))
     IsEndNode = Column(Integer)
     IdParent = Column(Integer)
-
-
-t_EAP_ReportFormulaValue = Table(
-    'EAP_ReportFormulaValue', metadata,
-    Column('ReportFormulaValue', UnicodeText(1073741823)),
-    Column('Ts', TIMESTAMP, nullable=False),
-    Column('Sheet', Integer),
-    Column('ReportID', Integer, nullable=False, server_default=text("((0))")),
-    Column('TemplateId', Integer, nullable=False, server_default=text("((0))"))
-)
 
 
 class EAPReportKeyWords(Base):
@@ -8647,16 +8582,16 @@ class EAPRowAuthMapping(Base):
     id = Column(Integer, primary_key=True)
 
 
-t_EAP_SYSReportKeyWordsData = Table(
-    'EAP_SYSReportKeyWordsData', metadata,
-    Column('KeyName', Unicode(50), nullable=False, server_default=text("('')")),
-    Column('KeyValue', Unicode(50)),
-    Column('KeyDataType', Integer, nullable=False, server_default=text("((-1))")),
-    Column('TS', TIMESTAMP),
-    Column('SortId', Integer, nullable=False, server_default=text("((0))")),
-    Column('SubSysId', Unicode(20), nullable=False, server_default=text("('')")),
-    Column('ID', Integer, server_default=text("((0))"))
-)
+class EAPSYSReportKeyWordsData(Base):
+    __tablename__ = 'EAP_SYSReportKeyWordsData'
+
+    KeyName = Column(Unicode(50), nullable=False, server_default=text("('')"))
+    KeyValue = Column(Unicode(50))
+    KeyDataType = Column(Integer, nullable=False, server_default=text("((-1))"))
+    TS = Column(TIMESTAMP)
+    SortId = Column(Integer, nullable=False, server_default=text("((0))"))
+    SubSysId = Column(Unicode(20), nullable=False, server_default=text("('')"))
+    ID = Column(Integer, server_default=text("((0))"), primary_key=True)
 
 
 class EAPSYSReportTemplateBasic(Base):
@@ -9193,14 +9128,6 @@ class EapGridParams(Base):
     ID = Column(Integer, primary_key=True)
 
 
-t_Eap_MenuDefaultOption = Table(
-    'Eap_MenuDefaultOption', metadata,
-    Column('Code', Unicode(50), nullable=False),
-    Column('OrderIndex', Integer, nullable=False),
-    Column('isSystem', BIT, nullable=False, server_default=text("((0))"))
-)
-
-
 class EapMenuIndividuation(Base):
     __tablename__ = 'Eap_MenuIndividuation'
 
@@ -9305,55 +9232,55 @@ class EapPrintCountSet(Base):
     ExpressionName = Column(Unicode(200))
 
 
-t_Eap_PrintDataColumn = Table(
-    'Eap_PrintDataColumn', metadata,
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('name', Unicode(200), nullable=False),
-    Column('Title', Unicode(4000)),
-    Column('DataType', Unicode(30)),
-    Column('DynPropertyString', Unicode(1000)),
-    Column('PosLeft', Integer),
-    Column('id', Integer, nullable=False),
-    Column('IdPrintDataTable', Integer)
-)
+class EapPrintDataColumn(Base):
+    __tablename__ = 'Eap_PrintDataColumn'
+
+    ts = Column(TIMESTAMP, nullable=False)
+    name = Column(Unicode(200), nullable=False)
+    Title = Column(Unicode(4000))
+    DataType = Column(Unicode(30))
+    DynPropertyString = Column(Unicode(1000))
+    PosLeft = Column(Integer)
+    id = Column(Integer, nullable=False, primary_key=True)
+    IdPrintDataTable = Column(Integer)
 
 
-t_Eap_PrintDataField = Table(
-    'Eap_PrintDataField', metadata,
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('name', Unicode(200), nullable=False),
-    Column('Title', Unicode(200)),
-    Column('DataType', Unicode(30)),
-    Column('DynPropertyString', Unicode(1000)),
-    Column('PosTop', Integer),
-    Column('PosLeft', Integer),
-    Column('PosTitleTop', Integer),
-    Column('PosTitleLeft', Integer),
-    Column('id', Integer, nullable=False),
-    Column('SourceType', Integer),
-    Column('IdPrintTemplate', Integer),
-    Column('updated', DateTime)
-)
+class EapPrintDataField(Base):
+    __tablename__ = 'Eap_PrintDataField'
+
+    ts = Column(TIMESTAMP, nullable=False)
+    name = Column(Unicode(200), nullable=False)
+    Title = Column(Unicode(200))
+    DataType = Column(Unicode(30))
+    DynPropertyString = Column(Unicode(1000))
+    PosTop = Column(Integer)
+    PosLeft = Column(Integer)
+    PosTitleTop = Column(Integer)
+    PosTitleLeft = Column(Integer)
+    id = Column(Integer, nullable=False, primary_key=True)
+    SourceType = Column(Integer)
+    IdPrintTemplate = Column(Integer)
+    updated = Column(DateTime)
 
 
-t_Eap_PrintDataTable = Table(
-    'Eap_PrintDataTable', metadata,
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('name', Unicode(200), nullable=False),
-    Column('DetailType', Unicode(30)),
-    Column('ParentDetail', Unicode(200)),
-    Column('FixRows', Integer),
-    Column('PrintPageTotal', Integer),
-    Column('FillBlankRows', Integer),
-    Column('RowsAdaptive', Integer),
-    Column('PrintTotal', Integer),
-    Column('PrintPageSubTotal', Integer),
-    Column('DynPropertyString', Unicode(1000)),
-    Column('PosTop', Integer),
-    Column('PosBottom', Integer),
-    Column('id', Integer, nullable=False),
-    Column('IdPrintTemplate', Integer)
-)
+class EapPrintDataTable(Base):
+    __tablename__ = 'Eap_PrintDataTable'
+
+    ts = Column(TIMESTAMP, nullable=False)
+    name = Column(Unicode(200), nullable=False)
+    DetailType = Column(Unicode(30))
+    ParentDetail = Column(Unicode(200))
+    FixRows = Column(Integer)
+    PrintPageTotal = Column(Integer)
+    FillBlankRows = Column(Integer)
+    RowsAdaptive = Column(Integer)
+    PrintTotal = Column(Integer)
+    PrintPageSubTotal = Column(Integer)
+    DynPropertyString = Column(Unicode(1000))
+    PosTop = Column(Integer)
+    PosBottom = Column(Integer)
+    id = Column(Integer, nullable=False, primary_key=True)
+    IdPrintTemplate = Column(Integer)
 
 
 class EapPrintDesignField(Base):
@@ -9789,565 +9716,6 @@ class EapSyncfileinfo(Base):
     makedate = Column(DateTime)
 
 
-t_GLAuxDetailReturnTempTable13671904217 = Table(
-    'GLAuxDetailReturnTempTable13671904217', metadata,
-    Column('eap_reportrowtype', Integer, nullable=False),
-    Column('accountID', UNIQUEIDENTIFIER),
-    Column('accountCode', Unicode(40)),
-    Column('accountName', Unicode(50)),
-    Column('accountDcdirection', UNIQUEIDENTIFIER),
-    Column('AuxAccCustomerName', Unicode(200)),
-    Column('AuxAccCustomerID', UNIQUEIDENTIFIER),
-    Column('AuxAccCustomerCode', Unicode(40)),
-    Column('madeDate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('period', String(34, u'Chinese_PRC_CI_AS')),
-    Column('docwordCode', Unicode(34)),
-    Column('docTypeNo', Unicode(34)),
-    Column('docID', UNIQUEIDENTIFIER),
-    Column('docNo', Unicode(34)),
-    Column('entryNo', Unicode(34)),
-    Column('summary', Unicode(4000), nullable=False),
-    Column('currencyID', UNIQUEIDENTIFIER),
-    Column('currencyCode', Unicode(32)),
-    Column('currencyName', Unicode(200)),
-    Column('calDirection', UNIQUEIDENTIFIER),
-    Column('exchangeRate', Numeric(38, 14)),
-    Column('price', Numeric(38, 14)),
-    Column('quantityDr', Numeric(38, 14)),
-    Column('origAmountDr', Numeric(38, 14)),
-    Column('amountDr', Numeric(38, 14)),
-    Column('priceDr', Numeric(28, 14)),
-    Column('quantityCr', Numeric(38, 14)),
-    Column('origAmountCr', Numeric(38, 14)),
-    Column('amountCr', Numeric(38, 14)),
-    Column('priceCr', Numeric(28, 14)),
-    Column('dCDirection', UNIQUEIDENTIFIER),
-    Column('priceBalance', Numeric(38, 14)),
-    Column('quantityBalance', Numeric(38, 14)),
-    Column('origAmountBalance', Numeric(38, 14)),
-    Column('exchangeRateBalance', Numeric(38, 14)),
-    Column('amountBalance', Numeric(38, 14))
-)
-
-
-t_GLAuxDetailReturnTempTable13917156705 = Table(
-    'GLAuxDetailReturnTempTable13917156705', metadata,
-    Column('eap_reportrowtype', Integer, nullable=False),
-    Column('accountID', UNIQUEIDENTIFIER),
-    Column('accountCode', Unicode(40)),
-    Column('accountName', Unicode(50)),
-    Column('accountDcdirection', UNIQUEIDENTIFIER),
-    Column('AuxAccPersonName', Unicode(200)),
-    Column('AuxAccPersonID', UNIQUEIDENTIFIER),
-    Column('AuxAccPersonCode', Unicode(40)),
-    Column('madeDate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('period', String(34, u'Chinese_PRC_CI_AS')),
-    Column('docwordCode', Unicode(34)),
-    Column('docTypeNo', Unicode(34)),
-    Column('docID', UNIQUEIDENTIFIER),
-    Column('docNo', Unicode(34)),
-    Column('entryNo', Unicode(34)),
-    Column('summary', Unicode(4000), nullable=False),
-    Column('currencyID', UNIQUEIDENTIFIER),
-    Column('currencyCode', Unicode(32)),
-    Column('currencyName', Unicode(200)),
-    Column('calDirection', UNIQUEIDENTIFIER),
-    Column('exchangeRate', Numeric(38, 14)),
-    Column('price', Numeric(38, 14)),
-    Column('quantityDr', Numeric(38, 14)),
-    Column('origAmountDr', Numeric(38, 14)),
-    Column('amountDr', Numeric(38, 14)),
-    Column('priceDr', Numeric(28, 14)),
-    Column('quantityCr', Numeric(38, 14)),
-    Column('origAmountCr', Numeric(38, 14)),
-    Column('amountCr', Numeric(38, 14)),
-    Column('priceCr', Numeric(28, 14)),
-    Column('dCDirection', UNIQUEIDENTIFIER),
-    Column('priceBalance', Numeric(38, 14)),
-    Column('quantityBalance', Numeric(38, 14)),
-    Column('origAmountBalance', Numeric(38, 14)),
-    Column('exchangeRateBalance', Numeric(38, 14)),
-    Column('amountBalance', Numeric(38, 14))
-)
-
-
-t_GLAuxDetailReturnTempTabledemo = Table(
-    'GLAuxDetailReturnTempTabledemo', metadata,
-    Column('eap_reportrowtype', Integer, nullable=False),
-    Column('accountID', UNIQUEIDENTIFIER),
-    Column('accountCode', Unicode(40)),
-    Column('accountName', Unicode(50)),
-    Column('accountDcdirection', UNIQUEIDENTIFIER),
-    Column('AuxAccCustomerName', Unicode(200)),
-    Column('AuxAccCustomerID', UNIQUEIDENTIFIER),
-    Column('AuxAccCustomerCode', Unicode(40)),
-    Column('madeDate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('period', String(34, u'Chinese_PRC_CI_AS')),
-    Column('docwordCode', Unicode(34)),
-    Column('docTypeNo', Unicode(34)),
-    Column('docID', UNIQUEIDENTIFIER),
-    Column('docNo', Unicode(34)),
-    Column('entryNo', Unicode(34)),
-    Column('summary', Unicode(4000), nullable=False),
-    Column('currencyID', UNIQUEIDENTIFIER),
-    Column('currencyCode', Unicode(32)),
-    Column('currencyName', Unicode(200)),
-    Column('calDirection', UNIQUEIDENTIFIER),
-    Column('exchangeRate', Numeric(38, 14)),
-    Column('price', Numeric(38, 14)),
-    Column('quantityDr', Numeric(38, 14)),
-    Column('origAmountDr', Numeric(38, 14)),
-    Column('amountDr', Numeric(38, 14)),
-    Column('priceDr', Numeric(28, 14)),
-    Column('quantityCr', Numeric(38, 14)),
-    Column('origAmountCr', Numeric(38, 14)),
-    Column('amountCr', Numeric(38, 14)),
-    Column('priceCr', Numeric(28, 14)),
-    Column('dCDirection', UNIQUEIDENTIFIER),
-    Column('priceBalance', Numeric(38, 14)),
-    Column('quantityBalance', Numeric(38, 14)),
-    Column('origAmountBalance', Numeric(38, 14)),
-    Column('exchangeRateBalance', Numeric(38, 14)),
-    Column('amountBalance', Numeric(38, 14))
-)
-
-
-t_GLAuxSumReturnTempTable13671904217 = Table(
-    'GLAuxSumReturnTempTable13671904217', metadata,
-    Column('CurrentYear', Integer),
-    Column('eap_reportrowtype', Integer, nullable=False),
-    Column('accountID', UNIQUEIDENTIFIER),
-    Column('accountCode', Unicode(40)),
-    Column('accountName', Unicode(50)),
-    Column('accountDcdirection', UNIQUEIDENTIFIER),
-    Column('AuxAccCustomerName', Unicode(200)),
-    Column('AuxAccCustomerID', UNIQUEIDENTIFIER),
-    Column('AuxAccCustomerCode', Unicode(40)),
-    Column('currencyID', UNIQUEIDENTIFIER),
-    Column('currencyCode', Unicode(32)),
-    Column('currencyName', Unicode(200)),
-    Column('calDirection', UNIQUEIDENTIFIER),
-    Column('exchangeRate', Integer),
-    Column('period', String(34, u'Chinese_PRC_CI_AS')),
-    Column('summary', Unicode(8), nullable=False),
-    Column('quantityDr', Numeric(38, 14)),
-    Column('origAmountDr', Numeric(38, 14)),
-    Column('amountDr', Numeric(38, 14)),
-    Column('quantityCr', Numeric(38, 14)),
-    Column('origAmountCr', Numeric(38, 14)),
-    Column('amountCr', Numeric(38, 14)),
-    Column('dCDirection', UNIQUEIDENTIFIER),
-    Column('quantityBalance', Numeric(38, 14)),
-    Column('origAmountBalance', Numeric(38, 14)),
-    Column('amountBalance', Numeric(38, 14))
-)
-
-
-t_GLAuxSumReturnTempTable13917156705 = Table(
-    'GLAuxSumReturnTempTable13917156705', metadata,
-    Column('CurrentYear', Integer),
-    Column('eap_reportrowtype', Integer, nullable=False),
-    Column('accountID', UNIQUEIDENTIFIER),
-    Column('accountCode', Unicode(40)),
-    Column('accountName', Unicode(50)),
-    Column('accountDcdirection', UNIQUEIDENTIFIER),
-    Column('AuxAccCustomerName', Unicode(200)),
-    Column('AuxAccCustomerID', UNIQUEIDENTIFIER),
-    Column('AuxAccCustomerCode', Unicode(40)),
-    Column('currencyID', UNIQUEIDENTIFIER),
-    Column('currencyCode', Unicode(32)),
-    Column('currencyName', Unicode(200)),
-    Column('calDirection', UNIQUEIDENTIFIER),
-    Column('exchangeRate', Integer),
-    Column('period', String(34, u'Chinese_PRC_CI_AS')),
-    Column('summary', Unicode(8), nullable=False),
-    Column('quantityDr', Numeric(38, 14)),
-    Column('origAmountDr', Numeric(38, 14)),
-    Column('amountDr', Numeric(38, 14)),
-    Column('quantityCr', Numeric(38, 14)),
-    Column('origAmountCr', Numeric(38, 14)),
-    Column('amountCr', Numeric(38, 14)),
-    Column('dCDirection', UNIQUEIDENTIFIER),
-    Column('quantityBalance', Numeric(38, 14)),
-    Column('origAmountBalance', Numeric(38, 14)),
-    Column('amountBalance', Numeric(38, 14))
-)
-
-
-t_GLBalanceSumTempTable13671904217 = Table(
-    'GLBalanceSumTempTable13671904217', metadata,
-    Column('eap_reportrowtype', Integer, nullable=False),
-    Column('accountTypeID', UNIQUEIDENTIFIER),
-    Column('accountTypeCode', Unicode(40)),
-    Column('accountTypeName', Unicode(50)),
-    Column('accountID', UNIQUEIDENTIFIER),
-    Column('accountCode', Unicode(40)),
-    Column('accountName', Unicode(500)),
-    Column('accountDcdirection', UNIQUEIDENTIFIER),
-    Column('accountUnit', Unicode(50)),
-    Column('currencyID', UNIQUEIDENTIFIER),
-    Column('currencyCode', Unicode(32)),
-    Column('currencyName', Unicode(200)),
-    Column('calDirection', UNIQUEIDENTIFIER),
-    Column('quantityBalance', Numeric(28, 14)),
-    Column('origAmountBalance', Numeric(28, 14)),
-    Column('amountBalance', Numeric(28, 14)),
-    Column('periodBeginBalanceQuantityDr', Numeric(28, 14)),
-    Column('periodBeginBalanceOrigAmountDr', Numeric(28, 14)),
-    Column('periodBeginBalanceAmountDr', Numeric(28, 14)),
-    Column('periodBeginBalanceQuantityCr', Numeric(28, 14)),
-    Column('periodBeginBalanceOrigAmountCr', Numeric(28, 14)),
-    Column('periodBeginBalanceAmountCr', Numeric(28, 14)),
-    Column('quantityDr', Numeric(28, 14)),
-    Column('origAmountDr', Numeric(28, 14)),
-    Column('amountDr', Numeric(28, 14)),
-    Column('quantityCr', Numeric(28, 14)),
-    Column('origAmountCr', Numeric(28, 14)),
-    Column('amountCr', Numeric(28, 14)),
-    Column('cumQuantityDr', Numeric(28, 14)),
-    Column('cumOrigAmountDr', Numeric(28, 14)),
-    Column('cumAmountDr', Numeric(28, 14)),
-    Column('cumQuantityCr', Numeric(28, 14)),
-    Column('cumOrigAmountCr', Numeric(28, 14)),
-    Column('cumAmountCr', Numeric(28, 14)),
-    Column('periodEndBalanceQuantityDr', Numeric(28, 14)),
-    Column('periodEndBalanceOrigAmountDr', Numeric(28, 14)),
-    Column('periodEndBalanceAmountDr', Numeric(28, 14)),
-    Column('periodEndBalanceQuantityCr', Numeric(28, 14)),
-    Column('periodEndBalanceOrigAmountCr', Numeric(28, 14)),
-    Column('periodEndBalanceAmountCr', Numeric(28, 14)),
-    Column('auxAccAuxSelfDef', Unicode(10))
-)
-
-
-t_GLBalanceSumTempTable13726451076 = Table(
-    'GLBalanceSumTempTable13726451076', metadata,
-    Column('eap_reportrowtype', Integer, nullable=False),
-    Column('accountTypeID', UNIQUEIDENTIFIER),
-    Column('accountTypeCode', Unicode(40)),
-    Column('accountTypeName', Unicode(50)),
-    Column('accountID', UNIQUEIDENTIFIER),
-    Column('accountCode', Unicode(40)),
-    Column('accountName', Unicode(500)),
-    Column('accountDcdirection', UNIQUEIDENTIFIER),
-    Column('accountUnit', Unicode(50)),
-    Column('currencyID', UNIQUEIDENTIFIER),
-    Column('currencyCode', Unicode(32)),
-    Column('currencyName', Unicode(200)),
-    Column('calDirection', UNIQUEIDENTIFIER),
-    Column('quantityBalance', Numeric(28, 14)),
-    Column('origAmountBalance', Numeric(28, 14)),
-    Column('amountBalance', Numeric(28, 14)),
-    Column('periodBeginBalanceQuantityDr', Numeric(28, 14)),
-    Column('periodBeginBalanceOrigAmountDr', Numeric(28, 14)),
-    Column('periodBeginBalanceAmountDr', Numeric(28, 14)),
-    Column('periodBeginBalanceQuantityCr', Numeric(28, 14)),
-    Column('periodBeginBalanceOrigAmountCr', Numeric(28, 14)),
-    Column('periodBeginBalanceAmountCr', Numeric(28, 14)),
-    Column('quantityDr', Numeric(28, 14)),
-    Column('origAmountDr', Numeric(28, 14)),
-    Column('amountDr', Numeric(28, 14)),
-    Column('quantityCr', Numeric(28, 14)),
-    Column('origAmountCr', Numeric(28, 14)),
-    Column('amountCr', Numeric(28, 14)),
-    Column('cumQuantityDr', Numeric(28, 14)),
-    Column('cumOrigAmountDr', Numeric(28, 14)),
-    Column('cumAmountDr', Numeric(28, 14)),
-    Column('cumQuantityCr', Numeric(28, 14)),
-    Column('cumOrigAmountCr', Numeric(28, 14)),
-    Column('cumAmountCr', Numeric(28, 14)),
-    Column('periodEndBalanceQuantityDr', Numeric(28, 14)),
-    Column('periodEndBalanceOrigAmountDr', Numeric(28, 14)),
-    Column('periodEndBalanceAmountDr', Numeric(28, 14)),
-    Column('periodEndBalanceQuantityCr', Numeric(28, 14)),
-    Column('periodEndBalanceOrigAmountCr', Numeric(28, 14)),
-    Column('periodEndBalanceAmountCr', Numeric(28, 14)),
-    Column('auxAccAuxSelfDef', Unicode(10))
-)
-
-
-t_GLBalanceSumTempTabledemo = Table(
-    'GLBalanceSumTempTabledemo', metadata,
-    Column('eap_reportrowtype', Integer, nullable=False),
-    Column('accountTypeID', UNIQUEIDENTIFIER),
-    Column('accountTypeCode', Unicode(40)),
-    Column('accountTypeName', Unicode(50)),
-    Column('accountID', UNIQUEIDENTIFIER),
-    Column('accountCode', Unicode(40)),
-    Column('accountName', Unicode(500)),
-    Column('accountDcdirection', UNIQUEIDENTIFIER),
-    Column('accountUnit', Unicode(50)),
-    Column('currencyID', UNIQUEIDENTIFIER),
-    Column('currencyCode', Unicode(32)),
-    Column('currencyName', Unicode(200)),
-    Column('calDirection', UNIQUEIDENTIFIER),
-    Column('quantityBalance', Numeric(28, 14)),
-    Column('origAmountBalance', Numeric(28, 14)),
-    Column('amountBalance', Numeric(28, 14)),
-    Column('periodBeginBalanceQuantityDr', Numeric(28, 14)),
-    Column('periodBeginBalanceOrigAmountDr', Numeric(28, 14)),
-    Column('periodBeginBalanceAmountDr', Numeric(28, 14)),
-    Column('periodBeginBalanceQuantityCr', Numeric(28, 14)),
-    Column('periodBeginBalanceOrigAmountCr', Numeric(28, 14)),
-    Column('periodBeginBalanceAmountCr', Numeric(28, 14)),
-    Column('quantityDr', Numeric(28, 14)),
-    Column('origAmountDr', Numeric(28, 14)),
-    Column('amountDr', Numeric(28, 14)),
-    Column('quantityCr', Numeric(28, 14)),
-    Column('origAmountCr', Numeric(28, 14)),
-    Column('amountCr', Numeric(28, 14)),
-    Column('cumQuantityDr', Numeric(28, 14)),
-    Column('cumOrigAmountDr', Numeric(28, 14)),
-    Column('cumAmountDr', Numeric(28, 14)),
-    Column('cumQuantityCr', Numeric(28, 14)),
-    Column('cumOrigAmountCr', Numeric(28, 14)),
-    Column('cumAmountCr', Numeric(28, 14)),
-    Column('periodEndBalanceQuantityDr', Numeric(28, 14)),
-    Column('periodEndBalanceOrigAmountDr', Numeric(28, 14)),
-    Column('periodEndBalanceAmountDr', Numeric(28, 14)),
-    Column('periodEndBalanceQuantityCr', Numeric(28, 14)),
-    Column('periodEndBalanceOrigAmountCr', Numeric(28, 14)),
-    Column('periodEndBalanceAmountCr', Numeric(28, 14)),
-    Column('auxAccAuxSelfDef', Unicode(10))
-)
-
-
-t_GLDetailReturnTempTable13671904217 = Table(
-    'GLDetailReturnTempTable13671904217', metadata,
-    Column('isIncludeUnPost', Integer, nullable=False),
-    Column('eap_reportrowtype', Integer, nullable=False),
-    Column('accountID', UNIQUEIDENTIFIER),
-    Column('accountCode', Unicode(40)),
-    Column('accountName', Unicode(50)),
-    Column('accountDcdirection', UNIQUEIDENTIFIER),
-    Column('madeDate', Unicode(34)),
-    Column('period', Unicode(34)),
-    Column('docwordCode', Unicode(100)),
-    Column('docTypeNo', Unicode(30)),
-    Column('docID', UNIQUEIDENTIFIER),
-    Column('docNo', Unicode(50)),
-    Column('entryNo', Unicode(50)),
-    Column('summary', Unicode(4000)),
-    Column('currencyID', UNIQUEIDENTIFIER),
-    Column('currencyCode', Unicode(32)),
-    Column('currencyName', Unicode(200)),
-    Column('calDirection', UNIQUEIDENTIFIER),
-    Column('oppositeAccount', Unicode(4000)),
-    Column('price', Numeric(28, 14)),
-    Column('exchangeRate', Numeric(28, 14)),
-    Column('quantityDr', Numeric(28, 14)),
-    Column('origAmountDr', Numeric(28, 14)),
-    Column('amountDr', Numeric(28, 14)),
-    Column('priceDr', Numeric(28, 14)),
-    Column('quantityCr', Numeric(28, 14)),
-    Column('origAmountCr', Numeric(28, 14)),
-    Column('amountCr', Numeric(28, 14)),
-    Column('priceCr', Numeric(28, 14)),
-    Column('dCDirection', Integer),
-    Column('priceBalance', Numeric(28, 14)),
-    Column('quantityBalance', Numeric(28, 14)),
-    Column('origAmountBalance', Numeric(28, 14)),
-    Column('exchangeRateBalance', Numeric(28, 14)),
-    Column('amountBalance', Numeric(28, 14)),
-    Column('tempQuantityCr', Numeric(28, 14)),
-    Column('tempQuantityDr', Numeric(28, 14)),
-    Column('temporigAmountDr', Numeric(28, 14)),
-    Column('temporigAmountCr', Numeric(28, 14)),
-    Column('DocDrCrType', Integer)
-)
-
-
-t_GLDetailReturnTempTable13917156705 = Table(
-    'GLDetailReturnTempTable13917156705', metadata,
-    Column('isIncludeUnPost', Integer, nullable=False),
-    Column('eap_reportrowtype', Integer, nullable=False),
-    Column('accountID', UNIQUEIDENTIFIER),
-    Column('accountCode', Unicode(40)),
-    Column('accountName', Unicode(50)),
-    Column('accountDcdirection', UNIQUEIDENTIFIER),
-    Column('madeDate', Unicode(34)),
-    Column('period', Unicode(34)),
-    Column('docwordCode', Unicode(100)),
-    Column('docTypeNo', Unicode(30)),
-    Column('docID', UNIQUEIDENTIFIER),
-    Column('docNo', Unicode(50)),
-    Column('entryNo', Unicode(50)),
-    Column('summary', Unicode(4000)),
-    Column('currencyID', UNIQUEIDENTIFIER),
-    Column('currencyCode', Unicode(32)),
-    Column('currencyName', Unicode(200)),
-    Column('calDirection', UNIQUEIDENTIFIER),
-    Column('oppositeAccount', Unicode(4000)),
-    Column('price', Numeric(28, 14)),
-    Column('exchangeRate', Numeric(28, 14)),
-    Column('quantityDr', Numeric(28, 14)),
-    Column('origAmountDr', Numeric(28, 14)),
-    Column('amountDr', Numeric(28, 14)),
-    Column('priceDr', Numeric(28, 14)),
-    Column('quantityCr', Numeric(28, 14)),
-    Column('origAmountCr', Numeric(28, 14)),
-    Column('amountCr', Numeric(28, 14)),
-    Column('priceCr', Numeric(28, 14)),
-    Column('dCDirection', Integer),
-    Column('priceBalance', Numeric(28, 14)),
-    Column('quantityBalance', Numeric(28, 14)),
-    Column('origAmountBalance', Numeric(28, 14)),
-    Column('exchangeRateBalance', Numeric(28, 14)),
-    Column('amountBalance', Numeric(28, 14)),
-    Column('tempQuantityCr', Numeric(28, 14)),
-    Column('tempQuantityDr', Numeric(28, 14)),
-    Column('temporigAmountDr', Numeric(28, 14)),
-    Column('temporigAmountCr', Numeric(28, 14)),
-    Column('DocDrCrType', Integer)
-)
-
-
-t_GLSumReturnTempTable13671904217 = Table(
-    'GLSumReturnTempTable13671904217', metadata,
-    Column('CurrentYear', Integer),
-    Column('eap_reportrowtype', Integer, nullable=False),
-    Column('accountID', UNIQUEIDENTIFIER),
-    Column('accountCode', Unicode(400)),
-    Column('accountName', Unicode(1000)),
-    Column('accountDcdirection', UNIQUEIDENTIFIER),
-    Column('madeDate', Unicode(34)),
-    Column('period', Unicode(34)),
-    Column('summary', Unicode(8), nullable=False),
-    Column('currencyID', UNIQUEIDENTIFIER),
-    Column('currencyCode', Unicode(32)),
-    Column('currencyName', Unicode(200)),
-    Column('quantityDr', Numeric(38, 14)),
-    Column('origAmountDr', Numeric(38, 14)),
-    Column('amountDr', Numeric(38, 14)),
-    Column('quantityCr', Numeric(38, 14)),
-    Column('origAmountCr', Numeric(38, 14)),
-    Column('amountCr', Numeric(38, 14)),
-    Column('dCDirection', Integer),
-    Column('quantityBalance', Numeric(38, 14)),
-    Column('origAmountBalance', Numeric(38, 14)),
-    Column('amountBalance', Numeric(38, 14)),
-    Column('auxAccAuxSelfDef', Unicode(200)),
-    Column('auxAccCustomerID', UNIQUEIDENTIFIER),
-    Column('auxAccCustomerCode', Unicode(32)),
-    Column('auxAccCustomerName', Unicode(200)),
-    Column('auxAccPersonID', UNIQUEIDENTIFIER),
-    Column('auxAccPersonCode', Unicode(32)),
-    Column('auxAccPersonName', Unicode(200)),
-    Column('auxAccDepartmentID', UNIQUEIDENTIFIER),
-    Column('auxAccDepartmentCode', Unicode(32)),
-    Column('auxAccDepartmentName', Unicode(200)),
-    Column('auxAccProjectID', UNIQUEIDENTIFIER),
-    Column('auxAccProjectCode', Unicode(32)),
-    Column('auxAccProjectName', Unicode(200)),
-    Column('auxAccInventoryID', UNIQUEIDENTIFIER),
-    Column('auxAccInventoryCode', Unicode(32)),
-    Column('auxAccInventoryName', Unicode(200)),
-    Column('ExAuxAcc1ID', UNIQUEIDENTIFIER),
-    Column('ExAuxAcc1Code', Unicode(50)),
-    Column('ExAuxAcc1Name', Unicode(200)),
-    Column('ExAuxAcc2ID', UNIQUEIDENTIFIER),
-    Column('ExAuxAcc2Code', Unicode(50)),
-    Column('ExAuxAcc2Name', Unicode(200)),
-    Column('ExAuxAcc3ID', UNIQUEIDENTIFIER),
-    Column('ExAuxAcc3Code', Unicode(50)),
-    Column('ExAuxAcc3Name', Unicode(200)),
-    Column('ExAuxAcc4ID', UNIQUEIDENTIFIER),
-    Column('ExAuxAcc4Code', Unicode(50)),
-    Column('ExAuxAcc4Name', Unicode(200)),
-    Column('ExAuxAcc5ID', UNIQUEIDENTIFIER),
-    Column('ExAuxAcc5Code', Unicode(50)),
-    Column('ExAuxAcc5Name', Unicode(200)),
-    Column('ExAuxAcc6ID', UNIQUEIDENTIFIER),
-    Column('ExAuxAcc6Code', Unicode(50)),
-    Column('ExAuxAcc6Name', Unicode(200)),
-    Column('ExAuxAcc7ID', UNIQUEIDENTIFIER),
-    Column('ExAuxAcc7Code', Unicode(50)),
-    Column('ExAuxAcc7Name', Unicode(200)),
-    Column('ExAuxAcc8ID', UNIQUEIDENTIFIER),
-    Column('ExAuxAcc8Code', Unicode(50)),
-    Column('ExAuxAcc8Name', Unicode(200)),
-    Column('ExAuxAcc9ID', UNIQUEIDENTIFIER),
-    Column('ExAuxAcc9Code', Unicode(50)),
-    Column('ExAuxAcc9Name', Unicode(200)),
-    Column('ExAuxAcc10ID', UNIQUEIDENTIFIER),
-    Column('ExAuxAcc10Code', Unicode(50)),
-    Column('ExAuxAcc10Name', Unicode(200))
-)
-
-
-t_GLSumReturnTempTabledemo = Table(
-    'GLSumReturnTempTabledemo', metadata,
-    Column('CurrentYear', Integer),
-    Column('eap_reportrowtype', Integer, nullable=False),
-    Column('accountID', UNIQUEIDENTIFIER),
-    Column('accountCode', Unicode(400)),
-    Column('accountName', Unicode(1000)),
-    Column('accountDcdirection', UNIQUEIDENTIFIER),
-    Column('madeDate', Unicode(34)),
-    Column('period', Unicode(34)),
-    Column('summary', Unicode(8), nullable=False),
-    Column('currencyID', UNIQUEIDENTIFIER),
-    Column('currencyCode', Unicode(32)),
-    Column('currencyName', Unicode(200)),
-    Column('quantityDr', Numeric(38, 14)),
-    Column('origAmountDr', Numeric(38, 14)),
-    Column('amountDr', Numeric(38, 14)),
-    Column('quantityCr', Numeric(38, 14)),
-    Column('origAmountCr', Numeric(38, 14)),
-    Column('amountCr', Numeric(38, 14)),
-    Column('dCDirection', Integer),
-    Column('quantityBalance', Numeric(38, 14)),
-    Column('origAmountBalance', Numeric(38, 14)),
-    Column('amountBalance', Numeric(38, 14)),
-    Column('auxAccAuxSelfDef', Unicode(200)),
-    Column('auxAccCustomerID', UNIQUEIDENTIFIER),
-    Column('auxAccCustomerCode', Unicode(32)),
-    Column('auxAccCustomerName', Unicode(200)),
-    Column('auxAccPersonID', UNIQUEIDENTIFIER),
-    Column('auxAccPersonCode', Unicode(32)),
-    Column('auxAccPersonName', Unicode(200)),
-    Column('auxAccDepartmentID', UNIQUEIDENTIFIER),
-    Column('auxAccDepartmentCode', Unicode(32)),
-    Column('auxAccDepartmentName', Unicode(200)),
-    Column('auxAccProjectID', UNIQUEIDENTIFIER),
-    Column('auxAccProjectCode', Unicode(32)),
-    Column('auxAccProjectName', Unicode(200)),
-    Column('auxAccInventoryID', UNIQUEIDENTIFIER),
-    Column('auxAccInventoryCode', Unicode(32)),
-    Column('auxAccInventoryName', Unicode(200)),
-    Column('ExAuxAcc1ID', UNIQUEIDENTIFIER),
-    Column('ExAuxAcc1Code', Unicode(50)),
-    Column('ExAuxAcc1Name', Unicode(200)),
-    Column('ExAuxAcc2ID', UNIQUEIDENTIFIER),
-    Column('ExAuxAcc2Code', Unicode(50)),
-    Column('ExAuxAcc2Name', Unicode(200)),
-    Column('ExAuxAcc3ID', UNIQUEIDENTIFIER),
-    Column('ExAuxAcc3Code', Unicode(50)),
-    Column('ExAuxAcc3Name', Unicode(200)),
-    Column('ExAuxAcc4ID', UNIQUEIDENTIFIER),
-    Column('ExAuxAcc4Code', Unicode(50)),
-    Column('ExAuxAcc4Name', Unicode(200)),
-    Column('ExAuxAcc5ID', UNIQUEIDENTIFIER),
-    Column('ExAuxAcc5Code', Unicode(50)),
-    Column('ExAuxAcc5Name', Unicode(200)),
-    Column('ExAuxAcc6ID', UNIQUEIDENTIFIER),
-    Column('ExAuxAcc6Code', Unicode(50)),
-    Column('ExAuxAcc6Name', Unicode(200)),
-    Column('ExAuxAcc7ID', UNIQUEIDENTIFIER),
-    Column('ExAuxAcc7Code', Unicode(50)),
-    Column('ExAuxAcc7Name', Unicode(200)),
-    Column('ExAuxAcc8ID', UNIQUEIDENTIFIER),
-    Column('ExAuxAcc8Code', Unicode(50)),
-    Column('ExAuxAcc8Name', Unicode(200)),
-    Column('ExAuxAcc9ID', UNIQUEIDENTIFIER),
-    Column('ExAuxAcc9Code', Unicode(50)),
-    Column('ExAuxAcc9Name', Unicode(200)),
-    Column('ExAuxAcc10ID', UNIQUEIDENTIFIER),
-    Column('ExAuxAcc10Code', Unicode(50)),
-    Column('ExAuxAcc10Name', Unicode(200))
-)
-
-
 class GLAccountAuxPeriodBeginDetail(Base):
     __tablename__ = 'GL_AccountAuxPeriodBeginDetail'
 
@@ -10465,14 +9833,6 @@ class GLAccountPeriodBeginDetail(Base):
     idexauxacc7 = Column(Integer)
     idexauxacc8 = Column(Integer)
     idexauxacc9 = Column(Integer)
-
-
-t_GL_AgeAnalysisRptSet = Table(
-    'GL_AgeAnalysisRptSet', metadata,
-    Column('days', Integer),
-    Column('flag', Integer),
-    Column('userId', Integer)
-)
 
 
 class GLAuxiliaryInfo(Base):
@@ -10647,67 +10007,67 @@ class GLDoc(Base):
     transDocId = Column(Unicode(50))
 
 
-t_GL_DocJournal = Table(
-    'GL_DocJournal', metadata,
-    Column('madedate', String(19, u'Chinese_PRC_CI_AS'), nullable=False),
-    Column('DocType', Unicode(200), nullable=False),
-    Column('docno', Unicode(50), nullable=False),
-    Column('attachedvouchernum', Integer),
-    Column('summary', Unicode(200), nullable=False),
-    Column('period', Unicode(64), nullable=False),
-    Column('accountCode', Unicode(200), nullable=False),
-    Column('accountName', Unicode(200)),
-    Column('currency', Unicode(200), nullable=False),
-    Column('exchangerate', Numeric(28, 14)),
-    Column('quantity', Numeric(28, 14)),
-    Column('price', Numeric(28, 14)),
-    Column('OrigAmount', Numeric(28, 14)),
-    Column('Amount', Numeric(28, 14), nullable=False),
-    Column('billNo', Unicode(200)),
-    Column('billDate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('bizNo', Unicode(200)),
-    Column('bizDate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('dueDate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('ClerkCode', Unicode(200)),
-    Column('ClerkName', Unicode(200)),
-    Column('BankAccountName', Unicode(200)),
-    Column('SettlestyleName', Unicode(200)),
-    Column('AuxAccCustomerCode', Unicode(200)),
-    Column('AuxAccCustomerName', Unicode(200)),
-    Column('AuxAccDepartmentCode', Unicode(200)),
-    Column('AuxAccDepartmentName', Unicode(200)),
-    Column('AuxAccInventoryCode', Unicode(200)),
-    Column('AuxAccInventoryName', Unicode(200)),
-    Column('AuxAccPersonCode', Unicode(200)),
-    Column('AuxAccPersonName', Unicode(200)),
-    Column('AuxAccProjectCode', Unicode(200)),
-    Column('AuxAccProjectName', Unicode(200)),
-    Column('Exauxacc1Code', Unicode(200)),
-    Column('Exauxacc1Name', Unicode(200)),
-    Column('Exauxacc2Code', Unicode(200)),
-    Column('Exauxacc2Name', Unicode(200)),
-    Column('Exauxacc3Code', Unicode(200)),
-    Column('Exauxacc3Name', Unicode(200)),
-    Column('Exauxacc4Code', Unicode(200)),
-    Column('Exauxacc4Name', Unicode(200)),
-    Column('Exauxacc5Code', Unicode(200)),
-    Column('Exauxacc5Name', Unicode(200)),
-    Column('Exauxacc6Code', Unicode(200)),
-    Column('Exauxacc6Name', Unicode(200)),
-    Column('Exauxacc7Code', Unicode(200)),
-    Column('Exauxacc7Name', Unicode(200)),
-    Column('Exauxacc8Code', Unicode(200)),
-    Column('Exauxacc8Name', Unicode(200)),
-    Column('Exauxacc9Code', Unicode(200)),
-    Column('Exauxacc9Name', Unicode(200)),
-    Column('Exauxacc10Code', Unicode(200)),
-    Column('Exauxacc10Name', Unicode(200)),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('updatedBy', Unicode(32)),
-    Column('id', Integer, nullable=False),
-    Column('direction', Integer, nullable=False, server_default=text("((0))"))
-)
+class GLDocJournal(Base):
+    __tablename__ = 'GL_DocJournal'
+
+    madedate = Column(String(19, u'Chinese_PRC_CI_AS'), nullable=False)
+    DocType = Column(Unicode(200), nullable=False)
+    docno = Column(Unicode(50), nullable=False)
+    attachedvouchernum = Column(Integer)
+    summary = Column(Unicode(200), nullable=False)
+    period = Column(Unicode(64), nullable=False)
+    accountCode = Column(Unicode(200), nullable=False)
+    accountName = Column(Unicode(200))
+    currency = Column(Unicode(200), nullable=False)
+    exchangerate = Column(Numeric(28, 14))
+    quantity = Column(Numeric(28, 14))
+    price = Column(Numeric(28, 14))
+    OrigAmount = Column(Numeric(28, 14))
+    Amount = Column(Numeric(28, 14), nullable=False)
+    billNo = Column(Unicode(200))
+    billDate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    bizNo = Column(Unicode(200))
+    bizDate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    dueDate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    ClerkCode = Column(Unicode(200))
+    ClerkName = Column(Unicode(200))
+    BankAccountName = Column(Unicode(200))
+    SettlestyleName = Column(Unicode(200))
+    AuxAccCustomerCode = Column(Unicode(200))
+    AuxAccCustomerName = Column(Unicode(200))
+    AuxAccDepartmentCode = Column(Unicode(200))
+    AuxAccDepartmentName = Column(Unicode(200))
+    AuxAccInventoryCode = Column(Unicode(200))
+    AuxAccInventoryName = Column(Unicode(200))
+    AuxAccPersonCode = Column(Unicode(200))
+    AuxAccPersonName = Column(Unicode(200))
+    AuxAccProjectCode = Column(Unicode(200))
+    AuxAccProjectName = Column(Unicode(200))
+    Exauxacc1Code = Column(Unicode(200))
+    Exauxacc1Name = Column(Unicode(200))
+    Exauxacc2Code = Column(Unicode(200))
+    Exauxacc2Name = Column(Unicode(200))
+    Exauxacc3Code = Column(Unicode(200))
+    Exauxacc3Name = Column(Unicode(200))
+    Exauxacc4Code = Column(Unicode(200))
+    Exauxacc4Name = Column(Unicode(200))
+    Exauxacc5Code = Column(Unicode(200))
+    Exauxacc5Name = Column(Unicode(200))
+    Exauxacc6Code = Column(Unicode(200))
+    Exauxacc6Name = Column(Unicode(200))
+    Exauxacc7Code = Column(Unicode(200))
+    Exauxacc7Name = Column(Unicode(200))
+    Exauxacc8Code = Column(Unicode(200))
+    Exauxacc8Name = Column(Unicode(200))
+    Exauxacc9Code = Column(Unicode(200))
+    Exauxacc9Name = Column(Unicode(200))
+    Exauxacc10Code = Column(Unicode(200))
+    Exauxacc10Name = Column(Unicode(200))
+    ts = Column(TIMESTAMP, nullable=False)
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    updatedBy = Column(Unicode(32))
+    id = Column(Integer, nullable=False, primary_key=True)
+    direction = Column(Integer, nullable=False, server_default=text("((0))"))
 
 
 class GLEntry(Base):
@@ -11195,17 +10555,17 @@ class GLReferenceDoc(Base):
     idreferencedocclass = Column(Integer)
 
 
-t_GL_ReferenceDocClass = Table(
-    'GL_ReferenceDocClass', metadata,
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('Updated', DateTime),
-    Column('UpdatedBy', Unicode(32)),
-    Column('name', Unicode(50)),
-    Column('code', Unicode(32), unique=True),
-    Column('madeDate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('createdTime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('id', Integer, nullable=False)
-)
+class GLReferenceDocClass(Base):
+    __tablename__ = 'GL_ReferenceDocClass'
+
+    ts = Column(TIMESTAMP, nullable=False)
+    Updated = Column(DateTime)
+    UpdatedBy = Column(Unicode(32))
+    name = Column(Unicode(50))
+    code = Column(Unicode(32), unique=True)
+    madeDate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    createdTime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    id = Column(Integer, nullable=False, primary_key=True)
 
 
 class GLReferenceEntry(Base):
@@ -11456,23 +10816,6 @@ class GLWriteOffJournal(Base):
     idexauxacc8 = Column(Integer)
     idexauxacc9 = Column(Integer)
     idjournal = Column(Integer)
-
-
-t_MB_EntInfo = Table(
-    'MB_EntInfo', metadata,
-    Column('entId', String(50, u'Chinese_PRC_CI_AS'), nullable=False),
-    Column('manager', String(50, u'Chinese_PRC_CI_AS'), nullable=False),
-    Column('adminPwd', String(50, u'Chinese_PRC_CI_AS'), nullable=False)
-)
-
-
-t_MB_SyncPartnerAddress = Table(
-    'MB_SyncPartnerAddress', metadata,
-    Column('partnerTs', BINARY(8), nullable=False),
-    Column('partnerAddressId', Integer, nullable=False, server_default=text("((0))")),
-    Column('partnerId', Integer, nullable=False, server_default=text("((0))")),
-    Column('userId', Integer, nullable=False, server_default=text("((0))"))
-)
 
 
 class MEIntegralAdjust(Base):
@@ -11744,105 +11087,92 @@ class MEIntegralSteadCashSettingMemberType(Base):
     idIntegralSteadCashSettingDTO = Column(Integer)
 
 
-t_ME_MemberStorage = Table(
-    'ME_MemberStorage', metadata,
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('cardcode', Unicode(50)),
-    Column('memberquantity', Numeric(28, 14)),
-    Column('storageamount', Numeric(28, 14)),
-    Column('singlestorageamount', Numeric(28, 14)),
-    Column('docno', Unicode(36)),
-    Column('docclass', Unicode(36)),
-    Column('accountingperiod', Integer),
-    Column('docid', Unicode(36)),
-    Column('accountingyear', Integer),
-    Column('memo', Unicode(200)),
-    Column('voucherdate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('madedate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('maker', Unicode(50)),
-    Column('auditor', Unicode(50)),
-    Column('auditeddate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('reviser', Unicode(50)),
-    Column('iscarriedforwardout', Integer),
-    Column('iscarriedforwardin', Integer),
-    Column('ismodifiedcode', Integer),
-    Column('createdtime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('sequencenumber', Integer),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('updatedBy', Unicode(32)),
-    Column('integral', Numeric(28, 14)),
-    Column('PrintCount', Integer),
-    Column('ExternalCode', Unicode(50)),
-    Column('id', Integer, nullable=False),
-    Column('idintegralmember', Integer),
-    Column('idmember', Integer),
-    Column('idstore', Integer),
-    Column('idcustomer', Integer),
-    Column('idsettlecustomer', Integer),
-    Column('poststate', Integer),
-    Column('voucherstate', Integer),
-    Column('auditorid', Integer),
-    Column('makerid', Integer)
-)
+class MEMemberStorage(Base):
+    __tablename__ = 'ME_MemberStorage'
+
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    cardcode = Column(Unicode(50))
+    memberquantity = Column(Numeric(28, 14))
+    storageamount = Column(Numeric(28, 14))
+    singlestorageamount = Column(Numeric(28, 14))
+    docno = Column(Unicode(36))
+    docclass = Column(Unicode(36))
+    accountingperiod = Column(Integer)
+    docid = Column(Unicode(36))
+    accountingyear = Column(Integer)
+    memo = Column(Unicode(200))
+    voucherdate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    madedate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    maker = Column(Unicode(50))
+    auditor = Column(Unicode(50))
+    auditeddate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    reviser = Column(Unicode(50))
+    iscarriedforwardout = Column(Integer)
+    iscarriedforwardin = Column(Integer)
+    ismodifiedcode = Column(Integer)
+    createdtime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    sequencenumber = Column(Integer)
+    ts = Column(TIMESTAMP, nullable=False)
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    updatedBy = Column(Unicode(32))
+    integral = Column(Numeric(28, 14))
+    PrintCount = Column(Integer)
+    ExternalCode = Column(Unicode(50))
+    id = Column(Integer, nullable=False, primary_key=True)
+    idintegralmember = Column(Integer)
+    idmember = Column(Integer)
+    idstore = Column(Integer)
+    idcustomer = Column(Integer)
+    idsettlecustomer = Column(Integer)
+    poststate = Column(Integer)
+    voucherstate = Column(Integer)
+    auditorid = Column(Integer)
+    makerid = Column(Integer)
 
 
-t_ME_MemberStorageDetail_b = Table(
-    'ME_MemberStorageDetail_b', metadata,
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('totalstorageamount', Numeric(28, 14)),
-    Column('balancetotalstorage', Numeric(28, 14)),
-    Column('thisstorageamount', Numeric(28, 14)),
-    Column('thispresentamount', Numeric(28, 14)),
-    Column('thisvalidstorageamount', Numeric(28, 14)),
-    Column('fullamount', Numeric(28, 14)),
-    Column('storagedetails', Unicode(200)),
-    Column('createdtime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('sequencenumber', Integer),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('updatedBy', Unicode(32)),
-    Column('AfterBalanceStorage', Numeric(28, 14)),
-    Column('id', Integer, nullable=False),
-    Column('idmember', Integer),
-    Column('idmembertype', Integer),
-    Column('idmembertypebefore', Integer),
-    Column('storagetype', Integer),
-    Column('idMemberStorageDTO', Integer)
-)
+class MEMemberStorageDetailB(Base):
+    __tablename__ = 'ME_MemberStorageDetail_b'
+
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    totalstorageamount = Column(Numeric(28, 14))
+    balancetotalstorage = Column(Numeric(28, 14))
+    thisstorageamount = Column(Numeric(28, 14))
+    thispresentamount = Column(Numeric(28, 14))
+    thisvalidstorageamount = Column(Numeric(28, 14))
+    fullamount = Column(Numeric(28, 14))
+    storagedetails = Column(Unicode(200))
+    createdtime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    sequencenumber = Column(Integer)
+    ts = Column(TIMESTAMP, nullable=False)
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    updatedBy = Column(Unicode(32))
+    AfterBalanceStorage = Column(Numeric(28, 14))
+    id = Column(Integer, nullable=False, primary_key=True)
+    idmember = Column(Integer)
+    idmembertype = Column(Integer)
+    idmembertypebefore = Column(Integer)
+    storagetype = Column(Integer)
+    idMemberStorageDTO = Column(Integer)
 
 
-t_ME_MemberStorage_Logs = Table(
-    'ME_MemberStorage_Logs', metadata,
-    Column('ExternalCode', Unicode(50)),
-    Column('logtiming', Unicode(50)),
-    Column('recorddate', DateTime),
-    Column('storageamount', Numeric(28, 14)),
-    Column('integralmember', Unicode(200)),
-    Column('integral', Numeric(28, 14)),
-    Column('maker', Unicode(50)),
-    Column('details', Unicode(2000))
-)
+class MEMemberStorageMutiSettle(Base):
+    __tablename__ = 'ME_MemberStorage_MutiSettle'
 
-
-t_ME_MemberStorage_MutiSettle = Table(
-    'ME_MemberStorage_MutiSettle', metadata,
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('storageamount', Numeric(28, 14)),
-    Column('balancebankaccount', Numeric(28, 14)),
-    Column('createdtime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('sequencenumber', Integer),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('updatedBy', Unicode(32)),
-    Column('id', Integer, nullable=False),
-    Column('idbankaccount', Integer),
-    Column('idsettlestyle', Integer),
-    Column('idMemberStorageDTO', Integer)
-)
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    storageamount = Column(Numeric(28, 14))
+    balancebankaccount = Column(Numeric(28, 14))
+    createdtime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    sequencenumber = Column(Integer)
+    ts = Column(TIMESTAMP, nullable=False)
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    updatedBy = Column(Unicode(32))
+    id = Column(Integer, nullable=False, primary_key=True)
+    idbankaccount = Column(Integer)
+    idsettlestyle = Column(Integer)
+    idMemberStorageDTO = Column(Integer)
 
 
 class MEMemberUpgrade(Base):
@@ -12010,49 +11340,49 @@ class MPCostAllocationDirectMaterialSumOrderB(Base):
     ManufactureOrderMaterialDetailId = Column(Integer)
 
 
-t_MP_CostAllocationDirectMaterialSumOrder_b_tmp = Table(
-    'MP_CostAllocationDirectMaterialSumOrder_b_tmp', metadata,
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('quantity', Numeric(28, 14)),
-    Column('nassignedquantity', Numeric(28, 14)),
-    Column('nassignedcost', Numeric(28, 14)),
-    Column('assignedquantity', Numeric(28, 14)),
-    Column('assignedcost', Numeric(28, 14)),
-    Column('balancequantity', Numeric(28, 14)),
-    Column('balancecost', Numeric(28, 14)),
-    Column('origassignedquantity', Numeric(28, 14)),
-    Column('totalassignedquantity', Numeric(28, 14)),
-    Column('createdtime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('sequencenumber', Integer),
-    Column('ckcost', Numeric(28, 14)),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('updatedBy', Unicode(32)),
-    Column('priuserdefnvc1', Unicode(100)),
-    Column('priuserdefdecm1', Numeric(28, 14)),
-    Column('priuserdefnvc2', Unicode(100)),
-    Column('priuserdefdecm2', Numeric(28, 14)),
-    Column('priuserdefnvc3', Unicode(100)),
-    Column('priuserdefdecm3', Numeric(28, 14)),
-    Column('priuserdefnvc4', Unicode(100)),
-    Column('priuserdefdecm4', Numeric(28, 14)),
-    Column('pubuserdefnvc1', Unicode(100)),
-    Column('pubuserdefdecm1', Numeric(28, 14)),
-    Column('pubuserdefnvc2', Unicode(100)),
-    Column('pubuserdefdecm2', Numeric(28, 14)),
-    Column('pubuserdefnvc3', Unicode(100)),
-    Column('pubuserdefdecm3', Numeric(28, 14)),
-    Column('pubuserdefnvc4', Unicode(100)),
-    Column('pubuserdefdecm4', Numeric(28, 14)),
-    Column('isupdated', Integer, server_default=text("((0))")),
-    Column('id', Integer, nullable=False),
-    Column('idinventory', Integer),
-    Column('idbaseunit', Integer),
-    Column('CurrUserID', Integer),
-    Column('idCostAllocationDirectMaterialSumOrderDTO', Integer),
-    Column('ManufactureOrderMaterialDetailId', Integer)
-)
+class MPCostAllocationDirectMaterialSumOrderBTmp(Base):
+    __tablename__ = 'MP_CostAllocationDirectMaterialSumOrder_b_tmp'
+
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    quantity = Column(Numeric(28, 14))
+    nassignedquantity = Column(Numeric(28, 14))
+    nassignedcost = Column(Numeric(28, 14))
+    assignedquantity = Column(Numeric(28, 14))
+    assignedcost = Column(Numeric(28, 14))
+    balancequantity = Column(Numeric(28, 14))
+    balancecost = Column(Numeric(28, 14))
+    origassignedquantity = Column(Numeric(28, 14))
+    totalassignedquantity = Column(Numeric(28, 14))
+    createdtime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    sequencenumber = Column(Integer)
+    ckcost = Column(Numeric(28, 14))
+    ts = Column(TIMESTAMP, nullable=False)
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    updatedBy = Column(Unicode(32))
+    priuserdefnvc1 = Column(Unicode(100))
+    priuserdefdecm1 = Column(Numeric(28, 14))
+    priuserdefnvc2 = Column(Unicode(100))
+    priuserdefdecm2 = Column(Numeric(28, 14))
+    priuserdefnvc3 = Column(Unicode(100))
+    priuserdefdecm3 = Column(Numeric(28, 14))
+    priuserdefnvc4 = Column(Unicode(100))
+    priuserdefdecm4 = Column(Numeric(28, 14))
+    pubuserdefnvc1 = Column(Unicode(100))
+    pubuserdefdecm1 = Column(Numeric(28, 14))
+    pubuserdefnvc2 = Column(Unicode(100))
+    pubuserdefdecm2 = Column(Numeric(28, 14))
+    pubuserdefnvc3 = Column(Unicode(100))
+    pubuserdefdecm3 = Column(Numeric(28, 14))
+    pubuserdefnvc4 = Column(Unicode(100))
+    pubuserdefdecm4 = Column(Numeric(28, 14))
+    isupdated = Column(Integer, server_default=text("((0))"))
+    id = Column(Integer, nullable=False, primary_key=True)
+    idinventory = Column(Integer)
+    idbaseunit = Column(Integer)
+    CurrUserID = Column(Integer)
+    idCostAllocationDirectMaterialSumOrderDTO = Column(Integer)
+    ManufactureOrderMaterialDetailId = Column(Integer)
 
 
 class MPCostAllocationDirectMaterialSumOrderS(Base):
@@ -12107,98 +11437,98 @@ class MPCostAllocationDirectMaterialSumOrderS(Base):
     sourceVoucherDetailId = Column(Integer)
 
 
-t_MP_CostAllocationDirectMaterialSumOrder_s_tmp = Table(
-    'MP_CostAllocationDirectMaterialSumOrder_s_tmp', metadata,
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('quantity', Numeric(28, 14)),
-    Column('price', Numeric(28, 14)),
-    Column('amount', Numeric(28, 14)),
-    Column('nassignedquantity', Numeric(28, 14)),
-    Column('nassignedcost', Numeric(28, 14)),
-    Column('assignedquantity', Numeric(28, 14)),
-    Column('assignedcost', Numeric(28, 14)),
-    Column('balancequantity', Numeric(28, 14)),
-    Column('balancecost', Numeric(28, 14)),
-    Column('origassignedquantity', Numeric(28, 14)),
-    Column('totalrdrecordassignedquantity', Numeric(28, 14)),
-    Column('totalinventoryassignedquantity', Numeric(28, 14)),
-    Column('createdtime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('sequencenumber', Integer),
-    Column('ckcost', Numeric(28, 14)),
-    Column('sourceVoucherCode', Unicode(50)),
-    Column('sourcevoucherdetailts', LargeBinary(1)),
-    Column('sourcevoucherts', LargeBinary(1)),
-    Column('sourcevoucherdate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('updatedBy', Unicode(32)),
-    Column('priuserdefnvc1', Unicode(100)),
-    Column('priuserdefdecm1', Numeric(28, 14)),
-    Column('priuserdefnvc2', Unicode(100)),
-    Column('priuserdefdecm2', Numeric(28, 14)),
-    Column('priuserdefnvc3', Unicode(100)),
-    Column('priuserdefdecm3', Numeric(28, 14)),
-    Column('priuserdefnvc4', Unicode(100)),
-    Column('priuserdefdecm4', Numeric(28, 14)),
-    Column('pubuserdefnvc1', Unicode(100)),
-    Column('pubuserdefdecm1', Numeric(28, 14)),
-    Column('pubuserdefnvc2', Unicode(100)),
-    Column('pubuserdefdecm2', Numeric(28, 14)),
-    Column('pubuserdefnvc3', Unicode(100)),
-    Column('pubuserdefdecm3', Numeric(28, 14)),
-    Column('pubuserdefnvc4', Unicode(100)),
-    Column('pubuserdefdecm4', Numeric(28, 14)),
-    Column('isupdated', Integer, server_default=text("((0))")),
-    Column('id', Integer, nullable=False),
-    Column('idinventory', Integer),
-    Column('idbaseunit', Integer),
-    Column('CurrUserID', Integer),
-    Column('voucherId', Integer),
-    Column('idCostAllocationDirectMaterialSumDetailDTO', Integer),
-    Column('sourceVoucherId', Integer),
-    Column('sourceVoucherDetailId', Integer)
-)
+class MPCostAllocationDirectMaterialSumOrderSTmp(Base):
+    __tablename__ = 'MP_CostAllocationDirectMaterialSumOrder_s_tmp'
+
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    quantity = Column(Numeric(28, 14))
+    price = Column(Numeric(28, 14))
+    amount = Column(Numeric(28, 14))
+    nassignedquantity = Column(Numeric(28, 14))
+    nassignedcost = Column(Numeric(28, 14))
+    assignedquantity = Column(Numeric(28, 14))
+    assignedcost = Column(Numeric(28, 14))
+    balancequantity = Column(Numeric(28, 14))
+    balancecost = Column(Numeric(28, 14))
+    origassignedquantity = Column(Numeric(28, 14))
+    totalrdrecordassignedquantity = Column(Numeric(28, 14))
+    totalinventoryassignedquantity = Column(Numeric(28, 14))
+    createdtime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    sequencenumber = Column(Integer)
+    ckcost = Column(Numeric(28, 14))
+    sourceVoucherCode = Column(Unicode(50))
+    sourcevoucherdetailts = Column(LargeBinary(1))
+    sourcevoucherts = Column(LargeBinary(1))
+    sourcevoucherdate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    ts = Column(TIMESTAMP, nullable=False)
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    updatedBy = Column(Unicode(32))
+    priuserdefnvc1 = Column(Unicode(100))
+    priuserdefdecm1 = Column(Numeric(28, 14))
+    priuserdefnvc2 = Column(Unicode(100))
+    priuserdefdecm2 = Column(Numeric(28, 14))
+    priuserdefnvc3 = Column(Unicode(100))
+    priuserdefdecm3 = Column(Numeric(28, 14))
+    priuserdefnvc4 = Column(Unicode(100))
+    priuserdefdecm4 = Column(Numeric(28, 14))
+    pubuserdefnvc1 = Column(Unicode(100))
+    pubuserdefdecm1 = Column(Numeric(28, 14))
+    pubuserdefnvc2 = Column(Unicode(100))
+    pubuserdefdecm2 = Column(Numeric(28, 14))
+    pubuserdefnvc3 = Column(Unicode(100))
+    pubuserdefdecm3 = Column(Numeric(28, 14))
+    pubuserdefnvc4 = Column(Unicode(100))
+    pubuserdefdecm4 = Column(Numeric(28, 14))
+    isupdated = Column(Integer, server_default=text("((0))"))
+    id = Column(Integer, nullable=False, primary_key=True)
+    idinventory = Column(Integer)
+    idbaseunit = Column(Integer)
+    CurrUserID = Column(Integer)
+    voucherId = Column(Integer)
+    idCostAllocationDirectMaterialSumDetailDTO = Column(Integer)
+    sourceVoucherId = Column(Integer)
+    sourceVoucherDetailId = Column(Integer)
 
 
-t_MP_CostAllocationDirectMaterialSumOrder_tmp = Table(
-    'MP_CostAllocationDirectMaterialSumOrder_tmp', metadata,
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('isnomodify', Unicode(50)),
-    Column('docno', Unicode(36)),
-    Column('docclass', Unicode(36)),
-    Column('docid', Unicode(36)),
-    Column('accountingperiod', Integer),
-    Column('accountingyear', Integer),
-    Column('voucherdate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('madedate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('maker', Unicode(50)),
-    Column('memo', Unicode(50)),
-    Column('auditor', Unicode(50)),
-    Column('auditeddate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('reviser', Unicode(50)),
-    Column('iscarriedforwardout', Integer),
-    Column('iscarriedforwardin', Integer),
-    Column('ismodifiedcode', Integer),
-    Column('createdtime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('sequencenumber', Integer),
-    Column('rkdcode', Unicode(50)),
-    Column('jgdcode', Unicode(50)),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('updatedBy', Unicode(32)),
-    Column('quantity', Numeric(28, 14)),
-    Column('id', Integer, nullable=False),
-    Column('idinventory', Integer),
-    Column('voucherstate', Integer),
-    Column('auditorid', Integer),
-    Column('CurrUserID', Integer),
-    Column('makerid', Integer),
-    Column('costallocationorderdetailid', Integer),
-    Column('jgdid', Integer),
-    Column('rkdid', Integer)
-)
+class MPCostAllocationDirectMaterialSumOrderTmp(Base):
+    __tablename__ = 'MP_CostAllocationDirectMaterialSumOrder_tmp'
+
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    isnomodify = Column(Unicode(50))
+    docno = Column(Unicode(36))
+    docclass = Column(Unicode(36))
+    docid = Column(Unicode(36))
+    accountingperiod = Column(Integer)
+    accountingyear = Column(Integer)
+    voucherdate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    madedate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    maker = Column(Unicode(50))
+    memo = Column(Unicode(50))
+    auditor = Column(Unicode(50))
+    auditeddate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    reviser = Column(Unicode(50))
+    iscarriedforwardout = Column(Integer)
+    iscarriedforwardin = Column(Integer)
+    ismodifiedcode = Column(Integer)
+    createdtime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    sequencenumber = Column(Integer)
+    rkdcode = Column(Unicode(50))
+    jgdcode = Column(Unicode(50))
+    ts = Column(TIMESTAMP, nullable=False)
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    updatedBy = Column(Unicode(32))
+    quantity = Column(Numeric(28, 14))
+    id = Column(Integer, nullable=False, primary_key=True)
+    idinventory = Column(Integer)
+    voucherstate = Column(Integer)
+    auditorid = Column(Integer)
+    CurrUserID = Column(Integer)
+    makerid = Column(Integer)
+    costallocationorderdetailid = Column(Integer)
+    jgdid = Column(Integer)
+    rkdid = Column(Integer)
 
 
 class MPCostAllocationOrder(Base):
@@ -12324,64 +11654,64 @@ class MPCostAllocationOrderB(Base):
     sourceVoucherDetailId = Column(Integer)
 
 
-t_MP_CostAllocationOrder_b_tmp = Table(
-    'MP_CostAllocationOrder_b_tmp', metadata,
-    Column('id', Integer, nullable=False),
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('sourceVoucherCode', Unicode(50)),
-    Column('sourcevoucherdetailts', LargeBinary(1)),
-    Column('sourcevoucherts', LargeBinary(1)),
-    Column('batch', Unicode(50)),
-    Column('createdtime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('sequencenumber', Integer),
-    Column('refcost', Numeric(28, 14)),
-    Column('totalrefcost', Numeric(28, 14)),
-    Column('quantity', Numeric(28, 14)),
-    Column('directmaterials', Numeric(28, 14)),
-    Column('indirectmaterials', Numeric(28, 14)),
-    Column('manufacturecost', Numeric(28, 14)),
-    Column('mancost', Numeric(28, 14)),
-    Column('outsourcingcost', Numeric(28, 14)),
-    Column('othercost', Numeric(28, 14)),
-    Column('othercost1', Numeric(28, 14)),
-    Column('othercost2', Numeric(28, 14)),
-    Column('totalcost', Numeric(28, 14)),
-    Column('unitcost', Numeric(28, 14)),
-    Column('jgdcode', Unicode(50)),
-    Column('rkdcode', Unicode(50)),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('updatedBy', Unicode(32)),
-    Column('priuserdefnvc1', Unicode(100)),
-    Column('priuserdefdecm1', Numeric(28, 14)),
-    Column('priuserdefnvc2', Unicode(100)),
-    Column('priuserdefdecm2', Numeric(28, 14)),
-    Column('priuserdefnvc3', Unicode(100)),
-    Column('priuserdefdecm3', Numeric(28, 14)),
-    Column('priuserdefnvc4', Unicode(100)),
-    Column('priuserdefdecm4', Numeric(28, 14)),
-    Column('pubuserdefnvc1', Unicode(100)),
-    Column('pubuserdefdecm1', Numeric(28, 14)),
-    Column('pubuserdefnvc2', Unicode(100)),
-    Column('pubuserdefdecm2', Numeric(28, 14)),
-    Column('pubuserdefnvc3', Unicode(100)),
-    Column('pubuserdefdecm3', Numeric(28, 14)),
-    Column('pubuserdefnvc4', Unicode(100)),
-    Column('pubuserdefdecm4', Numeric(28, 14)),
-    Column('idinventory', Integer),
-    Column('idproject', Integer),
-    Column('idbaseunit', Integer),
-    Column('idWarehouse', Integer),
-    Column('CurrUserID', Integer),
-    Column('idCostAllocationOrderDTO', Integer),
-    Column('jgdid', Integer),
-    Column('jgdDetailId', Integer),
-    Column('rkdid', Integer),
-    Column('sourceVoucherId', Integer),
-    Column('rkdDetailId', Integer),
-    Column('sourceVoucherDetailId', Integer)
-)
+class MPCostAllocationOrderBTmp(Base):
+    __tablename__ = 'MP_CostAllocationOrder_b_tmp'
+
+    id = Column(Integer, nullable=False, primary_key=True)
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    sourceVoucherCode = Column(Unicode(50))
+    sourcevoucherdetailts = Column(LargeBinary(1))
+    sourcevoucherts = Column(LargeBinary(1))
+    batch = Column(Unicode(50))
+    createdtime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    sequencenumber = Column(Integer)
+    refcost = Column(Numeric(28, 14))
+    totalrefcost = Column(Numeric(28, 14))
+    quantity = Column(Numeric(28, 14))
+    directmaterials = Column(Numeric(28, 14))
+    indirectmaterials = Column(Numeric(28, 14))
+    manufacturecost = Column(Numeric(28, 14))
+    mancost = Column(Numeric(28, 14))
+    outsourcingcost = Column(Numeric(28, 14))
+    othercost = Column(Numeric(28, 14))
+    othercost1 = Column(Numeric(28, 14))
+    othercost2 = Column(Numeric(28, 14))
+    totalcost = Column(Numeric(28, 14))
+    unitcost = Column(Numeric(28, 14))
+    jgdcode = Column(Unicode(50))
+    rkdcode = Column(Unicode(50))
+    ts = Column(TIMESTAMP, nullable=False)
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    updatedBy = Column(Unicode(32))
+    priuserdefnvc1 = Column(Unicode(100))
+    priuserdefdecm1 = Column(Numeric(28, 14))
+    priuserdefnvc2 = Column(Unicode(100))
+    priuserdefdecm2 = Column(Numeric(28, 14))
+    priuserdefnvc3 = Column(Unicode(100))
+    priuserdefdecm3 = Column(Numeric(28, 14))
+    priuserdefnvc4 = Column(Unicode(100))
+    priuserdefdecm4 = Column(Numeric(28, 14))
+    pubuserdefnvc1 = Column(Unicode(100))
+    pubuserdefdecm1 = Column(Numeric(28, 14))
+    pubuserdefnvc2 = Column(Unicode(100))
+    pubuserdefdecm2 = Column(Numeric(28, 14))
+    pubuserdefnvc3 = Column(Unicode(100))
+    pubuserdefdecm3 = Column(Numeric(28, 14))
+    pubuserdefnvc4 = Column(Unicode(100))
+    pubuserdefdecm4 = Column(Numeric(28, 14))
+    idinventory = Column(Integer)
+    idproject = Column(Integer)
+    idbaseunit = Column(Integer)
+    idWarehouse = Column(Integer)
+    CurrUserID = Column(Integer)
+    idCostAllocationOrderDTO = Column(Integer)
+    jgdid = Column(Integer)
+    jgdDetailId = Column(Integer)
+    rkdid = Column(Integer)
+    sourceVoucherId = Column(Integer)
+    rkdDetailId = Column(Integer)
+    sourceVoucherDetailId = Column(Integer)
 
 
 class MPCostAllocationOrderSrc(Base):
@@ -12433,163 +11763,125 @@ class MPCostAllocationOrderSrc(Base):
     sourceVoucherDetailId = Column(Integer)
 
 
-t_MP_CostAllocationOrder_src_tmp = Table(
-    'MP_CostAllocationOrder_src_tmp', metadata,
-    Column('sourceVoucherCode', Unicode(50)),
-    Column('sourcevoucherdetailts', LargeBinary(8)),
-    Column('sourcevoucherts', LargeBinary(8)),
-    Column('batch', Unicode(50)),
-    Column('createdtime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('sequencenumber', Integer),
-    Column('refcost', Numeric(28, 14)),
-    Column('totalrefcost', Numeric(28, 14)),
-    Column('quantity', Numeric(28, 14)),
-    Column('jgdcode', Unicode(50)),
-    Column('rkdcode', Unicode(50)),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('updatedBy', Unicode(32)),
-    Column('priuserdefnvc1', Unicode(100)),
-    Column('priuserdefdecm1', Numeric(28, 14)),
-    Column('priuserdefnvc2', Unicode(100)),
-    Column('priuserdefdecm2', Numeric(28, 14)),
-    Column('priuserdefnvc3', Unicode(100)),
-    Column('priuserdefdecm3', Numeric(28, 14)),
-    Column('priuserdefnvc4', Unicode(100)),
-    Column('priuserdefdecm4', Numeric(28, 14)),
-    Column('pubuserdefnvc1', Unicode(100)),
-    Column('pubuserdefdecm1', Numeric(28, 14)),
-    Column('pubuserdefnvc2', Unicode(100)),
-    Column('pubuserdefdecm2', Numeric(28, 14)),
-    Column('pubuserdefnvc3', Unicode(100)),
-    Column('pubuserdefdecm3', Numeric(28, 14)),
-    Column('pubuserdefnvc4', Unicode(100)),
-    Column('pubuserdefdecm4', Numeric(28, 14)),
-    Column('id', Integer, nullable=False),
-    Column('idinventory', Integer),
-    Column('idproject', Integer),
-    Column('idbaseunit', Integer),
-    Column('idWarehouse', Integer),
-    Column('CurrUserID', Integer),
-    Column('voucherId', Integer),
-    Column('idCostAllocationOrderDTO', Integer),
-    Column('idSum', Integer),
-    Column('jgdid', Integer),
-    Column('jgdDetailId', Integer),
-    Column('rkdid', Integer),
-    Column('sourceVoucherId', Integer),
-    Column('rkdDetailId', Integer),
-    Column('sourceVoucherDetailId', Integer)
-)
+class MPCostAllocationOrderSrcTmp(Base):
+    __tablename__ = 'MP_CostAllocationOrder_src_tmp'
+
+    sourceVoucherCode = Column(Unicode(50))
+    sourcevoucherdetailts = Column(LargeBinary(8))
+    sourcevoucherts = Column(LargeBinary(8))
+    batch = Column(Unicode(50))
+    createdtime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    sequencenumber = Column(Integer)
+    refcost = Column(Numeric(28, 14))
+    totalrefcost = Column(Numeric(28, 14))
+    quantity = Column(Numeric(28, 14))
+    jgdcode = Column(Unicode(50))
+    rkdcode = Column(Unicode(50))
+    ts = Column(TIMESTAMP, nullable=False)
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    updatedBy = Column(Unicode(32))
+    priuserdefnvc1 = Column(Unicode(100))
+    priuserdefdecm1 = Column(Numeric(28, 14))
+    priuserdefnvc2 = Column(Unicode(100))
+    priuserdefdecm2 = Column(Numeric(28, 14))
+    priuserdefnvc3 = Column(Unicode(100))
+    priuserdefdecm3 = Column(Numeric(28, 14))
+    priuserdefnvc4 = Column(Unicode(100))
+    priuserdefdecm4 = Column(Numeric(28, 14))
+    pubuserdefnvc1 = Column(Unicode(100))
+    pubuserdefdecm1 = Column(Numeric(28, 14))
+    pubuserdefnvc2 = Column(Unicode(100))
+    pubuserdefdecm2 = Column(Numeric(28, 14))
+    pubuserdefnvc3 = Column(Unicode(100))
+    pubuserdefdecm3 = Column(Numeric(28, 14))
+    pubuserdefnvc4 = Column(Unicode(100))
+    pubuserdefdecm4 = Column(Numeric(28, 14))
+    id = Column(Integer, nullable=False, primary_key=True)
+    idinventory = Column(Integer)
+    idproject = Column(Integer)
+    idbaseunit = Column(Integer)
+    idWarehouse = Column(Integer)
+    CurrUserID = Column(Integer)
+    voucherId = Column(Integer)
+    idCostAllocationOrderDTO = Column(Integer)
+    idSum = Column(Integer)
+    jgdid = Column(Integer)
+    jgdDetailId = Column(Integer)
+    rkdid = Column(Integer)
+    sourceVoucherId = Column(Integer)
+    rkdDetailId = Column(Integer)
+    sourceVoucherDetailId = Column(Integer)
 
 
-t_MP_CostAllocationOrder_tmp = Table(
-    'MP_CostAllocationOrder_tmp', metadata,
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('isNoModify', Unicode(50)),
-    Column('docno', Unicode(36)),
-    Column('docclass', Unicode(36)),
-    Column('accountingperiod', Integer),
-    Column('docid', Unicode(36)),
-    Column('accountingyear', Integer),
-    Column('memo', Unicode(50)),
-    Column('voucherdate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('madedate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('maker', Unicode(50)),
-    Column('auditor', Unicode(50)),
-    Column('auditeddate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('reviser', Unicode(50)),
-    Column('iscarriedforwardout', Integer),
-    Column('iscarriedforwardin', Integer),
-    Column('ismodifiedcode', Integer),
-    Column('createdtime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('sequencenumber', Integer),
-    Column('directmaterialcost', Numeric(28, 14)),
-    Column('indirectmaterialcost', Numeric(28, 14)),
-    Column('manufacturcost', Numeric(28, 14)),
-    Column('mancost', Numeric(28, 14)),
-    Column('consignationcost', Numeric(28, 14)),
-    Column('othercost', Numeric(28, 14)),
-    Column('othercost1', Numeric(28, 14)),
-    Column('othercost2', Numeric(28, 14)),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('updatedBy', Unicode(32)),
-    Column('priuserdefnvc1', Unicode(100)),
-    Column('priuserdefdecm1', Numeric(28, 14)),
-    Column('priuserdefnvc2', Unicode(100)),
-    Column('priuserdefdecm2', Numeric(28, 14)),
-    Column('priuserdefnvc3', Unicode(100)),
-    Column('priuserdefdecm3', Numeric(28, 14)),
-    Column('priuserdefnvc4', Unicode(100)),
-    Column('priuserdefdecm4', Numeric(28, 14)),
-    Column('priuserdefnvc5', Unicode(100)),
-    Column('priuserdefdecm5', Numeric(28, 14)),
-    Column('priuserdefnvc6', Unicode(100)),
-    Column('priuserdefdecm6', Numeric(28, 14)),
-    Column('pubuserdefnvc1', Unicode(100)),
-    Column('pubuserdefdecm1', Numeric(28, 14)),
-    Column('pubuserdefnvc2', Unicode(100)),
-    Column('pubuserdefdecm2', Numeric(28, 14)),
-    Column('pubuserdefnvc3', Unicode(100)),
-    Column('pubuserdefdecm3', Numeric(28, 14)),
-    Column('pubuserdefnvc4', Unicode(100)),
-    Column('pubuserdefdecm4', Numeric(28, 14)),
-    Column('pubuserdefnvc5', Unicode(100)),
-    Column('pubuserdefdecm5', Numeric(28, 14)),
-    Column('pubuserdefnvc6', Unicode(100)),
-    Column('pubuserdefdecm6', Numeric(28, 14)),
-    Column('PrintCount', Integer),
-    Column('id', Integer, nullable=False),
-    Column('idmarketingorgan', Integer),
-    Column('idperson', Integer),
-    Column('idproject', Integer),
-    Column('voucherstate', Integer),
-    Column('allocationbasis', Integer),
-    Column('costcollectorobject', Integer),
-    Column('auditorid', Integer),
-    Column('CurrUserID', Integer),
-    Column('makerid', Integer)
-)
+class MPCostAllocationOrderTmp(Base):
+    __tablename__ = 'MP_CostAllocationOrder_tmp'
 
-
-t_MP_Cycle_Queue = Table(
-    'MP_Cycle_Queue', metadata,
-    Column('parentInv', String(40, u'Chinese_PRC_CI_AS')),
-    Column('sonInv', String(40, u'Chinese_PRC_CI_AS')),
-    Column('SourceParent', String(40, u'Chinese_PRC_CI_AS'))
-)
-
-
-t_MP_Cycle_Queue_Temp = Table(
-    'MP_Cycle_Queue_Temp', metadata,
-    Column('parentInv', String(40, u'Chinese_PRC_CI_AS')),
-    Column('sonInv', String(40, u'Chinese_PRC_CI_AS')),
-    Column('SourceParent', String(40, u'Chinese_PRC_CI_AS'))
-)
-
-
-t_MP_Cycle_This = Table(
-    'MP_Cycle_This', metadata,
-    Column('parentInv', String(40, u'Chinese_PRC_CI_AS')),
-    Column('sonInv', String(40, u'Chinese_PRC_CI_AS')),
-    Column('SourceParent', String(40, u'Chinese_PRC_CI_AS'))
-)
-
-
-t_MP_DeductAq = Table(
-    'MP_DeductAq', metadata,
-    Column('DeductQuantity', Numeric(28, 14)),
-    Column('IdSku', Integer, nullable=False, server_default=text("((0))"))
-)
-
-
-class MPDeductAqSum(Base):
-    __tablename__ = 'MP_DeductAqSum'
-
-    DeductQuantity = Column(Numeric(28, 14))
-    IdSku = Column(Integer, primary_key=True, server_default=text("((0))"))
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    isNoModify = Column(Unicode(50))
+    docno = Column(Unicode(36))
+    docclass = Column(Unicode(36))
+    accountingperiod = Column(Integer)
+    docid = Column(Unicode(36))
+    accountingyear = Column(Integer)
+    memo = Column(Unicode(50))
+    voucherdate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    madedate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    maker = Column(Unicode(50))
+    auditor = Column(Unicode(50))
+    auditeddate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    reviser = Column(Unicode(50))
+    iscarriedforwardout = Column(Integer)
+    iscarriedforwardin = Column(Integer)
+    ismodifiedcode = Column(Integer)
+    createdtime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    sequencenumber = Column(Integer)
+    directmaterialcost = Column(Numeric(28, 14))
+    indirectmaterialcost = Column(Numeric(28, 14))
+    manufacturcost = Column(Numeric(28, 14))
+    mancost = Column(Numeric(28, 14))
+    consignationcost = Column(Numeric(28, 14))
+    othercost = Column(Numeric(28, 14))
+    othercost1 = Column(Numeric(28, 14))
+    othercost2 = Column(Numeric(28, 14))
+    ts = Column(TIMESTAMP, nullable=False)
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    updatedBy = Column(Unicode(32))
+    priuserdefnvc1 = Column(Unicode(100))
+    priuserdefdecm1 = Column(Numeric(28, 14))
+    priuserdefnvc2 = Column(Unicode(100))
+    priuserdefdecm2 = Column(Numeric(28, 14))
+    priuserdefnvc3 = Column(Unicode(100))
+    priuserdefdecm3 = Column(Numeric(28, 14))
+    priuserdefnvc4 = Column(Unicode(100))
+    priuserdefdecm4 = Column(Numeric(28, 14))
+    priuserdefnvc5 = Column(Unicode(100))
+    priuserdefdecm5 = Column(Numeric(28, 14))
+    priuserdefnvc6 = Column(Unicode(100))
+    priuserdefdecm6 = Column(Numeric(28, 14))
+    pubuserdefnvc1 = Column(Unicode(100))
+    pubuserdefdecm1 = Column(Numeric(28, 14))
+    pubuserdefnvc2 = Column(Unicode(100))
+    pubuserdefdecm2 = Column(Numeric(28, 14))
+    pubuserdefnvc3 = Column(Unicode(100))
+    pubuserdefdecm3 = Column(Numeric(28, 14))
+    pubuserdefnvc4 = Column(Unicode(100))
+    pubuserdefdecm4 = Column(Numeric(28, 14))
+    pubuserdefnvc5 = Column(Unicode(100))
+    pubuserdefdecm5 = Column(Numeric(28, 14))
+    pubuserdefnvc6 = Column(Unicode(100))
+    pubuserdefdecm6 = Column(Numeric(28, 14))
+    PrintCount = Column(Integer)
+    id = Column(Integer, nullable=False, primary_key=True)
+    idmarketingorgan = Column(Integer)
+    idperson = Column(Integer)
+    idproject = Column(Integer)
+    voucherstate = Column(Integer)
+    allocationbasis = Column(Integer)
+    costcollectorobject = Column(Integer)
+    auditorid = Column(Integer)
+    CurrUserID = Column(Integer)
+    makerid = Column(Integer)
 
 
 class MPIntendSaleOrder(Base):
@@ -12731,23 +12023,6 @@ class MPInventoryLine(Base):
     updatedtime = Column(String(19, u'Chinese_PRC_CI_AS'))
     id = Column(Integer, primary_key=True)
     idInventory = Column(Integer)
-
-
-t_MP_MRPPRA_SourceVoucherDetails = Table(
-    'MP_MRPPRA_SourceVoucherDetails', metadata,
-    Column('sourceVoucherDetailId', Integer, nullable=False)
-)
-
-
-t_MP_MRPPRA_StopWatch = Table(
-    'MP_MRPPRA_StopWatch', metadata,
-    Column('code', Unicode(100), nullable=False),
-    Column('name', Unicode(50)),
-    Column('memo', Unicode(100)),
-    Column('elapsed', Integer),
-    Column('startTime', DateTime, server_default=text("(getdate())")),
-    Column('endTime', DateTime, server_default=text("(getdate())"))
-)
 
 
 class MPManufactureOrder(Base):
@@ -13076,89 +12351,89 @@ class MPOperationSku(Base):
     idSourceVoucherType = Column(Integer)
 
 
-t_MP_PRA_FormComputerSetting = Table(
-    'MP_PRA_FormComputerSetting', metadata,
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('increasevalue', Numeric(28, 14)),
-    Column('increasescale', Numeric(28, 14)),
-    Column('isnullitem', Integer),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('updatedBy', Unicode(32)),
-    Column('id', Integer, nullable=False),
-    Column('increasemode', Integer)
-)
+class MPPRAFormComputerSetting(Base):
+    __tablename__ = 'MP_PRA_FormComputerSetting'
+
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    increasevalue = Column(Numeric(28, 14))
+    increasescale = Column(Numeric(28, 14))
+    isnullitem = Column(Integer)
+    ts = Column(TIMESTAMP, nullable=False)
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    updatedBy = Column(Unicode(32))
+    id = Column(Integer, nullable=False, primary_key=True)
+    increasemode = Column(Integer)
 
 
-t_MP_PRA_GeneratePurchaseOrderRule = Table(
-    'MP_PRA_GeneratePurchaseOrderRule', metadata,
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('isphurchaselots', Integer),
-    Column('createdtime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('sequencenumber', Integer),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('updatedBy', Unicode(32)),
-    Column('ID', Integer, nullable=False),
-    Column('mergerule', Integer),
-    Column('splitrule', Integer),
-    Column('iduser', Integer)
-)
+class MPPRAGeneratePurchaseOrderRule(Base):
+    __tablename__ = 'MP_PRA_GeneratePurchaseOrderRule'
+
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    isphurchaselots = Column(Integer)
+    createdtime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    sequencenumber = Column(Integer)
+    ts = Column(TIMESTAMP, nullable=False)
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    updatedBy = Column(Unicode(32))
+    ID = Column(Integer, nullable=False, primary_key=True)
+    mergerule = Column(Integer)
+    splitrule = Column(Integer)
+    iduser = Column(Integer)
 
 
-t_MP_PRA_GeneratePurchaseOrderSetting = Table(
-    'MP_PRA_GeneratePurchaseOrderSetting', metadata,
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('purchasedate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('arrivaldate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('exchangerate', Numeric(28, 14)),
-    Column('isnullitem', Integer),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('updatedBy', Unicode(32)),
-    Column('id', Integer, nullable=False),
-    Column('idcurrency', Integer),
-    Column('iddepartment', Integer),
-    Column('idpartner', Integer),
-    Column('idperson', Integer)
-)
+class MPPRAGeneratePurchaseOrderSetting(Base):
+    __tablename__ = 'MP_PRA_GeneratePurchaseOrderSetting'
+
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    purchasedate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    arrivaldate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    exchangerate = Column(Numeric(28, 14))
+    isnullitem = Column(Integer)
+    ts = Column(TIMESTAMP, nullable=False)
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    updatedBy = Column(Unicode(32))
+    id = Column(Integer, nullable=False, primary_key=True)
+    idcurrency = Column(Integer)
+    iddepartment = Column(Integer)
+    idpartner = Column(Integer)
+    idperson = Column(Integer)
 
 
-t_MP_PRA_GeneratePurchaseRequisitionRule = Table(
-    'MP_PRA_GeneratePurchaseRequisitionRule', metadata,
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('isPhurchaseLots', Integer),
-    Column('createdtime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('sequencenumber', Integer),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('updatedBy', Unicode(32)),
-    Column('id', Integer, nullable=False),
-    Column('mergeRule', Integer),
-    Column('splitRule', Integer),
-    Column('idUser', Integer)
-)
+class MPPRAGeneratePurchaseRequisitionRule(Base):
+    __tablename__ = 'MP_PRA_GeneratePurchaseRequisitionRule'
+
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    isPhurchaseLots = Column(Integer)
+    createdtime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    sequencenumber = Column(Integer)
+    ts = Column(TIMESTAMP, nullable=False)
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    updatedBy = Column(Unicode(32))
+    id = Column(Integer, nullable=False, primary_key=True)
+    mergeRule = Column(Integer)
+    splitRule = Column(Integer)
+    idUser = Column(Integer)
 
 
-t_MP_PRA_GeneratePurchaseRequisitionSetting = Table(
-    'MP_PRA_GeneratePurchaseRequisitionSetting', metadata,
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('purchaseDate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('demanddate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('isnullitem', Integer),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('updatedBy', Unicode(32)),
-    Column('id', Integer, nullable=False),
-    Column('iddepartment', Integer),
-    Column('idpartner', Integer),
-    Column('idclerk', Integer)
-)
+class MPPRAGeneratePurchaseRequisitionSetting(Base):
+    __tablename__ = 'MP_PRA_GeneratePurchaseRequisitionSetting'
+
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    purchaseDate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    demanddate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    isnullitem = Column(Integer)
+    ts = Column(TIMESTAMP, nullable=False)
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    updatedBy = Column(Unicode(32))
+    id = Column(Integer, nullable=False, primary_key=True)
+    iddepartment = Column(Integer)
+    idpartner = Column(Integer)
+    idclerk = Column(Integer)
 
 
 class MPPRAPraComputeVoucher(Base):
@@ -13357,61 +12632,61 @@ class MPPRAPraComputeVoucherTemp(Base):
     idsourcevouchertype = Column(Integer)
 
 
-t_MP_PRA_PraOption = Table(
-    'MP_PRA_PraOption', metadata,
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('isPraInventory', Integer),
-    Column('isPurchaseInventory', Integer),
-    Column('isCarriedForwardOut', Integer),
-    Column('isCarriedForwardIn', Integer),
-    Column('getavailablebeforesomedate', Integer),
-    Column('availablequantitydate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('notquantityonfreeitems', Integer),
-    Column('onquantityonfreeitems', Integer),
-    Column('containsnullwarehouse', Integer),
-    Column('existingquantity', Integer),
-    Column('safequantity', Integer),
-    Column('lowquantity', Integer),
-    Column('purchaseonwayquantity', Integer),
-    Column('purchaseorderonwayquantity', Integer),
-    Column('purchaseorderonwayunaudit', Integer),
-    Column('purchasearrivalquantity', Integer),
-    Column('purchaseforreceivequantity', Integer),
-    Column('onProducingQuantity', Integer),
-    Column('manufacturequantity', Integer),
-    Column('manufacturequantityunaudit', Integer),
-    Column('productforreceivequantity', Integer),
-    Column('transonwayquantity', Integer),
-    Column('otheronwayquantity', Integer),
-    Column('saleonwayquantity', Integer),
-    Column('saleorderquantity', Integer),
-    Column('saleorderquantityunaudit', Integer),
-    Column('saledeliveryquantity', Integer),
-    Column('forsaledispatchquantity', Integer),
-    Column('manufactureMaterialsQuantity', Integer),
-    Column('manufactureforsendquantity', Integer),
-    Column('manufactureforsendunaudit', Integer),
-    Column('materialforsendquantity', Integer),
-    Column('transfordispatchquantity', Integer),
-    Column('otherfordispatchquantity', Integer),
-    Column('purchaserequisitionquantity', Integer),
-    Column('purchaserequisitionunaudit', Integer),
-    Column('createdtime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('sequencenumber', Integer),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('updatedBy', Unicode(32)),
-    Column('DeliveryOnWayQuantity', BIT),
-    Column('DeliveryOnWayQuantityUnaudit', BIT),
-    Column('id', Integer, nullable=False),
-    Column('completmentType', Integer),
-    Column('completmentTypeForHeigh', Integer),
-    Column('GeneratedType', Integer),
-    Column('resultmergetype', Integer),
-    Column('SourceDocType', Integer),
-    Column('suggestiontype', Integer)
-)
+class MPPRAPraOption(Base):
+    __tablename__ = 'MP_PRA_PraOption'
+
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    isPraInventory = Column(Integer)
+    isPurchaseInventory = Column(Integer)
+    isCarriedForwardOut = Column(Integer)
+    isCarriedForwardIn = Column(Integer)
+    getavailablebeforesomedate = Column(Integer)
+    availablequantitydate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    notquantityonfreeitems = Column(Integer)
+    onquantityonfreeitems = Column(Integer)
+    containsnullwarehouse = Column(Integer)
+    existingquantity = Column(Integer)
+    safequantity = Column(Integer)
+    lowquantity = Column(Integer)
+    purchaseonwayquantity = Column(Integer)
+    purchaseorderonwayquantity = Column(Integer)
+    purchaseorderonwayunaudit = Column(Integer)
+    purchasearrivalquantity = Column(Integer)
+    purchaseforreceivequantity = Column(Integer)
+    onProducingQuantity = Column(Integer)
+    manufacturequantity = Column(Integer)
+    manufacturequantityunaudit = Column(Integer)
+    productforreceivequantity = Column(Integer)
+    transonwayquantity = Column(Integer)
+    otheronwayquantity = Column(Integer)
+    saleonwayquantity = Column(Integer)
+    saleorderquantity = Column(Integer)
+    saleorderquantityunaudit = Column(Integer)
+    saledeliveryquantity = Column(Integer)
+    forsaledispatchquantity = Column(Integer)
+    manufactureMaterialsQuantity = Column(Integer)
+    manufactureforsendquantity = Column(Integer)
+    manufactureforsendunaudit = Column(Integer)
+    materialforsendquantity = Column(Integer)
+    transfordispatchquantity = Column(Integer)
+    otherfordispatchquantity = Column(Integer)
+    purchaserequisitionquantity = Column(Integer)
+    purchaserequisitionunaudit = Column(Integer)
+    createdtime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    sequencenumber = Column(Integer)
+    ts = Column(TIMESTAMP, nullable=False)
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    updatedBy = Column(Unicode(32))
+    DeliveryOnWayQuantity = Column(BIT)
+    DeliveryOnWayQuantityUnaudit = Column(BIT)
+    id = Column(Integer, nullable=False, primary_key=True)
+    completmentType = Column(Integer)
+    completmentTypeForHeigh = Column(Integer)
+    GeneratedType = Column(Integer)
+    resultmergetype = Column(Integer)
+    SourceDocType = Column(Integer)
+    suggestiontype = Column(Integer)
 
 
 class MPPRAPraResult(Base):
@@ -13488,104 +12763,104 @@ class MPPRAPraResult(Base):
     idsourcevouchertype = Column(Integer)
 
 
-t_MP_PRA_PraWarehouse = Table(
-    'MP_PRA_PraWarehouse', metadata,
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('isselected', Integer),
-    Column('createdtime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('sequencenumber', Integer),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('updatedBy', Unicode(32)),
-    Column('id', Integer, nullable=False),
-    Column('idwarehouse', Integer),
-    Column('idPraOptionDTO', Integer)
-)
+class MPPRAPraWarehouse(Base):
+    __tablename__ = 'MP_PRA_PraWarehouse'
+
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    isselected = Column(Integer)
+    createdtime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    sequencenumber = Column(Integer)
+    ts = Column(TIMESTAMP, nullable=False)
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    updatedBy = Column(Unicode(32))
+    id = Column(Integer, nullable=False, primary_key=True)
+    idwarehouse = Column(Integer)
+    idPraOptionDTO = Column(Integer)
 
 
-t_MP_PRA_PurSuggestion2PurOrder = Table(
-    'MP_PRA_PurSuggestion2PurOrder', metadata,
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('currentquantity', Numeric(28, 14)),
-    Column('currentquantity2', Numeric(28, 14)),
-    Column('purchasedate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('arrivalDate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('price', Numeric(28, 14)),
-    Column('taxRate', Numeric(28, 14)),
-    Column('taxPrice', Numeric(28, 14)),
-    Column('unitexchangerate', Numeric(28, 14)),
-    Column('exchangerate', Numeric(28, 14)),
-    Column('createdtime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('sequencenumber', Integer),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('updatedBy', Unicode(32)),
-    Column('isNoModify', Unicode(400)),
-    Column('freeItem0', Unicode(300)),
-    Column('freeItem1', Unicode(300)),
-    Column('freeItem2', Unicode(300)),
-    Column('freeItem3', Unicode(300)),
-    Column('freeItem4', Unicode(300)),
-    Column('freeItem5', Unicode(300)),
-    Column('freeItem6', Unicode(300)),
-    Column('freeItem7', Unicode(300)),
-    Column('freeItem8', Unicode(300)),
-    Column('freeItem9', Unicode(300)),
-    Column('id', Integer, nullable=False),
-    Column('idcurrency', Integer),
-    Column('iddepartment', Integer),
-    Column('idinventory', Integer),
-    Column('idpartner', Integer),
-    Column('idclerk', Integer),
-    Column('idproject', Integer),
-    Column('idunit', Integer),
-    Column('idunit2', Integer),
-    Column('iduser', Integer),
-    Column('idpurchasesuggestion', Integer)
-)
+class MPPRAPurSuggestion2PurOrder(Base):
+    __tablename__ = 'MP_PRA_PurSuggestion2PurOrder'
+
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    currentquantity = Column(Numeric(28, 14))
+    currentquantity2 = Column(Numeric(28, 14))
+    purchasedate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    arrivalDate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    price = Column(Numeric(28, 14))
+    taxRate = Column(Numeric(28, 14))
+    taxPrice = Column(Numeric(28, 14))
+    unitexchangerate = Column(Numeric(28, 14))
+    exchangerate = Column(Numeric(28, 14))
+    createdtime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    sequencenumber = Column(Integer)
+    ts = Column(TIMESTAMP, nullable=False)
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    updatedBy = Column(Unicode(32))
+    isNoModify = Column(Unicode(400))
+    freeItem0 = Column(Unicode(300))
+    freeItem1 = Column(Unicode(300))
+    freeItem2 = Column(Unicode(300))
+    freeItem3 = Column(Unicode(300))
+    freeItem4 = Column(Unicode(300))
+    freeItem5 = Column(Unicode(300))
+    freeItem6 = Column(Unicode(300))
+    freeItem7 = Column(Unicode(300))
+    freeItem8 = Column(Unicode(300))
+    freeItem9 = Column(Unicode(300))
+    id = Column(Integer, nullable=False, primary_key=True)
+    idcurrency = Column(Integer)
+    iddepartment = Column(Integer)
+    idinventory = Column(Integer)
+    idpartner = Column(Integer)
+    idclerk = Column(Integer)
+    idproject = Column(Integer)
+    idunit = Column(Integer)
+    idunit2 = Column(Integer)
+    iduser = Column(Integer)
+    idpurchasesuggestion = Column(Integer)
 
 
-t_MP_PRA_PurSuggestion2PurRequisition = Table(
-    'MP_PRA_PurSuggestion2PurRequisition', metadata,
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('currentquantity2', Numeric(28, 14)),
-    Column('purchasedate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('price', Numeric(28, 14)),
-    Column('taxRate', Numeric(28, 14)),
-    Column('taxPrice', Numeric(28, 14)),
-    Column('currentquantity', Numeric(28, 14)),
-    Column('unitexchangerate', Numeric(28, 14)),
-    Column('demanddate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('createdtime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('sequencenumber', Integer),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('updatedBy', Unicode(32)),
-    Column('isNoModify', Unicode(400)),
-    Column('freeItem0', Unicode(300)),
-    Column('freeItem1', Unicode(300)),
-    Column('freeItem2', Unicode(300)),
-    Column('freeItem3', Unicode(300)),
-    Column('freeItem4', Unicode(300)),
-    Column('freeItem5', Unicode(300)),
-    Column('freeItem6', Unicode(300)),
-    Column('freeItem7', Unicode(300)),
-    Column('freeItem8', Unicode(300)),
-    Column('freeItem9', Unicode(300)),
-    Column('id', Integer, nullable=False),
-    Column('iddepartment', Integer),
-    Column('idinventory', Integer),
-    Column('idpartner', Integer),
-    Column('idclerk', Integer),
-    Column('idproject', Integer),
-    Column('idunit', Integer),
-    Column('idunit2', Integer),
-    Column('iduser', Integer),
-    Column('idpurchasesuggestion', Integer)
-)
+class MPPRAPurSuggestion2PurRequisition(Base):
+    __tablename__ = 'MP_PRA_PurSuggestion2PurRequisition'
+
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    currentquantity2 = Column(Numeric(28, 14))
+    purchasedate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    price = Column(Numeric(28, 14))
+    taxRate = Column(Numeric(28, 14))
+    taxPrice = Column(Numeric(28, 14))
+    currentquantity = Column(Numeric(28, 14))
+    unitexchangerate = Column(Numeric(28, 14))
+    demanddate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    createdtime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    sequencenumber = Column(Integer)
+    ts = Column(TIMESTAMP, nullable=False)
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    updatedBy = Column(Unicode(32))
+    isNoModify = Column(Unicode(400))
+    freeItem0 = Column(Unicode(300))
+    freeItem1 = Column(Unicode(300))
+    freeItem2 = Column(Unicode(300))
+    freeItem3 = Column(Unicode(300))
+    freeItem4 = Column(Unicode(300))
+    freeItem5 = Column(Unicode(300))
+    freeItem6 = Column(Unicode(300))
+    freeItem7 = Column(Unicode(300))
+    freeItem8 = Column(Unicode(300))
+    freeItem9 = Column(Unicode(300))
+    id = Column(Integer, nullable=False, primary_key=True)
+    iddepartment = Column(Integer)
+    idinventory = Column(Integer)
+    idpartner = Column(Integer)
+    idclerk = Column(Integer)
+    idproject = Column(Integer)
+    idunit = Column(Integer)
+    idunit2 = Column(Integer)
+    iduser = Column(Integer)
+    idpurchasesuggestion = Column(Integer)
 
 
 class MPPRAPurchaseSuggestion(Base):
@@ -13660,10 +12935,10 @@ class MPPRAPurchaseSuggestionSourceTrace(Base):
     idsourcevouchertype = Column(Integer)
 
 
-t_MP_PRA_PurchaseSuggestion_Temp = Table(
-    'MP_PRA_PurchaseSuggestion_Temp', metadata,
-    Column('id', Integer, nullable=False)
-)
+class MPPRAPurchaseSuggestionTemp(Base):
+    __tablename__ = 'MP_PRA_PurchaseSuggestion_Temp'
+
+    id = Column(Integer, nullable=False, primary_key=True)
 
 
 class MPPRAResultSourceRelation(Base):
@@ -13713,17 +12988,17 @@ class MPPRAResultSourceTrace(Base):
     idsourcevouchertype = Column(Integer)
 
 
-t_MP_PRA_SourceType = Table(
-    'MP_PRA_SourceType', metadata,
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('sourceType', Unicode(50)),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('updatedBy', Unicode(32)),
-    Column('id', Integer, nullable=False),
-    Column('userId', Integer)
-)
+class MPPRASourceType(Base):
+    __tablename__ = 'MP_PRA_SourceType'
+
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    sourceType = Column(Unicode(50))
+    ts = Column(TIMESTAMP, nullable=False)
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    updatedBy = Column(Unicode(32))
+    id = Column(Integer, nullable=False, primary_key=True)
+    userId = Column(Integer)
 
 
 class MPPRASuggestionSourceRelation(Base):
@@ -13809,101 +13084,101 @@ class MPPRAVoucher(Base):
     makerid = Column(Integer)
 
 
-t_MP_ProduceToolPreManufactureOrder = Table(
-    'MP_ProduceToolPreManufactureOrder', metadata,
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('bomtype', Unicode(50)),
-    Column('bomversion', Unicode(50)),
-    Column('quantity', Numeric(28, 14)),
-    Column('unitExchangeRate', Numeric(28, 14)),
-    Column('quantity2', Numeric(28, 14)),
-    Column('preStartDate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('preFinishDate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('sourceVoucherCode', Unicode(50)),
-    Column('sourceVoucherTs', Unicode(50)),
-    Column('sourceVoucherDetailTs', Unicode(50)),
-    Column('saleOrderCode', Unicode(30)),
-    Column('createdtime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('sequencenumber', Integer),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('updatedBy', Unicode(32)),
-    Column('freeItem0', String(36, u'Chinese_PRC_CI_AS')),
-    Column('freeItem1', String(36, u'Chinese_PRC_CI_AS')),
-    Column('freeItem2', String(36, u'Chinese_PRC_CI_AS')),
-    Column('freeItem3', String(36, u'Chinese_PRC_CI_AS')),
-    Column('freeItem4', String(36, u'Chinese_PRC_CI_AS')),
-    Column('freeItem5', String(36, u'Chinese_PRC_CI_AS')),
-    Column('freeItem6', String(36, u'Chinese_PRC_CI_AS')),
-    Column('freeItem7', String(36, u'Chinese_PRC_CI_AS')),
-    Column('freeItem8', String(36, u'Chinese_PRC_CI_AS')),
-    Column('freeItem9', String(36, u'Chinese_PRC_CI_AS')),
-    Column('id', Integer, nullable=False, server_default=text("((0))")),
-    Column('produceType', Integer),
-    Column('bomid', Integer),
-    Column('expandType', Integer),
-    Column('sourceVoucherId', Integer),
-    Column('sourceVoucherDetailId', Integer),
-    Column('saleOrderId', Integer),
-    Column('saleOrderDetailId', Integer),
-    Column('idinventory', Integer),
-    Column('idunit', Integer),
-    Column('idunit2', Integer),
-    Column('iddepartment', Integer),
-    Column('idperson', Integer),
-    Column('idpartner', Integer),
-    Column('idsourcevouchertype', Integer),
-    Column('idproject', Integer),
-    Column('idbom', Integer),
-    Column('idwarehouse', Integer)
-)
+class MPProduceToolPreManufactureOrder(Base):
+    __tablename__ = 'MP_ProduceToolPreManufactureOrder'
+
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    bomtype = Column(Unicode(50))
+    bomversion = Column(Unicode(50))
+    quantity = Column(Numeric(28, 14))
+    unitExchangeRate = Column(Numeric(28, 14))
+    quantity2 = Column(Numeric(28, 14))
+    preStartDate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    preFinishDate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    sourceVoucherCode = Column(Unicode(50))
+    sourceVoucherTs = Column(Unicode(50))
+    sourceVoucherDetailTs = Column(Unicode(50))
+    saleOrderCode = Column(Unicode(30))
+    createdtime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    sequencenumber = Column(Integer)
+    ts = Column(TIMESTAMP, nullable=False)
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    updatedBy = Column(Unicode(32))
+    freeItem0 = Column(String(36, u'Chinese_PRC_CI_AS'))
+    freeItem1 = Column(String(36, u'Chinese_PRC_CI_AS'))
+    freeItem2 = Column(String(36, u'Chinese_PRC_CI_AS'))
+    freeItem3 = Column(String(36, u'Chinese_PRC_CI_AS'))
+    freeItem4 = Column(String(36, u'Chinese_PRC_CI_AS'))
+    freeItem5 = Column(String(36, u'Chinese_PRC_CI_AS'))
+    freeItem6 = Column(String(36, u'Chinese_PRC_CI_AS'))
+    freeItem7 = Column(String(36, u'Chinese_PRC_CI_AS'))
+    freeItem8 = Column(String(36, u'Chinese_PRC_CI_AS'))
+    freeItem9 = Column(String(36, u'Chinese_PRC_CI_AS'))
+    id = Column(Integer, nullable=False, server_default=text("((0))"), primary_key=True)
+    produceType = Column(Integer)
+    bomid = Column(Integer)
+    expandType = Column(Integer)
+    sourceVoucherId = Column(Integer)
+    sourceVoucherDetailId = Column(Integer)
+    saleOrderId = Column(Integer)
+    saleOrderDetailId = Column(Integer)
+    idinventory = Column(Integer)
+    idunit = Column(Integer)
+    idunit2 = Column(Integer)
+    iddepartment = Column(Integer)
+    idperson = Column(Integer)
+    idpartner = Column(Integer)
+    idsourcevouchertype = Column(Integer)
+    idproject = Column(Integer)
+    idbom = Column(Integer)
+    idwarehouse = Column(Integer)
 
 
-t_MP_ProduceToolSourceVoucherSelected = Table(
-    'MP_ProduceToolSourceVoucherSelected', metadata,
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('bomtype', Unicode(50)),
-    Column('bomversion', Unicode(50)),
-    Column('quantity', Numeric(28, 14)),
-    Column('unitExchangeRate', Numeric(28, 14)),
-    Column('quantity2', Numeric(28, 14)),
-    Column('demandingDate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('sourceVoucherCode', Unicode(50)),
-    Column('sourceVoucherTs', Unicode(50)),
-    Column('sourceVoucherDetailTs', Unicode(50)),
-    Column('saleOrderCode', Unicode(30)),
-    Column('createdtime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('sequencenumber', Integer),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('updatedBy', Unicode(32)),
-    Column('freeItem0', String(36, u'Chinese_PRC_CI_AS')),
-    Column('freeItem1', String(36, u'Chinese_PRC_CI_AS')),
-    Column('freeItem2', String(36, u'Chinese_PRC_CI_AS')),
-    Column('freeItem3', String(36, u'Chinese_PRC_CI_AS')),
-    Column('freeItem4', String(36, u'Chinese_PRC_CI_AS')),
-    Column('freeItem5', String(36, u'Chinese_PRC_CI_AS')),
-    Column('freeItem6', String(36, u'Chinese_PRC_CI_AS')),
-    Column('freeItem7', String(36, u'Chinese_PRC_CI_AS')),
-    Column('freeItem8', String(36, u'Chinese_PRC_CI_AS')),
-    Column('freeItem9', String(36, u'Chinese_PRC_CI_AS')),
-    Column('id', Integer, nullable=False, server_default=text("((0))")),
-    Column('bomid', Integer),
-    Column('sourceVoucherId', Integer),
-    Column('sourceVoucherDetailId', Integer),
-    Column('saleOrderId', Integer),
-    Column('saleOrderDetailId', Integer),
-    Column('idinventory', Integer),
-    Column('idunit', Integer),
-    Column('idunit2', Integer),
-    Column('idpartner', Integer),
-    Column('idsourcevouchertype', Integer),
-    Column('idproject', Integer),
-    Column('idbom', Integer),
-    Column('idwarehouse', Integer)
-)
+class MPProduceToolSourceVoucherSelected(Base):
+    __tablename__ = 'MP_ProduceToolSourceVoucherSelected'
+
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    bomtype = Column(Unicode(50))
+    bomversion = Column(Unicode(50))
+    quantity = Column(Numeric(28, 14))
+    unitExchangeRate = Column(Numeric(28, 14))
+    quantity2 = Column(Numeric(28, 14))
+    demandingDate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    sourceVoucherCode = Column(Unicode(50))
+    sourceVoucherTs = Column(Unicode(50))
+    sourceVoucherDetailTs = Column(Unicode(50))
+    saleOrderCode = Column(Unicode(30))
+    createdtime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    sequencenumber = Column(Integer)
+    ts = Column(TIMESTAMP, nullable=False)
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    updatedBy = Column(Unicode(32))
+    freeItem0 = Column(String(36, u'Chinese_PRC_CI_AS'))
+    freeItem1 = Column(String(36, u'Chinese_PRC_CI_AS'))
+    freeItem2 = Column(String(36, u'Chinese_PRC_CI_AS'))
+    freeItem3 = Column(String(36, u'Chinese_PRC_CI_AS'))
+    freeItem4 = Column(String(36, u'Chinese_PRC_CI_AS'))
+    freeItem5 = Column(String(36, u'Chinese_PRC_CI_AS'))
+    freeItem6 = Column(String(36, u'Chinese_PRC_CI_AS'))
+    freeItem7 = Column(String(36, u'Chinese_PRC_CI_AS'))
+    freeItem8 = Column(String(36, u'Chinese_PRC_CI_AS'))
+    freeItem9 = Column(String(36, u'Chinese_PRC_CI_AS'))
+    id = Column(Integer, nullable=False, server_default=text("((0))"), primary_key=True)
+    bomid = Column(Integer)
+    sourceVoucherId = Column(Integer)
+    sourceVoucherDetailId = Column(Integer)
+    saleOrderId = Column(Integer)
+    saleOrderDetailId = Column(Integer)
+    idinventory = Column(Integer)
+    idunit = Column(Integer)
+    idunit2 = Column(Integer)
+    idpartner = Column(Integer)
+    idsourcevouchertype = Column(Integer)
+    idproject = Column(Integer)
+    idbom = Column(Integer)
+    idwarehouse = Column(Integer)
 
 
 class MPResultTemp(Base):
@@ -13959,187 +13234,149 @@ class MPSKU(Base):
     IdInventory = Column(Integer)
 
 
-t_MP_Step = Table(
-    'MP_Step', metadata,
-    Column('Step', Integer, nullable=False),
-    Column('IsMRP', Integer, nullable=False),
-    Column('Status', Integer),
-    Column('Message', Unicode(1000), server_default=text("('')"))
-)
+class PREAAAssetClass(Base):
+    __tablename__ = 'PRE_AA_AssetClass'
+
+    TradeKind = Column(Unicode(100), nullable=False)
+    code = Column(Unicode(30))
+    name = Column(Unicode(100))
+    depth = Column(Integer)
+    inid = Column(Unicode(750))
+    isendnode = Column(Integer)
+    ispreset = Column(Integer)
+    isdisPlay = Column(Integer)
+    imageFile = Column(Unicode(500))
+    defaultyears = Column(Integer)
+    defaultmonths = Column(Integer)
+    defaultnrvrate = Column(Numeric(9, 6))
+    defaultoffsetinputtax = Column(Integer)
+    defaultinputtaxrate = Column(Numeric(5, 2))
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    updatedBy = Column(Unicode(32))
+    createdTime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    UsedYearAndMonth = Column(Unicode(200))
+    IsSystem = Column(Integer, nullable=False, server_default=text("((0))"))
+    id = Column(Integer, nullable=False, server_default=text("((0))"), primary_key=True)
+    idassetprop = Column(Integer)
+    iddeprmethod = Column(Integer)
+    idbarcode = Column(Integer)
+    idunit = Column(Integer)
+    idlabelstyle = Column(Integer)
+    idcardstyle = Column(Integer)
+    idparent = Column(Integer)
 
 
-t_MP_TEMP_DAQ = Table(
-    'MP_TEMP_DAQ', metadata,
-    Column('Quantity', Numeric(28, 14), server_default=text("((0))")),
-    Column('IdSku', Integer)
-)
+class PREAAAssetClassExt(Base):
+    __tablename__ = 'PRE_AA_AssetClass_Ext'
+
+    TradeKind = Column(Unicode(100), nullable=False)
+    id = Column(UNIQUEIDENTIFIER, nullable=False, primary_key=True)
+    assetClassid_lev1 = Column(UNIQUEIDENTIFIER)
+    assetClasscode_lev1 = Column(Unicode(40))
+    assetClassname_lev1 = Column(Unicode(100))
+    assetClassid_lev2 = Column(UNIQUEIDENTIFIER)
+    assetClasscode_lev2 = Column(Unicode(40))
+    assetClassname_lev2 = Column(Unicode(100))
+    assetClassid_lev3 = Column(UNIQUEIDENTIFIER)
+    assetClasscode_lev3 = Column(Unicode(40))
+    assetClassname_lev3 = Column(Unicode(100))
+    assetClassid_lev4 = Column(UNIQUEIDENTIFIER)
+    assetClasscode_lev4 = Column(Unicode(40))
+    assetClassname_lev4 = Column(Unicode(100))
+    assetClassid_lev5 = Column(UNIQUEIDENTIFIER)
+    assetClasscode_lev5 = Column(Unicode(40))
+    assetClassname_lev5 = Column(Unicode(100))
+    assetClassid_lev6 = Column(UNIQUEIDENTIFIER)
+    assetClasscode_lev6 = Column(Unicode(40))
+    assetClassname_lev6 = Column(Unicode(100))
+    assetClassid_lev7 = Column(UNIQUEIDENTIFIER)
+    assetClasscode_lev7 = Column(Unicode(40))
+    assetClassname_lev7 = Column(Unicode(100))
+    assetClassid_lev8 = Column(UNIQUEIDENTIFIER)
+    assetClasscode_lev8 = Column(Unicode(40))
+    assetClassname_lev8 = Column(Unicode(100))
+    assetClassid_lev9 = Column(UNIQUEIDENTIFIER)
+    assetClasscode_lev9 = Column(Unicode(40))
+    assetClassname_lev9 = Column(Unicode(100))
+    assetClassid_lev10 = Column(UNIQUEIDENTIFIER)
+    assetClasscode_lev10 = Column(Unicode(40))
+    assetClassname_lev10 = Column(Unicode(100))
+    assetClassid_lev11 = Column(UNIQUEIDENTIFIER)
+    assetClasscode_lev11 = Column(Unicode(40))
+    assetClassname_lev11 = Column(Unicode(100))
+    assetClassid_lev12 = Column(UNIQUEIDENTIFIER)
+    assetClasscode_lev12 = Column(Unicode(40))
+    assetClassname_lev12 = Column(Unicode(100))
+    assetClassid_lev13 = Column(UNIQUEIDENTIFIER)
+    assetClasscode_lev13 = Column(Unicode(40))
+    assetClassname_lev13 = Column(Unicode(100))
+    assetClassid_lev14 = Column(UNIQUEIDENTIFIER)
+    assetClasscode_lev14 = Column(Unicode(40))
+    assetClassname_lev14 = Column(Unicode(100))
+    assetClassid_lev15 = Column(UNIQUEIDENTIFIER)
+    assetClasscode_lev15 = Column(Unicode(40))
+    assetClassname_lev15 = Column(Unicode(100))
+    depth = Column(Unicode(10))
+    createTime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    IsSystem = Column(Integer, nullable=False, server_default=text("((0))"))
 
 
-t_My_tmp_Inventory = Table(
-    'My_tmp_Inventory', metadata,
-    Column('Unit1Code', Unicode(50)),
-    Column('Unit1Name', Unicode(200)),
-    Column('Unit1ChangeRate', Numeric(28, 14)),
-    Column('Unit2Code', Unicode(50)),
-    Column('Unit2Name', Unicode(200)),
-    Column('Unit2ChangeRate', Numeric(28, 14)),
-    Column('Unit3Code', Unicode(50)),
-    Column('Unit3Name', Unicode(200)),
-    Column('Unit3ChangeRate', Numeric(28, 14)),
-    Column('Unit4Code', Unicode(50)),
-    Column('Unit4Name', Unicode(200)),
-    Column('Unit4ChangeRate', Numeric(28, 14)),
-    Column('IDInventory', Integer),
-    Column('IDUnit1', Integer),
-    Column('IDUnit2', Integer),
-    Column('IDUnit3', Integer),
-    Column('IDUnit4', Integer)
-)
+class PREAAAssetProp(Base):
+    __tablename__ = 'PRE_AA_AssetProp'
+
+    TradeKind = Column(Unicode(100), nullable=False)
+    code = Column(Unicode(30))
+    name = Column(Unicode(100))
+    isdepr = Column(Integer)
+    ispreset = Column(Integer)
+    IsSystem = Column(Integer, nullable=False, server_default=text("((0))"))
+    id = Column(Integer, nullable=False, server_default=text("((0))"), primary_key=True)
+    provisionway = Column(Integer)
 
 
-t_PRE_AA_AssetClass = Table(
-    'PRE_AA_AssetClass', metadata,
-    Column('TradeKind', Unicode(100), nullable=False),
-    Column('code', Unicode(30)),
-    Column('name', Unicode(100)),
-    Column('depth', Integer),
-    Column('inid', Unicode(750)),
-    Column('isendnode', Integer),
-    Column('ispreset', Integer),
-    Column('isdisPlay', Integer),
-    Column('imageFile', Unicode(500)),
-    Column('defaultyears', Integer),
-    Column('defaultmonths', Integer),
-    Column('defaultnrvrate', Numeric(9, 6)),
-    Column('defaultoffsetinputtax', Integer),
-    Column('defaultinputtaxrate', Numeric(5, 2)),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('updatedBy', Unicode(32)),
-    Column('createdTime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('UsedYearAndMonth', Unicode(200)),
-    Column('IsSystem', Integer, nullable=False, server_default=text("((0))")),
-    Column('id', Integer, nullable=False, server_default=text("((0))")),
-    Column('idassetprop', Integer),
-    Column('iddeprmethod', Integer),
-    Column('idbarcode', Integer),
-    Column('idunit', Integer),
-    Column('idlabelstyle', Integer),
-    Column('idcardstyle', Integer),
-    Column('idparent', Integer)
-)
+class PREAADeprMethod(Base):
+    __tablename__ = 'PRE_AA_DeprMethod'
+
+    TradeKind = Column(Unicode(100), nullable=False)
+    code = Column(Unicode(30))
+    name = Column(Unicode(100))
+    depramount = Column(Unicode(500))
+    deprrate = Column(Unicode(500))
+    sequenceNumber = Column(Integer)
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    updatedBy = Column(Unicode(32))
+    createdTime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    IsSystem = Column(Integer, nullable=False, server_default=text("((0))"))
+    id = Column(Integer, nullable=False, server_default=text("((0))"), primary_key=True)
 
 
-t_PRE_AA_AssetClass_Ext = Table(
-    'PRE_AA_AssetClass_Ext', metadata,
-    Column('TradeKind', Unicode(100), nullable=False),
-    Column('id', UNIQUEIDENTIFIER, nullable=False),
-    Column('assetClassid_lev1', UNIQUEIDENTIFIER),
-    Column('assetClasscode_lev1', Unicode(40)),
-    Column('assetClassname_lev1', Unicode(100)),
-    Column('assetClassid_lev2', UNIQUEIDENTIFIER),
-    Column('assetClasscode_lev2', Unicode(40)),
-    Column('assetClassname_lev2', Unicode(100)),
-    Column('assetClassid_lev3', UNIQUEIDENTIFIER),
-    Column('assetClasscode_lev3', Unicode(40)),
-    Column('assetClassname_lev3', Unicode(100)),
-    Column('assetClassid_lev4', UNIQUEIDENTIFIER),
-    Column('assetClasscode_lev4', Unicode(40)),
-    Column('assetClassname_lev4', Unicode(100)),
-    Column('assetClassid_lev5', UNIQUEIDENTIFIER),
-    Column('assetClasscode_lev5', Unicode(40)),
-    Column('assetClassname_lev5', Unicode(100)),
-    Column('assetClassid_lev6', UNIQUEIDENTIFIER),
-    Column('assetClasscode_lev6', Unicode(40)),
-    Column('assetClassname_lev6', Unicode(100)),
-    Column('assetClassid_lev7', UNIQUEIDENTIFIER),
-    Column('assetClasscode_lev7', Unicode(40)),
-    Column('assetClassname_lev7', Unicode(100)),
-    Column('assetClassid_lev8', UNIQUEIDENTIFIER),
-    Column('assetClasscode_lev8', Unicode(40)),
-    Column('assetClassname_lev8', Unicode(100)),
-    Column('assetClassid_lev9', UNIQUEIDENTIFIER),
-    Column('assetClasscode_lev9', Unicode(40)),
-    Column('assetClassname_lev9', Unicode(100)),
-    Column('assetClassid_lev10', UNIQUEIDENTIFIER),
-    Column('assetClasscode_lev10', Unicode(40)),
-    Column('assetClassname_lev10', Unicode(100)),
-    Column('assetClassid_lev11', UNIQUEIDENTIFIER),
-    Column('assetClasscode_lev11', Unicode(40)),
-    Column('assetClassname_lev11', Unicode(100)),
-    Column('assetClassid_lev12', UNIQUEIDENTIFIER),
-    Column('assetClasscode_lev12', Unicode(40)),
-    Column('assetClassname_lev12', Unicode(100)),
-    Column('assetClassid_lev13', UNIQUEIDENTIFIER),
-    Column('assetClasscode_lev13', Unicode(40)),
-    Column('assetClassname_lev13', Unicode(100)),
-    Column('assetClassid_lev14', UNIQUEIDENTIFIER),
-    Column('assetClasscode_lev14', Unicode(40)),
-    Column('assetClassname_lev14', Unicode(100)),
-    Column('assetClassid_lev15', UNIQUEIDENTIFIER),
-    Column('assetClasscode_lev15', Unicode(40)),
-    Column('assetClassname_lev15', Unicode(100)),
-    Column('depth', Unicode(10)),
-    Column('createTime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('IsSystem', Integer, nullable=False, server_default=text("((0))"))
-)
+class PREAAParentAssetClass(Base):
+    __tablename__ = 'PRE_AA_ParentAssetClass'
+
+    TradeKind = Column(Unicode(100), nullable=False)
+    id = Column(UNIQUEIDENTIFIER, nullable=False, primary_key=True)
+    updatedBy = Column(Unicode(32))
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    name = Column(Unicode(100))
+    code = Column(Unicode(32))
+    idSon = Column(UNIQUEIDENTIFIER)
+    idParent = Column(UNIQUEIDENTIFIER)
+    Depth = Column(Integer)
+    isEndNode = Column(Integer)
+    IsSystem = Column(Integer, nullable=False, server_default=text("((0))"))
 
 
-t_PRE_AA_AssetProp = Table(
-    'PRE_AA_AssetProp', metadata,
-    Column('TradeKind', Unicode(100), nullable=False),
-    Column('code', Unicode(30)),
-    Column('name', Unicode(100)),
-    Column('isdepr', Integer),
-    Column('ispreset', Integer),
-    Column('IsSystem', Integer, nullable=False, server_default=text("((0))")),
-    Column('id', Integer, nullable=False, server_default=text("((0))")),
-    Column('provisionway', Integer)
-)
+class PREFISMTransferredCode(Base):
+    __tablename__ = 'PRE_FI_SM_TransferredCode'
 
-
-t_PRE_AA_DeprMethod = Table(
-    'PRE_AA_DeprMethod', metadata,
-    Column('TradeKind', Unicode(100), nullable=False),
-    Column('code', Unicode(30)),
-    Column('name', Unicode(100)),
-    Column('depramount', Unicode(500)),
-    Column('deprrate', Unicode(500)),
-    Column('sequenceNumber', Integer),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('updatedBy', Unicode(32)),
-    Column('createdTime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('IsSystem', Integer, nullable=False, server_default=text("((0))")),
-    Column('id', Integer, nullable=False, server_default=text("((0))"))
-)
-
-
-t_PRE_AA_ParentAssetClass = Table(
-    'PRE_AA_ParentAssetClass', metadata,
-    Column('TradeKind', Unicode(100), nullable=False),
-    Column('id', UNIQUEIDENTIFIER, nullable=False),
-    Column('updatedBy', Unicode(32)),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('name', Unicode(100)),
-    Column('code', Unicode(32)),
-    Column('idSon', UNIQUEIDENTIFIER),
-    Column('idParent', UNIQUEIDENTIFIER),
-    Column('Depth', Integer),
-    Column('isEndNode', Integer),
-    Column('IsSystem', Integer, nullable=False, server_default=text("((0))"))
-)
-
-
-t_PRE_FI_SM_TransferredCode = Table(
-    'PRE_FI_SM_TransferredCode', metadata,
-    Column('TradeKind', Unicode(100), nullable=False),
-    Column('basearchivecode', Unicode(30), nullable=False),
-    Column('basearchivename', Unicode(200), nullable=False),
-    Column('transferredcode', Unicode(30)),
-    Column('IsSystem', Integer, nullable=False),
-    Column('id', Integer, nullable=False),
-    Column('basearchiveid', Integer, nullable=False, server_default=text("((0))")),
-    Column('idcodingprefixion', Integer, nullable=False, server_default=text("((0))"))
-)
+    TradeKind = Column(Unicode(100), nullable=False)
+    basearchivecode = Column(Unicode(30), nullable=False)
+    basearchivename = Column(Unicode(200), nullable=False)
+    transferredcode = Column(Unicode(30))
+    IsSystem = Column(Integer, nullable=False)
+    id = Column(Integer, nullable=False, primary_key=True)
+    basearchiveid = Column(Integer, nullable=False, server_default=text("((0))"))
+    idcodingprefixion = Column(Integer, nullable=False, server_default=text("((0))"))
 
 
 class PREGLReferenceDoc(Base):
@@ -14238,99 +13475,99 @@ class PREGLReferenceEntry(Base):
     idReferenceDocDTO = Column(Integer)
 
 
-t_PRE_SM_FC_AccountExtendRule = Table(
-    'PRE_SM_FC_AccountExtendRule', metadata,
-    Column('TradeKind', Unicode(100), nullable=False),
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('rowidx', Integer),
-    Column('checkstate', UNIQUEIDENTIFIER),
-    Column('adjusttype', UNIQUEIDENTIFIER),
-    Column('inventorypriuserdefdecm0', Numeric(28, 14)),
-    Column('inventorypriuserdefnvc0', Unicode(50)),
-    Column('inventorypriuserdefdecm1', Numeric(28, 14)),
-    Column('inventorypriuserdefnvc1', Unicode(50)),
-    Column('inventorypriuserdefdecm2', Numeric(28, 14)),
-    Column('inventorypriuserdefnvc2', Unicode(50)),
-    Column('inventorypriuserdefdecm3', Numeric(28, 14)),
-    Column('inventorypriuserdefnvc3', Unicode(50)),
-    Column('inventorypriuserdefdecm4', Numeric(28, 14)),
-    Column('inventorypriuserdefnvc4', Unicode(50)),
-    Column('headerpubuserdefdecm0', Numeric(28, 14)),
-    Column('headerpubuserdefnvc0', Unicode(60)),
-    Column('headerpubuserdefdecm1', Numeric(28, 14)),
-    Column('headerpubuserdefnvc1', Unicode(60)),
-    Column('headerpubuserdefdecm2', Numeric(28, 14)),
-    Column('headerpubuserdefnvc2', Unicode(60)),
-    Column('headerpubuserdefdecm3', Numeric(28, 14)),
-    Column('headerpubuserdefnvc3', Unicode(60)),
-    Column('headerpubuserdefdecm4', Numeric(28, 14)),
-    Column('headerpubuserdefnvc4', Unicode(60)),
-    Column('headerpubuserdefdecm5', Numeric(28, 14)),
-    Column('headerpubuserdefnvc5', Unicode(60)),
-    Column('headerpriuserdefdecm0', Numeric(28, 14)),
-    Column('headerpriuserdefnvc0', Unicode(60)),
-    Column('headerpriuserdefdecm1', Numeric(28, 14)),
-    Column('headerpriuserdefnvc1', Unicode(60)),
-    Column('headerpriuserdefdecm2', Numeric(28, 14)),
-    Column('headerpriuserdefnvc2', Unicode(60)),
-    Column('headerpriuserdefdecm3', Numeric(28, 14)),
-    Column('headerpriuserdefnvc3', Unicode(60)),
-    Column('headerpriuserdefdecm4', Numeric(28, 14)),
-    Column('headerpriuserdefnvc4', Unicode(60)),
-    Column('headerpriuserdefdecm5', Numeric(28, 14)),
-    Column('headerpriuserdefnvc5', Unicode(60)),
-    Column('detailspubuserdefdecm0', Numeric(28, 14)),
-    Column('detailspubuserdefnvc0', Unicode(60)),
-    Column('detailspubuserdefdecm1', Numeric(28, 14)),
-    Column('detailspubuserdefnvc1', Unicode(60)),
-    Column('detailspubuserdefdecm2', Numeric(28, 14)),
-    Column('detailspubuserdefnvc2', Unicode(60)),
-    Column('detailspubuserdefdecm3', Numeric(28, 14)),
-    Column('detailspubuserdefnvc3', Unicode(60)),
-    Column('detailspriuserdefdecm0', Numeric(28, 14)),
-    Column('detailspriuserdefnvc0', Unicode(60)),
-    Column('detailspriuserdefdecm1', Numeric(28, 14)),
-    Column('detailspriuserdefnvc1', Unicode(60)),
-    Column('detailspriuserdefdecm2', Numeric(28, 14)),
-    Column('detailspriuserdefnvc2', Unicode(60)),
-    Column('detailspriuserdefdecm3', Numeric(28, 14)),
-    Column('detailspriuserdefnvc3', Unicode(60)),
-    Column('accountcode', Unicode(50)),
-    Column('accountname', Unicode(50)),
-    Column('createdtime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('sequencenumber', Integer),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('updatedBy', Unicode(32)),
-    Column('idbusitype', UNIQUEIDENTIFIER),
-    Column('idwarehouse', UNIQUEIDENTIFIER),
-    Column('iddistrict', UNIQUEIDENTIFIER),
-    Column('idcurrency', UNIQUEIDENTIFIER),
-    Column('idpartner', UNIQUEIDENTIFIER),
-    Column('idpartnerclass', UNIQUEIDENTIFIER),
-    Column('idincome', UNIQUEIDENTIFIER),
-    Column('idbankaccount', UNIQUEIDENTIFIER),
-    Column('idinventoryclass', UNIQUEIDENTIFIER),
-    Column('idinventory', UNIQUEIDENTIFIER),
-    Column('idexpenseitem', UNIQUEIDENTIFIER),
-    Column('idproject', UNIQUEIDENTIFIER),
-    Column('iddepartment', UNIQUEIDENTIFIER),
-    Column('idaccount', UNIQUEIDENTIFIER),
-    Column('idrdstyle', UNIQUEIDENTIFIER),
-    Column('islaborcost', Integer),
-    Column('idprojectclass', UNIQUEIDENTIFIER),
-    Column('idassetProp', UNIQUEIDENTIFIER),
-    Column('idincDecWay', UNIQUEIDENTIFIER),
-    Column('summary', Unicode(200)),
-    Column('idhandleReason', UNIQUEIDENTIFIER),
-    Column('id', Integer, nullable=False),
-    Column('expensetype', Integer),
-    Column('incomeExpensesType', Integer),
-    Column('profitlosstype', Integer),
-    Column('idassetClass', Integer),
-    Column('idAccountRuleDTO', Integer),
-    Column('idvouchertype', Integer)
-)
+class PRESMFCAccountExtendRule(Base):
+    __tablename__ = 'PRE_SM_FC_AccountExtendRule'
+
+    TradeKind = Column(Unicode(100), nullable=False)
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    rowidx = Column(Integer)
+    checkstate = Column(UNIQUEIDENTIFIER)
+    adjusttype = Column(UNIQUEIDENTIFIER)
+    inventorypriuserdefdecm0 = Column(Numeric(28, 14))
+    inventorypriuserdefnvc0 = Column(Unicode(50))
+    inventorypriuserdefdecm1 = Column(Numeric(28, 14))
+    inventorypriuserdefnvc1 = Column(Unicode(50))
+    inventorypriuserdefdecm2 = Column(Numeric(28, 14))
+    inventorypriuserdefnvc2 = Column(Unicode(50))
+    inventorypriuserdefdecm3 = Column(Numeric(28, 14))
+    inventorypriuserdefnvc3 = Column(Unicode(50))
+    inventorypriuserdefdecm4 = Column(Numeric(28, 14))
+    inventorypriuserdefnvc4 = Column(Unicode(50))
+    headerpubuserdefdecm0 = Column(Numeric(28, 14))
+    headerpubuserdefnvc0 = Column(Unicode(60))
+    headerpubuserdefdecm1 = Column(Numeric(28, 14))
+    headerpubuserdefnvc1 = Column(Unicode(60))
+    headerpubuserdefdecm2 = Column(Numeric(28, 14))
+    headerpubuserdefnvc2 = Column(Unicode(60))
+    headerpubuserdefdecm3 = Column(Numeric(28, 14))
+    headerpubuserdefnvc3 = Column(Unicode(60))
+    headerpubuserdefdecm4 = Column(Numeric(28, 14))
+    headerpubuserdefnvc4 = Column(Unicode(60))
+    headerpubuserdefdecm5 = Column(Numeric(28, 14))
+    headerpubuserdefnvc5 = Column(Unicode(60))
+    headerpriuserdefdecm0 = Column(Numeric(28, 14))
+    headerpriuserdefnvc0 = Column(Unicode(60))
+    headerpriuserdefdecm1 = Column(Numeric(28, 14))
+    headerpriuserdefnvc1 = Column(Unicode(60))
+    headerpriuserdefdecm2 = Column(Numeric(28, 14))
+    headerpriuserdefnvc2 = Column(Unicode(60))
+    headerpriuserdefdecm3 = Column(Numeric(28, 14))
+    headerpriuserdefnvc3 = Column(Unicode(60))
+    headerpriuserdefdecm4 = Column(Numeric(28, 14))
+    headerpriuserdefnvc4 = Column(Unicode(60))
+    headerpriuserdefdecm5 = Column(Numeric(28, 14))
+    headerpriuserdefnvc5 = Column(Unicode(60))
+    detailspubuserdefdecm0 = Column(Numeric(28, 14))
+    detailspubuserdefnvc0 = Column(Unicode(60))
+    detailspubuserdefdecm1 = Column(Numeric(28, 14))
+    detailspubuserdefnvc1 = Column(Unicode(60))
+    detailspubuserdefdecm2 = Column(Numeric(28, 14))
+    detailspubuserdefnvc2 = Column(Unicode(60))
+    detailspubuserdefdecm3 = Column(Numeric(28, 14))
+    detailspubuserdefnvc3 = Column(Unicode(60))
+    detailspriuserdefdecm0 = Column(Numeric(28, 14))
+    detailspriuserdefnvc0 = Column(Unicode(60))
+    detailspriuserdefdecm1 = Column(Numeric(28, 14))
+    detailspriuserdefnvc1 = Column(Unicode(60))
+    detailspriuserdefdecm2 = Column(Numeric(28, 14))
+    detailspriuserdefnvc2 = Column(Unicode(60))
+    detailspriuserdefdecm3 = Column(Numeric(28, 14))
+    detailspriuserdefnvc3 = Column(Unicode(60))
+    accountcode = Column(Unicode(50))
+    accountname = Column(Unicode(50))
+    createdtime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    sequencenumber = Column(Integer)
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    updatedBy = Column(Unicode(32))
+    idbusitype = Column(UNIQUEIDENTIFIER)
+    idwarehouse = Column(UNIQUEIDENTIFIER)
+    iddistrict = Column(UNIQUEIDENTIFIER)
+    idcurrency = Column(UNIQUEIDENTIFIER)
+    idpartner = Column(UNIQUEIDENTIFIER)
+    idpartnerclass = Column(UNIQUEIDENTIFIER)
+    idincome = Column(UNIQUEIDENTIFIER)
+    idbankaccount = Column(UNIQUEIDENTIFIER)
+    idinventoryclass = Column(UNIQUEIDENTIFIER)
+    idinventory = Column(UNIQUEIDENTIFIER)
+    idexpenseitem = Column(UNIQUEIDENTIFIER)
+    idproject = Column(UNIQUEIDENTIFIER)
+    iddepartment = Column(UNIQUEIDENTIFIER)
+    idaccount = Column(UNIQUEIDENTIFIER)
+    idrdstyle = Column(UNIQUEIDENTIFIER)
+    islaborcost = Column(Integer)
+    idprojectclass = Column(UNIQUEIDENTIFIER)
+    idassetProp = Column(UNIQUEIDENTIFIER)
+    idincDecWay = Column(UNIQUEIDENTIFIER)
+    summary = Column(Unicode(200))
+    idhandleReason = Column(UNIQUEIDENTIFIER)
+    id = Column(Integer, nullable=False, primary_key=True)
+    expensetype = Column(Integer)
+    incomeExpensesType = Column(Integer)
+    profitlosstype = Column(Integer)
+    idassetClass = Column(Integer)
+    idAccountRuleDTO = Column(Integer)
+    idvouchertype = Column(Integer)
 
 
 class PRSalePromotionOrderCalled(Base):
@@ -14717,8 +13954,8 @@ class PUPurchaseArrivalSourceRelation(Base):
 class PUPurchaseArrivalB(Base):
     __tablename__ = 'PU_PurchaseArrival_b'
     __table_args__ = (
-        Index('IDX_PU_PurchaseArrival_b_idPurchaseArrivalDTO__taxAmount', 'idPurchaseArrivalDTO', 'taxAmount'),
-        Index('IDX_PU_PurchaseArrival_b_idPurchaseArrivalDTO__origSettleAmount', 'idPurchaseArrivalDTO', 'origSettleAmount')
+        Index('IDX_PU_PurchaseArrival_b_idPurchaseArrivalDTO__origSettleAmount', 'idPurchaseArrivalDTO', 'origSettleAmount'),
+        Index('IDX_PU_PurchaseArrival_b_idPurchaseArrivalDTO__taxAmount', 'idPurchaseArrivalDTO', 'taxAmount')
     )
 
     code = Column(Unicode(30))
@@ -15318,13 +14555,6 @@ class PUPurchaseOrderB(Base):
     updated = Column(DateTime)
 
 
-t_Pos_Guidtoint = Table(
-    'Pos_Guidtoint', metadata,
-    Column('Gid', UNIQUEIDENTIFIER),
-    Column('iid', Integer)
-)
-
-
 class PuPurchaseArrivalMultiPayment(Base):
     __tablename__ = 'Pu_PurchaseArrival_MultiPayment'
 
@@ -15600,16 +14830,6 @@ class PuPurchaseRequisitionB(Base):
     idsourcevouchertype = Column(Integer, index=True)
     requireDate = Column(DateTime)
     updated = Column(DateTime)
-
-
-t_RE_BatchSaleOutController = Table(
-    'RE_BatchSaleOutController', metadata,
-    Column('flag', Integer),
-    Column('username', Unicode(200)),
-    Column('createdtime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('isAuto', Integer, server_default=text("((0))")),
-    Column('idstore', Integer)
-)
 
 
 class REDailyDetail(Base):
@@ -16436,82 +15656,82 @@ class RERetailBak(Base):
     idshiftvoucher = Column(Integer)
 
 
-t_RE_ShiftVoucher = Table(
-    'RE_ShiftVoucher', metadata,
-    Column('code', Unicode(50)),
-    Column('name', Unicode(200)),
-    Column('docno', Unicode(36)),
-    Column('docclass', Unicode(36)),
-    Column('accountingperiod', Integer),
-    Column('docid', Unicode(36)),
-    Column('accountingyear', Integer),
-    Column('memo', Unicode(200)),
-    Column('voucherdate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('madedate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('maker', Unicode(50)),
-    Column('auditor', Unicode(50)),
-    Column('auditeddate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('reviser', Unicode(50)),
-    Column('iscarriedforwardout', Integer),
-    Column('iscarriedforwardin', Integer),
-    Column('ismodifiedcode', Integer),
-    Column('createdtime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('sequencenumber', Integer),
-    Column('poscode', Unicode(50)),
-    Column('posname', Unicode(50)),
-    Column('usercode', Unicode(50)),
-    Column('username', Unicode(50)),
-    Column('workingdate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('workingtime', String(8, u'Chinese_PRC_CI_AS')),
-    Column('shiftdate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('shifttime', String(8, u'Chinese_PRC_CI_AS')),
-    Column('retailcount', Numeric(28, 14)),
-    Column('retailamount', Numeric(28, 14)),
-    Column('retailreturncount', Numeric(28, 14)),
-    Column('returnamount', Numeric(28, 14)),
-    Column('removecount', Numeric(28, 14)),
-    Column('removeamount', Numeric(28, 14)),
-    Column('totalcount', Integer),
-    Column('price', Numeric(28, 14)),
-    Column('totalsettleamount', Numeric(28, 14)),
-    Column('initialamount', Numeric(28, 14)),
-    Column('imprestamount', Numeric(28, 14)),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('updatedBy', Unicode(32)),
-    Column('voucherdiscountamount', Numeric(28, 14)),
-    Column('id', Integer, nullable=False),
-    Column('idstore', Integer),
-    Column('idmarketingorgan', Integer),
-    Column('iscancel', Integer),
-    Column('shift', Integer),
-    Column('voucherstate', Integer),
-    Column('auditorid', Integer),
-    Column('makerid', Integer),
-    Column('userid', Integer)
-)
+class REShiftVoucher(Base):
+    __tablename__ = 'RE_ShiftVoucher'
+
+    code = Column(Unicode(50))
+    name = Column(Unicode(200))
+    docno = Column(Unicode(36))
+    docclass = Column(Unicode(36))
+    accountingperiod = Column(Integer)
+    docid = Column(Unicode(36))
+    accountingyear = Column(Integer)
+    memo = Column(Unicode(200))
+    voucherdate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    madedate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    maker = Column(Unicode(50))
+    auditor = Column(Unicode(50))
+    auditeddate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    reviser = Column(Unicode(50))
+    iscarriedforwardout = Column(Integer)
+    iscarriedforwardin = Column(Integer)
+    ismodifiedcode = Column(Integer)
+    createdtime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    sequencenumber = Column(Integer)
+    poscode = Column(Unicode(50))
+    posname = Column(Unicode(50))
+    usercode = Column(Unicode(50))
+    username = Column(Unicode(50))
+    workingdate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    workingtime = Column(String(8, u'Chinese_PRC_CI_AS'))
+    shiftdate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    shifttime = Column(String(8, u'Chinese_PRC_CI_AS'))
+    retailcount = Column(Numeric(28, 14))
+    retailamount = Column(Numeric(28, 14))
+    retailreturncount = Column(Numeric(28, 14))
+    returnamount = Column(Numeric(28, 14))
+    removecount = Column(Numeric(28, 14))
+    removeamount = Column(Numeric(28, 14))
+    totalcount = Column(Integer)
+    price = Column(Numeric(28, 14))
+    totalsettleamount = Column(Numeric(28, 14))
+    initialamount = Column(Numeric(28, 14))
+    imprestamount = Column(Numeric(28, 14))
+    ts = Column(TIMESTAMP, nullable=False)
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    updatedBy = Column(Unicode(32))
+    voucherdiscountamount = Column(Numeric(28, 14))
+    id = Column(Integer, nullable=False, primary_key=True)
+    idstore = Column(Integer)
+    idmarketingorgan = Column(Integer)
+    iscancel = Column(Integer)
+    shift = Column(Integer)
+    voucherstate = Column(Integer)
+    auditorid = Column(Integer)
+    makerid = Column(Integer)
+    userid = Column(Integer)
 
 
-t_RE_ShiftVoucher_b = Table(
-    'RE_ShiftVoucher_b', metadata,
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('createdtime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('sequencenumber', Integer),
-    Column('origamount', Numeric(28, 14)),
-    Column('amount', Numeric(28, 14)),
-    Column('origsettleamount', Numeric(28, 14)),
-    Column('settleamount', Numeric(28, 14)),
-    Column('initialamount', Numeric(28, 14)),
-    Column('imprestamount', Numeric(28, 14)),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('updatedBy', Unicode(32)),
-    Column('id', Integer, nullable=False),
-    Column('idbankaccount', Integer),
-    Column('idsettlestyle', Integer),
-    Column('idShiftVoucherDTO', Integer)
-)
+class REShiftVoucherB(Base):
+    __tablename__ = 'RE_ShiftVoucher_b'
+
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    createdtime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    sequencenumber = Column(Integer)
+    origamount = Column(Numeric(28, 14))
+    amount = Column(Numeric(28, 14))
+    origsettleamount = Column(Numeric(28, 14))
+    settleamount = Column(Numeric(28, 14))
+    initialamount = Column(Numeric(28, 14))
+    imprestamount = Column(Numeric(28, 14))
+    ts = Column(TIMESTAMP, nullable=False)
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    updatedBy = Column(Unicode(32))
+    id = Column(Integer, nullable=False, primary_key=True)
+    idbankaccount = Column(Integer)
+    idsettlestyle = Column(Integer)
+    idShiftVoucherDTO = Column(Integer)
 
 
 class RTReportCenter(Base):
@@ -16574,9 +15794,9 @@ class SAInventoryLocation(Base):
 class SASaleDelivery(Base):
     __tablename__ = 'SA_SaleDelivery'
     __table_args__ = (
-        Index('IDX_SA_SaleDelivery_isBeforeSystemInuse', 'isBeforeSystemInuse', 'ID', 'code', 'origTaxAmount', 'voucherState', 'memo', 'voucherdate', 'maker', 'auditor', 'idcustomer', 'iddepartment', 'createdtime', 'idbusinesstype', 'ts', 'SourceVoucherCode', 'changer'),
+        Index('Idx_SA_SaleDelivery_createdtime_voucherdate', 'createdtime', 'voucherdate', 'ID', 'idcustomer', 'idsettlecustomer', 'iddepartment', 'idclerk', 'makerid'),
         Index('IDX_SA_SaleDelivery_id_Code_VoucherDate_VoucherSate', 'ID', 'voucherdate', 'voucherState', 'code'),
-        Index('Idx_SA_SaleDelivery_createdtime_voucherdate', 'createdtime', 'voucherdate', 'ID', 'idcustomer', 'idsettlecustomer', 'iddepartment', 'idclerk', 'makerid')
+        Index('IDX_SA_SaleDelivery_isBeforeSystemInuse', 'isBeforeSystemInuse', 'ID', 'code', 'origTaxAmount', 'voucherState', 'memo', 'voucherdate', 'maker', 'auditor', 'idcustomer', 'iddepartment', 'createdtime', 'idbusinesstype', 'ts', 'SourceVoucherCode', 'changer')
     )
 
     code = Column(Unicode(30), index=True)
@@ -16763,12 +15983,12 @@ class SASaleDeliverySourceRelation(Base):
 class SASaleDeliveryB(Base):
     __tablename__ = 'SA_SaleDelivery_b'
     __table_args__ = (
+        Index('IDX_SA_SaleDelivery_b_idwarehouse', 'idwarehouse', 'idSaleDeliveryDTO'),
         Index('IDX_SA_SaleDelivery_b_idSaleDeliveryDTO__origSettleAmount', 'idSaleDeliveryDTO', 'origSettleAmount'),
+        Index('IDX_Sa_SaleDelivery_b_PromotionPresent', 'PromotionPresentTypeID', 'PromotionPresentVoucherCode'),
         Index('IDX_SA_SaleDelivery_b_idSaleDeliveryDTO_id_saleOrderId', 'idSaleDeliveryDTO', 'updated', 'ID', 'saleOrderId'),
         Index('IDX_SA_SaleDelivery_b_idSaleDeliveryDTO__taxAmount', 'idSaleDeliveryDTO', 'taxAmount'),
-        Index('IDX_SA_SaleDelivery_b_idwarehouse', 'idwarehouse', 'idSaleDeliveryDTO'),
-        Index('IDX_Sa_SaleDelivery_b_PromotionSingle', 'PromotionSingleTypeID', 'PromotionSingleVoucherCode'),
-        Index('IDX_Sa_SaleDelivery_b_PromotionPresent', 'PromotionPresentTypeID', 'PromotionPresentVoucherCode')
+        Index('IDX_Sa_SaleDelivery_b_PromotionSingle', 'PromotionSingleTypeID', 'PromotionSingleVoucherCode')
     )
 
     code = Column(Unicode(30))
@@ -17178,8 +16398,8 @@ class SASaleInvoiceSourceRelation(Base):
 class SASaleInvoiceB(Base):
     __tablename__ = 'SA_SaleInvoice_b'
     __table_args__ = (
-        Index('IDX_SA_SaleInvoice_b_PromotionSingle', 'PromotionSingleTypeID', 'PromotionSingleVoucherCode'),
-        Index('IDX_SA_SaleInvoice_b_PromotionPresent', 'PromotionPresentTypeID', 'PromotionPresentVoucherCode')
+        Index('IDX_SA_SaleInvoice_b_PromotionPresent', 'PromotionPresentTypeID', 'PromotionPresentVoucherCode'),
+        Index('IDX_SA_SaleInvoice_b_PromotionSingle', 'PromotionSingleTypeID', 'PromotionSingleVoucherCode')
     )
 
     code = Column(Unicode(30))
@@ -17456,8 +16676,8 @@ class SASaleOrderSourceRelation(Base):
 class SASaleOrderB(Base):
     __tablename__ = 'SA_SaleOrder_b'
     __table_args__ = (
-        Index('IDX_SA_SaleOrder_b_PromotionSingle', 'PromotionSingleTypeID', 'PromotionSingleVoucherCode'),
         Index('IDX_SA_SaleOrder_b_PromotionPresent', 'PromotionPresentTypeID', 'PromotionPresentVoucherCode'),
+        Index('IDX_SA_SaleOrder_b_PromotionSingle', 'PromotionSingleTypeID', 'PromotionSingleVoucherCode'),
         Index('IDX_SA_SaleOrder_b_mix1', 'detailVoucherState', 'id', 'idSaleOrderDTO', 'idinventory', 'idbaseunit', 'quantity', 'baseQuantity', 'origTaxPrice', 'taxPrice', 'origTaxAmount', 'iddestvouchertype')
     )
 
@@ -17658,8 +16878,8 @@ class SASaleQuotation(Base):
 class SASaleQuotationB(Base):
     __tablename__ = 'SA_SaleQuotation_b'
     __table_args__ = (
-        Index('IDX_SA_SaleQuotation_b_PromotionSingle', 'PromotionSingleTypeID', 'PromotionSingleVoucherCode'),
-        Index('IDX_SA_SaleQuotation_b_PromotionPresent', 'PromotionPresentTypeID', 'PromotionPresentVoucherCode')
+        Index('IDX_SA_SaleQuotation_b_PromotionPresent', 'PromotionPresentTypeID', 'PromotionPresentVoucherCode'),
+        Index('IDX_SA_SaleQuotation_b_PromotionSingle', 'PromotionSingleTypeID', 'PromotionSingleVoucherCode')
     )
 
     code = Column(Unicode(30))
@@ -17758,13 +16978,6 @@ class SASaleQuotationB(Base):
     SingleInvGrossProfit = Column(Numeric(28, 14), server_default=text("(NULL)"))
     GrossProfit = Column(Numeric(28, 14), server_default=text("(NULL)"))
     GrossProfitRate = Column(Numeric(28, 14), server_default=text("(NULL)"))
-
-
-t_SCM_PrintMemory = Table(
-    'SCM_PrintMemory', metadata,
-    Column('voucherName', Unicode(200), nullable=False),
-    Column('flag', BIT, nullable=False)
-)
 
 
 class SMCodingPrefixion(Base):
@@ -17926,27 +17139,27 @@ class SMFCAccountExtractCompositeColumn(Base):
     updated = Column(DateTime)
 
 
-t_SM_FC_AccountRule = Table(
-    'SM_FC_AccountRule', metadata,
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('visible', Integer),
-    Column('extendrulemodelid', Unicode(50)),
-    Column('extendrulecontrollerid', Unicode(50)),
-    Column('extractmodelid', Unicode(50)),
-    Column('extractcontrollerid', Unicode(50)),
-    Column('accountcode', Unicode(50)),
-    Column('accountname', Unicode(50)),
-    Column('sequencenumber', Integer),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updatedBy', Unicode(32)),
-    Column('category', Unicode(50)),
-    Column('id', Integer, nullable=False),
-    Column('idaccount', Integer),
-    Column('idedittable', Integer),
-    Column('createdtime', DateTime),
-    Column('updated', DateTime)
-)
+class SMFCAccountRule(Base):
+    __tablename__ = 'SM_FC_AccountRule'
+
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    visible = Column(Integer)
+    extendrulemodelid = Column(Unicode(50))
+    extendrulecontrollerid = Column(Unicode(50))
+    extractmodelid = Column(Unicode(50))
+    extractcontrollerid = Column(Unicode(50))
+    accountcode = Column(Unicode(50))
+    accountname = Column(Unicode(50))
+    sequencenumber = Column(Integer)
+    ts = Column(TIMESTAMP, nullable=False)
+    updatedBy = Column(Unicode(32))
+    category = Column(Unicode(50))
+    id = Column(Integer, nullable=False, primary_key=True)
+    idaccount = Column(Integer)
+    idedittable = Column(Integer)
+    createdtime = Column(DateTime)
+    updated = Column(DateTime)
 
 
 class SMFCDocSimpleSourceVoucher(Base):
@@ -18120,27 +17333,27 @@ class SMFCDocSummaryRule(Base):
     updated = Column(DateTime)
 
 
-t_SM_FC_History_TransactionAuxiliaryInfo = Table(
-    'SM_FC_History_TransactionAuxiliaryInfo', metadata,
-    Column('id', UNIQUEIDENTIFIER, nullable=False),
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('dcdirection', UNIQUEIDENTIFIER),
-    Column('vouchercode', Unicode(50)),
-    Column('invoicecode', Unicode(50)),
-    Column('origamount', Numeric(28, 14)),
-    Column('amount', Numeric(28, 14)),
-    Column('quantity', Numeric(28, 14)),
-    Column('price', Numeric(28, 14)),
-    Column('sequencenumber', Integer),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updatedBy', Unicode(32)),
-    Column('idTransactionEntryHistoryDTO', UNIQUEIDENTIFIER),
-    Column('voucherdate', DateTime),
-    Column('duedate', DateTime),
-    Column('createdtime', DateTime),
-    Column('updated', DateTime)
-)
+class SMFCHistoryTransactionAuxiliaryInfo(Base):
+    __tablename__ = 'SM_FC_History_TransactionAuxiliaryInfo'
+
+    id = Column(UNIQUEIDENTIFIER, nullable=False, primary_key=True)
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    dcdirection = Column(UNIQUEIDENTIFIER)
+    vouchercode = Column(Unicode(50))
+    invoicecode = Column(Unicode(50))
+    origamount = Column(Numeric(28, 14))
+    amount = Column(Numeric(28, 14))
+    quantity = Column(Numeric(28, 14))
+    price = Column(Numeric(28, 14))
+    sequencenumber = Column(Integer)
+    ts = Column(TIMESTAMP, nullable=False)
+    updatedBy = Column(Unicode(32))
+    idTransactionEntryHistoryDTO = Column(UNIQUEIDENTIFIER)
+    voucherdate = Column(DateTime)
+    duedate = Column(DateTime)
+    createdtime = Column(DateTime)
+    updated = Column(DateTime)
 
 
 class SMFCHistoryTransactionDoc(Base):
@@ -18161,21 +17374,21 @@ class SMFCHistoryTransactionDoc(Base):
     updated = Column(DateTime)
 
 
-t_SM_FC_History_TransactionDocSourceRelation = Table(
-    'SM_FC_History_TransactionDocSourceRelation', metadata,
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('sourcevoucherts', Unicode(50)),
-    Column('sequencenumber', Integer),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updatedBy', Unicode(32)),
-    Column('id', Integer, nullable=False),
-    Column('sourcevoucherid', Integer),
-    Column('idTransactionDocHistoryDTO', Integer),
-    Column('sourcevouchertypeid', Integer),
-    Column('createdtime', DateTime),
-    Column('updated', DateTime)
-)
+class SMFCHistoryTransactionDocSourceRelation(Base):
+    __tablename__ = 'SM_FC_History_TransactionDocSourceRelation'
+
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    sourcevoucherts = Column(Unicode(50))
+    sequencenumber = Column(Integer)
+    ts = Column(TIMESTAMP, nullable=False)
+    updatedBy = Column(Unicode(32))
+    id = Column(Integer, nullable=False, primary_key=True)
+    sourcevoucherid = Column(Integer)
+    idTransactionDocHistoryDTO = Column(Integer)
+    sourcevouchertypeid = Column(Integer)
+    createdtime = Column(DateTime)
+    updated = Column(DateTime)
 
 
 class SMFCHistoryTransactionEntry(Base):
@@ -18233,19 +17446,19 @@ class SMFCHistoryTransactionEntrySourceRelation(Base):
     updated = Column(DateTime)
 
 
-t_SM_FC_MergeOption = Table(
-    'SM_FC_MergeOption', metadata,
-    Column('SequenceNumber', Integer),
-    Column('Code', Unicode(30)),
-    Column('Name', Unicode(200)),
-    Column('IsEnabled', Integer),
-    Column('IsVisible', Integer),
-    Column('UpdatedBy', Unicode(32)),
-    Column('Ts', TIMESTAMP, nullable=False),
-    Column('ID', Integer, nullable=False),
-    Column('CreatedTime', DateTime),
-    Column('Updated', DateTime)
-)
+class SMFCMergeOption(Base):
+    __tablename__ = 'SM_FC_MergeOption'
+
+    SequenceNumber = Column(Integer)
+    Code = Column(Unicode(30))
+    Name = Column(Unicode(200))
+    IsEnabled = Column(Integer)
+    IsVisible = Column(Integer)
+    UpdatedBy = Column(Unicode(32))
+    Ts = Column(TIMESTAMP, nullable=False)
+    ID = Column(Integer, nullable=False, primary_key=True)
+    CreatedTime = Column(DateTime)
+    Updated = Column(DateTime)
 
 
 class SMFCMergeRule(Base):
@@ -18400,21 +17613,21 @@ class SMFCPeriodBeginSyncError(Base):
     updated = Column(DateTime)
 
 
-t_SM_FC_QryVoucherURL = Table(
-    'SM_FC_QryVoucherURL', metadata,
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('vouchertypecode', Unicode(30)),
-    Column('requeststr', Unicode(200)),
-    Column('urlstr', String(200, u'Chinese_PRC_CI_AS')),
-    Column('sequencenumber', Integer),
-    Column('ts', TIMESTAMP),
-    Column('updatedBy', Unicode(32)),
-    Column('id', Integer, nullable=False),
-    Column('idvouchertype', Integer),
-    Column('createdtime', DateTime),
-    Column('updated', DateTime)
-)
+class SMFCQryVoucherURL(Base):
+    __tablename__ = 'SM_FC_QryVoucherURL'
+
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    vouchertypecode = Column(Unicode(30))
+    requeststr = Column(Unicode(200))
+    urlstr = Column(String(200, u'Chinese_PRC_CI_AS'))
+    sequencenumber = Column(Integer)
+    ts = Column(TIMESTAMP)
+    updatedBy = Column(Unicode(32))
+    id = Column(Integer, nullable=False, primary_key=True)
+    idvouchertype = Column(Integer)
+    createdtime = Column(DateTime)
+    updated = Column(DateTime)
 
 
 class SMIndMessageRule(Base):
@@ -18464,13 +17677,6 @@ class SMMessageAssociateInfo(Base):
     associateSelectField = Column(Unicode(50))
     id = Column(Integer, primary_key=True)
     isUse = Column(BIT, server_default=text("((1))"))
-
-
-t_SM_MessageMultiTemplate = Table(
-    'SM_MessageMultiTemplate', metadata,
-    Column('Key_Word', Unicode(50)),
-    Column('Value_Word', Unicode(200))
-)
 
 
 class SMMessageReceivers(Base):
@@ -18640,22 +17846,22 @@ class SMTransferredCode(Base):
     idcodingprefixion = Column(Integer, nullable=False, server_default=text("((0))"))
 
 
-t_SM_Upgrade = Table(
-    'SM_Upgrade', metadata,
-    Column('ID', Integer, nullable=False),
-    Column('Version', Unicode(50), nullable=False),
-    Column('ScriptFileName', Unicode(50)),
-    Column('ItemType', Unicode(20), nullable=False),
-    Column('UpdateClass', Unicode(200)),
-    Column('Parameter', Unicode(50)),
-    Column('OrderNo', Integer, nullable=False),
-    Column('DBType', Integer, nullable=False),
-    Column('Location', Unicode(50)),
-    Column('LanguageType', Unicode(50)),
-    Column('Status', Integer, server_default=text("((0))")),
-    Column('Product', Unicode(100)),
-    Column('ExecutionTime', DateTime)
-)
+class SMUpgrade(Base):
+    __tablename__ = 'SM_Upgrade'
+
+    ID = Column(Integer, nullable=False, primary_key=True)
+    Version = Column(Unicode(50), nullable=False)
+    ScriptFileName = Column(Unicode(50))
+    ItemType = Column(Unicode(20), nullable=False)
+    UpdateClass = Column(Unicode(200))
+    Parameter = Column(Unicode(50))
+    OrderNo = Column(Integer, nullable=False)
+    DBType = Column(Integer, nullable=False)
+    Location = Column(Unicode(50))
+    LanguageType = Column(Unicode(50))
+    Status = Column(Integer, server_default=text("((0))"))
+    Product = Column(Unicode(100))
+    ExecutionTime = Column(DateTime)
 
 
 class SMUsedRule(Base):
@@ -18855,8 +18061,8 @@ class STAdjustCostVoucher(Base):
 class STAdjustCostVoucherB(Base):
     __tablename__ = 'ST_AdjustCostVoucher_b'
     __table_args__ = (
-        Index('IDX_ST_AdjustCostVoucher_b_id', 'idAdjustCostVoucherDTO', 'id', 'idinventory', 'idwarehouse', 'batch'),
-        Index('IDX_ST_AdjustCostVoucher_b_mix1', 'idinventory', 'sourceVoucherID', 'sourceVoucherDetailID', 'fromVoucherDetailID')
+        Index('IDX_ST_AdjustCostVoucher_b_mix1', 'idinventory', 'sourceVoucherID', 'sourceVoucherDetailID', 'fromVoucherDetailID'),
+        Index('IDX_ST_AdjustCostVoucher_b_id', 'idAdjustCostVoucherDTO', 'id', 'idinventory', 'idwarehouse', 'batch')
     )
 
     code = Column(Unicode(30))
@@ -19289,13 +18495,6 @@ class STCheckVoucher(Base):
     createdtime = Column(DateTime, index=True)
     updated = Column(DateTime)
     VoucherDateInStock = Column(DateTime)
-
-
-t_ST_CheckVoucherSelectInventoryClassSetting = Table(
-    'ST_CheckVoucherSelectInventoryClassSetting', metadata,
-    Column('idCheckVoucher', Integer),
-    Column('idInventoryClass', Integer)
-)
 
 
 class STCheckVoucherB(Base):
@@ -19808,8 +19007,8 @@ class STPurchaseSettleVoucherB(Base):
 class STRDRecord(Base):
     __tablename__ = 'ST_RDRecord'
     __table_args__ = (
-        Index('IDX_ST_RDRecord_idvouchertype_voucherdate', 'idvouchertype', 'voucherdate'),
         Index('IDX_ST_RDRecord_ids', 'IdMarketingOrgan', 'voucherState', 'idvouchertype', 'voucherdate', 'idsettleCustomer', 'id'),
+        Index('IDX_ST_RDRecord_idvouchertype_voucherdate', 'idvouchertype', 'voucherdate'),
         Index('IDX_ST_RDRecord_mix1', 'idvouchertype', 'voucherdate', 'createdtime', 'id', 'makerid', 'idclerk', 'iddepartment', 'idpartner', 'idwarehouse', 'idsettleCustomer', 'IdStore')
     )
 
@@ -19943,33 +19142,35 @@ class STRDRecordSourceRelation(Base):
     updated = Column(DateTime, index=True)
 
 
-t_ST_RDRecord_Trace = Table(
-    'ST_RDRecord_Trace', metadata,
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('sourceVoucherCode', Unicode(50)),
-    Column('sequencenumber', Integer),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updatedBy', Unicode(32)),
-    Column('id', Integer, nullable=False),
-    Column('sourceVoucherId', Integer),
-    Column('sourceVoucherDetailId', Integer),
-    Column('IdsourceVoucherType', Integer, index=True),
-    Column('voucherId', Integer),
-    Column('idRDRecordDetailDTO', Integer, index=True),
-    Column('createdtime', DateTime),
-    Column('updated', DateTime, index=True),
-    Index('IDX_ST_RDRecord_Trace_id', 'idRDRecordDetailDTO', 'id')
-)
+class STRDRecordTrace(Base):
+    __tablename__ = 'ST_RDRecord_Trace'
+    __table_args__ = (
+        Index('IDX_ST_RDRecord_Trace_id', 'idRDRecordDetailDTO', 'id'),
+    )
+
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    sourceVoucherCode = Column(Unicode(50))
+    sequencenumber = Column(Integer)
+    ts = Column(TIMESTAMP, nullable=False)
+    updatedBy = Column(Unicode(32))
+    id = Column(Integer, nullable=False, primary_key=True)
+    sourceVoucherId = Column(Integer)
+    sourceVoucherDetailId = Column(Integer)
+    IdsourceVoucherType = Column(Integer, index=True)
+    voucherId = Column(Integer)
+    idRDRecordDetailDTO = Column(Integer, index=True)
+    createdtime = Column(DateTime)
+    updated = Column(DateTime, index=True)
 
 
 class STRDRecordB(Base):
     __tablename__ = 'ST_RDRecord_b'
     __table_args__ = (
-        Index('IDX_ST_RDRecord_b_cost', 'idRDRecordDTO', 'updated', 'idsourcevouchertype', 'amount', 'dispatchAdjust'),
-        Index('IDX_ST_RDRecord_b_PromotionPresent', 'PromotionPresentTypeID', 'PromotionPresentVoucherCode'),
+        Index('IDX_ST_RDRecord_b_PromotionSingle', 'PromotionSingleTypeID', 'PromotionSingleVoucherCode'),
         Index('IDX_ST_RDRecord_b_idinventory_idwarehouse', 'idinventory', 'idwarehouse', 'ID'),
-        Index('IDX_ST_RDRecord_b_PromotionSingle', 'PromotionSingleTypeID', 'PromotionSingleVoucherCode')
+        Index('IDX_ST_RDRecord_b_cost', 'idRDRecordDTO', 'updated', 'idsourcevouchertype', 'amount', 'dispatchAdjust'),
+        Index('IDX_ST_RDRecord_b_PromotionPresent', 'PromotionPresentTypeID', 'PromotionPresentVoucherCode')
     )
 
     code = Column(Unicode(30))
@@ -20533,23 +19734,6 @@ class STShareExpenseVoucherRdDetail(Base):
     updated = Column(DateTime, index=True)
 
 
-t_ST_SubTemp = Table(
-    'ST_SubTemp', metadata,
-    Column('Batch', Unicode(50)),
-    Column('orderno', Integer),
-    Column('AccountYear', Integer),
-    Column('AccountPeriod', Integer),
-    Column('AccountYearPeriod', String(6, u'Chinese_PRC_CI_AS')),
-    Column('Idinventory', Integer, nullable=False, server_default=text("((0))")),
-    Column('Idwarehouse', Integer),
-    Column('valuetype', Integer),
-    Column('fromVoucherID', Integer),
-    Column('fromVoucherDetailID', Integer),
-    Column('AccountDate', DateTime),
-    Column('fromVoucherTypeID', Integer)
-)
-
-
 class STSubsidiaryBook(Base):
     __tablename__ = 'ST_SubsidiaryBook'
     __table_args__ = (
@@ -20639,13 +19823,6 @@ class STSummaryBook(Base):
     id = Column(Integer, primary_key=True)
     idinventory = Column(Integer, index=True)
     idwarehouse = Column(Integer, index=True)
-
-
-t_ST_ToValuation = Table(
-    'ST_ToValuation', metadata,
-    Column('SerialNo', Integer, nullable=False),
-    Column('WarehouseID', Integer, nullable=False, server_default=text("((0))"))
-)
 
 
 class STTranVoucherRecord(Base):
@@ -20849,554 +20026,538 @@ class STWarehouseLocationLock(Base):
     updated = Column(DateTime, index=True)
 
 
-t_TEMP_1_GL_TEMPOpeningAccount = Table(
-    'TEMP_1_GL_TEMPOpeningAccount', metadata,
-    Column('DTOStatus', Unicode(10)),
-    Column('ID', Integer, nullable=False),
-    Column('UserId', Integer),
-    Column('DocId', Integer),
-    Column('EntryId', Integer)
-)
+class TEMP1GLTEMPOpeningAccount(Base):
+    __tablename__ = 'TEMP_1_GL_TEMPOpeningAccount'
+
+    DTOStatus = Column(Unicode(10))
+    ID = Column(Integer, nullable=False, primary_key=True)
+    UserId = Column(Integer)
+    DocId = Column(Integer)
+    EntryId = Column(Integer)
 
 
-t_TEMP_1_GL_TempAuxiliaryInfo = Table(
-    'TEMP_1_GL_TempAuxiliaryInfo', metadata,
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('billno', Unicode(50)),
-    Column('billdate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('exchangerate', Numeric(28, 14)),
-    Column('bizdate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('bizno', Unicode(50)),
-    Column('duedate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('origamount', Numeric(28, 14)),
-    Column('amount', Numeric(28, 14)),
-    Column('quantity', Numeric(28, 14)),
-    Column('price', Numeric(28, 14)),
-    Column('createdtime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('sequencenumber', Integer),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('updatedBy', Unicode(32)),
-    Column('unit', Unicode(200)),
-    Column('id', Integer, nullable=False),
-    Column('idaccount', Integer),
-    Column('idbankAccount', Integer),
-    Column('idcurrency', Integer),
-    Column('idauxAccDepartment', Integer),
-    Column('idauxAccInventory', Integer),
-    Column('idauxAccCustomer', Integer),
-    Column('idauxAccSupplier', Integer),
-    Column('idauxAccPerson', Integer),
-    Column('idclerk', Integer),
-    Column('idauxAccProject', Integer),
-    Column('idsettlestyle', Integer),
-    Column('idUnit', Integer),
-    Column('dcdirection', Integer),
-    Column('idexauxacc1', Integer),
-    Column('idexauxacc10', Integer),
-    Column('idexauxacc2', Integer),
-    Column('idexauxacc3', Integer),
-    Column('idexauxacc4', Integer),
-    Column('idexauxacc5', Integer),
-    Column('idexauxacc6', Integer),
-    Column('idexauxacc7', Integer),
-    Column('idexauxacc8', Integer),
-    Column('idexauxacc9', Integer),
-    Column('idTempEntryDTO', Integer)
-)
+class TEMP1GLTempAuxiliaryInfo(Base):
+    __tablename__ = 'TEMP_1_GL_TempAuxiliaryInfo'
+
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    billno = Column(Unicode(50))
+    billdate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    exchangerate = Column(Numeric(28, 14))
+    bizdate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    bizno = Column(Unicode(50))
+    duedate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    origamount = Column(Numeric(28, 14))
+    amount = Column(Numeric(28, 14))
+    quantity = Column(Numeric(28, 14))
+    price = Column(Numeric(28, 14))
+    createdtime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    sequencenumber = Column(Integer)
+    ts = Column(TIMESTAMP, nullable=False)
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    updatedBy = Column(Unicode(32))
+    unit = Column(Unicode(200))
+    id = Column(Integer, nullable=False, primary_key=True)
+    idaccount = Column(Integer)
+    idbankAccount = Column(Integer)
+    idcurrency = Column(Integer)
+    idauxAccDepartment = Column(Integer)
+    idauxAccInventory = Column(Integer)
+    idauxAccCustomer = Column(Integer)
+    idauxAccSupplier = Column(Integer)
+    idauxAccPerson = Column(Integer)
+    idclerk = Column(Integer)
+    idauxAccProject = Column(Integer)
+    idsettlestyle = Column(Integer)
+    idUnit = Column(Integer)
+    dcdirection = Column(Integer)
+    idexauxacc1 = Column(Integer)
+    idexauxacc10 = Column(Integer)
+    idexauxacc2 = Column(Integer)
+    idexauxacc3 = Column(Integer)
+    idexauxacc4 = Column(Integer)
+    idexauxacc5 = Column(Integer)
+    idexauxacc6 = Column(Integer)
+    idexauxacc7 = Column(Integer)
+    idexauxacc8 = Column(Integer)
+    idexauxacc9 = Column(Integer)
+    idTempEntryDTO = Column(Integer)
 
 
-t_TEMP_1_GL_TempCashFlowInfo = Table(
-    'TEMP_1_GL_TempCashFlowInfo', metadata,
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('amount', Numeric(28, 14)),
-    Column('createdtime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('sequencenumber', Integer),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('updatedBy', Unicode(32)),
-    Column('ownerEntryNo', Integer),
-    Column('mapEntryNo', Integer),
-    Column('id', Integer, nullable=False),
-    Column('idaccount', Integer),
-    Column('idcashflowitem', Integer),
-    Column('idcurrency', Integer),
-    Column('idTempDocDTO', Integer)
-)
+class TEMP1GLTempCashFlowInfo(Base):
+    __tablename__ = 'TEMP_1_GL_TempCashFlowInfo'
+
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    amount = Column(Numeric(28, 14))
+    createdtime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    sequencenumber = Column(Integer)
+    ts = Column(TIMESTAMP, nullable=False)
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    updatedBy = Column(Unicode(32))
+    ownerEntryNo = Column(Integer)
+    mapEntryNo = Column(Integer)
+    id = Column(Integer, nullable=False, primary_key=True)
+    idaccount = Column(Integer)
+    idcashflowitem = Column(Integer)
+    idcurrency = Column(Integer)
+    idTempDocDTO = Column(Integer)
 
 
-t_TEMP_1_GL_TempDoc = Table(
-    'TEMP_1_GL_TempDoc', metadata,
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('isgenerateddoc', Integer),
-    Column('attachedvouchernum', Integer),
-    Column('docno', Unicode(50)),
-    Column('docclass', Unicode(50)),
-    Column('accountingperiod', Integer),
-    Column('docid', Unicode(50)),
-    Column('accountingyear', Integer),
-    Column('memo', Unicode(50)),
-    Column('voucherdate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('madedate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('maker', Unicode(50)),
-    Column('auditor', Unicode(50)),
-    Column('auditeddate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('reviser', Unicode(50)),
-    Column('ismodifiedcode', Integer),
-    Column('createdtime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('sequencenumber', Integer),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('updatedBy', Unicode(32)),
-    Column('priuserdefnvc1', Unicode(500)),
-    Column('priuserdefdecm1', Numeric(28, 14)),
-    Column('priuserdefnvc2', Unicode(500)),
-    Column('priuserdefdecm2', Numeric(28, 14)),
-    Column('priuserdefnvc3', Unicode(500)),
-    Column('priuserdefdecm3', Numeric(28, 14)),
-    Column('priuserdefnvc4', Unicode(500)),
-    Column('priuserdefdecm4', Numeric(28, 14)),
-    Column('priuserdefnvc5', Unicode(500)),
-    Column('priuserdefdecm5', Numeric(28, 14)),
-    Column('priuserdefnvc6', Unicode(500)),
-    Column('priuserdefdecm6', Numeric(28, 14)),
-    Column('IsCashFlowed', Integer),
-    Column('isCashflowByHand', Integer),
-    Column('businessDocMoney', Numeric(28, 14)),
-    Column('id', Integer, nullable=False),
-    Column('iddoctype', Integer),
-    Column('isdefrence', Integer),
-    Column('CashFlowedState', Integer),
-    Column('tempDocGenerate', Integer),
-    Column('tempdoctype', Integer),
-    Column('voucherstate', Integer),
-    Column('auditorid', Integer),
-    Column('makerid', Integer)
-)
+class TEMP1GLTempDoc(Base):
+    __tablename__ = 'TEMP_1_GL_TempDoc'
+
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    isgenerateddoc = Column(Integer)
+    attachedvouchernum = Column(Integer)
+    docno = Column(Unicode(50))
+    docclass = Column(Unicode(50))
+    accountingperiod = Column(Integer)
+    docid = Column(Unicode(50))
+    accountingyear = Column(Integer)
+    memo = Column(Unicode(50))
+    voucherdate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    madedate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    maker = Column(Unicode(50))
+    auditor = Column(Unicode(50))
+    auditeddate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    reviser = Column(Unicode(50))
+    ismodifiedcode = Column(Integer)
+    createdtime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    sequencenumber = Column(Integer)
+    ts = Column(TIMESTAMP, nullable=False)
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    updatedBy = Column(Unicode(32))
+    priuserdefnvc1 = Column(Unicode(500))
+    priuserdefdecm1 = Column(Numeric(28, 14))
+    priuserdefnvc2 = Column(Unicode(500))
+    priuserdefdecm2 = Column(Numeric(28, 14))
+    priuserdefnvc3 = Column(Unicode(500))
+    priuserdefdecm3 = Column(Numeric(28, 14))
+    priuserdefnvc4 = Column(Unicode(500))
+    priuserdefdecm4 = Column(Numeric(28, 14))
+    priuserdefnvc5 = Column(Unicode(500))
+    priuserdefdecm5 = Column(Numeric(28, 14))
+    priuserdefnvc6 = Column(Unicode(500))
+    priuserdefdecm6 = Column(Numeric(28, 14))
+    IsCashFlowed = Column(Integer)
+    isCashflowByHand = Column(Integer)
+    businessDocMoney = Column(Numeric(28, 14))
+    id = Column(Integer, nullable=False, primary_key=True)
+    iddoctype = Column(Integer)
+    isdefrence = Column(Integer)
+    CashFlowedState = Column(Integer)
+    tempDocGenerate = Column(Integer)
+    tempdoctype = Column(Integer)
+    voucherstate = Column(Integer)
+    auditorid = Column(Integer)
+    makerid = Column(Integer)
 
 
-t_TEMP_1_GL_TempDocIds = Table(
-    'TEMP_1_GL_TempDocIds', metadata,
-    Column('DocTs', BINARY(16)),
-    Column('BookType', Unicode(32)),
-    Column('UserID', Integer),
-    Column('DocID', Integer)
-)
+class TEMP1GLTempDocSrcDocDetailInfo(Base):
+    __tablename__ = 'TEMP_1_GL_TempDocSrcDocDetailInfo'
+
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    createdtime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    sequencenumber = Column(Integer)
+    ts = Column(TIMESTAMP, nullable=False)
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    updatedBy = Column(Unicode(32))
+    srcVoucherTimeStamp = Column(Unicode(200))
+    srcVoucherDetailTimeStamp = Column(Unicode(200))
+    id = Column(Integer, nullable=False, primary_key=True)
+    srcvoucherid = Column(Integer)
+    fccarryforwardtype = Column(Integer)
+    srcvoucherdetailid = Column(Integer)
+    idSrcVoucherType = Column(Integer)
+    idTempEntryDTO = Column(Integer)
+    IdTransactionEntry = Column(Integer)
 
 
-t_TEMP_1_GL_TempDocSrcDocDetailInfo = Table(
-    'TEMP_1_GL_TempDocSrcDocDetailInfo', metadata,
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('createdtime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('sequencenumber', Integer),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('updatedBy', Unicode(32)),
-    Column('srcVoucherTimeStamp', Unicode(200)),
-    Column('srcVoucherDetailTimeStamp', Unicode(200)),
-    Column('id', Integer, nullable=False),
-    Column('srcvoucherid', Integer),
-    Column('fccarryforwardtype', Integer),
-    Column('srcvoucherdetailid', Integer),
-    Column('idSrcVoucherType', Integer),
-    Column('idTempEntryDTO', Integer),
-    Column('IdTransactionEntry', Integer)
-)
+class TEMP1GLTempDocSrcDocInfo(Base):
+    __tablename__ = 'TEMP_1_GL_TempDocSrcDocInfo'
+
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    createdtime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    sequencenumber = Column(Integer)
+    ts = Column(TIMESTAMP, nullable=False)
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    updatedBy = Column(Unicode(32))
+    srcVoucherTimeStamp = Column(Unicode(200))
+    srcVoucherNo = Column(Unicode(200))
+    srcVoucherDate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    id = Column(Integer, nullable=False, primary_key=True)
+    idSrcBusiType = Column(Integer)
+    srcvoucherid = Column(Integer)
+    carryforwardtype = Column(Integer)
+    idSrcVoucherType = Column(Integer)
+    idTempDocDTO = Column(Integer)
+    idTransactionDocDTO = Column(Integer)
 
 
-t_TEMP_1_GL_TempDocSrcDocInfo = Table(
-    'TEMP_1_GL_TempDocSrcDocInfo', metadata,
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('createdtime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('sequencenumber', Integer),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('updatedBy', Unicode(32)),
-    Column('srcVoucherTimeStamp', Unicode(200)),
-    Column('srcVoucherNo', Unicode(200)),
-    Column('srcVoucherDate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('id', Integer, nullable=False),
-    Column('idSrcBusiType', Integer),
-    Column('srcvoucherid', Integer),
-    Column('carryforwardtype', Integer),
-    Column('idSrcVoucherType', Integer),
-    Column('idTempDocDTO', Integer),
-    Column('idTransactionDocDTO', Integer)
-)
+class TEMP1GLTempEntry(Base):
+    __tablename__ = 'TEMP_1_GL_TempEntry'
+
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    summary = Column(Unicode(200))
+    AuxiliaryItems = Column(Unicode(200))
+    exchangerate = Column(Numeric(28, 14))
+    origamountdr = Column(Numeric(28, 14))
+    origamountcr = Column(Numeric(28, 14))
+    amountdr = Column(Numeric(28, 14))
+    amountcr = Column(Numeric(28, 14))
+    quantitydr = Column(Numeric(28, 14))
+    quantitycr = Column(Numeric(28, 14))
+    price = Column(Numeric(28, 14))
+    createdtime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    sequencenumber = Column(Integer)
+    accountcode = Column(Unicode(50))
+    ts = Column(TIMESTAMP, nullable=False)
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    updatedBy = Column(Unicode(32))
+    priuserdefnvc1 = Column(Unicode(500))
+    priuserdefdecm1 = Column(Numeric(28, 14))
+    priuserdefnvc2 = Column(Unicode(500))
+    priuserdefdecm2 = Column(Numeric(28, 14))
+    priuserdefnvc3 = Column(Unicode(500))
+    priuserdefdecm3 = Column(Numeric(28, 14))
+    priuserdefnvc4 = Column(Unicode(500))
+    priuserdefdecm4 = Column(Numeric(28, 14))
+    id = Column(Integer, nullable=False, primary_key=True)
+    idaccount = Column(Integer)
+    idcurrency = Column(Integer)
+    datafrom = Column(Integer)
+    idTempDocDTO = Column(Integer)
 
 
-t_TEMP_1_GL_TempEntry = Table(
-    'TEMP_1_GL_TempEntry', metadata,
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('summary', Unicode(200)),
-    Column('AuxiliaryItems', Unicode(200)),
-    Column('exchangerate', Numeric(28, 14)),
-    Column('origamountdr', Numeric(28, 14)),
-    Column('origamountcr', Numeric(28, 14)),
-    Column('amountdr', Numeric(28, 14)),
-    Column('amountcr', Numeric(28, 14)),
-    Column('quantitydr', Numeric(28, 14)),
-    Column('quantitycr', Numeric(28, 14)),
-    Column('price', Numeric(28, 14)),
-    Column('createdtime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('sequencenumber', Integer),
-    Column('accountcode', Unicode(50)),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('updatedBy', Unicode(32)),
-    Column('priuserdefnvc1', Unicode(500)),
-    Column('priuserdefdecm1', Numeric(28, 14)),
-    Column('priuserdefnvc2', Unicode(500)),
-    Column('priuserdefdecm2', Numeric(28, 14)),
-    Column('priuserdefnvc3', Unicode(500)),
-    Column('priuserdefdecm3', Numeric(28, 14)),
-    Column('priuserdefnvc4', Unicode(500)),
-    Column('priuserdefdecm4', Numeric(28, 14)),
-    Column('id', Integer, nullable=False),
-    Column('idaccount', Integer),
-    Column('idcurrency', Integer),
-    Column('datafrom', Integer),
-    Column('idTempDocDTO', Integer)
-)
+class TEMP1SMFCPBSAMCheckAccount(Base):
+    __tablename__ = 'TEMP_1_SM_FC_PBSAMCheckAccount'
+
+    ts = Column(TIMESTAMP, nullable=False)
+    Updated = Column(DateTime)
+    UpdatedBy = Column(Unicode(32))
+    name = Column(Unicode(200))
+    ValueType = Column(Unicode(200))
+    AssetOrigAmount = Column(Float(53))
+    GLOrigAmount = Column(Float(53), server_default=text("((0))"))
+    OrigAmountDiff = Column(Float(53), server_default=text("((0))"))
+    id = Column(Integer, nullable=False, primary_key=True)
+    idAccount = Column(Integer)
+    idAssetProp = Column(Integer)
 
 
-t_TEMP_1_SM_FC_PBSAMCheckAccount = Table(
-    'TEMP_1_SM_FC_PBSAMCheckAccount', metadata,
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('Updated', DateTime),
-    Column('UpdatedBy', Unicode(32)),
-    Column('name', Unicode(200)),
-    Column('ValueType', Unicode(200)),
-    Column('AssetOrigAmount', Float(53)),
-    Column('GLOrigAmount', Float(53), server_default=text("((0))")),
-    Column('OrigAmountDiff', Float(53), server_default=text("((0))")),
-    Column('id', Integer, nullable=False),
-    Column('idAccount', Integer),
-    Column('idAssetProp', Integer)
-)
+class TEMP1SMFCPBSARAPCheckAccount(Base):
+    __tablename__ = 'TEMP_1_SM_FC_PBSARAPCheckAccount'
+
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    periodbeginsynctype = Column(Integer)
+    origamount = Column(Numeric(28, 14))
+    amount = Column(Numeric(28, 14))
+    glamount = Column(Numeric(28, 14))
+    glorigamount = Column(Numeric(28, 14))
+    amountdiff = Column(Numeric(28, 14))
+    origamountdiff = Column(Numeric(28, 14))
+    createdtime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    sequencenumber = Column(Integer)
+    ts = Column(TIMESTAMP, nullable=False)
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    updatedBy = Column(Unicode(32))
+    id = Column(Integer, nullable=False, primary_key=True)
+    idaccount = Column(Integer)
+    idcurrency = Column(Integer)
+    pbscheckaccounttype = Column(Integer)
 
 
-t_TEMP_1_SM_FC_PBSARAPCheckAccount = Table(
-    'TEMP_1_SM_FC_PBSARAPCheckAccount', metadata,
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('periodbeginsynctype', Integer),
-    Column('origamount', Numeric(28, 14)),
-    Column('amount', Numeric(28, 14)),
-    Column('glamount', Numeric(28, 14)),
-    Column('glorigamount', Numeric(28, 14)),
-    Column('amountdiff', Numeric(28, 14)),
-    Column('origamountdiff', Numeric(28, 14)),
-    Column('createdtime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('sequencenumber', Integer),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('updatedBy', Unicode(32)),
-    Column('id', Integer, nullable=False),
-    Column('idaccount', Integer),
-    Column('idcurrency', Integer),
-    Column('pbscheckaccounttype', Integer)
-)
+class TEMP1SMFCPBSCashBankCheckAccount(Base):
+    __tablename__ = 'TEMP_1_SM_FC_PBSCashBankCheckAccount'
+
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    origamount = Column(Numeric(28, 14))
+    amount = Column(Numeric(28, 14))
+    glamount = Column(Numeric(28, 14))
+    glorigamount = Column(Numeric(28, 14))
+    amountdiff = Column(Numeric(28, 14))
+    origamountdiff = Column(Numeric(28, 14))
+    createdtime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    sequencenumber = Column(Integer)
+    ts = Column(TIMESTAMP, nullable=False)
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    updatedBy = Column(Unicode(32))
+    id = Column(Integer, nullable=False, primary_key=True)
+    idaccount = Column(Integer)
+    idbankaccount = Column(Integer)
 
 
-t_TEMP_1_SM_FC_PBSCashBankCheckAccount = Table(
-    'TEMP_1_SM_FC_PBSCashBankCheckAccount', metadata,
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('origamount', Numeric(28, 14)),
-    Column('amount', Numeric(28, 14)),
-    Column('glamount', Numeric(28, 14)),
-    Column('glorigamount', Numeric(28, 14)),
-    Column('amountdiff', Numeric(28, 14)),
-    Column('origamountdiff', Numeric(28, 14)),
-    Column('createdtime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('sequencenumber', Integer),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('updatedBy', Unicode(32)),
-    Column('id', Integer, nullable=False),
-    Column('idaccount', Integer),
-    Column('idbankaccount', Integer)
-)
+class TEMP1SMFCPBSInventoryCheckAccount(Base):
+    __tablename__ = 'TEMP_1_SM_FC_PBSInventoryCheckAccount'
+
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    quantity = Column(Numeric(28, 14))
+    amount = Column(Numeric(28, 14))
+    origamount = Column(Numeric(28, 14))
+    glamount = Column(Numeric(28, 14))
+    glorigamount = Column(Numeric(28, 14))
+    glquantity = Column(Numeric(28, 14))
+    amountdiff = Column(Numeric(28, 14))
+    origamountdiff = Column(Numeric(28, 14))
+    quantitydiff = Column(Numeric(28, 14))
+    createdtime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    sequencenumber = Column(Integer)
+    ts = Column(TIMESTAMP, nullable=False)
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    updatedBy = Column(Unicode(32))
+    id = Column(Integer, nullable=False, primary_key=True)
+    idaccount = Column(Integer)
+    idinventoryclass = Column(Integer)
+    idwarehouse = Column(Integer)
 
 
-t_TEMP_1_SM_FC_PBSInventoryCheckAccount = Table(
-    'TEMP_1_SM_FC_PBSInventoryCheckAccount', metadata,
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('quantity', Numeric(28, 14)),
-    Column('amount', Numeric(28, 14)),
-    Column('origamount', Numeric(28, 14)),
-    Column('glamount', Numeric(28, 14)),
-    Column('glorigamount', Numeric(28, 14)),
-    Column('glquantity', Numeric(28, 14)),
-    Column('amountdiff', Numeric(28, 14)),
-    Column('origamountdiff', Numeric(28, 14)),
-    Column('quantitydiff', Numeric(28, 14)),
-    Column('createdtime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('sequencenumber', Integer),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('updatedBy', Unicode(32)),
-    Column('id', Integer, nullable=False),
-    Column('idaccount', Integer),
-    Column('idinventoryclass', Integer),
-    Column('idwarehouse', Integer)
-)
+class TEMP1SMFCPBSPurRecCheckAccount(Base):
+    __tablename__ = 'TEMP_1_SM_FC_PBSPurRecCheckAccount'
+
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    origamount = Column(Numeric(28, 14))
+    amount = Column(Numeric(28, 14))
+    glamount = Column(Numeric(28, 14))
+    glorigamount = Column(Numeric(28, 14))
+    amountdiff = Column(Numeric(28, 14))
+    origamountdiff = Column(Numeric(28, 14))
+    ts = Column(TIMESTAMP, nullable=False)
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    updatedBy = Column(Unicode(32))
+    id = Column(Integer, nullable=False, primary_key=True)
+    idaccount = Column(Integer)
+    idcurrency = Column(Integer)
 
 
-t_TEMP_1_SM_FC_PBSPurRecCheckAccount = Table(
-    'TEMP_1_SM_FC_PBSPurRecCheckAccount', metadata,
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('origamount', Numeric(28, 14)),
-    Column('amount', Numeric(28, 14)),
-    Column('glamount', Numeric(28, 14)),
-    Column('glorigamount', Numeric(28, 14)),
-    Column('amountdiff', Numeric(28, 14)),
-    Column('origamountdiff', Numeric(28, 14)),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('updatedBy', Unicode(32)),
-    Column('id', Integer, nullable=False),
-    Column('idaccount', Integer),
-    Column('idcurrency', Integer)
-)
+class TEMP1SMFCTransactionAuxiliaryInfo(Base):
+    __tablename__ = 'TEMP_1_SM_FC_TransactionAuxiliaryInfo'
+
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    voucherdate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    vouchercode = Column(Unicode(50))
+    invoicecode = Column(Unicode(50))
+    duedate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    origamount = Column(Numeric(28, 14))
+    amount = Column(Numeric(28, 14))
+    quantity = Column(Numeric(28, 14))
+    price = Column(Numeric(28, 14))
+    createdtime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    sequencenumber = Column(Integer)
+    ts = Column(TIMESTAMP, nullable=False)
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    updatedBy = Column(Unicode(32))
+    id = Column(Integer, nullable=False, primary_key=True)
+    idbankaccount = Column(Integer)
+    idbusitype = Column(Integer)
+    idcostitem = Column(Integer)
+    idcurrency = Column(Integer)
+    iddepartment = Column(Integer)
+    iddistrict = Column(Integer)
+    iddocumentsusage = Column(Integer)
+    idexpenseitem = Column(Integer)
+    idincome = Column(Integer)
+    idinventory = Column(Integer)
+    idinventoryclass = Column(Integer)
+    idinvlocation = Column(Integer)
+    idcustomer = Column(Integer)
+    idsupplier = Column(Integer)
+    idcustomerclass = Column(Integer)
+    idsupplierclass = Column(Integer)
+    idperson = Column(Integer)
+    idproductprocess = Column(Integer)
+    idproject = Column(Integer)
+    idprojectClass = Column(Integer)
+    idinrdstyle = Column(Integer)
+    idoutrdstyle = Column(Integer)
+    idsettlestyle = Column(Integer)
+    idUnit = Column(Integer)
+    idwarehouse = Column(Integer)
+    dcdirection = Column(Integer)
+    idexauxacc1 = Column(Integer)
+    idexauxacc10 = Column(Integer)
+    idexauxacc2 = Column(Integer)
+    idexauxacc3 = Column(Integer)
+    idexauxacc4 = Column(Integer)
+    idexauxacc5 = Column(Integer)
+    idexauxacc6 = Column(Integer)
+    idexauxacc7 = Column(Integer)
+    idexauxacc8 = Column(Integer)
+    idexauxacc9 = Column(Integer)
+    idvouchertype = Column(Integer)
+    idTransactionEntryDTO = Column(Integer)
 
 
-t_TEMP_1_SM_FC_TransactionAuxiliaryInfo = Table(
-    'TEMP_1_SM_FC_TransactionAuxiliaryInfo', metadata,
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('voucherdate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('vouchercode', Unicode(50)),
-    Column('invoicecode', Unicode(50)),
-    Column('duedate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('origamount', Numeric(28, 14)),
-    Column('amount', Numeric(28, 14)),
-    Column('quantity', Numeric(28, 14)),
-    Column('price', Numeric(28, 14)),
-    Column('createdtime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('sequencenumber', Integer),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('updatedBy', Unicode(32)),
-    Column('id', Integer, nullable=False),
-    Column('idbankaccount', Integer),
-    Column('idbusitype', Integer),
-    Column('idcostitem', Integer),
-    Column('idcurrency', Integer),
-    Column('iddepartment', Integer),
-    Column('iddistrict', Integer),
-    Column('iddocumentsusage', Integer),
-    Column('idexpenseitem', Integer),
-    Column('idincome', Integer),
-    Column('idinventory', Integer),
-    Column('idinventoryclass', Integer),
-    Column('idinvlocation', Integer),
-    Column('idcustomer', Integer),
-    Column('idsupplier', Integer),
-    Column('idcustomerclass', Integer),
-    Column('idsupplierclass', Integer),
-    Column('idperson', Integer),
-    Column('idproductprocess', Integer),
-    Column('idproject', Integer),
-    Column('idprojectClass', Integer),
-    Column('idinrdstyle', Integer),
-    Column('idoutrdstyle', Integer),
-    Column('idsettlestyle', Integer),
-    Column('idUnit', Integer),
-    Column('idwarehouse', Integer),
-    Column('dcdirection', Integer),
-    Column('idexauxacc1', Integer),
-    Column('idexauxacc10', Integer),
-    Column('idexauxacc2', Integer),
-    Column('idexauxacc3', Integer),
-    Column('idexauxacc4', Integer),
-    Column('idexauxacc5', Integer),
-    Column('idexauxacc6', Integer),
-    Column('idexauxacc7', Integer),
-    Column('idexauxacc8', Integer),
-    Column('idexauxacc9', Integer),
-    Column('idvouchertype', Integer),
-    Column('idTransactionEntryDTO', Integer)
-)
+class TEMP1SMFCTransactionDoc(Base):
+    __tablename__ = 'TEMP_1_SM_FC_TransactionDoc'
+
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    attachedvouchernum = Column(Integer)
+    voucherdate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    generatedate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    createdtime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    sequencenumber = Column(Integer)
+    ts = Column(TIMESTAMP, nullable=False)
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    updatedBy = Column(Unicode(32))
+    businessDocMoney = Column(Numeric(28, 14))
+    id = Column(Integer, nullable=False, primary_key=True)
+    iddoctype = Column(Integer)
+    isdefrence = Column(Integer)
+    userid = Column(Integer)
 
 
-t_TEMP_1_SM_FC_TransactionDoc = Table(
-    'TEMP_1_SM_FC_TransactionDoc', metadata,
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('attachedvouchernum', Integer),
-    Column('voucherdate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('generatedate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('createdtime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('sequencenumber', Integer),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('updatedBy', Unicode(32)),
-    Column('businessDocMoney', Numeric(28, 14)),
-    Column('id', Integer, nullable=False),
-    Column('iddoctype', Integer),
-    Column('isdefrence', Integer),
-    Column('userid', Integer)
-)
+class TEMP1SMFCTransactionDocSourceRelation(Base):
+    __tablename__ = 'TEMP_1_SM_FC_TransactionDocSourceRelation'
+
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    sourcevoucherts = Column(Unicode(50))
+    createdtime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    sequencenumber = Column(Integer)
+    ts = Column(TIMESTAMP, nullable=False)
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    updatedBy = Column(Unicode(32))
+    id = Column(Integer, nullable=False, primary_key=True)
+    sourcevoucherid = Column(Integer)
+    carryforwardtype = Column(Integer)
+    sourcevouchertypeid = Column(Integer)
+    idTransactionDocDTO = Column(Integer)
 
 
-t_TEMP_1_SM_FC_TransactionDocSourceRelation = Table(
-    'TEMP_1_SM_FC_TransactionDocSourceRelation', metadata,
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('sourcevoucherts', Unicode(50)),
-    Column('createdtime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('sequencenumber', Integer),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('updatedBy', Unicode(32)),
-    Column('id', Integer, nullable=False),
-    Column('sourcevoucherid', Integer),
-    Column('carryforwardtype', Integer),
-    Column('sourcevouchertypeid', Integer),
-    Column('idTransactionDocDTO', Integer)
-)
+class TEMP1SMFCTransactionEntry(Base):
+    __tablename__ = 'TEMP_1_SM_FC_TransactionEntry'
+
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    summary = Column(Unicode(200))
+    exchangerate = Column(Numeric(28, 14))
+    origamountdr = Column(Numeric(28, 14))
+    origamountcr = Column(Numeric(28, 14))
+    amountdr = Column(Numeric(28, 14))
+    amountcr = Column(Numeric(28, 14))
+    quantitydr = Column(Numeric(28, 14))
+    quantitycr = Column(Numeric(28, 14))
+    price = Column(Numeric(28, 14))
+    mergecode = Column(Unicode(50))
+    origamount = Column(Numeric(28, 14))
+    billno = Column(Unicode(50))
+    billdate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    memoto = Column(Unicode(200))
+    generatedate = Column(String(19, u'Chinese_PRC_CI_AS'))
+    accounttype = Column(Unicode(50))
+    extend1 = Column(Unicode(50))
+    extend2 = Column(Unicode(50))
+    extend3 = Column(Unicode(50))
+    createdtime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    sequencenumber = Column(Integer)
+    ts = Column(TIMESTAMP, nullable=False)
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    updatedBy = Column(Unicode(32))
+    id = Column(Integer, nullable=False, primary_key=True)
+    idaccount = Column(Integer)
+    idcurrency = Column(Integer)
+    dcdirection = Column(Integer)
+    idauxiliaryinfo = Column(Integer)
+    idTransactionDocDTO = Column(Integer)
 
 
-t_TEMP_1_SM_FC_TransactionEntry = Table(
-    'TEMP_1_SM_FC_TransactionEntry', metadata,
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('summary', Unicode(200)),
-    Column('exchangerate', Numeric(28, 14)),
-    Column('origamountdr', Numeric(28, 14)),
-    Column('origamountcr', Numeric(28, 14)),
-    Column('amountdr', Numeric(28, 14)),
-    Column('amountcr', Numeric(28, 14)),
-    Column('quantitydr', Numeric(28, 14)),
-    Column('quantitycr', Numeric(28, 14)),
-    Column('price', Numeric(28, 14)),
-    Column('mergecode', Unicode(50)),
-    Column('origamount', Numeric(28, 14)),
-    Column('billno', Unicode(50)),
-    Column('billdate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('memoto', Unicode(200)),
-    Column('generatedate', String(19, u'Chinese_PRC_CI_AS')),
-    Column('accounttype', Unicode(50)),
-    Column('extend1', Unicode(50)),
-    Column('extend2', Unicode(50)),
-    Column('extend3', Unicode(50)),
-    Column('createdtime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('sequencenumber', Integer),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('updatedBy', Unicode(32)),
-    Column('id', Integer, nullable=False),
-    Column('idaccount', Integer),
-    Column('idcurrency', Integer),
-    Column('dcdirection', Integer),
-    Column('idauxiliaryinfo', Integer),
-    Column('idTransactionDocDTO', Integer)
-)
+class TEMP1SMFCTransactionEntrySourceRelation(Base):
+    __tablename__ = 'TEMP_1_SM_FC_TransactionEntrySourceRelation'
+
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    sourcevoucherts = Column(Unicode(50))
+    sourcevoucherdetailts = Column(Unicode(50))
+    createdtime = Column(String(19, u'Chinese_PRC_CI_AS'))
+    sequencenumber = Column(Integer)
+    ts = Column(TIMESTAMP, nullable=False)
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    updatedBy = Column(Unicode(32))
+    id = Column(Integer, nullable=False, primary_key=True)
+    sourcevoucherid = Column(Integer)
+    carryforwardtype = Column(Integer)
+    sourcevoucherdetailid = Column(Integer)
+    sourcevouchertypeid = Column(Integer)
+    idTransactionEntryDTO = Column(Integer)
 
 
-t_TEMP_1_SM_FC_TransactionEntrySourceRelation = Table(
-    'TEMP_1_SM_FC_TransactionEntrySourceRelation', metadata,
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('sourcevoucherts', Unicode(50)),
-    Column('sourcevoucherdetailts', Unicode(50)),
-    Column('createdtime', String(19, u'Chinese_PRC_CI_AS')),
-    Column('sequencenumber', Integer),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('updatedBy', Unicode(32)),
-    Column('id', Integer, nullable=False),
-    Column('sourcevoucherid', Integer),
-    Column('carryforwardtype', Integer),
-    Column('sourcevoucherdetailid', Integer),
-    Column('sourcevouchertypeid', Integer),
-    Column('idTransactionEntryDTO', Integer)
-)
+class UAListPrintstyle(Base):
+    __tablename__ = 'UA_ListPrintstyle'
+
+    ts = Column(TIMESTAMP)
+    updatedBy = Column(Unicode(32))
+    updated = Column(String(19, u'Chinese_PRC_CI_AS'))
+    name = Column(Unicode(200))
+    code = Column(Unicode(32))
+    Style = Column(Unicode(2000))
+    id = Column(Integer, nullable=False, primary_key=True)
+    UserID = Column(Integer)
 
 
-t_Temp_CurrentAccount = Table(
-    'Temp_CurrentAccount', metadata,
-    Column('code', String(50, u'Chinese_PRC_CI_AS')),
-    Column('AccountID', String(50, u'Chinese_PRC_CI_AS'))
-)
+class AaDimensionSet(Base):
+    __tablename__ = 'aa_DimensionSet'
+
+    PriceSetType = Column(Unicode(50))
+    Dimension = Column(Integer)
+    Remark = Column(Unicode(100))
+    IsInUse = Column(Integer)
+    TS = Column(TIMESTAMP, nullable=False)
+    id = Column(Integer, nullable=False, primary_key=True)
 
 
-t_UA_ListPrintstyle = Table(
-    'UA_ListPrintstyle', metadata,
-    Column('ts', TIMESTAMP),
-    Column('updatedBy', Unicode(32)),
-    Column('updated', String(19, u'Chinese_PRC_CI_AS')),
-    Column('name', Unicode(200)),
-    Column('code', Unicode(32)),
-    Column('Style', Unicode(2000)),
-    Column('id', Integer, nullable=False),
-    Column('UserID', Integer)
-)
+class AaPartnerclassprice(Base):
+    __tablename__ = 'aa_partnerclassprice'
+
+    Code = Column(Unicode(32))
+    ts = Column(TIMESTAMP, nullable=False)
+    updatedBy = Column(Unicode(32))
+    name = Column(Unicode(200))
+    QuotedPrice = Column(Unicode(1000))
+    QuotedPriceFormula = Column(Unicode(1000))
+    Discount = Column(Numeric(28, 14))
+    Price = Column(Unicode(1000))
+    PriceFormula = Column(Unicode(1000))
+    IncreasePriceRate = Column(Float(53))
+    LowestPrice = Column(Unicode(1000))
+    lowestPriceFormula = Column(Unicode(1000))
+    AgreementDiscount = Column(Numeric(28, 14))
+    PriceKey = Column(Unicode(34))
+    InvBarCode = Column(Unicode(128))
+    idDepartment = Column(Integer)
+    idDistrict = Column(Integer)
+    idInventory = Column(Integer)
+    idInventoryClass = Column(Integer)
+    idInventoryPrice = Column(Integer)
+    idPartner = Column(Integer)
+    idPartnerClass = Column(Integer)
+    id = Column(Integer, nullable=False, primary_key=True)
+    idpricetrace = Column(Integer)
+    idPerson = Column(Integer)
+    idUnit = Column(Integer)
+    updated = Column(DateTime)
 
 
-t_aa_DimensionSet = Table(
-    'aa_DimensionSet', metadata,
-    Column('PriceSetType', Unicode(50)),
-    Column('Dimension', Integer),
-    Column('Remark', Unicode(100)),
-    Column('IsInUse', Integer),
-    Column('TS', TIMESTAMP, nullable=False),
-    Column('id', Integer, nullable=False)
-)
+class Dtproperties(Base):
+    __tablename__ = 'dtproperties'
 
-
-t_aa_partnerclassprice = Table(
-    'aa_partnerclassprice', metadata,
-    Column('Code', Unicode(32)),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updatedBy', Unicode(32)),
-    Column('name', Unicode(200)),
-    Column('QuotedPrice', Unicode(1000)),
-    Column('QuotedPriceFormula', Unicode(1000)),
-    Column('Discount', Numeric(28, 14)),
-    Column('Price', Unicode(1000)),
-    Column('PriceFormula', Unicode(1000)),
-    Column('IncreasePriceRate', Float(53)),
-    Column('LowestPrice', Unicode(1000)),
-    Column('lowestPriceFormula', Unicode(1000)),
-    Column('AgreementDiscount', Numeric(28, 14)),
-    Column('PriceKey', Unicode(34)),
-    Column('InvBarCode', Unicode(128)),
-    Column('idDepartment', Integer),
-    Column('idDistrict', Integer),
-    Column('idInventory', Integer),
-    Column('idInventoryClass', Integer),
-    Column('idInventoryPrice', Integer),
-    Column('idPartner', Integer),
-    Column('idPartnerClass', Integer),
-    Column('id', Integer, nullable=False),
-    Column('idpricetrace', Integer),
-    Column('idPerson', Integer),
-    Column('idUnit', Integer),
-    Column('updated', DateTime)
-)
-
-
-t_dtproperties = Table(
-    'dtproperties', metadata,
-    Column('id', Integer, nullable=False),
-    Column('objectid', Integer),
-    Column('property', String(64, u'Chinese_PRC_CI_AS'), nullable=False),
-    Column('value', String(255, u'Chinese_PRC_CI_AS')),
-    Column('uvalue', Unicode(255)),
-    Column('lvalue', LargeBinary),
-    Column('version', Integer, nullable=False, server_default=text("(0)"))
-)
+    id = Column(Integer, nullable=False, primary_key=True)
+    objectid = Column(Integer)
+    property = Column(String(64, u'Chinese_PRC_CI_AS'), nullable=False)
+    value = Column(String(255, u'Chinese_PRC_CI_AS'))
+    uvalue = Column(Unicode(255))
+    lvalue = Column(LargeBinary)
+    version = Column(Integer, nullable=False, server_default=text("(0)"))
 
 
 class EapColumnSetSolution(Base):
@@ -22051,42 +21212,42 @@ class EapIdesktopsystemshortcut(Base):
     ShortcutType = Column(Integer)
 
 
-t_eap_printbussetting = Table(
-    'eap_printbussetting', metadata,
-    Column('id', Integer, nullable=False),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('name', Unicode(200)),
-    Column('code', Unicode(32)),
-    Column('UserId', Integer),
-    Column('TemplateId', Integer),
-    Column('printdirname', Unicode(200)),
-    Column('clientName', Unicode(400)),
-    Column('printerName', Unicode(400)),
-    Column('PageCopies', Integer, server_default=text("((1))")),
-    Column('PrintAllPage', Integer, server_default=text("((1))")),
-    Column('PrintPageRange', Unicode(200)),
-    Column('PrintType', Integer, server_default=text("((1))")),
-    Column('PrintDirection', Integer, server_default=text("((1))")),
-    Column('CopiesSpacing', Integer, server_default=text("((0))")),
-    Column('PrintSeparator', Integer, server_default=text("((0))")),
-    Column('Collated', Integer, server_default=text("((1))")),
-    Column('PrintNum', Integer, server_default=text("((1))")),
-    Column('PageVouchers', Integer, server_default=text("((1))")),
-    Column('RowsAdaptive', Integer, server_default=text("((1))")),
-    Column('FillBlankRows', Integer, server_default=text("((0))")),
-    Column('FixRows', Integer),
-    Column('Printpaper', Unicode(200)),
-    Column('margin', Unicode(200)),
-    Column('BarcodeType', Unicode(200)),
-    Column('PerRows', Integer, server_default=text("((1))")),
-    Column('LabelSpacings', Unicode(200)),
-    Column('DynPropertyString', UnicodeText(1073741823)),
-    Column('SetUrl', Unicode(400)),
-    Column('PrintClass', Unicode(400)),
-    Column('NumRows', Integer),
-    Column('AutoRows', Integer, server_default=text("((0))")),
-    Column('PrintCfgJson', Unicode(4000))
-)
+class EapPrintbussetting(Base):
+    __tablename__ = 'eap_printbussetting'
+
+    id = Column(Integer, nullable=False, primary_key=True)
+    ts = Column(TIMESTAMP, nullable=False)
+    name = Column(Unicode(200))
+    code = Column(Unicode(32))
+    UserId = Column(Integer)
+    TemplateId = Column(Integer)
+    printdirname = Column(Unicode(200))
+    clientName = Column(Unicode(400))
+    printerName = Column(Unicode(400))
+    PageCopies = Column(Integer, server_default=text("((1))"))
+    PrintAllPage = Column(Integer, server_default=text("((1))"))
+    PrintPageRange = Column(Unicode(200))
+    PrintType = Column(Integer, server_default=text("((1))"))
+    PrintDirection = Column(Integer, server_default=text("((1))"))
+    CopiesSpacing = Column(Integer, server_default=text("((0))"))
+    PrintSeparator = Column(Integer, server_default=text("((0))"))
+    Collated = Column(Integer, server_default=text("((1))"))
+    PrintNum = Column(Integer, server_default=text("((1))"))
+    PageVouchers = Column(Integer, server_default=text("((1))"))
+    RowsAdaptive = Column(Integer, server_default=text("((1))"))
+    FillBlankRows = Column(Integer, server_default=text("((0))"))
+    FixRows = Column(Integer)
+    Printpaper = Column(Unicode(200))
+    margin = Column(Unicode(200))
+    BarcodeType = Column(Unicode(200))
+    PerRows = Column(Integer, server_default=text("((1))"))
+    LabelSpacings = Column(Unicode(200))
+    DynPropertyString = Column(UnicodeText(1073741823))
+    SetUrl = Column(Unicode(400))
+    PrintClass = Column(Unicode(400))
+    NumRows = Column(Integer)
+    AutoRows = Column(Integer, server_default=text("((0))"))
+    PrintCfgJson = Column(Unicode(4000))
 
 
 class EapPrintdir(Base):
@@ -22312,8 +21473,8 @@ class EapUserdefinearticledict(Base):
 class EapWfauditlog(Base):
     __tablename__ = 'eap_wfauditlog'
     __table_args__ = (
-        Index('IDX_eap_wfauditlog_BizCode_EntityID', 'BizCode', 'EntityID'),
-        Index('IDX_eap_wfauditlog_BizCode_EntityID_IsCurrent', 'BizCode', 'EntityID', 'IsCurrent')
+        Index('IDX_eap_wfauditlog_BizCode_EntityID_IsCurrent', 'BizCode', 'EntityID', 'IsCurrent'),
+        Index('IDX_eap_wfauditlog_BizCode_EntityID', 'BizCode', 'EntityID')
     )
 
     ts = Column(TIMESTAMP, nullable=False)
@@ -22411,9 +21572,9 @@ class EapWfsolution(Base):
 class EapWftask(Base):
     __tablename__ = 'eap_wftask'
     __table_args__ = (
+        Index('IDX_eap_wftask_BizCode_EntityID_UserID', 'BizCode', 'EntityID', 'TaskStatus'),
         Index('IDX_eap_wftask_BizCode_EntityID_NodeID_TaskStatus', 'BizCode', 'EntityID', 'NodeID', 'TaskStatus'),
-        Index('IDX_eap_wftask_BizCode_EntityID_TaskStatus', 'BizCode', 'EntityID', 'TaskStatus'),
-        Index('IDX_eap_wftask_BizCode_EntityID_UserID', 'BizCode', 'EntityID', 'TaskStatus')
+        Index('IDX_eap_wftask_BizCode_EntityID_TaskStatus', 'BizCode', 'EntityID', 'TaskStatus')
     )
 
     BizCode = Column(Unicode(60))
@@ -22447,43 +21608,43 @@ class SmConfig(Base):
     updated = Column(DateTime)
 
 
-t_sm_fc_accountextendrulecolumn_bak = Table(
-    'sm_fc_accountextendrulecolumn_bak', metadata,
-    Column('id', UNIQUEIDENTIFIER, nullable=False),
-    Column('code', Unicode(30)),
-    Column('name', Unicode(200)),
-    Column('accountruletype', UNIQUEIDENTIFIER),
-    Column('geneaccountbytype', UNIQUEIDENTIFIER),
-    Column('idx', Integer),
-    Column('isdisplay', Integer),
-    Column('iscombin', Integer),
-    Column('displayname', Unicode(50)),
-    Column('ismatchby', Integer),
-    Column('issystemhidden', Integer),
-    Column('baseinfo', Unicode(50)),
-    Column('idfieldname', Unicode(50)),
-    Column('idedittablecolumn', UNIQUEIDENTIFIER),
-    Column('sequencenumber', Integer),
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updatedBy', Unicode(32)),
-    Column('createdtime', DateTime),
-    Column('updated', DateTime)
-)
+class SmFcAccountextendrulecolumnBak(Base):
+    __tablename__ = 'sm_fc_accountextendrulecolumn_bak'
+
+    id = Column(UNIQUEIDENTIFIER, nullable=False, primary_key=True)
+    code = Column(Unicode(30))
+    name = Column(Unicode(200))
+    accountruletype = Column(UNIQUEIDENTIFIER)
+    geneaccountbytype = Column(UNIQUEIDENTIFIER)
+    idx = Column(Integer)
+    isdisplay = Column(Integer)
+    iscombin = Column(Integer)
+    displayname = Column(Unicode(50))
+    ismatchby = Column(Integer)
+    issystemhidden = Column(Integer)
+    baseinfo = Column(Unicode(50))
+    idfieldname = Column(Unicode(50))
+    idedittablecolumn = Column(UNIQUEIDENTIFIER)
+    sequencenumber = Column(Integer)
+    ts = Column(TIMESTAMP, nullable=False)
+    updatedBy = Column(Unicode(32))
+    createdtime = Column(DateTime)
+    updated = Column(DateTime)
 
 
-t_sm_fc_bookformatrelation = Table(
-    'sm_fc_bookformatrelation', metadata,
-    Column('ts', TIMESTAMP, nullable=False),
-    Column('updatedBy', Unicode(32)),
-    Column('name', Unicode(200)),
-    Column('code', Unicode(32)),
-    Column('id', Integer, nullable=False),
-    Column('bookFormat', Integer),
-    Column('idEap_PrintTemplate', Integer),
-    Column('updated', DateTime),
-    Column('madeDate', DateTime),
-    Column('createdTime', DateTime)
-)
+class SmFcBookformatrelation(Base):
+    __tablename__ = 'sm_fc_bookformatrelation'
+
+    ts = Column(TIMESTAMP, nullable=False)
+    updatedBy = Column(Unicode(32))
+    name = Column(Unicode(200))
+    code = Column(Unicode(32))
+    id = Column(Integer, nullable=False, primary_key=True)
+    bookFormat = Column(Integer)
+    idEap_PrintTemplate = Column(Integer)
+    updated = Column(DateTime)
+    madeDate = Column(DateTime)
+    createdTime = Column(DateTime)
 
 
 class SmMessageruleuser(Base):

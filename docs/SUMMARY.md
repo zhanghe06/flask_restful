@@ -12,5 +12,6 @@
     * [Nginx](Components/Nginx.md)
 * [插件介绍](Plugins/README.md)
     * [Flask-RESTful](Plugins/Flask-RESTful.md)
+    * [SqlAlchemy](Plugins/SqlAlchemy.md)
     * [HTTPAuthentication](Plugins/HTTPAuthentication.md)
     * [HttpCode](Plugins/HttpCode.md)

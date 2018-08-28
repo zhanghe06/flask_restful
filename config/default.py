@@ -30,7 +30,7 @@ REQUESTS_TIME_OUT = (30, 30)
 
 # 数据库 MySQL - 用友
 DB_MYSQL_YONYOU = {
-    'host': '192.168.64.149\SQLEXPRESS',
+    'host': '192.168.64.138\SQLEXPRESS',
     'username': 'sa',
     'password': '1qazXSW@',
     'port': 1433,

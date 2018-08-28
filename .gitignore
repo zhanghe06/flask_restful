@@ -18,3 +18,10 @@ docs/_book/*
 # local files
 run_service_app.py
 web_app
+
+docs/node_modules
+docs/package-lock.json
+
+
+env_*.sh
+!env_default.sh
